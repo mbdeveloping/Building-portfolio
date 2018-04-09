@@ -88,7 +88,16 @@ $(document).ready(function(){
     });
   });
 
-
+$(document).ready(function(){
+    $(".logo").on('mouseenter', function(){
+          TweenMax.to(".big-rq", 1.5,{rotation:135, ease:Back.easeOut.config(1.7)});
+          TweenMax.to(".small-rq", 1.5,{rotation:-40, ease:Back.easeOut.config(1.7)});
+    $(".logo").on('mouseleave', function(){
+          TweenMax.to(".big-rq", 1.5,{rotation:47, ease:Back.easeOut.config(1.7)});
+          TweenMax.to(".small-rq", 1.5,{rotation:22, ease:Back.easeOut.config(1.7)});
+      });
+    });
+});
 
 
 
