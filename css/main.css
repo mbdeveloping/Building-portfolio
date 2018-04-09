@@ -115,6 +115,14 @@ h1 div {
 .hello {
   font-size: 80px;
 }
+.hello-header span {
+  /* opacity:0; */
+  display: inline-block;
+  transform: scale(0);
+}
+.hello-header:hover {
+  cursor:default;
+}
 .iam {
   font-size: 60px;
   margin-top: -30px;

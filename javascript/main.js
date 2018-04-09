@@ -40,6 +40,33 @@
     TweenMax.to("#mb-logo", 1.5,{opacity:1,scale:1,y:0-30, ease:Back.easeOut.config(3), overwrite: 'all'});
   }, 1200);
 
+  window.setTimeout(function(){
+    $(".hello-header span").each(function( index ) {
+      var $this = $(this);
+      setTimeout(function(){
+        $this.addClass("scale-letters-header-load");
+      },70*index);
+      $this.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        $this.css("transform", "scale(1)");
+        $this.removeClass('scale-letters-header-load');
+      });
+    });
+  }, 1000);
+
+  $(".hello").on('mouseenter', function(){
+    $(".hello span").each(function( index ) {
+      var $this = $(this);
+      setTimeout(function(){
+        $this.addClass("scale-letters-hello");
+
+      }, 150*index);
+      $this.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+          $this.removeClass('scale-letters-hello');
+          $this.css("opacity", "1");
+      });
+    });
+  });
+
 
 
   $(".logo").on('mouseenter', function(){
@@ -57,21 +84,10 @@
 
 
 
-// $(".about-span").on('mouseenter', function(){
-//   var el = $(this);
-//   $(this).addClass(' scale-letters');
-//   $(this).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-//       el.removeClass('scale-letters');
-//   });
-// });
 
-// $(".about").on('click', function(){
-//
-//   TweenMax.to(".overlay", 1,{scaleX:1,transformOrigin:"left", ease:Expo.easeIn, overwrite: 'all'});
-//   setInterval(function(){ TweenMax.to(".overlay", 1,{scaleX:0,transformOrigin:"right", ease:Expo.easeOut, overwrite: 'all',}); }, 2000);
-//
-//
-// })
+
+
+
 var FadeTransition = Barba.BaseTransition.extend({
   start: function() {
     /**
