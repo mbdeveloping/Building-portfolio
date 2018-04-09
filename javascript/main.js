@@ -53,19 +53,25 @@
     });
   }, 1000);
 
-  $(".hello").on('mouseenter', function(){
-    $(".hello span").each(function( index ) {
+  $(".hello-header span").on('mouseenter', function(){
       var $this = $(this);
-      setTimeout(function(){
-        $this.addClass("scale-letters-hello");
 
-      }, 150*index);
+      $this.addClass("bounce");
       $this.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-          $this.removeClass('scale-letters-hello');
-          $this.css("opacity", "1");
+          $this.removeClass('bounce');
       });
-    });
+
   });
+//Generate random color on hover span
+$(document).ready(function(){
+  $(".hello-header span").hover(function(){
+      var r = Math.floor(Math.random() * 255);
+      var g = Math.floor(Math.random() * 255);
+      var b = Math.floor(Math.random() * 255);
+      var color = "rgb("+r+","+g+","+b+")"
+      $(this).css("color", color);
+  });
+});
 
 
 

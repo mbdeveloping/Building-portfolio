@@ -116,10 +116,13 @@ h1 div {
   font-size: 80px;
 }
 .hello-header span {
-  /* opacity:0; */
   display: inline-block;
   transform: scale(0);
+  transition: color .3s ease;
 }
+/* .hello-header span:hover {
+ color:purple;
+} */
 .hello-header:hover {
   cursor:default;
 }
