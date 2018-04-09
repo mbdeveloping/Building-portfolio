@@ -1,0 +1,149 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: Arial;
+  font-weight: bold;
+}
+body {
+  overflow: hidden;
+  background: #000;
+}
+.barba-container {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+nav {
+  position: fixed;
+  top:0;
+  left:60px;
+  height: 40px;
+  text-align: center;
+  z-index: 10;
+}
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  color:#fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  letter-spacing: 1px;
+}
+nav ul li a span {
+  display: inline-block;
+  padding:0;
+  opacity:0;
+  font-size: 10px;
+}
+h1 {
+  color:#fff;
+  position: absolute;
+  top:50%;
+  left:20%;
+  transform: translate(-20%, -50%);
+  z-index: 10;
+}
+h1 div {
+  letter-spacing: 5px;
+}
+.hello {
+  font-size: 80px;
+}
+.iam {
+  font-size: 60px;
+  margin-top: -30px;
+  margin-left: 2px;
+}
+.developer {
+  font-size: 40px;
+  margin-top: -20px;
+  margin-left: 3px;
+  letter-spacing: 3.3px;
+}
+.based {
+  font-size: 20px;
+  float: right;
+  margin-top: -5px;
+  letter-spacing: 1.5px;
+  margin-right: 45px;
+}
+#big-ben {
+  position: absolute;
+  width: 15px;
+  height: 77px;
+  bottom: 5px;
+  right: 32px;
+}
+#london-bus {
+  position: absolute;
+  width: 43px;
+  right:-10px;
+  bottom: -10px;
+}
+#about-img {
+  width: 100%;
+  height: 100vh;
+  opacity:0.2;
+  z-index: -1;
+}
+#home-page {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+}
+#about-page {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+}
+.overlay {
+  position: fixed;
+  top:0;
+  left:0;
+  background:red;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  transform: scaleX(0);
+}
+a {
+  color:#fff;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  padding-top:20px;
+  padding-bottom: 20px;
+}
+.wa span {
+  display: block;
+  font-size: 20px;
+  transition: all .3s ease;
+  padding-left: 20px;
+  padding-right: 20px;
+  opacity: .5;
+}
+
+/* span:hover {
+  transform: scaleX(2);
+} */
+.about {
+  position: absolute;
+  top:50%;
+  left:0;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.work {
+  position: absolute;
+  top:50%;
+  right:0;
+  transform: translateY(-50%);
+  z-index: 10;
+}
