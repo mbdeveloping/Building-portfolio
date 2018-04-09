@@ -23,7 +23,7 @@
   });
 
   window.setTimeout(function(){
-    $(".mb a span").each(function( index ) {
+    $(".logo-name span").each(function( index ) {
       var $this = $(this);
       setTimeout(function(){
         $this.addClass("scale-letters-mb");
@@ -37,8 +37,8 @@
 
 
 
-  $(".mb").on('mouseenter', function(){
-    $(".mb a span").each(function( index ) {
+  $(".logo-name").on('mouseenter', function(){
+    $(".logo-name span").each(function( index ) {
       var $this = $(this);
       setTimeout(function(){
         $this.addClass("scale-letters-mb");
