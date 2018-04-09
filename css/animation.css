@@ -1,17 +1,17 @@
 @keyframes scale-letters {
   0% {
-    transform: scale(1);
+    transform: scale(1) translateZ(0);
   }
   25% {
-    transform: scale(2.2);
+    transform: scale(2.2) translateZ(0);
     opacity: 1;
   }
 
   50% {
-    transform: scale(.5);
+    transform: scale(.5) translateZ(0);
   }
   60% {
-    transform: scale(1);
+    transform: scale(1) translateZ(0);
     /* padding-top:5px;
     padding-bottom: 5px; */
   }
@@ -129,4 +129,24 @@
 .about-header {
   animation-name: about-header;
   animation-duration: 1s;
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
 }

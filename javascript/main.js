@@ -33,11 +33,16 @@
           $this.css("opacity", "1");
       });
     });
+    TweenMax.to(".big-rq", 1.5,{opacity:1,rotation:47, scale:1,x:87,y:-40, ease:Back.easeOut.config(1.7), overwrite: 'all'});
+    TweenMax.to(".small-rq", 1.5,{opacity:1,rotation:22, scale:1,x:-60,y:-30, ease:Back.easeOut.config(1.7), overwrite: 'all'});
   }, 1000);
+  window.setTimeout(function(){
+    TweenMax.to("#mb-logo", 1.5,{opacity:1,scale:1,y:0-30, ease:Back.easeOut.config(3), overwrite: 'all'});
+  }, 1200);
 
 
 
-  $(".logo-name").on('mouseenter', function(){
+  $(".logo").on('mouseenter', function(){
     $(".logo-name span").each(function( index ) {
       var $this = $(this);
       setTimeout(function(){
@@ -49,6 +54,8 @@
       });
     });
   });
+
+
 
 // $(".about-span").on('mouseenter', function(){
 //   var el = $(this);
