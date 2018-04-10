@@ -1,4 +1,5 @@
   $(document).ready(function(){
+    $(".logo").hide().fadeIn(1000);
   // $(".about").css("left", "-10%");
   // $(".about").animate({left:"0"},6000);
   // $(".work").css("right", "-10%");
@@ -28,6 +29,13 @@
     });
   });
 
+
+      setTimeout(function(){
+        $(".door").addClass("door-open");
+        $(".door p").css("opacity","1");
+      },4000);
+
+
   $(".work").on('mouseenter', function(){
     $(".work-span").addClass("scale-letters");
     $(".work-span").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
@@ -35,11 +43,11 @@
     });
     // TweenMax.to(".door", 1,{perspective:70,rotationY:-13, ease:Power2.ease});
     // $(".door").addClass("open");
-    $(".door").css("transform","perspective(300px) rotateY(13deg)");
+    // $(".door").css("transform","perspective(300px) rotateY(13deg)");
   });
   $(".work").on('mouseleave', function(){
     // $(".door").removeClass("open");
-    $(".door").css("transform","perspective(0) rotateY(0)");
+    // $(".door").css("transform","perspective(0) rotateY(0)");
   });
 
 

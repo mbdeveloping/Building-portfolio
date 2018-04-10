@@ -250,9 +250,14 @@ a {
   color:#fff;
   font-size: 12px;
   transform: translateX(40%) rotate(-90deg);
+  opacity: 0;
+  transition: opacity 2s ease;
 }
 .open {
 	animation: crack 2s cubic-bezier(.46, .59, .53, 1) forwards;
+}
+.door-open {
+  transform: perspective(300px) rotateY(13deg);
 }
 
 /* span:hover {
