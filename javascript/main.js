@@ -1,11 +1,24 @@
   $(document).ready(function(){
-  $(".about").css("left", "-10%");
-  $(".about").animate({left:"0"},1000);
-  $(".work").css("right", "-10%");
-  $(".work").animate({right:"0"},1000);
-  $("nav").css("top", "-10%");
-  $("nav").animate({top:"0"},1000);
-  $("h1").hide().fadeIn(1000);
+  // $(".about").css("left", "-10%");
+  // $(".about").animate({left:"0"},1000);
+  // $(".work").css("right", "-10%");
+  // $(".work").animate({right:"0"},1000);
+  // $("h1").hide().fadeIn(1000);
+  window.setTimeout(function(){
+  $(".about span").each(function( index ) {
+    var $this = $(this);
+    setTimeout(function(){
+      $this.css("transform","translateX(0)");
+    }, 100*index);
+  });
+
+  $(".work span").each(function( index ) {
+    var $this = $(this);
+    setTimeout(function(){
+      $this.css("transform","translateX(0)");
+    }, 100*index);
+  });
+}, 6000);
 
   $(".about").on('mouseenter', function(){
     console.log("working");
@@ -20,27 +33,34 @@
     $(".work-span").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
         $(".work-span").removeClass('scale-letters');
     });
+    // TweenMax.to(".door", 1,{perspective:70,rotationY:-13, ease:Power2.ease});
+    // $(".door").addClass("open");
+    $(".door").css("transform","perspective(300px) rotateY(13deg)");
+  });
+  $(".work").on('mouseleave', function(){
+    // $(".door").removeClass("open");
+    $(".door").css("transform","perspective(0) rotateY(0)");
   });
 
-  window.setTimeout(function(){
-    $(".logo-name span").each(function( index ) {
-      var $this = $(this);
-      setTimeout(function(){
-        $this.addClass("scale-letters-mb");
-      }, 100*index);
-      $this.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-          $this.removeClass('scale-letters-mb');
-          $this.css("opacity", "1");
-      });
-    });
-    TweenMax.to(".big-rq", 1.5,{opacity:1,rotation:47, scale:1,x:87,y:-40, ease:Back.easeOut.config(1.7), overwrite: 'all'});
-    TweenMax.to(".small-rq", 1.5,{opacity:1,rotation:22, scale:1,x:-60,y:-30, ease:Back.easeOut.config(1.7), overwrite: 'all'});
-  }, 1000);
-  window.setTimeout(function(){
-    TweenMax.to("#mb-logo", 1.5,{opacity:1,scale:1,y:0-30, ease:Back.easeOut.config(3), overwrite: 'all'});
-  }, 1200);
 
-  window.setTimeout(function(){
+  //   $(".logo-name span").each(function( index ) {
+  //     var $this = $(this);
+  //     setTimeout(function(){
+  //       $this.addClass("scale-letters-mb");
+  //     }, 100*index);
+  //     $this.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+  //         $this.removeClass('scale-letters-mb');
+  //         $this.css("opacity", "1");
+  //     });
+  //   });
+  //   TweenMax.to(".big-rq", 1.5,{opacity:1,rotation:47, scale:1,x:87,y:-40, ease:Back.easeOut.config(1.7), overwrite: 'all'});
+  //   TweenMax.to(".small-rq", 1.5,{opacity:1,rotation:22, scale:1,x:-60,y:-30, ease:Back.easeOut.config(1.7), overwrite: 'all'});
+  //
+  // window.setTimeout(function(){
+  //   TweenMax.to("#mb-logo", 1.5,{opacity:1,scale:1,y:-30, ease:Back.easeOut.config(3), overwrite: 'all'});
+  // }, 200);
+
+  // window.setTimeout(function(){
     $(".hello-header span").each(function( index ) {
       var $this = $(this);
       setTimeout(function(){
@@ -51,7 +71,7 @@
         $this.removeClass('scale-letters-header-load');
       });
     });
-  }, 1000);
+  // }, 1000);
 
   $(".hello-header span").on('mouseenter', function(){
       var $this = $(this);
@@ -62,6 +82,12 @@
       });
 
   });
+
+  window.setTimeout(function(){
+    TweenMax.to("#big-ben", 1,{scaleY:1, ease:Back.easeOut.config(6)});
+    TweenMax.to("#london-bus", 3,{opacity:1, x:150, ease: Circ.easeOut});
+  }, 3800);
+
 //Generate random color on hover span
 $(document).ready(function(){
   $(".hello-header span").hover(function(){
@@ -90,16 +116,26 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $(".logo").on('mouseenter', function(){
-          TweenMax.to(".big-rq", 1.5,{rotation:135, ease:Back.easeOut.config(1.7)});
-          TweenMax.to(".small-rq", 1.5,{rotation:-40, ease:Back.easeOut.config(1.7)});
-          TweenMax.to("#mb-logo", 1.5,{scale:0.7, ease:Back.easeOut.config(1.7)});
-    $(".logo").on('mouseleave', function(){
-          TweenMax.to(".big-rq", 1.5,{rotation:47, ease:Back.easeOut.config(1.7)});
-          TweenMax.to(".small-rq", 1.5,{rotation:22, ease:Back.easeOut.config(1.7)});
-          TweenMax.to("#mb-logo", 1.5,{scale:1, ease:Back.easeOut.config(3)});
-      });
+          TweenMax.to(".big-rq", 2,{rotation:135, ease:Back.easeOut.config(1.7)});
+          TweenMax.to(".small-rq", 2,{rotation:-40, ease:Back.easeOut.config(1.7)});
+          TweenMax.to("#mb-logo", 2,{scale:0.7, ease:Back.easeOut.config(1.7)});
     });
+    $(".logo").on('mouseleave', function(){
+          TweenMax.to(".big-rq", 2,{rotation:47, ease:Back.easeOut.config(1.7)});
+          TweenMax.to(".small-rq", 2,{rotation:22, ease:Back.easeOut.config(1.7)});
+          TweenMax.to("#mb-logo", 2,{scale:1, ease:Back.easeOut.config(3)});
+      });
 });
+
+// $(document).ready(function(){
+//     $("#london-bus").on('mouseenter', function(){
+//       var $this = $(this);
+//       $this.addClass("bounce");
+//       $this.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+//           $this.removeClass('bounce');
+//       });
+//     });
+// });
 
 
 

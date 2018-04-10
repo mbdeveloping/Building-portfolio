@@ -287,3 +287,20 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
+
+@keyframes crackopen {
+	from {
+		background-color: @inner-color;
+		transform: perspective(15vw) rotateY(-13deg);
+	}
+	to {
+		background-color: lighten(@inner-color, 5%);
+		transform: perspective(20vw) rotateY(-90deg);
+	}
+}
+
+@keyframes crack {
+	to {
+		transform: perspective(150px) rotateY(-13deg);
+	}
+}
