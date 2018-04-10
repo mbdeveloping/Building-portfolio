@@ -1,10 +1,10 @@
   $(document).ready(function(){
   // $(".about").css("left", "-10%");
-  // $(".about").animate({left:"0"},1000);
+  // $(".about").animate({left:"0"},6000);
   // $(".work").css("right", "-10%");
-  // $(".work").animate({right:"0"},1000);
+  // $(".work").animate({right:"0"},6000);
   // $("h1").hide().fadeIn(1000);
-  window.setTimeout(function(){
+  // window.setTimeout(function(){
   $(".about span").each(function( index ) {
     var $this = $(this);
     setTimeout(function(){
@@ -18,7 +18,7 @@
       $this.css("transform","translateX(0)");
     }, 100*index);
   });
-}, 6000);
+// }, 6000);
 
   $(".about").on('mouseenter', function(){
     console.log("working");
