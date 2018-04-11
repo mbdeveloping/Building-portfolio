@@ -32,8 +32,65 @@
 
       setTimeout(function(){
         $(".door").addClass("door-open");
-        $(".door p").css("opacity","1");
-      },4000);
+        $(".door-outter").css("opacity","1");
+      },3000);
+
+      $(".door").on('mouseenter', function(){
+        $(".door").addClass("hover-door");
+        $(".door").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+            $(".door").removeClass('hover-door');
+        });
+      });
+
+      $(".work").on('click', function() {
+        if ($(".door").hasClass("hover-door")) {
+          $(".door").removeClass("hover-door");
+
+
+              // $(".door").addClass("full-open");
+              TweenMax.to(".door", 0.5,{rotationY:90, perspective:400,ease:Power0.easeIn});
+
+
+          setTimeout(function(){
+            // TweenMax.to(".door-outter", 2,{scale:,ease:Power0.easeInOut});
+            $(".door-pin1, .door-pin2").css("display","none");
+            $(".door").css("opacity","0");
+            // $(".door").css("transform","perspective(400px) rotateY(90deg)");
+
+            // $(".door-wrapper, .door").css({
+            //   width:"200%",
+            //     height: "200vh"
+            // });
+            $(".door-wrapper").animate({
+              width:"200%",
+              height: "200vh"
+            });
+            TweenMax.to(".door-outter", 2,{width:"200%", height:"200%", left:0,top:0,x:0,y:0,ease:Power0.easeIn});
+          },1000);
+        } else {
+          $(".door").addClass("full-open");
+          setTimeout(function(){
+            // TweenMax.to(".door-outter", 2,{scale:,ease:Power0.easeInOut});
+            $(".door-pin1, .door-pin2").css("display","none");
+            $(".door").css("opacity","0");
+            // $(".door-wrapper, .door").css({
+            //   width:"200%",
+            //     height: "200vh"
+            // });
+            $(".door-wrapper").animate({
+              width:"200%",
+              height: "200vh"
+            });
+            TweenMax.to(".door-outter", 2,{width:"200%", height:"200%", left:0,top:0,x:0,y:0,ease:Power0.easeIn});
+          },1000);
+        }
+
+      })
+
+      // setTimeout(function(){
+      //     TweenMax.to(".gradient", 6,{width:3000, height:3000,ease:Power2.ease,opacity:0, overwrite: 'all'});
+      // },4000);
+
 
 
   $(".work").on('mouseenter', function(){
@@ -42,11 +99,11 @@
         $(".work-span").removeClass('scale-letters');
     });
     // TweenMax.to(".door", 1,{perspective:70,rotationY:-13, ease:Power2.ease});
-    // $(".door").addClass("open");
+    // $(".door").addClass("door-open");
     // $(".door").css("transform","perspective(300px) rotateY(13deg)");
   });
   $(".work").on('mouseleave', function(){
-    // $(".door").removeClass("open");
+    // $(".door").removeClass("door-open");
     // $(".door").css("transform","perspective(0) rotateY(0)");
   });
 

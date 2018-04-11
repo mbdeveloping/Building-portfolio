@@ -242,6 +242,7 @@
 
 .scale-letters-header-load {
   animation: scale-letters-header-load 1.2s ease;
+  animation-fill-mode: both;
 }
 
 @keyframes bounce {
@@ -303,4 +304,21 @@
 	to {
 		transform: perspective(150px) rotateY(-13deg);
 	}
+}
+
+.hover-door {
+  animation-name: hover-door;
+  animation-fill-mode: both;
+  animation-duration: 3s;
+}
+@keyframes hover-door {
+  0%, {
+    transform: perspective(300px) rotateY(13deg);
+  }
+  20% {
+    transform: perspective(200px) rotateY(13deg);
+  }
+  60% {
+    transform: perspective(400px) rotateY(13deg);
+  }
 }
