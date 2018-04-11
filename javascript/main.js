@@ -29,17 +29,33 @@
     });
   });
 
-
+TweenMax.set(".door", {transformPerspective:300});
       setTimeout(function(){
-        $(".door").addClass("door-open");
         $(".door-outter").css("opacity","1");
       },3000);
+      setTimeout(function(){
 
-      $(".door").on('mouseenter', function(){
-        $(".door").addClass("hover-door");
-        $(".door").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-            $(".door").removeClass('hover-door');
-        });
+        // $(".door").addClass("onload-door");
+        // $(".door").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        //     $(".door").removeClass('onload-door');
+        //     });
+
+        // TweenMax.to(".door", 1.5, {rotationY:13, ease:Power1.easeInOut, repeat:1, yoyo:true});
+        //   $(".door").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        //         $(".door").removeClass('door-open');
+        //     });
+      },3500);
+
+      $(".door-wrapper").on('mouseenter', function(){
+        TweenMax.to(".door", 0.7, {rotationY:13, ease:Power1.easeInOut});
+
+        // $(".work span").addClass("work-span-door-hover");
+        // $(".work span").css("fontSize","40px");
+      });
+      $(".door-wrapper").on('mouseleave', function(){
+        // $(".work span").removeClass("work-span-door-hover");
+        // $(".work span").css("fontSize","20px");
+        TweenMax.to(".door", 0.7, {rotationY:0, ease:Power1.easeInOut});
       });
 
       $(".work").on('click', function() {

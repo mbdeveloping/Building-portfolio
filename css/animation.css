@@ -322,3 +322,17 @@
     transform: perspective(400px) rotateY(13deg);
   }
 }
+
+.onload-door {
+  animation-name: onload-door;
+  animation-fill-mode: both;
+  animation-duration: 3s;
+}
+@keyframes onload-door {
+  0%,90% {
+    transform: perspective(0px) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(300px) rotateY(13deg);
+  }
+}
