@@ -285,6 +285,7 @@ a {
   left:1px;
   transform-origin: left;
   /* transition: all 1s ease; */
+  outline: 1px solid transparent;
 }
 .door p {
   position: absolute;

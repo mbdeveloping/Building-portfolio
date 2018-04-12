@@ -16,15 +16,19 @@ $(document).ready(function(){
 
 //About and Work links animations
 $(document).ready(function(){
+  //Declare variables
+  var $work = $(".work");
+  var $aboutSpan = $(".about-span");
+  var $workSpan = $(".work-span");
   //About and Work onload animation
-  $(".about span").each(function( index ) {
+  $aboutSpan.each(function( index ) {
     var $this = $(this);
     setTimeout(function(){
       $this.css("transform","translateX(0)");
     }, 100*index);
   });
 
-  $(".work span").each(function( index ) {
+  $workSpan.each(function( index ) {
     var $this = $(this);
     setTimeout(function(){
       $this.css("transform","translateX(0)");
@@ -32,21 +36,20 @@ $(document).ready(function(){
   });
   //About hover animation
   $(".about").on('mouseenter', function(){
-    console.log("working");
-    $(".about-span").addClass("scale-letters");
-    $(".about-span").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-        $(".about-span").removeClass('scale-letters');
+    $aboutSpan.addClass("scale-letters");
+    $aboutSpan.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        $aboutSpan.removeClass('scale-letters');
     });
   });
   //Work hover animation
-  $(".work").on('mouseenter', function(){
-    $(".work-span").addClass("scale-letters");
-    $(".work-span").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-        $(".work-span").removeClass('scale-letters');
+  $work.on('mouseenter', function(){
+    $workSpan.addClass("scale-letters");
+    $workSpan.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        $workSpan.removeClass('scale-letters');
     });
   });
   //Work click animation
-  $(".work").on('click', function() {
+  $work.on('click', function() {
       TweenMax.to(".door", 1.2, {rotationY:90, ease:Power1.easeInOut});
       setTimeout(function(){
         $(".door-pin1, .door-pin2").css("display","none");
@@ -61,8 +64,10 @@ $(document).ready(function(){
 
 //Main header animations
 $(document).ready(function(){
+  //Declare variables
+  var $headerSpan = $(".hello-header span");
   //Main headers onload animation
-  $(".hello-header span").each(function( index ) {
+  $headerSpan.each(function( index ) {
     var $this = $(this);
     setTimeout(function(){
       $this.addClass("scale-letters-header-load");
@@ -73,7 +78,7 @@ $(document).ready(function(){
     });
   });
   //Main header hover animation
-  $(".hello-header span").on('mouseenter', function(){
+  $headerSpan.on('mouseenter', function(){
       var $this = $(this);
       $this.addClass("bounce");
       $this.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
@@ -81,7 +86,7 @@ $(document).ready(function(){
       });
   });
   //Main header spans random color on hover
-  $(".hello-header span").hover(function(){
+  $headerSpan.hover(function(){
       var r = Math.floor(Math.random() * 255);
       var g = Math.floor(Math.random() * 255);
       var b = Math.floor(Math.random() * 255);
@@ -97,10 +102,12 @@ $(document).ready(function(){
 
 //Logo  animation
 $(document).ready(function(){
+  //Declare variables
+  $logo = $(".logo");
   //Logo onload animation
-  $(".logo").hide().fadeIn(1000);
+  $logo.hide().fadeIn(1000);
   //Logo hover animation
-    $(".logo").on('mouseenter', function(){
+    $logo.on('mouseenter', function(){
           TweenMax.to(".big-rq", 2,{rotation:135, ease:Back.easeOut.config(1.7)});
           TweenMax.to(".small-rq", 2,{rotation:-40, ease:Back.easeOut.config(1.7)});
           TweenMax.to("#mb-logo", 2,{scale:0.7, ease:Back.easeOut.config(1.7)});
@@ -116,7 +123,7 @@ $(document).ready(function(){
             });
           });
     });
-    $(".logo").on('mouseleave', function(){
+    $logo.on('mouseleave', function(){
         TweenMax.to(".big-rq", 2,{rotation:47, ease:Back.easeOut.config(1.7)});
         TweenMax.to(".small-rq", 2,{rotation:22, ease:Back.easeOut.config(1.7)});
         TweenMax.to("#mb-logo", 2,{scale:1, ease:Back.easeOut.config(3)});
