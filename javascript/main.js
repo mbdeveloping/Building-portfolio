@@ -50,14 +50,15 @@ $(document).ready(function(){
   });
   //Work click animation
   $work.on('click', function() {
-      TweenMax.to(".door", 1.2, {rotationY:90, ease:Power1.easeInOut});
+      TweenMax.to(".door", 1, {rotationY:90, ease:Power1.easeInOut});
       setTimeout(function(){
         $(".door-pin1, .door-pin2").css("display","none");
         $(".door-wrapper").animate({
           width:"200%",
           height: "200vh"
         });
-        TweenMax.to(".door-outter", 2,{width:"200%", height:"200%", left:0,top:0,x:0,y:0,ease:Power0.easeIn});
+        $(".door").css("opacity", "0");
+        TweenMax.to(".door-outter", 1.7,{width:"200%", height:"200%",zIndex:100, left:0,top:0,x:0,y:0,ease:Power0.easeIn});
       },1000);
   });
 });
