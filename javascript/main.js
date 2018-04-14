@@ -413,13 +413,13 @@ Homepage.init();
         });
       });
 
-      TweenMax.to(".hello", .5, {x:-100, opacity:0});
-      TweenMax.to(".iam", .5, {x:100, opacity:0});
-      TweenMax.to(".developer", .5, {x:-100, opacity:0});
-      TweenMax.to(".based", .5, {x:100, opacity:0});
+      TweenMax.to(".hello", 1, {x:-100, opacity:0});
+      TweenMax.to(".iam", 1, {x:100, opacity:0});
+      TweenMax.to(".developer", 1, {x:-100, opacity:0});
+      TweenMax.to(".based", 1, {x:100, opacity:0});
 
-      TweenMax.to(".about", .5, {x:-100, opacity:0});
-      TweenMax.to(".work", .5, {x:100, opacity:0});
+      TweenMax.to(".about", 1, {x:-100, opacity:0});
+      TweenMax.to(".work", 1, {x:100, opacity:0});
 
       TweenMax.to(".door-wrapper", .5, {opacity:0});
       TweenMax.to("#london-bus", .5, {x:400, opacity:0});
