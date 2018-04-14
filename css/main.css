@@ -343,6 +343,13 @@ a {
   transform: translateY(-50%);
   z-index: 10;
 }
+.back-about {
+  position: absolute;
+  top:50%;
+  left:0;
+  transform: translateY(-50%);
+  z-index: 10;
+}
 
 .work {
   position: absolute;
@@ -355,3 +362,7 @@ a {
   padding-top: 10px;
   font-size: 30px;
 }
+
+/* .wa span.back-span {
+ display: none;
+} */
