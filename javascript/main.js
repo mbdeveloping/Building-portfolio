@@ -1,9 +1,10 @@
 //Door animation
 $(document).ready(function(){
-  TweenMax.set(".door", {transformPerspective:300});
+  TweenMax.set(".door", {transformPerspective:300, z:1});
   //Fade in doors onload
   setTimeout(function(){
-    $(".door-outter").css("opacity","1");
+    // $(".door-outter").css("opacity","1");
+    TweenMax.to(".door-outter", 3, {opacity:1});
   },3000);
   //Door hover animation
   $(".door-wrapper").on('mouseenter', function(){
@@ -148,9 +149,6 @@ $(document).ready(function(){
       $(document).ready(function(){
         TweenMax.set(".door", {transformPerspective:300});
         //Fade in doors onload
-        setTimeout(function(){
-          $(".door-outter").css("opacity","1");
-        },3000);
         //Door hover animation
         $(".door-wrapper").on('mouseenter', function(){
           TweenMax.to(".door", 0.7, {rotationY:13, ease:Power1.easeInOut});
@@ -222,16 +220,16 @@ $(document).ready(function(){
         //Declare variables
         var $headerSpan = $(".hello-header span");
         //Main headers onload animation
-        $headerSpan.each(function( index ) {
-          var $this = $(this);
-          setTimeout(function(){
-            $this.addClass("scale-letters-header-load");
-          },70*index);
-          $this.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-            $this.css("transform", "scale(1)");
-            $this.removeClass('scale-letters-header-load');
-          });
-        });
+        // $headerSpan.each(function( index ) {
+        //   var $this = $(this);
+        //   setTimeout(function(){
+        //     $this.addClass("scale-letters-header-load");
+        //   },70*index);
+        //   $this.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        //     $this.css("transform", "scale(1)");
+        //     $this.removeClass('scale-letters-header-load');
+        //   });
+        // });
         //Main header hover animation
         $headerSpan.on('mouseenter', function(){
             var $this = $(this);
@@ -377,100 +375,63 @@ Homepage.init();
 
   var FadeTransition = Barba.BaseTransition.extend({
     start: function() {
-
-      /**
-       * This function is automatically called as soon the Transition starts
-       * this.newContainerLoading is a Promise for the loading of the new container
-       * (Barba.js also comes with an handy Promise polyfill!)
-       */
-
-      // As soon the loading is finished and the old page is faded out, let's fade the new page
       Promise
         .all([this.newContainerLoading, this.fadeOut()])
         .then(this.fadeIn.bind(this));
     },
 
     fadeOut: function() {
-      /**
-       * this.oldContainer is the HTMLElement of the old Container
-       */
-
       // return $(this.oldContainer).animate({ opacity: 0 }).promise();
+      TweenMax.to(".barba-container", .7, {scale:0.8, onComplete: function(){deferred.resolve();}});
+
       var deferred = Barba.Utils.deferred();
-      //About and Work onload animation
-      var $aboutSpan = $(".about-span");
-      //About and Work onload animation
-      $aboutSpan.each(function( index ) {
-        var $this = $(this);
-        $aboutSpan.addClass("animating-about");
-        setTimeout(function(){
-          console.log("NEveikia");
-          $this.css("transform","translateX(-40px)");
-          // TweenMax.to($this, .5, {x:-40});
-        }, 100*index);
-        $aboutSpan.one('transitionend webkitTransitionEnd oTransitionEnd', function(){
-            $aboutSpan.removeClass('animating-about');
-        });
-      });
-
-      TweenMax.to(".hello", 1, {x:-100, opacity:0});
-      TweenMax.to(".iam", 1, {x:100, opacity:0});
-      TweenMax.to(".developer", 1, {x:-100, opacity:0});
-      TweenMax.to(".based", 1, {x:100, opacity:0});
-
+      // var $aboutSpan = $(".about-span");
+      //
+      // TweenMax.to(".hello", 1, {x:-100, opacity:0});
+      // TweenMax.to(".iam", 1, {x:100, opacity:0});
+      // TweenMax.to(".developer", 1, {x:-100, opacity:0});
+      // TweenMax.to(".based", 1, {x:100, opacity:0});
+      //
       TweenMax.to(".about", 1, {x:-100, opacity:0});
       TweenMax.to(".work", 1, {x:100, opacity:0});
+      //
+      // TweenMax.to(".door-wrapper", .5, {opacity:0});
+      // TweenMax.to("#london-bus", .5, {x:400, opacity:0});
+      // TweenMax.to("#big-ben", .5, {scaleY:0});
 
-      TweenMax.to(".door-wrapper", .5, {opacity:0});
-      TweenMax.to("#london-bus", .5, {x:400, opacity:0});
-      TweenMax.to("#big-ben", .5, {scaleY:0});
+      TweenMax.to(".hello-header", .5, {rotationX:90});
+      TweenMax.to(".door-outter", .5, {opacity:0});
 
+       // setTimeout(function(){
+       //    deferred.resolve();
+       // }, 1000);
 
-
-
-
-
-
-
-      // TweenMax.to(".about", .5, {
-      //   x: -40,
-      //   onComplete: function() {
-      //     deferred.resolve();
-      //   }
-      // });
-
-       setTimeout(function(){
-          deferred.resolve();
-       }, 500);
       return deferred.promise;
-
     },
 
     fadeIn: function() {
-      /**
-       * this.newContainer is the HTMLElement of the new Container
-       * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
-       * Please note, newContainer is available just after newContainerLoading is resolved!
-       */
 
       var _this = this;
       var $el = $(this.newContainer);
+      TweenLite.set(".barba-container", { scale:0.8 });
+      TweenMax.set(".hello-header span", {scale:1});
+      TweenMax.set(".hello-header", {rotationX:90});
+      TweenMax.set(".door-outter", {opacity:0});
+
 
       $(this.oldContainer).hide();
-
+      TweenMax.to(".barba-container", .7, {scale:1});
+      TweenMax.to(".hello-header", .5, {rotationX:0});
+      TweenMax.to(".door-outter", .5, {opacity:1});
       $el.css({
         visibility : 'visible',
-        opacity : 0
+        opacity : 1
       });
-
-      $el.animate({ opacity: 1 }, 1000, function() {
-        /**
-         * Do not forget to call .done() as soon your transition is finished!
-         * .done() will automatically remove from the DOM the old Container
-         */
-
-        _this.done();
-      });
+      // $el.animate({ opacity: 1 }, 100, function() {
+      //
+      //   _this.done();
+      // });
+      _this.done();
     }
   });
 
@@ -479,11 +440,6 @@ Homepage.init();
    */
 
   Barba.Pjax.getTransition = function() {
-    /**
-     * Here you can use your own logic!
-     * For example you can use different Transition based on the current page or link...
-     */
-
     return FadeTransition;
   };
 
