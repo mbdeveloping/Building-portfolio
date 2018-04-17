@@ -12,12 +12,15 @@ body {
   /* background: #000; */
 }
 .barba-container {
+  will-change: transform;
+  transform:translateZ(0);
   display: block;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  overflow: hidden;
 }
 .logo {
   width: 210px;
@@ -26,8 +29,8 @@ body {
   top:15px;
   left:60px;
   z-index: 100;
+  display:none;
 }
-
 .main-logo{
   position: absolute;
   left: 50%;
@@ -35,6 +38,7 @@ body {
   width: 67px;
 }
 #mb-logo {
+  will-change: transform;
   opacity: 1;
   position: absolute;
   /* top:30px; */
@@ -78,6 +82,7 @@ body {
   margin-top: 50px;
 }
 .logo-name span {
+  will-change: transform;
   display: inline-block;
   padding:0;
   opacity:1;
@@ -85,30 +90,7 @@ body {
   letter-spacing: 1px;
   backface-visibility: hidden;
 }
-/* nav {
-  position: fixed;
-  top:0;
-  left:60px;
-  height: 40px;
-  text-align: center;
-  z-index: 10;
-}
-nav ul li {
-  display: inline-block;
-}
 
-nav ul li a {
-  color:#fff;
-  padding-left: 10px;
-  padding-right: 10px;
-  letter-spacing: 1px;
-}
-nav ul li a span {
-  display: inline-block;
-  padding:0;
-  opacity:0;
-  font-size: 10px;
-} */
 h1 {
   color:#fff;
   position: absolute;
@@ -124,6 +106,7 @@ h1 div {
   font-size: 80px;
 }
 .hello-header span {
+  will-change: trasnform;
   display: inline-block;
   transform: scale(0);
   transition: color .3s ease;
@@ -160,6 +143,7 @@ h1 div {
   right: 32px;
   transform: scaleY(0);
   transform-origin: bottom;
+  -webkit-filter: blur(0);
 }
 #london-bus {
   position: absolute;
@@ -167,6 +151,7 @@ h1 div {
   right:140px;
   bottom: -10px;
   opacity:0;
+  -webkit-filter: blur(0);
 }
 
 #about-img {
@@ -207,14 +192,16 @@ a {
   padding-bottom: 20px;
 }
 .wa span {
+  will-change: transform;
   display: block;
   font-size: 20px;
-  transition: transform 1s ease;
+  /* transition: transform 1s ease; */
   padding-left: 20px;
   padding-right: 20px;
   opacity: .5;
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
+  /* -webkit-filter: blur(0); */
 }
 .about span {
   transform: translateX(-40px);
@@ -223,31 +210,6 @@ a {
   transform: translateX(40px);
 }
 
-.gradient {
-  /* display:none; */
-  z-index: 0;
-  position: absolute;
-  top:50%;
-  left:70%;
-  transform: translate(-50%,-50%);
-  width: 0px;
-  height: 0px;
-  /* background: radial-gradient(
-   ellipse at center,
-   rgba(0, 0, 0, 1) 0%,
-   rgba(57, 79, 167, 1) 0%,
-   rgba(21, 28, 60, 1) 64%,
-   rgba(0, 0, 0, 1) 100%
- ); */
- background: -webkit-radial-gradient(
-   center,
-   circle contain,
-   rgba(0, 0, 0, 1) 0%,
-   rgba(255, 255, 255, 1) 0%,
-   rgba(100, 100, 100, 1) 64%,
-   rgba(0, 0, 0, 1) 100%
- );
-}
 .door-bg {
   position: absolute;
   top:0;
@@ -260,10 +222,11 @@ a {
   top:50%;
   left:70%;
   transform: translate(-50%,-50%) translateZ(1px);
-  height: 322px;
+  height: 320px;
   width: 168px;
   opacity:0;
   /* transition: opacity 4s ease; */
+  border:2px solid #fff;
 }
 .door-wrapper {
   will-change: transform;
@@ -276,6 +239,17 @@ a {
   transform: translate(-50%,-50%);
   overflow: hidden;
   cursor: pointer;
+}
+.dw-bg {
+  top:10px;
+  left:-60px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity:1;
+  background-image: url("../img/malamute.jpg");
+  background-size: contain;
+  transform:rotate(45deg);
 }
 .door {
   will-change: transform;
@@ -321,6 +295,60 @@ a {
   z-index: 10;
 }
 
+.ray-bot-wrapper1 {
+  display: none;
+    position: relative;
+    -webkit-perspective: 100px;
+    perspective: 100px;
+    top: 291px;
+    left: -59px;
+    width: 400px;
+    height: 100px;
+    z-index: 22;
+}
+
+.ray-bot1 {
+    padding-top: 100px;
+    position: absolute;
+    background-color: red;
+    background: linear-gradient(white 1%, black 40%);
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotateX(45deg);
+    transform-style: preserve-3d;
+    transform: rotateX(45deg);
+    padding-left: 10px;
+    padding-right: 200px;
+    padding-bottom: 10px;
+}
+.ray-bot-wrapper2 {
+    /* display:none; */
+    position: absolute;
+    -webkit-perspective: 100px;
+    perspective: 100px;
+    /* top: 280px;
+    left: 157px; */
+    top:318px;
+    left:164px;
+    width: 40px;
+    height: 100px;
+    z-index: 22;
+}
+.ray-bot2 {
+    padding-top: 100px;
+    position: absolute;
+    background-color: red;
+    background: linear-gradient(white 5%, black 60%);
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotateX(45deg);
+    transform-style: preserve-3d;
+    transform: rotateX(0deg);
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    width: 0px;
+    height: 200px;
+    transform-origin: top;
+}
 .open {
 	animation: crack 2s cubic-bezier(.46, .59, .53, 1) forwards;
 }

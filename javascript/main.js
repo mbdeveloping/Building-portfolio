@@ -7,11 +7,21 @@ $(document).ready(function(){
     TweenMax.to(".door-outter", 3, {opacity:1});
   },3000);
   //Door hover animation
+  $(".door-wrapper").on('click', function(){
+    TweenMax.to(".dw-bg", 1, {left:-20});
+  });
   $(".door-wrapper").on('mouseenter', function(){
     TweenMax.to(".door", 0.7, {rotationY:13, ease:Power1.easeInOut});
+    TweenMax.to(".ray-bot2", 0.7, {paddingLeft:30, paddingRight:10, rotationX:45, ease:Power1.easeInOut});
+    TweenMax.to(".ray-bot-wrapper2", 0.7, {left:126, ease:Power1.easeInOut});
   });
   $(".door-wrapper").on('mouseleave', function(){
+    animating = false;
     TweenMax.to(".door", 0.7, {rotationY:0, ease:Power1.easeInOut});
+    TweenMax.to(".dw-bg", .3, {left:-60});
+    TweenMax.to(".ray-bot2", 0.7, {width:0,paddingLeft:0, paddingRight:0,rotationX:0, ease:Power1.easeInOut});
+    TweenMax.to(".ray-bot-wrapper2", 0.7, {left:164,  ease:Power1.easeInOut});
+
   });
 });
 
@@ -26,23 +36,18 @@ $(document).ready(function(){
     var $this = $(this);
     $aboutSpan.addClass("animating-about");
     setTimeout(function(){
-      $this.css("transform","translateX(0)");
-      // TweenMax.to($this, .5, {x:0});
+      TweenMax.to($this, .5, {x:0, onComplete: function(){$aboutSpan.removeClass('animating-about');}});
     }, 100*index);
-    $aboutSpan.one('transitionend webkitTransitionEnd oTransitionEnd', function(){
-        $aboutSpan.removeClass('animating-about');
-    });
   });
   $workSpan.each(function( index ) {
     var $this = $(this);
     setTimeout(function(){
-      $this.css("transform","translateX(0)");
+      TweenMax.to($this, .5, {x:0, onComplete: function(){$aboutSpan.removeClass('animating-about');}});
     }, 100*index);
   });
   //About hover animation
   $(".about").on('mouseenter', function(){
     if ($aboutSpan.hasClass("animating-about")) {
-      console.log("veikia");
     } else {
       $aboutSpan.addClass("scale-letters");
       $aboutSpan.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
@@ -51,11 +56,21 @@ $(document).ready(function(){
     }
   });
   //Work hover animation
+  // $work.on('mouseenter', function(){
+  //   $workSpan.addClass("scale-letters");
+  //   $workSpan.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+  //       $workSpan.removeClass('scale-letters');
+  //   });
+  // });
   $work.on('mouseenter', function(){
-    $workSpan.addClass("scale-letters");
-    $workSpan.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-        $workSpan.removeClass('scale-letters');
-    });
+    if ($workSpan.hasClass("animating-about")) {
+      console.log("turi calsse animating");
+    } else {
+      $workSpan.addClass("scale-letters");
+      $workSpan.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+          $workSpan.removeClass('scale-letters');
+      });
+    }
   });
   //Work click animation
   $work.on('click', function() {
@@ -81,7 +96,7 @@ $(document).ready(function(){
     var $this = $(this);
     setTimeout(function(){
       $this.addClass("scale-letters-header-load");
-    },70*index);
+    },50*index);
     $this.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
       $this.css("transform", "scale(1)");
       $this.removeClass('scale-letters-header-load');
@@ -140,6 +155,9 @@ $(document).ready(function(){
     });
 });
 
+
+
+
 //Barba
 $(document).ready(function(){
   var Homepage = Barba.BaseView.extend({
@@ -165,27 +183,26 @@ $(document).ready(function(){
         var $aboutSpan = $(".about-span");
         var $workSpan = $(".work-span");
         //About and Work onload animation
-        $aboutSpan.each(function( index ) {
-          var $this = $(this);
-          $aboutSpan.addClass("animating-about");
-          setTimeout(function(){
-            $this.css("transform","translateX(0)");
-            // TweenMax.to($this, .5, {x:0});
-          }, 100*index);
-          $aboutSpan.one('transitionend webkitTransitionEnd oTransitionEnd', function(){
-              $aboutSpan.removeClass('animating-about');
-          });
-        });
-        $workSpan.each(function( index ) {
-          var $this = $(this);
-          setTimeout(function(){
-            $this.css("transform","translateX(0)");
-          }, 100*index);
-        });
+        // $aboutSpan.each(function( index ) {
+        //   var $this = $(this);
+        //   $aboutSpan.addClass("animating-about");
+        //   setTimeout(function(){
+        //     TweenMax.to($this, .5, {x:0, onComplete: function(){$aboutSpan.removeClass('animating-about');}});
+        //
+        //   }, 100*index);
+        //   $aboutSpan.one('transitionend webkitTransitionEnd oTransitionEnd', function(){
+        //       $aboutSpan.removeClass('animating-about');
+        //   });
+        // });
+        // $workSpan.each(function( index ) {
+        //   var $this = $(this);
+        //   setTimeout(function(){
+        //     $this.css("transform","translateX(0)");
+        //   }, 100*index);
+        // });
         //About hover animation
         $(".about").on('mouseenter', function(){
           if ($aboutSpan.hasClass("animating-about")) {
-            console.log("veikia");
           } else {
             $aboutSpan.addClass("scale-letters");
             $aboutSpan.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
@@ -219,17 +236,6 @@ $(document).ready(function(){
       $(document).ready(function(){
         //Declare variables
         var $headerSpan = $(".hello-header span");
-        //Main headers onload animation
-        // $headerSpan.each(function( index ) {
-        //   var $this = $(this);
-        //   setTimeout(function(){
-        //     $this.addClass("scale-letters-header-load");
-        //   },70*index);
-        //   $this.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-        //     $this.css("transform", "scale(1)");
-        //     $this.removeClass('scale-letters-header-load');
-        //   });
-        // });
         //Main header hover animation
         $headerSpan.on('mouseenter', function(){
             var $this = $(this);
@@ -250,7 +256,7 @@ $(document).ready(function(){
         window.setTimeout(function(){
           TweenMax.to("#big-ben", 1,{scaleY:1, ease:Back.easeOut.config(6)});
           TweenMax.to("#london-bus", 3,{opacity:1, x:150, ease: Circ.easeOut});
-        }, 3800);
+        }, 3200);
       });
 
       //Logo  animation
@@ -305,23 +311,22 @@ var Aboutpage = Barba.BaseView.extend({
         var $aboutSpan = $(".about-span");
         var $workSpan = $(".work-span");
         //About and Work onload animation
-        $aboutSpan.each(function( index ) {
-          var $this = $(this);
-          $aboutSpan.addClass("animating-about");
-          setTimeout(function(){
-            $this.css("transform","translateX(0)");
-            // TweenMax.to($this, .5, {x:0});
-          }, 100*index);
-          $aboutSpan.one('transitionend webkitTransitionEnd oTransitionEnd', function(){
-              $aboutSpan.removeClass('animating-about');
-          });
-        });
-        $workSpan.each(function( index ) {
-          var $this = $(this);
-          setTimeout(function(){
-            $this.css("transform","translateX(0)");
-          }, 100*index);
-        });
+        // $aboutSpan.each(function( index ) {
+        //   var $this = $(this);
+        //   $aboutSpan.addClass("animating-about");
+        //   setTimeout(function(){
+        //     $this.css("transform","translateX(0)");
+        //   }, 100*index);
+        //   $aboutSpan.one('transitionend webkitTransitionEnd oTransitionEnd', function(){
+        //       $aboutSpan.removeClass('animating-about');
+        //   });
+        // });
+        // $workSpan.each(function( index ) {
+        //   var $this = $(this);
+        //   setTimeout(function(){
+        //     $this.css("transform","translateX(0)");
+        //   }, 100*index);
+        // });
         //About hover animation
         $(".about").on('mouseenter', function(){
           if ($aboutSpan.hasClass("animating-about")) {
@@ -381,31 +386,17 @@ Homepage.init();
     },
 
     fadeOut: function() {
-      // return $(this.oldContainer).animate({ opacity: 0 }).promise();
-      TweenMax.to(".barba-container", .7, {scale:0.8, onComplete: function(){deferred.resolve();}});
+      TweenMax.to(".barba-container", 1, {scale:0.8, onComplete: function(){deferred.resolve();}});
+      TweenMax.to(".logo", 1, {scale:0.8, x:"50%",y:"100%"});
+      TweenMax.to(".door-outter", 1, {opacity:0});
+      TweenMax.to(".door p", 1, {scale:2});
+
+
 
       var deferred = Barba.Utils.deferred();
-      // var $aboutSpan = $(".about-span");
-      //
-      // TweenMax.to(".hello", 1, {x:-100, opacity:0});
-      // TweenMax.to(".iam", 1, {x:100, opacity:0});
-      // TweenMax.to(".developer", 1, {x:-100, opacity:0});
-      // TweenMax.to(".based", 1, {x:100, opacity:0});
-      //
       TweenMax.to(".about", 1, {x:-100, opacity:0});
       TweenMax.to(".work", 1, {x:100, opacity:0});
-      //
-      // TweenMax.to(".door-wrapper", .5, {opacity:0});
-      // TweenMax.to("#london-bus", .5, {x:400, opacity:0});
-      // TweenMax.to("#big-ben", .5, {scaleY:0});
-
-      TweenMax.to(".hello-header", .5, {rotationX:90});
-      TweenMax.to(".door-outter", .5, {opacity:0});
-
-       // setTimeout(function(){
-       //    deferred.resolve();
-       // }, 1000);
-
+      TweenMax.to(".hello-header", 1, {opacity:0, scale:0.5, color:"black"});
       return deferred.promise;
     },
 
@@ -414,23 +405,61 @@ Homepage.init();
       var _this = this;
       var $el = $(this.newContainer);
       TweenLite.set(".barba-container", { scale:0.8 });
-      TweenMax.set(".hello-header span", {scale:1});
-      TweenMax.set(".hello-header", {rotationX:90});
+      TweenLite.set(".logo", { scale:0.8, x:"50%",y:"100%" });
+      TweenMax.set(".hello-header span", {scale:1, z:0});
+      TweenMax.set(".hello-header", {scale:0});
       TweenMax.set(".door-outter", {opacity:0});
+      TweenMax.set(".door p", {scale:2});
 
 
       $(this.oldContainer).hide();
-      TweenMax.to(".barba-container", .7, {scale:1});
-      TweenMax.to(".hello-header", .5, {rotationX:0});
-      TweenMax.to(".door-outter", .5, {opacity:1});
+      TweenMax.to(".barba-container", 1, {scale:1});
+      TweenMax.to(".logo", 1, {scale:1, x:"0%",y:"0%"});
+      TweenMax.to(".hello-header", 1.5, {scale:1});
+      TweenMax.to(".door-outter", 1, {opacity:1});
+      TweenMax.to(".door p", 1, {scale:1});
+      var $aboutSpan = $(".about-span");
+      var $workSpan = $(".work-span");
+      var $work = $(".work");
+      //About and Work onload animation
+      $aboutSpan.each(function( index ) {
+        var $this = $(this);
+        $aboutSpan.addClass("animating-about");
+        setTimeout(function(){
+          // $this.css("transform","translateX(0)");
+          TweenMax.to($this, .5, {x:0, onComplete: function(){$aboutSpan.removeClass('animating-about');}});
+        }, 100*index);
+      });
+      $workSpan.each(function( index ) {
+        var $this = $(this);
+        setTimeout(function(){
+          TweenMax.to($this, .5, {x:0, onComplete: function(){$aboutSpan.removeClass('animating-about');}});
+        }, 100*index);
+      });
+      $(".about").on('mouseenter', function(){
+        if ($aboutSpan.hasClass("animating-about")) {
+          console.log("turi calsse animating");
+        } else {
+          $aboutSpan.addClass("scale-letters");
+          $aboutSpan.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+              $aboutSpan.removeClass('scale-letters');
+          });
+        }
+      });
+      $work.on('mouseenter', function(){
+        if ($workSpan.hasClass("animating-about")) {
+          console.log("turi calsse animating");
+        } else {
+          $workSpan.addClass("scale-letters");
+          $workSpan.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+              $workSpan.removeClass('scale-letters');
+          });
+        }
+      });
       $el.css({
         visibility : 'visible',
         opacity : 1
       });
-      // $el.animate({ opacity: 1 }, 100, function() {
-      //
-      //   _this.done();
-      // });
       _this.done();
     }
   });
