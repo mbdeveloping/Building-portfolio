@@ -12,15 +12,21 @@ $(document).ready(function(){
   });
   $(".door-wrapper").on('mouseenter', function(){
     TweenMax.to(".door", 0.7, {rotationY:13, ease:Power1.easeInOut});
-    TweenMax.to(".ray-bot2", 0.7, {paddingLeft:30, paddingRight:10, rotationX:45, ease:Power1.easeInOut});
-    TweenMax.to(".ray-bot-wrapper2", 0.7, {left:126, ease:Power1.easeInOut});
+    TweenMax.to(".ray-bot-wrapper1", 0.7, {height:18, ease:Power1.easeInOut});
+    TweenMax.to(".door-inner-ray", 0.5, {width:"80%", ease:Power1.easeInOut});
+
+
+    // TweenMax.to(".ray-bot2", 0.7, {paddingLeft:0, paddingRight:0, rotationX:45,boxShadow:"0 0 60px 10px grey, 0 0 10px 6px grey, 0 0 4px 9px grey",  ease:Power1.easeInOut});
+    // TweenMax.to(".ray-bot-wrapper2", 0.7, {left:159, ease:Power1.easeInOut});
   });
   $(".door-wrapper").on('mouseleave', function(){
-    animating = false;
-    TweenMax.to(".door", 0.7, {rotationY:0, ease:Power1.easeInOut});
-    TweenMax.to(".dw-bg", .3, {left:-60});
-    TweenMax.to(".ray-bot2", 0.7, {width:0,paddingLeft:0, paddingRight:0,rotationX:0, ease:Power1.easeInOut});
-    TweenMax.to(".ray-bot-wrapper2", 0.7, {left:164,  ease:Power1.easeInOut});
+    TweenMax.to(".door-inner-ray", 0.5, {width:"0%", ease:Power1.easeInOut});
+    TweenMax.to(".ray-bot-wrapper1", 0.7, {height:0, ease:Power1.easeInOut});
+    // animating = false;
+    // TweenMax.to(".door", 0.7, {rotationY:0, ease:Power1.easeInOut});
+    // TweenMax.to(".dw-bg", .3, {left:-60});
+    // TweenMax.to(".ray-bot2", 0.7, {width:0,paddingLeft:0, paddingRight:0,rotationX:0,boxShadow:"rgb(128, 128, 128) 0px 0px 0px 0px, rgb(128, 128, 128) 0px 0px 0px 0px, rgb(128, 128, 128) 0px 0px 0px 0px", ease:Power1.easeInOut});
+    // TweenMax.to(".ray-bot-wrapper2", 0.7, {left:164,  ease:Power1.easeInOut});
 
   });
 });
@@ -159,6 +165,7 @@ $(document).ready(function(){
 
 
 //Barba
+
 $(document).ready(function(){
   var Homepage = Barba.BaseView.extend({
   namespace: 'home',

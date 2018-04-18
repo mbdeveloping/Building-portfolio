@@ -224,9 +224,11 @@ a {
   transform: translate(-50%,-50%) translateZ(1px);
   height: 320px;
   width: 168px;
-  opacity:0;
+  opacity:1;
   /* transition: opacity 4s ease; */
-  border:2px solid #fff;
+  /* border:2px solid #fff; */
+  /* border-left: 2px solid white; */
+  z-index: 0;
 }
 .door-wrapper {
   will-change: transform;
@@ -239,6 +241,7 @@ a {
   transform: translate(-50%,-50%);
   overflow: hidden;
   cursor: pointer;
+  z-index: 20;
 }
 .dw-bg {
   top:10px;
@@ -262,6 +265,7 @@ a {
   left:-1px;
   transform-origin: left;
   outline: 1px solid transparent;
+  z-index: 20;
 }
 .door-outter, .door-wrapper, .door {
 }
@@ -296,15 +300,22 @@ a {
 }
 
 .ray-bot-wrapper1 {
-  display: none;
-    position: relative;
-    -webkit-perspective: 100px;
-    perspective: 100px;
-    top: 291px;
-    left: -59px;
-    width: 400px;
-    height: 100px;
-    z-index: 22;
+    position: absolute;
+    bottom:0;
+    left:0;
+     background: linear-gradient(white 1%, black);
+    width:100%;
+    height: 0px;
+    z-index: 10;
+}
+
+.door-inner-ray {
+  position: absolute;
+  top:0;
+  right:0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, black 1%, #3f3f3f);
 }
 
 .ray-bot1 {
@@ -321,23 +332,23 @@ a {
     padding-bottom: 10px;
 }
 .ray-bot-wrapper2 {
-    /* display:none; */
+    display:none;
     position: absolute;
     -webkit-perspective: 100px;
     perspective: 100px;
     /* top: 280px;
     left: 157px; */
-    top:318px;
+    top:320px;
     left:164px;
-    width: 40px;
+    /* width: 40px; */
     height: 100px;
     z-index: 22;
 }
 .ray-bot2 {
-    padding-top: 100px;
+    padding-top: 90px;
     position: absolute;
-    background-color: red;
-    background: linear-gradient(white 5%, black 60%);
+    background-color: grey;
+    /* background: linear-gradient(white 5%, black 60%); */
     -webkit-transform-style: preserve-3d;
     -webkit-transform: rotateX(45deg);
     transform-style: preserve-3d;
@@ -346,8 +357,12 @@ a {
     padding-right: 0px;
     padding-bottom: 10px;
     width: 0px;
-    height: 200px;
+    height: 0px;
     transform-origin: top;
+    box-shadow:
+    0 0 0px 0px #fff,
+    0 0 0px 0px #fff,
+    0 0 0px 0px #fff;
 }
 .open {
 	animation: crack 2s cubic-bezier(.46, .59, .53, 1) forwards;
