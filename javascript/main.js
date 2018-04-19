@@ -14,6 +14,9 @@ $(document).ready(function(){
     TweenMax.to(".door", 0.7, {rotationY:13, ease:Power1.easeInOut});
     TweenMax.to(".ray-bot-wrapper1", 0.7, {height:18, ease:Power1.easeInOut});
     TweenMax.to(".door-inner-ray", 0.5, {width:"80%", ease:Power1.easeInOut});
+    TweenMax.to(".bot-black-ray", 0.7, {rotation: 45, marginLeft:-189, marginTop:-17,  ease:Power1.easeInOut});
+    TweenMax.to(".bot-black-small-ray", 0.7, {rotation: 45, marginLeft:-55, ease:Power1.easeInOut});
+    TweenMax.to(".big-grey-ray", 1, {opacity:1, height:200,ease:Power1.easeInOut});
 
 
     // TweenMax.to(".ray-bot2", 0.7, {paddingLeft:0, paddingRight:0, rotationX:45,boxShadow:"0 0 60px 10px grey, 0 0 10px 6px grey, 0 0 4px 9px grey",  ease:Power1.easeInOut});
@@ -22,6 +25,11 @@ $(document).ready(function(){
   $(".door-wrapper").on('mouseleave', function(){
     TweenMax.to(".door-inner-ray", 0.5, {width:"0%", ease:Power1.easeInOut});
     TweenMax.to(".ray-bot-wrapper1", 0.7, {height:0, ease:Power1.easeInOut});
+    TweenMax.to(".bot-black-ray", 0.7, {rotation: 10, marginLeft:-164, marginTop:1, ease:Power1.easeInOut});
+    TweenMax.to(".bot-black-small-ray", 0.7, {rotation: 10, marginLeft:-31, ease:Power1.easeInOut});
+    TweenMax.to(".big-grey-ray", 0.7, {opacity:1, height:0,ease:Power1.easeInOut});
+
+
     // animating = false;
     // TweenMax.to(".door", 0.7, {rotationY:0, ease:Power1.easeInOut});
     // TweenMax.to(".dw-bg", .3, {left:-60});
