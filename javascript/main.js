@@ -10,29 +10,35 @@ $(document).ready(function(){
   $(".door-wrapper").on('click', function(){
     TweenMax.to(".dw-bg", 1, {left:-20});
   });
-  $(".door-wrapper").on('mouseenter', function(){
+  $(".door").on('mouseenter', function(){
     TweenMax.to(".door", 0.7, {rotationY:13, ease:Power1.easeInOut});
     TweenMax.to(".ray-bot-wrapper1", 0.7, {height:18, ease:Power1.easeInOut});
     TweenMax.to(".door-inner-ray", 0.7, {width:"80%", opacity:1, ease:Power1.easeInOut});
-    TweenMax.to(".bot-black-ray", 0.7, {rotation: 45, marginLeft:-138, marginTop:-17,  ease:Power1.easeInOut});
-    TweenMax.to(".bot-black-ray-right", 0.7, {rotation: 45, ease:Power1.easeInOut});
+    TweenMax.to(".bot-black-ray", 0.7, {rotation: 45, marginLeft:-138, marginTop:-17, ease:Power1.easeInOut});
+    TweenMax.to(".bot-black-ray-right", 0.8, {rotation: 52, ease:Power1.easeInOut});
     TweenMax.to(".bot-black-small-ray", 0.7, {rotation: 45,marginTop: 0, marginLeft:-55, ease:Power1.easeInOut});
     TweenMax.to(".big-grey-ray", 0.7, {opacity:1,ease:Power1.easeInOut});
     TweenMax.to(".door-line-left", 0.7, {marginLeft:362,ease:Power1.easeInOut});
+    TweenMax.to(".white-shine-right", 0.7, {opacity:1,ease:Power1.easeInOut});
+    TweenMax.to(".white-shine-top", 0.7, {opacity:1,ease:Power1.easeInOut});
+    TweenMax.to(".door-pin-white-border", .7, {opacity:1,width:2,ease:Power1.easeInOut});
 
 
 
     // TweenMax.to(".ray-bot2", 0.7, {paddingLeft:0, paddingRight:0, rotationX:45,boxShadow:"0 0 60px 10px grey, 0 0 10px 6px grey, 0 0 4px 9px grey",  ease:Power1.easeInOut});
     // TweenMax.to(".ray-bot-wrapper2", 0.7, {left:159, ease:Power1.easeInOut});
   });
-  $(".door-wrapper").on('mouseleave', function(){
+  $(".door").on('mouseleave', function(){
+    TweenMax.to(".white-shine-top", 0.7, {opacity:0,ease:Power1.easeInOut});
+    TweenMax.to(".white-shine-right", 0.7, {opacity:0,ease:Power1.easeInOut});
     TweenMax.to(".door-inner-ray", 0.7, {width:"0%", opacity:0, ease:Power1.easeInOut});
     TweenMax.to(".ray-bot-wrapper1", 0.7, {height:0, ease:Power1.easeInOut});
-    TweenMax.to(".bot-black-ray", 0.7, {rotation: 10, marginLeft:-115, marginTop:2, ease:Power1.easeInOut});
+    TweenMax.to(".bot-black-ray", 0.7, {rotation: 10, marginLeft:-114, marginTop:2, ease:Power1.easeInOut});
     TweenMax.to(".bot-black-small-ray", 0.7, {rotation: 10, marginLeft:-34, marginTop: 0, ease:Power1.easeInOut});
     TweenMax.to(".big-grey-ray", 0.7, {opacity:0,ease:Power1.easeInOut});
     TweenMax.to(".bot-black-ray-right", 0.7, {rotation: 90, ease:Power1.easeInOut});
     TweenMax.to(".door-line-left", 0.7, {marginLeft:382,ease:Power1.easeInOut});
+    TweenMax.to(".door-pin-white-border", 0.7, {opacity:0, width:0,ease:Power1.easeInOut});
 
 
     // animating = false;
