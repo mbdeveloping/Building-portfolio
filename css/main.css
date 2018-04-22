@@ -11,6 +11,25 @@ body {
   overflow: hidden;
   /* background: #000; */
 }
+.img-holder {
+  position: absolute;
+  top:0;
+  right:0;
+  height: 100vh;
+  width: 100%;
+}
+
+.img-holder img {
+  visibility: hidden;
+  height: 768px;
+  position:absolute;
+  right:0;
+  margin-right: -250px;
+}
+
+.img-holder img:first-child {
+  visibility: visible;
+}
 .barba-container {
   will-change: transform;
   transform:translateZ(0);
