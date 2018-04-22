@@ -219,10 +219,10 @@ a {
   /* -webkit-filter: blur(0); */
 }
 .about span {
-  transform: translateX(-40px);
+  transform: translateX(40px);
 }
 .work span {
-  transform: translateX(40px);
+  transform: translateX(-40px);
 }
 
 .door-bg {
@@ -538,14 +538,14 @@ opacity: 0.3;
 .about {
   position: absolute;
   top:50%;
-  left:0;
+  right:0;
   transform: translateY(-50%);
   z-index: 10;
 }
 .back-about {
   position: absolute;
   top:50%;
-  left:0;
+  right:0;
   transform: translateY(-50%);
   z-index: 10;
 }
@@ -553,7 +553,7 @@ opacity: 0.3;
 .work {
   position: absolute;
   top:50%;
-  right:0;
+  left:0;
   transform: translateY(-50%);
   z-index: 10;
 }

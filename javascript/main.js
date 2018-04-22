@@ -362,8 +362,8 @@ var Aboutpage = Barba.BaseView.extend({
 
 
       var deferred = Barba.Utils.deferred();
-      TweenMax.to(".about", 1, {x:-100, opacity:0});
-      TweenMax.to(".work", 1, {x:100, opacity:0});
+      TweenMax.to(".about", 1, {x:100, opacity:0});
+      TweenMax.to(".work", 1, {x:-100, opacity:0});
       return deferred.promise;
     },
 
@@ -429,12 +429,130 @@ var Aboutpage = Barba.BaseView.extend({
     }
   });
 
+  var aboutTransition = Barba.BaseTransition.extend({
+    start: function() {
+      Promise
+        .all([this.newContainerLoading, this.fadeOut()])
+        .then(this.fadeIn.bind(this));
+    },
+
+    fadeOut: function() {
+      TweenMax.to(".barba-container", 1, {scale:1, onComplete: function(){deferred.resolve();}});
+      TweenMax.to(".hello-header", 1, {x:550});
+      TweenMax.to(".img13", 1, {scale:1, x:0});
+
+      var deferred = Barba.Utils.deferred();
+      TweenMax.to(".about", 1, {x:100, opacity:0});
+      TweenMax.to(".work", 1, {x:-100, opacity:0});
+
+      return deferred.promise;
+    },
+
+    fadeIn: function() {
+
+    $(".img13").addClass("active");
+      var _this = this;
+      var $el = $(this.newContainer);
+      TweenMax.set(".hello-header span", {scale:1, z:0});
+      TweenMax.set(".hello-header", {marginLeft:-290});
+      //Backwards img
+        var images = $('.img-holder img'),
+            count = images.length,
+            transitions = 1;
+        TweenMax.set(images, {autoAlpha:0});
+        TweenMax.set($(".active"), {autoAlpha:1});
+
+        function fadeImage()
+        {
+          var active = $(".active"),
+        		next = active.prev();
+
+        	TweenMax.set(active, {autoAlpha:0, className:"-=active"});
+        	TweenMax.set(next, {autoAlpha:1, className:'+=active', onComplete:nextImage});
+
+        	transitions++;
+
+        	console.log(transitions);
+        }
+
+        setTimeout(fadeImage,70);
+
+        function nextImage()
+        {
+        	if(transitions < 8)
+        	{
+        		setTimeout(fadeImage,70);
+        	}
+        	else
+        	{
+            $(".img6").addClass("active").css({visibility: "visible", opacity:"1"});
+      	}
+      }
+
+      $(this.oldContainer).hide();
+      TweenMax.to(".barba-container", 1, {scale:1});
+      TweenMax.to(".logo", 1, {scale:1, x:"0%",y:"0%"});
+      TweenMax.to(".hello-header", 1.5, {scale:1});
+      TweenMax.to(".door-outter", 1, {opacity:1});
+      TweenMax.to(".door p", 1, {scale:1});
+      TweenMax.to(".hello-header", 1, {marginLeft:0});
+
+      var $aboutSpan = $(".about-span");
+      var $workSpan = $(".work-span");
+      var $work = $(".work");
+      //About and Work onload animation
+      $aboutSpan.each(function( index ) {
+        var $this = $(this);
+        $aboutSpan.addClass("animating-about");
+        setTimeout(function(){
+          // $this.css("transform","translateX(0)");
+          TweenMax.to($this, .5, {x:0, onComplete: function(){$aboutSpan.removeClass('animating-about');}});
+        }, 100*index);
+      });
+      $workSpan.each(function( index ) {
+        var $this = $(this);
+        setTimeout(function(){
+          TweenMax.to($this, .5, {x:0, onComplete: function(){$aboutSpan.removeClass('animating-about');}});
+        }, 100*index);
+      });
+      $(".about").on('mouseenter', function(){
+        if ($aboutSpan.hasClass("animating-about")) {
+          console.log("turi calsse animating");
+        } else {
+          $aboutSpan.addClass("scale-letters");
+          $aboutSpan.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+              $aboutSpan.removeClass('scale-letters');
+          });
+        }
+      });
+      $work.on('mouseenter', function(){
+        if ($workSpan.hasClass("animating-about")) {
+          console.log("turi calsse animating");
+        } else {
+          $workSpan.addClass("scale-letters");
+          $workSpan.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+              $workSpan.removeClass('scale-letters');
+          });
+        }
+      });
+      $el.css({
+        visibility : 'visible',
+        opacity : 1
+      });
+      _this.done();
+    }
+  });
+
   /**
    * Next step, you have to tell Barba to use the new Transition
    */
 
   Barba.Pjax.getTransition = function() {
-    return FadeTransition;
+    var transitionObj = FadeTransition;
+    if (Barba.HistoryManager.prevStatus().namespace === 'about') {
+      transitionObj = aboutTransition;
+    }
+    return transitionObj;
   };
 
 });
