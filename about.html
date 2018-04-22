@@ -43,7 +43,7 @@
 
       <div class="barba-container" data-namespace="about">
           <div id="about-page">
-            <div class="main-header">
+            <div class="main-header about-main-header">
               <h1 class="hello-header">About me</h1>
               <!-- <p>I am self tought junior front end web developer with a huge interest in crafting interactive web pages with silky smooth animations.I am very passionate about what I do and I constantly seek new ways to develop myself. I keep expanding my knowledge, enhancing my skills of creative thinking and problem solving.</p> -->
             </div>
@@ -102,6 +102,11 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="javascript/TweenMax.min.js"></script>
     <script src="javascript/main.js"></script>
+    <script type="text/javascript">
+      $(".img13").hide().css("visibility","visible").fadeIn(2000);
+      TweenMax.to(".img13", 1, {scale:1.4, x:-100});
+    </script>
+
 
   </body>
 </html>

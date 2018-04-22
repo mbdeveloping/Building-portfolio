@@ -1,43 +1,4 @@
-// //Door animation
-// $(document).ready(function(){
-//   TweenMax.set(".door", {transformPerspective:300, z:1});
-//   //Fade in doors onload
-//   setTimeout(function(){
-//     // $(".door-outter").css("opacity","1");
-//     TweenMax.to(".door-outter", 3, {opacity:1});
-//   },3000);
-//   //Door hover animation
-//   $(".door-wrapper").on('click', function(){
-//     TweenMax.to(".dw-bg", 1, {left:-20});
-//   });
-//   $(".door").on('mouseenter', function(){
-//     TweenMax.to(".door", 0.7, {rotationY:13, ease:Power1.easeInOut});
-//     TweenMax.to(".ray-bot-wrapper1", 0.7, {height:18, ease:Power1.easeInOut});
-//     TweenMax.to(".door-inner-ray", 0.7, {width:"80%", opacity:1, ease:Power1.easeInOut});
-//     TweenMax.to(".bot-black-ray", 0.7, {rotation: 45, marginLeft:-138, marginTop:-17, ease:Power1.easeInOut});
-//     TweenMax.to(".bot-black-ray-right", 0.8, {rotation: 52, ease:Power1.easeInOut});
-//     TweenMax.to(".bot-black-small-ray", 0.7, {rotation: 45,marginTop: 0, marginLeft:-55, ease:Power1.easeInOut});
-//     TweenMax.to(".big-grey-ray", 0.7, {opacity:1,ease:Power1.easeInOut});
-//     TweenMax.to(".door-line-left", 0.7, {marginLeft:362,ease:Power1.easeInOut});
-//     TweenMax.to(".white-shine-right", 0.7, {opacity:1,ease:Power1.easeInOut});
-//     TweenMax.to(".white-shine-top", 0.7, {opacity:1,ease:Power1.easeInOut});
-//     TweenMax.to(".door-pin-white-border", .7, {opacity:1,width:2,ease:Power1.easeInOut});
-//   });
-//   $(".door").on('mouseleave', function(){
-//     TweenMax.to(".white-shine-top", 0.7, {opacity:0,ease:Power1.easeInOut});
-//     TweenMax.to(".white-shine-right", 0.7, {opacity:0,ease:Power1.easeInOut});
-//     TweenMax.to(".door-inner-ray", 0.7, {width:"0%", opacity:0, ease:Power1.easeInOut});
-//     TweenMax.to(".ray-bot-wrapper1", 0.7, {height:0, ease:Power1.easeInOut});
-//     TweenMax.to(".bot-black-ray", 0.7, {rotation: 10, marginLeft:-114, marginTop:2, ease:Power1.easeInOut});
-//     TweenMax.to(".bot-black-small-ray", 0.7, {rotation: 10, marginLeft:-34, marginTop: 0, ease:Power1.easeInOut});
-//     TweenMax.to(".big-grey-ray", 0.7, {opacity:0,ease:Power1.easeInOut});
-//     TweenMax.to(".bot-black-ray-right", 0.7, {rotation: 90, ease:Power1.easeInOut});
-//     TweenMax.to(".door-line-left", 0.7, {marginLeft:382,ease:Power1.easeInOut});
-//     TweenMax.to(".door-pin-white-border", 0.7, {opacity:0, width:0,ease:Power1.easeInOut});
-//
-//
-//   });
-// });
+
   $(".img6").hide().css("visibility","visible").fadeIn(2000);
   $(".social-links").hide().css("visibility","visible").fadeIn(2000);
 //About and Work links animations
@@ -106,7 +67,8 @@ $(document).ready(function(){
 //Main header animations
 $(document).ready(function(){
   //Declare variables
-  var $headerSpan = $(".hello-header span");
+  var $headerSpan = $(".hello-header span:not(.based span)"),
+      $basedSpan = $(".based span");
   //Main headers onload animation
   $headerSpan.each(function( index ) {
     var $this = $(this);
@@ -118,6 +80,21 @@ $(document).ready(function(){
       $this.removeClass('scale-letters-header-load');
     });
   });
+
+  window.setTimeout(function(){
+    $basedSpan.each(function( index ) {
+      var $this = $(this);
+      setTimeout(function(){
+        $this.addClass("scale-letters-header-load");
+      },50*index);
+      $this.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        $this.css("transform", "scale(1)");
+        $this.removeClass('scale-letters-header-load');
+      });
+    });
+  }, 1400);
+
+
   //Main header hover animation
   $headerSpan.on('mouseenter', function(){
       var $this = $(this);
@@ -138,7 +115,7 @@ $(document).ready(function(){
   window.setTimeout(function(){
     TweenMax.to("#big-ben", 1,{scaleY:1, ease:Back.easeOut.config(6)});
     TweenMax.to("#london-bus", 3,{opacity:1, x:150, ease: Circ.easeOut});
-  }, 3800);
+  }, 3000);
 });
 
 //Logo  animation
@@ -220,6 +197,48 @@ $(document).ready(function(){
         });
       });
 
+      $(document).ready(function() {
+
+        $(".about").on('click', function(event) {
+          event.preventDefault();
+          var images = $('.img-holder img'),
+              count = images.length,
+              transitions = 1;
+          TweenMax.set(images, {autoAlpha:0});
+          TweenMax.set($(".active"), {autoAlpha:1});
+
+          function fadeImage()
+          {
+            var active = $(".active"),
+          		next = active.next();
+
+          	TweenMax.set(active, {autoAlpha:0, className:"-=active"});
+          	TweenMax.set(next, {autoAlpha:1, className:'+=active', onComplete:nextImage});
+
+          	transitions++;
+
+          	console.log(transitions);
+          }
+
+          setTimeout(fadeImage,70);
+
+          function nextImage()
+          {
+          	if(transitions < count)
+          	{
+          		setTimeout(fadeImage,70);
+          	}
+          	else
+          	{
+              $(".img13").addClass("active").css({visibility: "visible", opacity:"1"});
+          		// transitions = 0;
+          		// TweenMax.set(images[0], {autoAlpha:1, className:'+=active'});
+          		// setTimeout(fadeImage,500);
+        	}
+        }
+      });
+      });
+
       //Main header animations
       $(document).ready(function(){
         //Declare variables
@@ -294,6 +313,7 @@ var Aboutpage = Barba.BaseView.extend({
       // The new Container is ready and attached to the DOM.
       //About and Work links animations
       $(document).ready(function(){
+        // $(".img13").hide().css("visibility","visible").fadeIn(2000);
         //Declare variables
         var $work = $(".work");
         var $aboutSpan = $(".about-span");
@@ -557,46 +577,45 @@ var Aboutpage = Barba.BaseView.extend({
 
 });
 
-
-$(document).ready(function() {
-
-  $(".about").on('click', function(event) {
-    event.preventDefault();
-    var images = $('.img-holder img'),
-        count = images.length,
-        transitions = 1;
-    TweenMax.set(images, {autoAlpha:0});
-    TweenMax.set($(".active"), {autoAlpha:1});
-
-    function fadeImage()
-    {
-      var active = $(".active"),
-    		next = active.next();
-
-    	TweenMax.set(active, {autoAlpha:0, className:"-=active"});
-    	TweenMax.set(next, {autoAlpha:1, className:'+=active', onComplete:nextImage});
-
-    	transitions++;
-
-    	console.log(transitions);
-    }
-
-    setTimeout(fadeImage,70);
-
-    function nextImage()
-    {
-    	if(transitions < count)
-    	{
-    		setTimeout(fadeImage,70);
-    	}
-    	else
-    	{
-        $(".img13").addClass("active").css({visibility: "visible", opacity:"1"});
-    		// transitions = 0;
-    		// TweenMax.set(images[0], {autoAlpha:1, className:'+=active'});
-    		// setTimeout(fadeImage,500);
-  	}
-  }
-
-});
-});
+//
+// $(document).ready(function() {
+//
+//   $(".about").on('click', function(event) {
+//     event.preventDefault();
+//     var images = $('.img-holder img'),
+//         count = images.length,
+//         transitions = 1;
+//     TweenMax.set(images, {autoAlpha:0});
+//     TweenMax.set($(".active"), {autoAlpha:1});
+//
+//     function fadeImage()
+//     {
+//       var active = $(".active"),
+//     		next = active.next();
+//
+//     	TweenMax.set(active, {autoAlpha:0, className:"-=active"});
+//     	TweenMax.set(next, {autoAlpha:1, className:'+=active', onComplete:nextImage});
+//
+//     	transitions++;
+//
+//     	console.log(transitions);
+//     }
+//
+//     setTimeout(fadeImage,70);
+//
+//     function nextImage()
+//     {
+//     	if(transitions < count)
+//     	{
+//     		setTimeout(fadeImage,70);
+//     	}
+//     	else
+//     	{
+//         $(".img13").addClass("active").css({visibility: "visible", opacity:"1"});
+//     		// transitions = 0;
+//     		// TweenMax.set(images[0], {autoAlpha:1, className:'+=active'});
+//     		// setTimeout(fadeImage,500);
+//   	}
+//   }
+// });
+// });
