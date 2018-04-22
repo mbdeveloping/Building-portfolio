@@ -28,7 +28,7 @@ body {
 }
 
 .img-holder img:first-child {
-  visibility: visible;
+  /* visibility: visible; */
 }
 .barba-container {
   will-change: transform;
@@ -44,9 +44,9 @@ body {
 .logo {
   width: 210px;
   height: 68px;
-  position: absolute;
-  top:15px;
-  left:60px;
+  position: fixed;
+  top:20px;
+  left:20px;
   z-index: 100;
   display:none;
 }
@@ -110,13 +110,18 @@ body {
   backface-visibility: hidden;
 }
 
-h1 {
-  color:#fff;
+.main-header {
+  overflow: hidden;
   position: absolute;
   top:50%;
   left:20%;
   transform: translate(-20%, -50%);
   z-index: 10;
+  padding-right: 10px;
+}
+
+.main-header h1 {
+  color:#fff;
 }
 h1 div {
   letter-spacing: 5px;
@@ -159,7 +164,7 @@ h1 div {
   width: 15px;
   height: 77px;
   bottom: 5px;
-  right: 32px;
+  right: 44px;
   transform: scaleY(0);
   transform-origin: bottom;
   -webkit-filter: blur(0);
@@ -167,7 +172,7 @@ h1 div {
 #london-bus {
   position: absolute;
   width: 43px;
-  right:140px;
+  right:152px;
   bottom: -10px;
   opacity:0;
   -webkit-filter: blur(0);
@@ -555,6 +560,64 @@ opacity: 0.3;
 .work-span-door-hover {
   padding-top: 10px;
   font-size: 30px;
+}
+
+.social-links {
+  visibility: hidden;
+  position: fixed;
+  bottom:20px;
+  right:20px;
+  z-index: 100;
+}
+
+.social-links li {
+display: inline-block;
+list-style-type: none;
+}
+
+.social-links-rotated-box{
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0);
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  border: 1px solid #fff;
+  transition: transform .3s ease;
+}
+
+.social-links li:hover .social-links-rotated-box {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+
+.social-links li a {
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.fa-facebook-f, .fa-linkedin-in, .fa-github-alt {
+  /* transform: rotate(-45deg); */
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+
 }
 
 /* .wa span.back-span {
