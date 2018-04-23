@@ -260,10 +260,10 @@ $(document).ready(function(){
             $(this).css("color", color);
         });
         //Bus and BigBen animation
-        window.setTimeout(function(){
-          TweenMax.to("#big-ben", 1,{scaleY:1, ease:Back.easeOut.config(6)});
-          TweenMax.to("#london-bus", 3,{opacity:1, x:150, ease: Circ.easeOut});
-        }, 3200);
+        // window.setTimeout(function(){
+        //   TweenMax.to("#big-ben", 1,{scaleY:1, ease:Back.easeOut.config(6)});
+        //   TweenMax.to("#london-bus", 3,{opacity:1, x:150, ease: Circ.easeOut});
+        // }, 3200);
       });
 
       //Logo  animation
@@ -378,7 +378,15 @@ var Aboutpage = Barba.BaseView.extend({
 
     fadeOut: function() {
       TweenMax.to(".barba-container", 1, {scale:1, onComplete: function(){deferred.resolve();}});
-      TweenMax.to(".hello-header", 1, {x:550});
+      // TweenMax.to(".hello-header", 1, {x:550});
+      TweenMax.to(".hello",1, {x:550});
+      // TweenMax.to(".hello",1, {y:-150});
+      TweenMax.to(".iam",1, {x:-550});
+      TweenMax.to(".developer",1, {x:550});
+      TweenMax.to(".based",1, {x:-550});
+      // TweenMax.to(".based",1, {y:50});
+      TweenMax.to("#big-ben", 1,{y:100});
+      TweenMax.to("#london-bus", 1,{x:250});
 
 
       var deferred = Barba.Utils.deferred();
@@ -392,17 +400,21 @@ var Aboutpage = Barba.BaseView.extend({
       var _this = this;
       var $el = $(this.newContainer);
       TweenMax.set(".hello-header span", {scale:1, z:0});
-      TweenMax.set(".hello-header", {marginLeft:-290});
-
+      TweenMax.set(".hello-header", {x:-400});
+      TweenMax.set(".about-main-header p",  {x:290});
+      // TweenMax.set("#big-ben", {scaleY:0});
+      // TweenMax.set("#london-bus", {x:-500, opacity:0});
+      // TweenMax.to("#big-ben", 1,{scaleY:1});
+      // TweenMax.to("#london-bus", 1,{x:150, opacity:1});
 
       $(this.oldContainer).hide();
+      TweenMax.to(".about-main-header p", 1, {x:0});
       TweenMax.to(".barba-container", 1, {scale:1});
       TweenMax.to(".logo", 1, {scale:1, x:"0%",y:"0%"});
-      TweenMax.to(".hello-header", 1.5, {scale:1});
-      TweenMax.to(".door-outter", 1, {opacity:1});
-      TweenMax.to(".door p", 1, {scale:1});
-      TweenMax.to(".hello-header", 1, {marginLeft:0});
+      TweenMax.to(".hello-header", 1, {x:0});
       TweenMax.to(".img13", 1, {scale:1.4, x:-100});
+
+
       var $aboutSpan = $(".about-span");
       var $workSpan = $(".work-span");
       var $work = $(".work");
@@ -460,6 +472,7 @@ var Aboutpage = Barba.BaseView.extend({
       TweenMax.to(".barba-container", 1, {scale:1, onComplete: function(){deferred.resolve();}});
       TweenMax.to(".hello-header", 1, {x:550});
       TweenMax.to(".img13", 1, {scale:1, x:0});
+      TweenMax.to(".about-main-header p", 1, {x:- 500, opacity:0.5});
 
       var deferred = Barba.Utils.deferred();
       TweenMax.to(".about", 1, {x:100, opacity:0});
@@ -474,7 +487,14 @@ var Aboutpage = Barba.BaseView.extend({
       var _this = this;
       var $el = $(this.newContainer);
       TweenMax.set(".hello-header span", {scale:1, z:0});
-      TweenMax.set(".hello-header", {marginLeft:-290});
+      TweenMax.set(".hello", {x:-500});
+      TweenMax.set(".iam", {x:530});
+      TweenMax.set(".developer", {x:-500});
+      TweenMax.set(".based", {x:500});
+      TweenMax.set("#big-ben", {scaleY:0});
+      TweenMax.set("#london-bus", {x:-500, opacity:0});
+
+
       //Backwards img
         var images = $('.img-holder img'),
             count = images.length,
@@ -512,10 +532,14 @@ var Aboutpage = Barba.BaseView.extend({
       $(this.oldContainer).hide();
       TweenMax.to(".barba-container", 1, {scale:1});
       TweenMax.to(".logo", 1, {scale:1, x:"0%",y:"0%"});
-      TweenMax.to(".hello-header", 1.5, {scale:1});
-      TweenMax.to(".door-outter", 1, {opacity:1});
-      TweenMax.to(".door p", 1, {scale:1});
       TweenMax.to(".hello-header", 1, {marginLeft:0});
+      TweenMax.to(".hello",1, {x:00});
+      TweenMax.to(".iam",1, {x:0});
+      TweenMax.to(".developer",1, {x:0});
+      TweenMax.to(".based",1, {x:0});
+
+      TweenMax.to("#big-ben", 1,{scaleY:1,ease:Back.easeOut.config(6)});
+      TweenMax.to("#london-bus", 1,{x:150, opacity:1});
 
       var $aboutSpan = $(".about-span");
       var $workSpan = $(".work-span");

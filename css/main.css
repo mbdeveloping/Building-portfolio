@@ -7,9 +7,9 @@
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-body {
+
+.body-oh {
   overflow: hidden;
-  /* background: #000; */
 }
 .img-holder {
   position: absolute;
@@ -21,7 +21,7 @@ body {
 
 .img-holder img {
   visibility: hidden;
-  height: 768px;
+  height: 100%;
   position:absolute;
   right:0;
   margin-right: -250px;
@@ -34,7 +34,7 @@ body {
   will-change: transform;
   transform:translateZ(0);
   display: block;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   right: 0;
   bottom: 0;
@@ -111,6 +111,8 @@ body {
 }
 
 .main-header {
+  width: 530px;
+  height: 176px;
   overflow: hidden;
   position: absolute;
   top:50%;
@@ -120,7 +122,24 @@ body {
   padding-right: 10px;
 }
 
-.main-header h1 {
+.about-main-header {
+  width: 500px;
+  overflow: hidden;
+  position: absolute;
+  top:50%;
+  left:20%;
+  transform: translate(-20%, -50%);
+  z-index: 10;
+  padding-right: 10px;
+}
+.about-main-header h1 {
+  font-size: 80px;
+}
+.about-main-header p {
+  color: #fff;
+}
+
+.main-header, .about-main-header  h1 {
   color:#fff;
 }
 h1 div {
@@ -191,8 +210,14 @@ h1 div {
 }
 #about-page {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   background: #000;
+}
+.about-banner {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 a {
@@ -536,14 +561,14 @@ opacity: 0.3;
   transform: scaleX(2);
 } */
 .about {
-  position: absolute;
+  position: fixed;
   top:50%;
   right:0;
   transform: translateY(-50%);
   z-index: 10;
 }
 .back-about {
-  position: absolute;
+  position: fixed;
   top:50%;
   right:0;
   transform: translateY(-50%);
@@ -551,7 +576,7 @@ opacity: 0.3;
 }
 
 .work {
-  position: absolute;
+  position: fixed;
   top:50%;
   left:0;
   transform: translateY(-50%);
@@ -620,6 +645,39 @@ list-style-type: none;
 
 }
 
-/* .wa span.back-span {
- display: none;
-} */
+.scroll-down-wrapper {
+  position: absolute;
+  bottom:0;
+  left:20px;
+  /* background:#fff; */
+  transform-origin: left;
+  transform: rotate(-90deg) translateY(50%);
+}
+
+.scroll-down-wrapper p {
+  color: #fff;
+  letter-spacing: 4px;
+  font-size: 14px;
+}
+
+.scroll-down-border {
+  height: 1px;
+  width: 200px;
+  background:#fff;
+}
+
+
+
+.who-i-am {
+  width: 100%;
+  height: 800px;
+  background:#fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color:#000;
+}
+::-webkit-scrollbar-thumb {
+  background-color:#555;
+}
