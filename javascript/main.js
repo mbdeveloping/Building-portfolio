@@ -362,6 +362,7 @@ var Aboutpage = Barba.BaseView.extend({
       // A new Transition toward a new page has just started.
       //About and Work links animations
       TweenMax.to(".scroll-down-wrapper", 1,{y:250});
+      TweenMax.to(window, 0.30, {scrollTo:0});
 
   },
   onLeaveCompleted: function() {
