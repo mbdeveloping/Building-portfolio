@@ -356,10 +356,12 @@ var Aboutpage = Barba.BaseView.extend({
   onEnterCompleted: function() {
       // The Transition has just finished.
       $('body').removeClass("body-oh");
+      TweenMax.to(".scroll-down-wrapper", 1,{y:0});
   },
   onLeave: function() {
       // A new Transition toward a new page has just started.
       //About and Work links animations
+      TweenMax.to(".scroll-down-wrapper", 1,{y:250});
 
   },
   onLeaveCompleted: function() {
