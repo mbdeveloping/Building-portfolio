@@ -8,6 +8,7 @@
   text-rendering: optimizeLegibility;
 }
 
+
 .body-oh {
   overflow: hidden;
 }
@@ -31,8 +32,8 @@
   /* visibility: visible; */
 }
 .barba-container {
-  will-change: transform;
-  transform:translateZ(0);
+  /* will-change: transform;
+  transform:translateZ(0); */
   display: block;
   /* position: fixed; */
   top: 0;
@@ -646,12 +647,12 @@ list-style-type: none;
 }
 
 .scroll-down-wrapper {
-  position: absolute;
+  position: fixed;
   bottom:0;
   left:20px;
-  /* background:#fff; */
+  background:red;
   transform-origin: left;
-  transform: rotate(-90deg) translateY(50%);
+  transform: rotate(-90deg) translateY(50%) translateZ(0);
 }
 
 .scroll-down-wrapper p {

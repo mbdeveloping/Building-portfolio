@@ -157,6 +157,7 @@ $(document).ready(function(){
   var Homepage = Barba.BaseView.extend({
   namespace: 'home',
   onEnter: function() {
+    $('body').addClass("body-oh");
       // The new Container is ready and attached to the DOM.
 
       //About and Work links animations
@@ -310,6 +311,7 @@ $(document).ready(function(){
 var Aboutpage = Barba.BaseView.extend({
   namespace: 'about',
   onEnter: function() {
+
       // The new Container is ready and attached to the DOM.
       //About and Work links animations
       $(document).ready(function(){
@@ -337,22 +339,23 @@ var Aboutpage = Barba.BaseView.extend({
           });
         });
         //Work click animation
-        $work.on('click', function() {
-            TweenMax.to(".door", 1, {rotationY:90, ease:Power1.easeInOut});
-            setTimeout(function(){
-              $(".door-pin1, .door-pin2").css("display","none");
-              $(".door-wrapper").animate({
-                width:"200%",
-                height: "200vh"
-              });
-              $(".door").css("opacity", "0");
-              TweenMax.to(".door-outter", 1.7,{width:"200%", height:"200%",zIndex:100, left:0,top:0,x:0,y:0,ease:Power0.easeIn});
-            },1000);
-        });
+        // $work.on('click', function() {
+        //     TweenMax.to(".door", 1, {rotationY:90, ease:Power1.easeInOut});
+        //     setTimeout(function(){
+        //       $(".door-pin1, .door-pin2").css("display","none");
+        //       $(".door-wrapper").animate({
+        //         width:"200%",
+        //         height: "200vh"
+        //       });
+        //       $(".door").css("opacity", "0");
+        //       TweenMax.to(".door-outter", 1.7,{width:"200%", height:"200%",zIndex:100, left:0,top:0,x:0,y:0,ease:Power0.easeIn});
+        //     },1000);
+        // });
       });
   },
   onEnterCompleted: function() {
       // The Transition has just finished.
+      $('body').removeClass("body-oh");
   },
   onLeave: function() {
       // A new Transition toward a new page has just started.
@@ -594,6 +597,7 @@ var Aboutpage = Barba.BaseView.extend({
   Barba.Pjax.getTransition = function() {
     var transitionObj = FadeTransition;
     if (Barba.HistoryManager.prevStatus().namespace === 'about') {
+
       transitionObj = aboutTransition;
     }
     return transitionObj;
