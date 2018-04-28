@@ -1,3 +1,25 @@
+  var test1 = $(".scroll-down-border");
+  var test2 = $(".test-p");
+  var test2w = test2.width();
+  var test1w = test2.width();
+
+$(window).on('scroll', function(){
+  // console.log("Border: " + test1.offset().top);
+  console.log("p: " + test2.offset().top);
+  console.log(test2.offset().top - test2w);
+  console.log("window " + $(window).scrollTop());
+
+  // console.log("scroll is working");
+  if (test2.offset().top <= test1.offset().top) {
+    // console.log("cia turetu pasikeisti i fixed");
+    test2.addClass("test-p-fixed");
+  } else if ($(window).scrollTop() == test2w - test1w) {
+    console.log("turi veikit");
+  }
+});
+
+
+
 
   $(".img6").hide().css("visibility","visible").fadeIn(2000);
   $(".social-links").hide().css("visibility","visible").fadeIn(2000);
