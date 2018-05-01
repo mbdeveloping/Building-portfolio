@@ -20,6 +20,50 @@
 //   }
 // });
 
+$(window).on('scroll', function(){
+  var logo = $(".logo");
+  var posTop = 20;
+  var logoTop = logo.outerHeight(true) + posTop;
+  var sw = $(window).scrollTop();
+  var whoiam = $(".who-i-am");
+  var whoiamTop = whoiam.offset().top;
+
+  var span1 = $(".span1").offset().top + 3;
+  var span2 = $(".span2").offset().top + 3;
+  var span3 = $(".span3").offset().top + 3;
+  var span4 = $(".span4").offset().top + 3;
+
+  if (span1 >= whoiamTop) {
+    console.log("working");
+    $(".span1").addClass("wa-color");
+  } else {
+    $(".span1").removeClass("wa-color");
+  }
+
+  if (span2 >= whoiamTop) {
+    console.log("working");
+    $(".span2").addClass("wa-color");
+  } else {
+    $(".span2").removeClass("wa-color");
+  }
+
+  if (span3 >= whoiamTop) {
+    console.log("working");
+    $(".span3").addClass("wa-color");
+  } else {
+    $(".span3").removeClass("wa-color");
+  }
+
+  if (span4 >= whoiamTop) {
+    console.log("working");
+    $(".span4").addClass("wa-color");
+  } else {
+    $(".span4").removeClass("wa-color");
+  }
+});
+
+
+
 
 
 
