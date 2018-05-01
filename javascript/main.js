@@ -4,27 +4,21 @@
   var test2w = test2.width();
   var test1w = test1.width();
 
-$(window).on('scroll', function(){
-  // console.log("Border: " + test1.offset().top);
-  // console.log(test2.offset().top);
-  // console.log(test1.offset().top);
-  // console.log(test2.offset().top - test2w);
-  // console.log("window " + $(window).scrollTop());
-  // console.log( test3.offset().top + test3.height());
-var fix = false;
-  // console.log("scroll is working");
-  if (test2.offset().top < test1.offset().top) {
-    // console.log("cia turetu pasikeisti i fixed");
-    test2.addClass("test-p-fixed");
-    fix = true;
-    console.log(fix)
-
-  }
-   if (test3.offset().top + test3.height() > test2.offset().top + test2.width() &&  fix === false) {
-    console.log(fix);
-    test2.removeClass("test-p-fixed");
-  }
-});
+// $(window).on('scroll', function(){
+// var fix = false;
+//
+//   if (test2.offset().top < test1.offset().top) {
+//
+//     test2.addClass("test-p-fixed");
+//     fix = true;
+//     console.log(fix)
+//
+//   }
+//    if (test3.offset().top + test3.height() > test2.offset().top + test2.width() &&  fix === false) {
+//     console.log(fix);
+//     test2.removeClass("test-p-fixed");
+//   }
+// });
 
 
 
