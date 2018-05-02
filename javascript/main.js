@@ -34,28 +34,33 @@ $(window).on('scroll', function(){
   var span4 = $(".span4").offset().top + 3;
 
   if (span1 >= whoiamTop) {
-    console.log("working");
     $(".span1").addClass("wa-color");
   } else {
     $(".span1").removeClass("wa-color");
   }
 
   if (span2 >= whoiamTop) {
-    console.log("working");
     $(".span2").addClass("wa-color");
   } else {
     $(".span2").removeClass("wa-color");
   }
 
   if (span3 >= whoiamTop) {
-    console.log("working");
     $(".span3").addClass("wa-color");
   } else {
     $(".span3").removeClass("wa-color");
   }
 
+
+  // console.log("W: "+span4);
+  // console.log(whoiamTop);
+  // console.log(parseInt(span4) == parseInt(whoiamTop));
+
+  if (parseInt(span4) == parseInt(whoiamTop)) {
+
+    $(".span4").hide().fadeIn('slow');
+  }
   if (span4 >= whoiamTop) {
-    console.log("working");
     $(".span4").addClass("wa-color");
   } else {
     $(".span4").removeClass("wa-color");
