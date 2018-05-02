@@ -51,7 +51,7 @@ $(window).on('scroll', function(){
     $(".span3").removeClass("wa-color");
   }
   if (span4 >= whoiamTop) {
-    $(".span4").hide().fadein('slow');
+    $(".span4").addClass("wa-color");
 
   } else {
     $(".span4").removeClass("wa-color");
