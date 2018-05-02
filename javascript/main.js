@@ -50,21 +50,23 @@ $(window).on('scroll', function(){
   } else {
     $(".span3").removeClass("wa-color");
   }
+  if (span4 >= whoiamTop) {
+    $(".span4").hide().fadein('slow');
+
+  } else {
+    $(".span4").removeClass("wa-color");
+  }
 
 
   // console.log("W: "+span4);
   // console.log(whoiamTop);
-  // console.log(parseInt(span4) == parseInt(whoiamTop));
+  console.log(parseInt(span4) == parseInt(whoiamTop));
 
-  if (parseInt(span4) == parseInt(whoiamTop)) {
+  if (parseInt(span4) === parseInt(whoiamTop)) {
 
-    $(".span4").hide().fadeIn('slow');
+    // $(".span4").hide();
   }
-  if (span4 >= whoiamTop) {
-    $(".span4").addClass("wa-color");
-  } else {
-    $(".span4").removeClass("wa-color");
-  }
+
 });
 
 
