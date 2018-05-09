@@ -35,11 +35,17 @@ $(window).on('scroll', function(){
   var span4 = $(".span4").offset().top + 3;
 
   var logo = $(".logo");
-  var logoTop = $(".logo").offset().top;
   var $logoWhite = $(".logo-white");
   var $logoBlack = $(".logo-black");
 
-  if (logoTop >= whoiamTop) {
+  console.log(sw);
+
+if ($(".logo").offset().top >= whoiamTop) {
+
+}
+
+  if (sw >= whoiamTop) {
+
     $(".big-rq").css({
       background: "white",
       borderColor: "black"
@@ -67,12 +73,13 @@ $(window).on('scroll', function(){
     $logoBlack.css("display", "none");
   }
 
+
   if ($(".social-links").offset().top >= whoiamTop) {
     $(".social-links-rotated-box").css("borderColor", "black");
-    $(".social-links li a svg").css("color", "black");
+    $(".icon-color").css("color", "black");
   } else {
     $(".social-links-rotated-box").css("borderColor", "white");
-    $(".social-links li a svg").css("color", "white");
+    $(".icon-color").css("color", "white");
   }
 
   if (span1 >= whoiamTop) {
@@ -97,16 +104,6 @@ $(window).on('scroll', function(){
 
   } else {
     $(".span4").removeClass("wa-color");
-  }
-
-
-  // console.log("W: "+span4);
-  // console.log(whoiamTop);
-  console.log(parseInt(span4) == parseInt(whoiamTop));
-
-  if (parseInt(span4) === parseInt(whoiamTop)) {
-
-    // $(".span4").hide();
   }
 
 });

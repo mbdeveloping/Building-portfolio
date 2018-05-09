@@ -64,6 +64,7 @@
   left:20px;
   z-index: 10;
   display:none;
+
 }
 .main-logo{
   position: absolute;
@@ -101,7 +102,7 @@
   z-index: -10;
   border-radius: 3px;
   transform:rotate(47deg);
-
+  transition: border 1s ease;
 }
 .small-rq {
   position: absolute;
@@ -116,11 +117,13 @@
   height: 29px;
   z-index: -20;
   border-radius: 3px;
+  transition:border 1s ease;
 }
 .logo-name {
   margin-top: 50px;
 }
 .logo-name span {
+  transition:color 1s ease;
   will-change: transform;
   display: inline-block;
   padding:0;
@@ -253,6 +256,7 @@ a {
   padding-bottom: 20px;
 }
 .wa span {
+  transition: .5s ease;
   will-change: transform;
   display: block;
   font-size: 20px;
@@ -427,6 +431,7 @@ a {
 
 .bot-black-small-ray {
   /* display: none; */
+
   transform-origin: top right;
   background: black;
   position: absolute;
@@ -625,6 +630,10 @@ opacity: 0.3;
 .social-links li {
 display: inline-block;
 list-style-type: none;
+}
+
+.icon-color {
+  transition: 1s ease;
 }
 
 .social-links-rotated-box{
