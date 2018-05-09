@@ -20,6 +20,7 @@
 //   }
 // });
 
+
 $(window).on('scroll', function(){
   var logo = $(".logo");
   var posTop = 20;
@@ -32,6 +33,47 @@ $(window).on('scroll', function(){
   var span2 = $(".span2").offset().top + 3;
   var span3 = $(".span3").offset().top + 3;
   var span4 = $(".span4").offset().top + 3;
+
+  var logo = $(".logo");
+  var logoTop = $(".logo").offset().top;
+  var $logoWhite = $(".logo-white");
+  var $logoBlack = $(".logo-black");
+
+  if (logoTop >= whoiamTop) {
+    $(".big-rq").css({
+      background: "white",
+      borderColor: "black"
+    });
+    $(".small-rq").css({
+      background: "white",
+      borderColor: "black"
+    });
+    $(".logo-name span").css("color","black");
+    $logoWhite.css("display", "none");
+    $logoBlack.css("display", "block");
+    logo.css("zIndex", "200");
+  } else {
+    $(".big-rq").css({
+      background: "black",
+      borderColor: "white"
+    });
+    $(".small-rq").css({
+      background: "black",
+      borderColor: "white"
+    });
+    $(".logo-name span").css("color","white");
+    logo.css("zIndex", "10");
+    $logoWhite.css("display", "block");
+    $logoBlack.css("display", "none");
+  }
+
+  if ($(".social-links").offset().top >= whoiamTop) {
+    $(".social-links-rotated-box").css("borderColor", "black");
+    $(".social-links li a svg").css("color", "black");
+  } else {
+    $(".social-links-rotated-box").css("borderColor", "white");
+    $(".social-links li a svg").css("color", "white");
+  }
 
   if (span1 >= whoiamTop) {
     $(".span1").addClass("wa-color");
@@ -203,7 +245,7 @@ $(document).ready(function(){
     $logo.on('mouseenter', function(){
           TweenMax.to(".big-rq", 2,{rotation:135, ease:Back.easeOut.config(1.7)});
           TweenMax.to(".small-rq", 2,{rotation:-40, ease:Back.easeOut.config(1.7)});
-          TweenMax.to("#mb-logo", 2,{scale:0.7, ease:Back.easeOut.config(1.7)});
+          TweenMax.to(".mb-logo", 2,{scale:0.7, ease:Back.easeOut.config(1.7)});
           //Logo text animation
           $(".logo-name span").each(function( index ) {
             var $this = $(this);
@@ -219,7 +261,7 @@ $(document).ready(function(){
     $logo.on('mouseleave', function(){
         TweenMax.to(".big-rq", 2,{rotation:47, ease:Back.easeOut.config(1.7)});
         TweenMax.to(".small-rq", 2,{rotation:22, ease:Back.easeOut.config(1.7)});
-        TweenMax.to("#mb-logo", 2,{scale:1, ease:Back.easeOut.config(3)});
+        TweenMax.to(".mb-logo", 2,{scale:1, ease:Back.easeOut.config(3)});
     });
 });
 
@@ -350,7 +392,7 @@ $(document).ready(function(){
           $logo.on('mouseenter', function(){
                 TweenMax.to(".big-rq", 2,{rotation:135, ease:Back.easeOut.config(1.7)});
                 TweenMax.to(".small-rq", 2,{rotation:-40, ease:Back.easeOut.config(1.7)});
-                TweenMax.to("#mb-logo", 2,{scale:0.7, ease:Back.easeOut.config(1.7)});
+                TweenMax.to(".mb-logo", 2,{scale:0.7, ease:Back.easeOut.config(1.7)});
                 //Logo text animation
                 $(".logo-name span").each(function( index ) {
                   var $this = $(this);
@@ -366,7 +408,7 @@ $(document).ready(function(){
           $logo.on('mouseleave', function(){
               TweenMax.to(".big-rq", 2,{rotation:47, ease:Back.easeOut.config(1.7)});
               TweenMax.to(".small-rq", 2,{rotation:22, ease:Back.easeOut.config(1.7)});
-              TweenMax.to("#mb-logo", 2,{scale:1, ease:Back.easeOut.config(3)});
+              TweenMax.to(".mb-logo", 2,{scale:1, ease:Back.easeOut.config(3)});
           });
       });
   },
@@ -553,7 +595,7 @@ var Aboutpage = Barba.BaseView.extend({
       TweenMax.to(".barba-container", 1, {scale:1, onComplete: function(){deferred.resolve();}});
       TweenMax.to(".hello-header", 1, {x:550});
       TweenMax.to(".img13", 1, {scale:1, x:0});
-      TweenMax.to(".about-main-header p", 1, {x:- 500, opacity:0.5});
+      TweenMax.to(".about-main-header p", 1, {x:- 500});
 
       var deferred = Barba.Utils.deferred();
       TweenMax.to(".about", 1, {x:100, opacity:0});
