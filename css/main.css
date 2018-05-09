@@ -256,7 +256,7 @@ a {
   padding-bottom: 20px;
 }
 .wa span {
-  transition: .5s ease;
+  transition:color .5s ease;
   will-change: transform;
   display: block;
   font-size: 20px;
