@@ -25,11 +25,7 @@ $(window).on('scroll', function(){
   var $logoWhite = $(".logo-white");
   var $logoBlack = $(".logo-black");
 
-  console.log(sw);
 
-if ($(".logo").offset().top >= whoiamTop) {
-
-}
 
   if (sw >= whoiamTop) {
 
@@ -95,11 +91,6 @@ if ($(".logo").offset().top >= whoiamTop) {
 
 });
 
-
-
-
-
-
   $(".img6").hide().css("visibility","visible").fadeIn(2000);
   $(".social-links").hide().css("visibility","visible").fadeIn(2000);
 }())
@@ -135,13 +126,7 @@ $(document).ready(function(){
       });
     }
   });
-  //Work hover animation
-  // $work.on('mouseenter', function(){
-  //   $workSpan.addClass("scale-letters");
-  //   $workSpan.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-  //       $workSpan.removeClass('scale-letters');
-  //   });
-  // });
+
   $work.on('mouseenter', function(){
     if ($workSpan.hasClass("animating-about")) {
       console.log("turi calsse animating");
@@ -710,46 +695,3 @@ var Aboutpage = Barba.BaseView.extend({
   };
 
 });
-
-//
-// $(document).ready(function() {
-//
-//   $(".about").on('click', function(event) {
-//     event.preventDefault();
-//     var images = $('.img-holder img'),
-//         count = images.length,
-//         transitions = 1;
-//     TweenMax.set(images, {autoAlpha:0});
-//     TweenMax.set($(".active"), {autoAlpha:1});
-//
-//     function fadeImage()
-//     {
-//       var active = $(".active"),
-//     		next = active.next();
-//
-//     	TweenMax.set(active, {autoAlpha:0, className:"-=active"});
-//     	TweenMax.set(next, {autoAlpha:1, className:'+=active', onComplete:nextImage});
-//
-//     	transitions++;
-//
-//     	console.log(transitions);
-//     }
-//
-//     setTimeout(fadeImage,70);
-//
-//     function nextImage()
-//     {
-//     	if(transitions < count)
-//     	{
-//     		setTimeout(fadeImage,70);
-//     	}
-//     	else
-//     	{
-//         $(".img13").addClass("active").css({visibility: "visible", opacity:"1"});
-//     		// transitions = 0;
-//     		// TweenMax.set(images[0], {autoAlpha:1, className:'+=active'});
-//     		// setTimeout(fadeImage,500);
-//   	}
-//   }
-// });
-// });
