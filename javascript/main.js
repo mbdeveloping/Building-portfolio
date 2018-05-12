@@ -11,10 +11,10 @@
 $(window).on('scroll', function(){
   const logo = $(".logo");
   const posTop = 20;
-  const logoTop = logo.outerHeight(true) + posTop;
+  let logoTop = logo.outerHeight(true) + posTop;
   const sw = $(window).scrollTop();
   const whoiam = $(".who-i-am");
-  const whoiamTop = whoiam.offset().top;
+  let whoiamTop = whoiam.offset().top;
 
   const span1 = $(".span1").offset().top + 3;
   const span2 = $(".span2").offset().top + 3;
@@ -99,19 +99,19 @@ $(window).on('scroll', function(){
 $(document).ready(function(){
 
   //Declare variables
-  var $work = $(".work");
-  var $aboutSpan = $(".about-span");
-  var $workSpan = $(".work-span");
+  const $work = $(".work");
+  const $aboutSpan = $(".about-span");
+  const $workSpan = $(".work-span");
   //About and Work onload animation
   $aboutSpan.each(function( index ) {
-    var $this = $(this);
+    let $this = $(this);
     $aboutSpan.addClass("animating-about");
     setTimeout(function(){
       TweenMax.to($this, .5, {x:0, onComplete: function(){$aboutSpan.removeClass('animating-about');}});
     }, 100*index);
   });
   $workSpan.each(function( index ) {
-    var $this = $(this);
+    let $this = $(this);
     setTimeout(function(){
       TweenMax.to($this, .5, {x:0, onComplete: function(){$aboutSpan.removeClass('animating-about');}});
     }, 100*index);
@@ -129,7 +129,6 @@ $(document).ready(function(){
 
   $work.on('mouseenter', function(){
     if ($workSpan.hasClass("animating-about")) {
-      console.log("turi calsse animating");
     } else {
       $workSpan.addClass("scale-letters");
       $workSpan.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
@@ -155,11 +154,11 @@ $(document).ready(function(){
 //Main header animations
 $(document).ready(function(){
   //Declare variables
-  var $headerSpan = $(".hello-header span:not(.based span)"),
+  const $headerSpan = $(".hello-header span:not(.based span)"),
       $basedSpan = $(".based span");
   //Main headers onload animation
   $headerSpan.each(function( index ) {
-    var $this = $(this);
+    let $this = $(this);
     setTimeout(function(){
       $this.addClass("scale-letters-header-load");
     },50*index);
@@ -171,7 +170,7 @@ $(document).ready(function(){
 
   window.setTimeout(function(){
     $basedSpan.each(function( index ) {
-      var $this = $(this);
+      let $this = $(this);
       setTimeout(function(){
         $this.addClass("scale-letters-header-load");
       },50*index);
@@ -185,7 +184,7 @@ $(document).ready(function(){
 
   //Main header hover animation
   $headerSpan.on('mouseenter', function(){
-      var $this = $(this);
+      let $this = $(this);
       $this.addClass("bounce");
       $this.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
           $this.removeClass('bounce');
@@ -193,10 +192,10 @@ $(document).ready(function(){
   });
   //Main header spans random color on hover
   $headerSpan.hover(function(){
-      var r = Math.floor(Math.random() * 255);
-      var g = Math.floor(Math.random() * 255);
-      var b = Math.floor(Math.random() * 255);
-      var color = "rgb("+r+","+g+","+b+")"
+      let r = Math.floor(Math.random() * 255);
+      let g = Math.floor(Math.random() * 255);
+      let b = Math.floor(Math.random() * 255);
+      const color = "rgb("+r+","+g+","+b+")"
       $(this).css("color", color);
   });
   //Bus and BigBen animation
@@ -209,7 +208,7 @@ $(document).ready(function(){
 //Logo  animation
 $(document).ready(function(){
   //Declare variables
-  $logo = $(".logo");
+  const  $logo = $(".logo");
   //Logo onload animation
   $logo.hide().fadeIn(1000);
   //Logo hover animation
@@ -219,7 +218,7 @@ $(document).ready(function(){
           TweenMax.to(".mb-logo", 2,{scale:0.7, ease:Back.easeOut.config(1.7)});
           //Logo text animation
           $(".logo-name span").each(function( index ) {
-            var $this = $(this);
+            let $this = $(this);
             setTimeout(function(){
               $this.addClass("scale-letters-mb");
             }, 100*index);
@@ -242,7 +241,7 @@ $(document).ready(function(){
 //Barba
 
 $(document).ready(function(){
-  var Homepage = Barba.BaseView.extend({
+  const Homepage = Barba.BaseView.extend({
   namespace: 'home',
   onEnter: function() {
     $('body').addClass("body-oh");
@@ -251,9 +250,9 @@ $(document).ready(function(){
       //About and Work links animations
       $(document).ready(function(){
         //Declare variables
-        var $work = $(".work");
-        var $aboutSpan = $(".about-span");
-        var $workSpan = $(".work-span");
+        const $work = $(".work");
+        const $aboutSpan = $(".about-span");
+        const $workSpan = $(".work-span");
         //About hover animation
         $(".about").on('mouseenter', function(){
           if ($aboutSpan.hasClass("animating-about")) {
@@ -290,23 +289,21 @@ $(document).ready(function(){
 
         $(".about").on('click', function(event) {
           event.preventDefault();
-          var images = $('.img-holder img'),
-              count = images.length,
+          const images = $('.img-holder img');
+          let count = images.length,
               transitions = 1;
           TweenMax.set(images, {autoAlpha:0});
           TweenMax.set($(".active"), {autoAlpha:1});
 
           function fadeImage()
           {
-            var active = $(".active"),
-          		next = active.next();
+            const active = $(".active");
+          	let	next = active.next();
 
           	TweenMax.set(active, {autoAlpha:0, className:"-=active"});
           	TweenMax.set(next, {autoAlpha:1, className:'+=active', onComplete:nextImage});
 
           	transitions++;
-
-          	console.log(transitions);
           }
 
           setTimeout(fadeImage,70);
@@ -331,10 +328,10 @@ $(document).ready(function(){
       //Main header animations
       $(document).ready(function(){
         //Declare variables
-        var $headerSpan = $(".hello-header span");
+        const $headerSpan = $(".hello-header span");
         //Main header hover animation
         $headerSpan.on('mouseenter', function(){
-            var $this = $(this);
+            let $this = $(this);
             $this.addClass("bounce");
             $this.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                 $this.removeClass('bounce');
@@ -342,10 +339,10 @@ $(document).ready(function(){
         });
         //Main header spans random color on hover
         $headerSpan.hover(function(){
-            var r = Math.floor(Math.random() * 255);
-            var g = Math.floor(Math.random() * 255);
-            var b = Math.floor(Math.random() * 255);
-            var color = "rgb("+r+","+g+","+b+")"
+            let r = Math.floor(Math.random() * 255);
+            let g = Math.floor(Math.random() * 255);
+            let b = Math.floor(Math.random() * 255);
+            const color = "rgb("+r+","+g+","+b+")"
             $(this).css("color", color);
         });
         //Bus and BigBen animation
@@ -358,7 +355,7 @@ $(document).ready(function(){
       //Logo  animation
       $(document).ready(function(){
         //Declare variables
-        $logo = $(".logo");
+        const $logo = $(".logo");
         //Logo hover animation
           $logo.on('mouseenter', function(){
                 TweenMax.to(".big-rq", 2,{rotation:135, ease:Back.easeOut.config(1.7)});
@@ -366,7 +363,7 @@ $(document).ready(function(){
                 TweenMax.to(".mb-logo", 2,{scale:0.7, ease:Back.easeOut.config(1.7)});
                 //Logo text animation
                 $(".logo-name span").each(function( index ) {
-                  var $this = $(this);
+                  let $this = $(this);
                   setTimeout(function(){
                     $this.addClass("scale-letters-mb");
                   }, 100*index);
@@ -396,7 +393,7 @@ $(document).ready(function(){
   }
 });
 
-var Aboutpage = Barba.BaseView.extend({
+const Aboutpage = Barba.BaseView.extend({
   namespace: 'about',
   onEnter: function() {
 
@@ -405,9 +402,9 @@ var Aboutpage = Barba.BaseView.extend({
       $(document).ready(function(){
         // $(".img13").hide().css("visibility","visible").fadeIn(2000);
         //Declare variables
-        var $work = $(".work");
-        var $aboutSpan = $(".about-span");
-        var $workSpan = $(".work-span");
+        const $work = $(".work");
+        const $aboutSpan = $(".about-span");
+        const $workSpan = $(".work-span");
         //About hover animation
         $(".about").on('mouseenter', function(){
           if ($aboutSpan.hasClass("animating-about")) {
@@ -463,7 +460,7 @@ var Aboutpage = Barba.BaseView.extend({
   Barba.Pjax.init();
   Barba.Prefetch.init();
 
-  var FadeTransition = Barba.BaseTransition.extend({
+  const FadeTransition = Barba.BaseTransition.extend({
     start: function() {
       Promise
         .all([this.newContainerLoading, this.fadeOut()])
@@ -491,8 +488,8 @@ var Aboutpage = Barba.BaseView.extend({
 
     fadeIn: function() {
 
-      var _this = this;
-      var $el = $(this.newContainer);
+      let _this = this;
+      let $el = $(this.newContainer);
       TweenMax.set(".hello-header span", {scale:1, z:0});
       TweenMax.set(".hello-header", {x:-400});
       TweenMax.set(".about-main-header p",  {x:290});
@@ -509,12 +506,12 @@ var Aboutpage = Barba.BaseView.extend({
       TweenMax.to(".img13", 1, {scale:1.4, x:-100});
 
 
-      var $aboutSpan = $(".about-span");
-      var $workSpan = $(".work-span");
-      var $work = $(".work");
+      const $aboutSpan = $(".about-span");
+      const $workSpan = $(".work-span");
+      const $work = $(".work");
       //About and Work onload animation
       $aboutSpan.each(function( index ) {
-        var $this = $(this);
+        let $this = $(this);
         $aboutSpan.addClass("animating-about");
         setTimeout(function(){
           // $this.css("transform","translateX(0)");
@@ -555,7 +552,7 @@ var Aboutpage = Barba.BaseView.extend({
     }
   });
 
-  var aboutTransition = Barba.BaseTransition.extend({
+  const aboutTransition = Barba.BaseTransition.extend({
     start: function() {
       Promise
         .all([this.newContainerLoading, this.fadeOut()])
@@ -568,7 +565,7 @@ var Aboutpage = Barba.BaseView.extend({
       TweenMax.to(".img13", 1, {scale:1, x:0});
       TweenMax.to(".about-main-header p", 1, {x:- 500});
 
-      var deferred = Barba.Utils.deferred();
+      let deferred = Barba.Utils.deferred();
       TweenMax.to(".about", 1, {x:100, opacity:0});
       TweenMax.to(".work", 1, {x:-100, opacity:0});
 
@@ -590,23 +587,22 @@ var Aboutpage = Barba.BaseView.extend({
 
 
       //Backwards img
-        var images = $('.img-holder img'),
-            count = images.length,
+        const images = $('.img-holder img');
+        let count = images.length,
             transitions = 1;
         TweenMax.set(images, {autoAlpha:0});
         TweenMax.set($(".active"), {autoAlpha:1});
 
         function fadeImage()
         {
-          var active = $(".active"),
-        		next = active.prev();
+          const active = $(".active");
+        	let	next = active.prev();
 
         	TweenMax.set(active, {autoAlpha:0, className:"-=active"});
         	TweenMax.set(next, {autoAlpha:1, className:'+=active', onComplete:nextImage});
 
         	transitions++;
 
-        	console.log(transitions);
         }
 
         setTimeout(fadeImage,70);
@@ -635,12 +631,12 @@ var Aboutpage = Barba.BaseView.extend({
       TweenMax.to("#big-ben", 1,{scaleY:1,ease:Back.easeOut.config(6)});
       TweenMax.to("#london-bus", 1,{x:150, opacity:1});
 
-      var $aboutSpan = $(".about-span");
-      var $workSpan = $(".work-span");
-      var $work = $(".work");
+      const $aboutSpan = $(".about-span");
+      const $workSpan = $(".work-span");
+      const $work = $(".work");
       //About and Work onload animation
       $aboutSpan.each(function( index ) {
-        var $this = $(this);
+        let $this = $(this);
         $aboutSpan.addClass("animating-about");
         setTimeout(function(){
           // $this.css("transform","translateX(0)");
