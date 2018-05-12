@@ -1,29 +1,29 @@
 (function(){
-  var test1 = $(".scroll-down-border");
-  var test2 = $(".test-p");
-  var test3 = $("header");
-  var test2w = test2.width();
-  var test1w = test1.width();
+  const test1 = $(".scroll-down-border");
+  const test2 = $(".test-p");
+  const test3 = $("header");
+  const test2w = test2.width();
+  const test1w = test1.width();
 
 
 
 
 $(window).on('scroll', function(){
-  var logo = $(".logo");
-  var posTop = 20;
-  var logoTop = logo.outerHeight(true) + posTop;
-  var sw = $(window).scrollTop();
-  var whoiam = $(".who-i-am");
-  var whoiamTop = whoiam.offset().top;
+  const logo = $(".logo");
+  const posTop = 20;
+  const logoTop = logo.outerHeight(true) + posTop;
+  const sw = $(window).scrollTop();
+  const whoiam = $(".who-i-am");
+  const whoiamTop = whoiam.offset().top;
 
-  var span1 = $(".span1").offset().top + 3;
-  var span2 = $(".span2").offset().top + 3;
-  var span3 = $(".span3").offset().top + 3;
-  var span4 = $(".span4").offset().top + 3;
+  const span1 = $(".span1").offset().top + 3;
+  const span2 = $(".span2").offset().top + 3;
+  const span3 = $(".span3").offset().top + 3;
+  const span4 = $(".span4").offset().top + 3;
 
-  var logo = $(".logo");
-  var $logoWhite = $(".logo-white");
-  var $logoBlack = $(".logo-black");
+
+  const $logoWhite = $(".logo-white");
+  const $logoBlack = $(".logo-black");
 
 
 
