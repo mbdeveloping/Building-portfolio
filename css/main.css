@@ -176,7 +176,7 @@ h1 div {
   will-change: trasnform;
   backface-visibility: hidden;
   display: inline-block;
-  transform:  scale(0);
+  transform: translateZ(0) scale(0);
   transition: color .3s ease;
   -webkit-font-smoothing: subpixel-antialiased;
 }
