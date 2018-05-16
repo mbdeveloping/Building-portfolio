@@ -145,24 +145,24 @@
 
 @keyframes scale-letters-header-load {
   0% {
-    transform: scale(0) translateZ(0);
+    transform: scale(0) translateZ(0) rotate(0.01deg);
 
   }
   50% {
-    transform: scale(1.68) translateZ(0);
+    transform: scale(1.7) translateZ(0) rotate(0.01deg);
   }
 
   70% {
-    transform: scale(.48) translateZ(0);
+    transform: scale(.5) translateZ(0) rotate(0.01deg);
   }
   75% {
-    transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0) rotate(0.01deg);
   }
   85% {
-    transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0) rotate(0.01deg);
   }
   100% {
-    transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0) rotate(0.01deg);
   }
 }
 
