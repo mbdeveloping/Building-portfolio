@@ -174,13 +174,13 @@ h1 div {
 }
 .hello-header span {
   will-change: trasnform;
+  backface-visibility: hidden;
   display: inline-block;
-  transform: scale(0);
+  transform:  scale(0);
   transition: color .3s ease;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
-/* .hello-header span:hover {
- color:purple;
-} */
+
 .hello-header:hover {
   cursor:default;
 }
