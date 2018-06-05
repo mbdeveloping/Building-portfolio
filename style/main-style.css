@@ -20,6 +20,7 @@ body {
   position: fixed;
   top:0;
   left:0;
+  z-index: 1000;
 }
 #nav-wrapper {
   width: 100%;
@@ -60,6 +61,7 @@ body {
 }
 #nav-btn {
   height: 30px;
+  z-index: 1000;
 }
 #nav-btn-wrapper {
   width: 30px;
@@ -85,6 +87,24 @@ body {
   background: #fff;
   transform-origin: top;
   transform: rotate(27deg) translate(7px,-7px);
+}
+#left-nav-overlay {
+  position: fixed;
+  width: 0;
+  height: 100vh;
+  top:0;
+  left: 0;
+  background:rgba(0,0,0, .9);
+  z-index: 20;
+}
+#right-nav-overlay {
+  position: fixed;
+  width: 0;
+  height: 100vh;
+  top:0;
+  right: 0;
+  background:rgba(0,0,0, .9);
+  z-index: 20;
 }
 /********** Home page rules **********/
 #home-header {

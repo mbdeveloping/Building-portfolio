@@ -21,12 +21,18 @@ $(document).ready(function() {
         }});
         TweenMax.to([leftStickTop, rightStickBot], .3, {rotation: 45});
         TweenMax.to(rightStickTop, .3, {rotation: -45});
+        TweenMax.to($('#home-main'), .3, {scale: 0.8});
+        TweenMax.to($('#left-nav-overlay'), 1, {width: '50%', ease: Bounce.easeOut});
+        TweenMax.to($('#right-nav-overlay'), 1, {width: '50%', ease: Bounce.easeOut});
       } else {
         navBtn.removeClass('navigation-open');
         TweenMax.to(stickMiddle, .3, {height: '0%'});
         TweenMax.to([rightStickBot, leftStickBot, leftStickTop, rightStickTop], .3, {x: 0, onComplete:function() {
           TweenMax.to([leftStickBot, leftStickTop, rightStickTop, rightStickBot], .3, {rotation: 0});
         }});
+        TweenMax.to($('#home-main'), .3, {scale: 1});
+        TweenMax.to($('#left-nav-overlay'), .3, {width: '0'});
+        TweenMax.to($('#right-nav-overlay'), .3, {width: '0'});
       }
     }
     navBtn.on('click', navBtnAnimation);
