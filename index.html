@@ -17,20 +17,31 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="style/main-style.css">
     <!-- <link rel="icon" href="fav.icon"> -->
+    <!-- Adds HTML5 element support for earlier versions of IE -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
   <body>
     <div id="barba-wrapper">
       <header id="nav-bar" class="container">
         <section id="nav-wrapper">
-          <section id="logo-section">
+          <a role="button" href="#" id="logo-section">
             <img src="img/logo02.png" alt="Mantvydas Binderis logo - MB initials">
             <div id="logo-big-rec"></div>
             <div id="logo-small-rec"></div>
-          </section>
+          </a role="button" href="#">
           <a id="nav-btn" role="button" href="#">
             <div id="nav-btn-wrapper">
-              <div class="nav-stick"></div>
-              <div class="nav-stick"></div>
+              <div class="nav-stick-wrapper">
+                <div class="nav-stick left-nav-stick-top"></div>
+                <div class="nav-stick left-nav-stick-bot"></div>
+              </div>
+              <div class="nav-stick-middle"></div>
+              <div class="nav-stick-wrapper">
+                <div class="nav-stick right-nav-stick-top"></div>
+                <div class="nav-stick right-nav-stick-bot"></div>
+              </div>
             </div>
           </a>
         </section>
@@ -67,6 +78,8 @@
         </main>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="script/TweenMax.min.js" type="text/javascript"></script>
     <script src="script/main.js" type="text/javascript"></script>
   </body>
 </html>

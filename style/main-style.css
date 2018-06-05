@@ -68,9 +68,23 @@ body {
   justify-content: space-around;
 }
 .nav-stick {
-  height: 100%;
+  height: 50%;
   width: 2px;
   background:#fff;
+}
+.left-nav-stick-bot, .right-nav-stick-bot {
+  will-change: transform;
+  transform-origin: top;
+}
+.left-nav-stick-top, .right-nav-stick-top {
+  transform-origin: bottom;
+}
+.nav-stick-middle {
+  width: 2px;
+  height: 0%;
+  background: #fff;
+  transform-origin: top;
+  transform: rotate(27deg) translate(7px,-7px);
 }
 /********** Home page rules **********/
 #home-header {
@@ -83,8 +97,9 @@ body {
   justify-content: center;
 }
 #home-header h1 {
-  grid-row: 3/4;
+  grid-row: 1/3;
   overflow: hidden;
+  padding-left: 1.5rem;
 }
 #hello {
   font-size: 3rem;
@@ -124,6 +139,6 @@ main {
   position: absolute;
   right: 0;
   bottom: 0;
-  transform:translate(215px,0px);
-  height: 80vh;
+  transform:translate(162px,0px);
+  height: 70vh;
 }
