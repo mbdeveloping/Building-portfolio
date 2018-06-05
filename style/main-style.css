@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+body {
+  font-size: 1rem;
+  background: #000;
+}
+.container {
+  padding:1rem;
+}
+header {
+  width: 100%;
+  /* background:red; */
+}
+#logo-section {
+  position: relative;
+  display: flex;
+  width: 67px;
+}
+#logo-section img {
+  width: 67px;
+  height: 50px;
+  z-index: 10;
+}
+#logo-big-rec {
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  transform:rotate(47deg) translate(9px,0px);
+  background:#000;
+  z-index: 5;
+}
+#logo-small-rec {
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  border:1px solid #fff;
+  border-radius: 3px;
+  transform:rotate(22deg) translate(27px,2px);
+  z-index: 1;
+}
