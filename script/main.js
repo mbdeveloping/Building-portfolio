@@ -11,7 +11,10 @@ $(document).ready(function() {
       const rightStickBot = $('.right-nav-stick-bot');
       const stickMiddle = $('.nav-stick-middle');
       const homeLinks = $('.home-page-link');
-      const socialLinks = $('#social-links');
+      const socialLinks = document.getElementById('social-links');
+      const homeMain = document.getElementById('home-main');
+      const leftNavOverlay = document.getElementById('left-nav-overlay');
+      const rightNavOverlay = document.getElementById('right-nav-overlay');
 
       e.preventDefault();
 
@@ -24,9 +27,9 @@ $(document).ready(function() {
         }});
         TweenMax.to([leftStickTop, rightStickBot], .3, {rotation: 45});
         TweenMax.to(rightStickTop, .3, {rotation: -45});
-        TweenMax.to($('#home-main'), .3, {scale: 0.8});
-        TweenMax.to($('#left-nav-overlay'), 1, {width: '50%', ease: Bounce.easeOut});
-        TweenMax.to($('#right-nav-overlay'), 1, {width: '50%', ease: Bounce.easeOut});
+        TweenMax.to(homeMain, .3, {scale: 0.8});
+        TweenMax.to(leftNavOverlay, 1, {width: '50%', ease: Bounce.easeOut});
+        TweenMax.to(rightNavOverlay, 1, {width: '50%', ease: Bounce.easeOut});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
         TweenMax.to(socialLinks, .3, {y:'0%'});
       } else {
@@ -35,9 +38,9 @@ $(document).ready(function() {
         TweenMax.to([rightStickBot, leftStickBot, leftStickTop, rightStickTop], .3, {x: 0, onComplete:function() {
           TweenMax.to([leftStickBot, leftStickTop, rightStickTop, rightStickBot], .3, {rotation: 0});
         }});
-        TweenMax.to($('#home-main'), .3, {scale: 1});
-        TweenMax.to($('#left-nav-overlay'), .3, {width: '0'});
-        TweenMax.to($('#right-nav-overlay'), .3, {width: '0'});
+        TweenMax.to(homeMain, .3, {scale: 1});
+        TweenMax.to(leftNavOverlay, .3, {width: '0'});
+        TweenMax.to(rightNavOverlay, .3, {width: '0'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
         TweenMax.to(socialLinks, .3, {y:'100%'});
       }
