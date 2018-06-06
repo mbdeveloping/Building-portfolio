@@ -191,3 +191,21 @@ main {
   background:rgba(0,0,0, .9);
   transform: translateY(100%);
 }
+#social-links a {
+  position: relative;
+  display: inline-block;
+}
+#social-links i {
+  font-size: .8rem;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+}
+.social-links-box {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #fff;
+  position: relative;
+  transform:rotate(45deg);
+}
