@@ -11,6 +11,8 @@ $(document).ready(function() {
       const rightStickBot = $('.right-nav-stick-bot');
       const stickMiddle = $('.nav-stick-middle');
       const homeLinks = $('.home-page-link');
+      const socialLinks = $('#social-links');
+
       e.preventDefault();
 
       if (!navBtn.hasClass('navigation-open')) {
@@ -26,6 +28,7 @@ $(document).ready(function() {
         TweenMax.to($('#left-nav-overlay'), 1, {width: '50%', ease: Bounce.easeOut});
         TweenMax.to($('#right-nav-overlay'), 1, {width: '50%', ease: Bounce.easeOut});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
+        TweenMax.to(socialLinks, .3, {y:'0%'});
       } else {
         navBtn.removeClass('navigation-open');
         TweenMax.to(stickMiddle, .3, {height: '0%'});
@@ -36,6 +39,7 @@ $(document).ready(function() {
         TweenMax.to($('#left-nav-overlay'), .3, {width: '0'});
         TweenMax.to($('#right-nav-overlay'), .3, {width: '0'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
+        TweenMax.to(socialLinks, .3, {y:'100%'});
       }
     }
     navBtn.on('click', navBtnAnimation);
