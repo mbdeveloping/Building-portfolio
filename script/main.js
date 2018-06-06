@@ -4,7 +4,7 @@ $(document).ready(function() {
     //Navigation button rules
     const navBtn = $('#nav-btn');
 
-    function navBtnAnimation(e) {
+    function navAnimation(e) {
       const leftStickBot = $('.left-nav-stick-bot');
       const leftStickTop = $('.left-nav-stick-top');
       const rightStickTop = $('.right-nav-stick-top');
@@ -45,6 +45,6 @@ $(document).ready(function() {
         TweenMax.to(socialLinks, .3, {y:'100%'});
       }
     }
-    navBtn.on('click', navBtnAnimation);
+    navBtn.on('click', navAnimation);
   }())
 })
