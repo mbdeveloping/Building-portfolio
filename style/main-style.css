@@ -9,7 +9,12 @@ body {
   background: #000;
   color: #fff;
   font-family: Arial;
+}
+.body-ov-hidden {
   overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
 }
 a {
   text-decoration: none;
