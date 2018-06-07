@@ -45,6 +45,6 @@ $(document).ready(function() {
         TweenMax.to(socialLinks, .3, {y:'100%'});
       }
     }
-    navBtn.on('click', navAnimation);
+    navBtn.on('click touchstart', navAnimation);
   }())
 })
