@@ -1,9 +1,15 @@
 $(document).ready(function() {
   //HOME PAGE rules
+  //Home page load animation
   (function() {
-    //Navigation button rules
+    const barbaWrapper = document.getElementById('barba-wrapper');
+    TweenMax.to(barbaWrapper, 1, {opacity:1});
+  }());
+  //Navigation button rules
+  (function() {
     const navBtn = $('#nav-btn');
 
+    //Navigation animation
     function navAnimation(e) {
       const leftStickBot = $('.left-nav-stick-bot');
       const leftStickTop = $('.left-nav-stick-top');
@@ -28,8 +34,7 @@ $(document).ready(function() {
         TweenMax.to([leftStickTop, rightStickBot], .3, {rotation: 45});
         TweenMax.to(rightStickTop, .3, {rotation: -45});
         TweenMax.to(homeMain, .3, {scale: 0.8});
-        TweenMax.to(leftNavOverlay, 1, {width: '50%', ease: Bounce.easeOut});
-        TweenMax.to(rightNavOverlay, 1, {width: '50%', ease: Bounce.easeOut});
+        TweenMax.to([leftNavOverlay, rightNavOverlay], 1, {width: '50%', ease: Bounce.easeOut});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
         TweenMax.to(socialLinks, .3, {y:'0%'});
       } else {
@@ -39,12 +44,11 @@ $(document).ready(function() {
           TweenMax.to([leftStickBot, leftStickTop, rightStickTop, rightStickBot], .3, {rotation: 0});
         }});
         TweenMax.to(homeMain, .3, {scale: 1});
-        TweenMax.to(leftNavOverlay, .3, {width: '0'});
-        TweenMax.to(rightNavOverlay, .3, {width: '0'});
+        TweenMax.to([leftNavOverlay, rightNavOverlay], .3, {width: '0'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
         TweenMax.to(socialLinks, .3, {y:'100%'});
       }
     }
     navBtn.on('click touchstart', navAnimation);
-  }())
+  }());
 })
