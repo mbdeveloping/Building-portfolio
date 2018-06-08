@@ -40,9 +40,8 @@ $(document).ready(function() {
       } else {
         navBtn.removeClass('navigation-open');
         TweenMax.to(stickMiddle, .3, {height: '0%'});
-        TweenMax.to([rightStickBot, leftStickBot, leftStickTop, rightStickTop], .3, {x: 0, onComplete:function() {
-          TweenMax.to([leftStickBot, leftStickTop, rightStickTop, rightStickBot], .3, {rotation: 0});
-        }});
+        TweenMax.to([rightStickBot, leftStickBot, leftStickTop, rightStickTop], .3, {x: 0});
+        TweenMax.to([leftStickBot, leftStickTop, rightStickTop, rightStickBot], .3, {rotation: 0});
         TweenMax.to(homeMain, .3, {scale: 1});
         TweenMax.to([leftNavOverlay, rightNavOverlay], .3, {width: '0'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
