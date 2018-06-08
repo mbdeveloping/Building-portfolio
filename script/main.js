@@ -3,7 +3,7 @@ $(document).ready(function() {
   //Home page load animation
   (function() {
     const barbaWrapper = document.getElementById('barba-wrapper');
-    TweenMax.to(barbaWrapper, 1, {opacity:1});
+    TweenMax.to(barbaWrapper, 2, {opacity:1});
   }());
   //Navigation button rules
   (function() {
@@ -24,12 +24,12 @@ $(document).ready(function() {
 
       e.preventDefault();
 
-      if (!navBtn.hasClass('navigation-open')) {
+      function openNav() {
         navBtn.addClass('navigation-open');
         TweenMax.to(leftStickBot, .3, {rotation: -45, onComplete:function() {
+          TweenMax.to(stickMiddle, .3, {height: '140%'});
           TweenMax.to([leftStickBot, leftStickTop],.3, {x: -5});
           TweenMax.to([rightStickTop, rightStickBot], .3, {x: 5});
-          TweenMax.to(stickMiddle, .3, {height: '140%'});
         }});
         TweenMax.to([leftStickTop, rightStickBot], .3, {rotation: 45});
         TweenMax.to(rightStickTop, .3, {rotation: -45});
@@ -37,7 +37,8 @@ $(document).ready(function() {
         TweenMax.to([leftNavOverlay, rightNavOverlay], 1, {width: '50%', ease: Bounce.easeOut});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
         TweenMax.to(socialLinks, .3, {y:'0%'});
-      } else {
+      }
+      function closeNav() {
         navBtn.removeClass('navigation-open');
         TweenMax.to(stickMiddle, .3, {height: '0%'});
         TweenMax.to([rightStickBot, leftStickBot, leftStickTop, rightStickTop], .3, {x: 0});
@@ -46,6 +47,11 @@ $(document).ready(function() {
         TweenMax.to([leftNavOverlay, rightNavOverlay], .3, {width: '0'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
         TweenMax.to(socialLinks, .3, {y:'100%'});
+      }
+      if (!navBtn.hasClass('navigation-open')) {
+        openNav();
+      } else {
+        closeNav();
       }
     }
     navBtn.on('click touchstart', navAnimation);
