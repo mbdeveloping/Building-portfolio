@@ -28,7 +28,7 @@ ul {
   padding: 0 1rem;
 }
 #barba-wrapper {
-  opacity:0;
+  /* opacity:0; */
 }
 /********** Main header rules **********/
 #nav-bar {
@@ -37,6 +37,7 @@ ul {
   top:0;
   left:0;
   z-index: 1000;
+  transform:translateY(-100%);
 }
 #nav-wrapper {
   width: 100%;
@@ -169,6 +170,9 @@ ul {
 #based span {
   font-size: 1rem;
 }
+#big-ben, #london-bus {
+  opacity:0;
+}
 #big-ben {
   width: 10px;
 }
@@ -191,10 +195,11 @@ main {
 }
 #img-holder img {
   position: absolute;
-  right: 0;
+  right: 50%;
   bottom: 0;
-  transform:translate(162px,0px);
-  height: 70vh;
+  height: 60vh;
+  transform: translateX(60%);
+  opacity:0;
 }
 .home-page-link {
   display: flex;

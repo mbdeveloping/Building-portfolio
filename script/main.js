@@ -2,15 +2,18 @@ $(document).ready(function() {
   //HOME PAGE rules
   //Home page load animation
   (function() {
+      //Home page header animation
+      const navBar = $('#nav-bar');
+      const homeBgImg = $('#img-holder img');
       function fadeInHeaderText() {
         const testH = $('#home-header-word-line-wrapper span');
-        TweenMax.staggerFromTo( testH, 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
-        TweenMax.staggerFromTo( testH, 0.1, {scale:4}, {scale:1}, 0.05 );
+        TweenMax.staggerFromTo( testH, 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.1 );
+        TweenMax.staggerFromTo( testH, 0.1, {scale:4}, {scale:1}, 0.1 );
       }
-    const barbaWrapper = document.getElementById('barba-wrapper');
-    TweenMax.to(barbaWrapper, .5, {opacity:1, onComplete:function(){
+    TweenMax.to(navBar, .5, {y:'0%', onComplete:function(){
       fadeInHeaderText();
     }});
+    TweenMax.to(homeBgImg, 3, {opacity:1});
   }());
   //Navigation button rules
   (function() {
