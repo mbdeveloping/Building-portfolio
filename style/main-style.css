@@ -140,6 +140,7 @@ ul {
   max-width: 311px;
   width: 100%;
   justify-self: center;
+  padding: 0 1rem;
 }
 #home-header-word-line-wrapper {
   display: flex;
@@ -247,4 +248,61 @@ main {
 #home-header-word-line-wrapper span {
   display: inline-block;
   opacity:0;
+}
+/********** MEDIA QUERIES **********/
+@media (min-width: 700px) {
+  #img-holder img {
+    right:0;
+    transform:translateX(10%);
+    height: 75vh;
+  }
+  #home-header {
+    grid-template-columns: 2fr 1fr;
+  }
+  #home-header h1 {
+    grid-row: 2/3;
+    max-width: 386px;
+    letter-spacing: 1.5px;
+  }
+  #hello {
+    font-size: 3.5rem;
+    transform:translateY(3px);
+  }
+  #i-am-mantvydas span {
+    font-size: 2.5rem;
+  }
+  #frontend-developer span {
+    font-size:1.7rem;
+  }
+}
+@media (min-width: 900px) {
+  #img-holder img {
+    height: 90vh;
+  }
+  #home-header h1 {
+    grid-row: 2/3;
+    max-width: 515px;
+    letter-spacing: 3.3px;
+  }
+  #hello {
+    font-size: 4rem;
+    transform:translateY(7px);
+  }
+  #i-am-mantvydas span {
+    font-size: 3rem;
+  }
+  #home-header h1 #based{
+    letter-spacing: 1.5px;
+  }
+  #frontend-developer span {
+    font-size:2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  
+}
+@media (min-height: 800px) and (min-width: 700px) {
+  #img-holder img {
+    transform:translateX(30%);
+  }
 }
