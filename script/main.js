@@ -42,8 +42,8 @@ $(document).ready(function() {
 
       function fadeInHeaderText() {
         const testH = $('#home-header-word-line-wrapper span');
-        TweenMax.staggerFromTo( testH, 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.1 );
-        TweenMax.staggerFromTo( testH, 0.1, {scale:4}, {scale:1}, 0.1 );
+        TweenMax.staggerFromTo( testH, 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.08 );
+        TweenMax.staggerFromTo( testH, 0.1, {scale:4}, {scale:1}, 0.08 );
       }
     TweenMax.to(navBar, .5, {y:'0%', onComplete:function(){
       fadeInHeaderText();
@@ -52,7 +52,7 @@ $(document).ready(function() {
     setTimeout(function() {
       TweenMax.fromTo(bigBen, 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
       TweenMax.fromTo(londonBus, 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
-    }, 5400);
+    }, 4400);
     }());
     //Navigation button rules
     (function() {
