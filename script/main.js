@@ -2,25 +2,57 @@ $(document).ready(function() {
   //HOME PAGE rules
   //Home page load animation
   (function() {
-      //Home page header animation
-      const navBar = $('#nav-bar');
-      const homeBgImg = $('#img-holder img');
-      const bigBen = $('#big-ben');
-      const londonBus = $('#london-bus');
+    //Home page resize queries
+      const socialLinks = document.getElementById('social-links');
+      const leftNavOverlay = document.getElementById('left-nav-overlay');
+      const rightNavOverlay = document.getElementById('right-nav-overlay');
+      const homeLinks = $('.home-page-link');
 
-      function fadeInHeaderText() {
-        const testH = $('#home-header-word-line-wrapper span');
-        TweenMax.staggerFromTo( testH, 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.1 );
-        TweenMax.staggerFromTo( testH, 0.1, {scale:4}, {scale:1}, 0.1 );
+      //Hide nlinks on pageload
+      function hideLinks() {
+        console.log("hide function");
+        TweenMax.set(socialLinks, {y:'100%'});
+        TweenMax.set([leftNavOverlay, rightNavOverlay],{width: '0%', ease: Bounce.easeOut});
+        TweenMax.set(homeLinks, {color: 'rgba(255, 255, 255, 0)'});
       }
-    TweenMax.to(navBar, .5, {y:'0%', onComplete:function(){
-      fadeInHeaderText();
-    }});
-    TweenMax.to(homeBgImg, 3, {opacity:1});
-    setTimeout(function() {
-      TweenMax.fromTo(bigBen, 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
-      TweenMax.fromTo(londonBus, 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
-    }, 5400);
+      hideLinks();
+      //SlideIn work/about, social links
+      function slieInLinks() {
+        TweenMax.to([leftNavOverlay, rightNavOverlay], 1, {width: '5%', ease: Bounce.easeOut});
+        TweenMax.to(socialLinks, .5, {y:'0%'});
+        TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
+      }
+      function fromMobileToDesktopSize(x) {
+          if (x.matches) {
+            slieInLinks();
+            console.log("queries");
+          } else {
+            hideLinks();
+          }
+      }
+      var x = window.matchMedia("(min-width: 1024px)");
+      fromMobileToDesktopSize(x);
+      x.addListener(fromMobileToDesktopSize);
+
+    //Home page header animation
+    const navBar = $('#nav-bar');
+    const homeBgImg = $('#img-holder img');
+    const bigBen = $('#big-ben');
+    const londonBus = $('#london-bus');
+
+    function fadeInHeaderText() {
+      const testH = $('#home-header-word-line-wrapper span');
+      TweenMax.staggerFromTo( testH, 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.1 );
+      TweenMax.staggerFromTo( testH, 0.1, {scale:4}, {scale:1}, 0.1 );
+    }
+  TweenMax.to(navBar, .5, {y:'0%', onComplete:function(){
+    fadeInHeaderText();
+  }});
+  TweenMax.to(homeBgImg, 3, {opacity:1});
+  setTimeout(function() {
+    TweenMax.fromTo(bigBen, 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
+    TweenMax.fromTo(londonBus, 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
+  }, 5400);
   }());
   //Navigation button rules
   (function() {

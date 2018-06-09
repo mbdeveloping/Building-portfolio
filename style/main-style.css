@@ -282,7 +282,7 @@ main {
   #home-header h1 {
     grid-row: 2/3;
     max-width: 515px;
-    letter-spacing: 3.3px;
+    letter-spacing: 5px;
   }
   #hello {
     font-size: 4rem;
@@ -290,6 +290,9 @@ main {
   }
   #i-am-mantvydas span {
     font-size: 3rem;
+  }
+  #home-header h1 #frontend-developer {
+    letter-spacing: 3.3px;
   }
   #home-header h1 #based{
     letter-spacing: 1.5px;
@@ -299,7 +302,36 @@ main {
   }
 }
 @media (min-width: 1024px) {
-  
+  #nav-btn {
+    display: none;
+  }
+  #left-nav-overlay, #right-nav-overlay {
+    display: flex;
+    /* width: 5%; */
+    background:none;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-page-link {
+    /* color:rgba(255,255,255, 1); */
+    height: 0;
+  }
+  #social-links {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0,0,0, 0);
+    max-width: 150px;
+    right: 0;
+    left: auto;
+    padding:1rem;
+  }
+  #social-links i {
+    font-size: .7rem;
+  }
+  .social-links-box {
+    width: 20px;
+    height: 20px;
+  }
 }
 @media (min-height: 800px) and (min-width: 700px) {
   #img-holder img {
