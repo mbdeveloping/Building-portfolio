@@ -250,7 +250,7 @@ main {
   opacity:0;
 }
 /********** MEDIA QUERIES **********/
-@media (min-width: 700px) {
+@media (min-width: 600px) {
   #img-holder img {
     right:0;
     transform:translateX(10%);
@@ -262,6 +262,7 @@ main {
   #home-header h1 {
     grid-row: 2/3;
     max-width: 386px;
+    max-height: 130px;
     letter-spacing: 1.5px;
   }
   #hello {
@@ -283,6 +284,7 @@ main {
     grid-row: 2/3;
     max-width: 515px;
     letter-spacing: 5px;
+    max-height: 165px;
   }
   #hello {
     font-size: 4rem;
