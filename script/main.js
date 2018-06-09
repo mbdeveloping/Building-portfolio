@@ -6,6 +6,7 @@ $(document).ready(function() {
       const navBar = $('#nav-bar');
       const homeBgImg = $('#img-holder img');
       const bigBen = $('#big-ben');
+      const londonBus = $('#london-bus');
 
       function fadeInHeaderText() {
         const testH = $('#home-header-word-line-wrapper span');
@@ -18,6 +19,7 @@ $(document).ready(function() {
     TweenMax.to(homeBgImg, 3, {opacity:1});
     setTimeout(function() {
       TweenMax.fromTo(bigBen, 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
+      TweenMax.fromTo(londonBus, 1.5, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
     }, 5400);
   }());
   //Navigation button rules
