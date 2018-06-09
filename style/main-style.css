@@ -159,11 +159,18 @@ ul {
   font-size: 1.5rem;
 }
 #based  {
-  transform:translate(0px,-62px);
+  transform:translate(0px,-80px);
   align-self: flex-end;
 }
 #based span {
   font-size: 1rem;
+}
+#big-ben {
+  width: 10px;
+}
+#london-bus {
+  width: 30px;
+  transform: translateY(10px);
 }
 main {
   width: 100%;
