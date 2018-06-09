@@ -5,6 +5,8 @@ $(document).ready(function() {
       //Home page header animation
       const navBar = $('#nav-bar');
       const homeBgImg = $('#img-holder img');
+      const bigBen = $('#big-ben');
+
       function fadeInHeaderText() {
         const testH = $('#home-header-word-line-wrapper span');
         TweenMax.staggerFromTo( testH, 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.1 );
@@ -14,6 +16,9 @@ $(document).ready(function() {
       fadeInHeaderText();
     }});
     TweenMax.to(homeBgImg, 3, {opacity:1});
+    setTimeout(function() {
+      TweenMax.fromTo(bigBen, 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
+    }, 5400);
   }());
   //Navigation button rules
   (function() {
