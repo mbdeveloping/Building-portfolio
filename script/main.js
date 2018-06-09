@@ -2,8 +2,15 @@ $(document).ready(function() {
   //HOME PAGE rules
   //Home page load animation
   (function() {
+      function fadeInHeaderText() {
+        const testH = $('#home-header-word-line-wrapper span');
+        TweenMax.staggerFromTo( testH, 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
+        TweenMax.staggerFromTo( testH, 0.1, {scale:4}, {scale:1}, 0.05 );
+      }
     const barbaWrapper = document.getElementById('barba-wrapper');
-    TweenMax.to(barbaWrapper, 2, {opacity:1});
+    TweenMax.to(barbaWrapper, .5, {opacity:1, onComplete:function(){
+      fadeInHeaderText();
+    }});
   }());
   //Navigation button rules
   (function() {

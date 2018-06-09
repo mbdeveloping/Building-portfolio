@@ -142,9 +142,13 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items:flex-start;
+  transform: scale(1);
+}
+#home-header-word-line-wrapper div {
 }
 #hello {
   font-size: 3rem;
+  transform: scale(1.0);
 }
 #i-am-mantvydas {
   transform:translate(1px,-17px);
@@ -230,4 +234,8 @@ main {
   border: 1px solid #fff;
   position: relative;
   transform:rotate(45deg);
+}
+#home-header-word-line-wrapper span {
+  display: inline-block;
+  opacity:0;
 }
