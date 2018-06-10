@@ -301,10 +301,14 @@ main {
   height: 25px;
   border: 1px solid #fff;
   position: relative;
+  transition: transform .3s;
   transform:rotate(45deg);
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
+}
+#social-links a:hover .social-links-box {
+  transform:rotate(90deg);
 }
 #home-header-word-line-wrapper span {
   display: inline-block;
