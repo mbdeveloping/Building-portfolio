@@ -63,6 +63,14 @@ $(document).ready(function() {
           TweenMax.to(element, .1, {y:0});
         }});
       }
+      function changeSpanHolor() {
+        let r = Math.floor(Math.random() * 255);
+        let g = Math.floor(Math.random() * 255);
+        let b = Math.floor(Math.random() * 255);
+        const color = "rgb("+r+","+g+","+b+")"
+        $(this).css("color", color);
+      }
+      headerSpan.hover(changeSpanHolor);
       headerSpan.on('mouseover', spanAnimation);
     })();
     //Navigation button rules
