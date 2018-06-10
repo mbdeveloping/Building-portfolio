@@ -58,19 +58,20 @@ $(document).ready(function() {
     (function() {
       const headerSpan = $('#home-header-word-line-wrapper span');
       function spanAnimation() {
-        let element = $(this);
+        const element = $(this);
         TweenMax.to(element, .2, {y:-10, onComplete:function() {
           TweenMax.to(element, .1, {y:0});
         }});
       }
       function changeSpanHolor() {
-        let r = Math.floor(Math.random() * 255);
-        let g = Math.floor(Math.random() * 255);
-        let b = Math.floor(Math.random() * 255);
+        const element = $(this);
+        const r = Math.floor(Math.random() * 255);
+        const g = Math.floor(Math.random() * 255);
+        const b = Math.floor(Math.random() * 255);
         const color = "rgb("+r+","+g+","+b+")"
-        $(this).css("color", color);
+        TweenMax.set(element, {color: color});
       }
-      headerSpan.hover(changeSpanHolor);
+      // headerSpan.hover(changeSpanHolor);
       headerSpan.on('mouseover', spanAnimation);
     })();
     //Navigation button rules

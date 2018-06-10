@@ -50,9 +50,22 @@ ul {
   padding:1rem 0;
 }
 #logo-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#logo-wrapper {
   position: relative;
   display: flex;
   width: 67px;
+}
+#logo-name {
+  padding-top: .5rem;
+  font-size: .6rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
 }
 #logo-section img {
   width: 67px;
