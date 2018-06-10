@@ -54,6 +54,17 @@ $(document).ready(function() {
       TweenMax.fromTo(londonBus, 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
     }, 4400);
     }());
+    //Home header hover animation
+    (function() {
+      const headerSpan = $('#home-header-word-line-wrapper span');
+      function spanAnimation() {
+        let element = $(this);
+        TweenMax.to(element, .2, {y:-10, onComplete:function() {
+          TweenMax.to(element, .1, {y:0});
+        }});
+      }
+      headerSpan.on('mouseover', spanAnimation);
+    })();
     //Navigation button rules
     (function() {
       const navBtn = $('#nav-btn');

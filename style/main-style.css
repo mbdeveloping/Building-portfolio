@@ -152,6 +152,7 @@ ul {
   width: 100%;
   justify-self: center;
   padding: 0 1rem;
+  cursor: default;
 }
 #home-header-word-line-wrapper {
   display: flex;
@@ -191,6 +192,7 @@ ul {
   font-size: 1.5rem;
 }
 #based  {
+  height: 0px;
   transform:translate(0px,-80px);
   -webkit-transform: translate(0px,-80px);
   -ms-transform: translate(0px,-80px);
