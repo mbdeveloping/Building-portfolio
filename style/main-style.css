@@ -261,6 +261,11 @@ main {
   justify-content: center;
   align-items: center;
   color: rgba(255,255,255, 0);
+  transform:scale(1);
+  -webkit-transform:scale(1);
+}
+.home-page-link span {
+  padding:0 1rem;
 }
 #social-links {
   display: flex;

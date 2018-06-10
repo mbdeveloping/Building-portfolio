@@ -41,9 +41,9 @@ $(document).ready(function() {
       const londonBus = $('#london-bus');
 
       function fadeInHeaderText() {
-        const testH = $('#home-header-word-line-wrapper span');
-        TweenMax.staggerFromTo( testH, 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.08 );
-        TweenMax.staggerFromTo( testH, 0.1, {scale:4}, {scale:1}, 0.08 );
+        const headerSpan = $('#home-header-word-line-wrapper span');
+        TweenMax.staggerFromTo( headerSpan, 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.08 );
+        TweenMax.staggerFromTo( headerSpan, 0.1, {scale:4}, {scale:1}, 0.08 );
       }
     TweenMax.to(navBar, .5, {y:'0%', onComplete:function(){
       fadeInHeaderText();
@@ -63,17 +63,33 @@ $(document).ready(function() {
           TweenMax.to(element, .1, {y:0});
         }});
       }
-      function changeSpanHolor() {
+      function changeSpanColor() {
         const element = $(this);
         const r = Math.floor(Math.random() * 255);
         const g = Math.floor(Math.random() * 255);
         const b = Math.floor(Math.random() * 255);
-        const color = "rgb("+r+","+g+","+b+")"
+        const color = "rgb("+r+","+g+","+b+")";
         TweenMax.set(element, {color: color});
       }
-      // headerSpan.hover(changeSpanHolor);
+      // headerSpan.hover(changeSpanColor);
       headerSpan.on('mouseover', spanAnimation);
     })();
+    //Home main links hover animation
+    (function() {
+      const workLink = $('#works');
+      const aboutLink = $('#about-me');
+
+      function startLinkAnimation() {
+        TweenMax.to($(this).find('span'), .3, {padding:'.5rem 1rem'});
+      }
+      function endLinkAnimation() {
+        TweenMax.to($(this).find('span'), .3, {padding:'0rem 1rem'});
+      }
+      workLink.on('mouseover', startLinkAnimation);
+      workLink.on('mouseleave', endLinkAnimation);
+      aboutLink.on('mouseover', startLinkAnimation);
+      aboutLink.on('mouseleave', endLinkAnimation);
+    }());
     //Navigation button rules
     (function() {
       const navBtn = $('#nav-btn');
