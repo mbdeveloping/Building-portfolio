@@ -25,15 +25,15 @@ $(document).ready(function() {
         }
         //Home page resize queries
         function fromMobileToDesktopSize(x) {
-            if (x.matches) {
+            if (media.matches) {
               slieInLinks();
             } else {
               hideLinks();
             }
         }
-        var x = window.matchMedia("(min-width: 1024px)");
-        fromMobileToDesktopSize(x);
-        x.addListener(fromMobileToDesktopSize);
+        const media = window.matchMedia("(min-width: 1024px)");
+        fromMobileToDesktopSize(media);
+        media.addListener(fromMobileToDesktopSize);
       //Home page header animation
       const navBar = $('#nav-bar');
       const homeBgImg = $('#img-holder img');

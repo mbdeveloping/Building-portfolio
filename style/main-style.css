@@ -61,6 +61,7 @@ ul {
   width: 67px;
 }
 #logo-name {
+  display:none;
   padding-top: .5rem;
   font-size: .6rem;
   text-transform: uppercase;
@@ -381,6 +382,9 @@ main {
   #nav-btn {
     display: none;
   }
+  #logo-name {
+    display:block;
+  }
   #left-nav-overlay, #right-nav-overlay {
     display: flex;
     /* width: 5%; */
@@ -411,7 +415,7 @@ main {
 }
 @media (min-width: 1440px) {
   #home-header h1 {
-    max-width: 625px;
+    max-width: 579px;
     max-height: 215px;
   }
   #hello {
@@ -422,13 +426,13 @@ main {
     -moz-transform: translateY(15px);
   }
   #i-am-mantvydas span {
-    font-size: 4rem;
+    font-size: 3.75rem;
   }
   #frontend-developer span {
-    font-size:3rem;
+    font-size:2.5rem;
   }
   #based span {
-    font-size: 2rem;
+    font-size: 1.25rem;
   }
   #big-ben {
     width: 15px;
@@ -437,10 +441,10 @@ main {
     width: 40px;
   }
   #based {
-    transform: translate(0px,-100px);
-    -webkit-transform: translate(0px,-100px);
-    -ms-transform: translate(0px,-100px);
-    -moz-transform: translate(0px,-100px);
+    transform: translate(0px,-106px);
+    -webkit-transform: translate(0px,-106px);
+    -ms-transform: translate(0px,-106px);
+    -moz-transform: translate(0px,-106px);
     align-self: flex-end;
   }
   #img-holder img {
