@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  //HOME PAGE rules
+  //HOME PAGE RULES
   (function() {
     const homeLinks = $('.home-page-link');
     const socialLinks = document.getElementById('social-links');
@@ -22,9 +22,9 @@ $(document).ready(function() {
     const homeMain = document.getElementById('home-main');
     //Home page load animation
     function hideLinks() {
-      TweenMax.set(socialLinks, {y:'100%'});
-      TweenMax.set([leftNavOverlay, rightNavOverlay],{width: '0%', ease: Bounce.easeOut});
-      TweenMax.set(homeLinks, {color: 'rgba(255, 255, 255, 0)'});
+      TweenMax.set(socialLinks,{y:'100%'});
+      TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%', ease: Bounce.easeOut});
+      TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
     }
     function slieInLinks() {
       TweenMax.to([leftNavOverlay, rightNavOverlay], 1, {width: '5%', ease: Bounce.easeOut});
@@ -131,5 +131,15 @@ $(document).ready(function() {
     headerSpan.on('mouseover', spanAnimation);
     //Home page function call
     fromMobileToDesktopSize(media);
+    //BARBA.JS TRANSITIONS
+
   }());
+  //ABOUT PAGE RULES
+  (function() {
+
+  }());
+  //WORKS PAGE RULES
+  (function() {
+
+  }())
 })
