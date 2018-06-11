@@ -34,15 +34,17 @@ $(document).ready(function() {
     function fadeInHeaderText() {
       TweenMax.staggerFromTo( headerSpan, 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.08 );
       TweenMax.staggerFromTo( headerSpan, 0.1, {scale:4}, {scale:1}, 0.08 );
+      setTimeout(function() {
+        TweenMax.fromTo(bigBen, 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
+        TweenMax.fromTo(londonBus, 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
+      }, 3900);
     }
-    TweenMax.to(navBar, .5, {y:'0%', onComplete:function(){
-      fadeInHeaderText();
-    }});
+    function slideInNavBar() {
+      TweenMax.to(navBar, .5, {y:'0%', onComplete:function(){
+        fadeInHeaderText();
+      }});
+    }
     TweenMax.to(homeBgImg, 8, {opacity:1});
-    setTimeout(function() {
-      TweenMax.fromTo(bigBen, 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
-      TweenMax.fromTo(londonBus, 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
-    }, 4400);
     //Home header hover animation
     function spanAnimation() {
       const element = $(this);
@@ -130,6 +132,7 @@ $(document).ready(function() {
     // headerSpan.hover(changeSpanColor);
     headerSpan.on('mouseover', spanAnimation);
     //Home page function call
+    slideInNavBar();
     fromMobileToDesktopSize(media);
     //BARBA.JS TRANSITIONS
 
