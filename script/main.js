@@ -7,7 +7,7 @@ $(document).ready(function() {
     const rightNavOverlay = document.getElementById('right-nav-overlay');
     const media = window.matchMedia("(min-width: 1024px)");
     const navBar = $('#nav-bar');
-    const homeBgImg = $('#img-holder img');
+    const homeBgFirstImg = $('#first-img');
     const bigBen = $('#big-ben');
     const londonBus = $('#london-bus');
     const headerSpan = $('#home-header-word-line-wrapper span');
@@ -20,6 +20,8 @@ $(document).ready(function() {
     const rightStickBot = $('.right-nav-stick-bot');
     const stickMiddle = $('.nav-stick-middle');
     const homeMain = document.getElementById('home-main');
+    const homeAllImg = $('#img-holder img');
+
     //Home page load animation
     function hideLinks() {
       TweenMax.set(socialLinks,{y:'100%'});
@@ -44,7 +46,9 @@ $(document).ready(function() {
         fadeInHeaderText();
       }});
     }
-    TweenMax.to(homeBgImg, 8, {opacity:1});
+    function fadeInBgImg(){
+      TweenMax.to(homeBgFirstImg, 8, {opacity:1});
+    }
     //Home header hover animation
     function spanAnimation() {
       const element = $(this);
@@ -131,8 +135,16 @@ $(document).ready(function() {
     aboutLink.on('mouseleave', endLinkAnimation);
     // headerSpan.hover(changeSpanColor);
     headerSpan.on('mouseover', spanAnimation);
+    aboutLink.on('click', function() {
+      // closeNav();
+      TweenMax.staggerTo( homeAllImg, .1, {autoAlpha:1}, .1);
+    });
+    workLink.on('click', function() {
+      TweenMax.staggerTo( $('.animate-back'), .1, {autoAlpha:0}, -.1);
+    })
     //Home page function call
     slideInNavBar();
+    fadeInBgImg();
     fromMobileToDesktopSize(media);
     //BARBA.JS TRANSITIONS
 
