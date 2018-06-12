@@ -136,12 +136,13 @@ $(document).ready(function() {
     // headerSpan.hover(changeSpanColor);
     headerSpan.on('mouseover', spanAnimation);
     aboutLink.on('click', function() {
-      // closeNav();
-      TweenMax.staggerTo( homeAllImg, .1, {autoAlpha:1}, .1);
+      closeNav();
+      TweenMax.staggerTo( homeAllImg, .05, {autoAlpha:1}, .08);
     });
     workLink.on('click', function() {
-      TweenMax.staggerTo( $('.animate-back'), .1, {autoAlpha:0}, -.1);
-    })
+      closeNav();
+      TweenMax.staggerTo( $('.animate-back'), .05, {autoAlpha:0}, -.08);
+    });
     //Home page function call
     slideInNavBar();
     fadeInBgImg();
