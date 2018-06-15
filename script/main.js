@@ -21,6 +21,10 @@
     const homeMain = document.getElementById('home-main');
     const homeAllImg = document.getElementById('img-holder img');
 
+    //Add class for all header spans
+    headerSpan.forEach(function(span) {
+      span.className = 'testSpan'
+    });
     //Home page load animation
     function hideLinks() {
       TweenMax.set(socialLinks,{y:'100%'});
@@ -48,9 +52,11 @@
     //Home header hover animation
     function spanAnimation(e) {
       let element = e.target;
+      if (element.className === 'testSpan') {
         TweenMax.to(element, .2, {y:-10, onComplete:function() {
           TweenMax.to(element, .1, {y:0});
         }});
+      }
     }
     function changeSpanColor() {
       const element = this;
@@ -132,9 +138,7 @@
     aboutLink.addEventListener('mouseover', startLinkAnimation);
     aboutLink.addEventListener('mouseleave', endLinkAnimation);
     // headerSpan.hover(changeSpanColor);
-    headerSpan.forEach(function(span) {
-      span.addEventListener('mouseover',spanAnimation,false);
-    });
+    headerSpanHoverTest.addEventListener('mouseover', spanAnimation);
     aboutLink.addEventListener('click', function() {
       closeNav();
       TweenMax.staggerTo( homeAllImg, .05, {autoAlpha:1}, .08);
