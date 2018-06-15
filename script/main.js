@@ -31,6 +31,7 @@
     const bigBen = document.getElementById('big-ben');
     const londonBus = document.getElementById('london-bus');
     const headerSpan = document.querySelectorAll('#home-header-word-line-wrapper span');
+    const headerSpanHoverTest = document.querySelector('#home-header-word-line-wrapper');
     const navBtn = document.getElementById('nav-btn');
     const workLink = document.getElementById('works');
     const aboutLink = document.getElementById('about-me');
@@ -70,8 +71,8 @@
     //   TweenMax.to(homeBgFirstImg, 8, {opacity:1});
     // }
     //Home header hover animation
-    function spanAnimation() {
-      let element = this;
+    function spanAnimation(e) {
+      let element = e.target;
       TweenMax.to(element, .2, {y:-10, onComplete:function() {
         TweenMax.to(element, .1, {y:0});
       }});
@@ -156,7 +157,9 @@
     aboutLink.addEventListener('mouseover', startLinkAnimation);
     aboutLink.addEventListener('mouseleave', endLinkAnimation);
     // headerSpan.hover(changeSpanColor);
-    // headerSpan.addEventListener('mouseover', spanAnimation);
+    for(let i=0;i<headerSpan.length;i++){
+      headerSpan[i].addEventListener('mouseover',spanAnimation,false);
+    }
     aboutLink.addEventListener('click', function() {
       closeNav();
       TweenMax.staggerTo( homeAllImg, .05, {autoAlpha:1}, .08);
