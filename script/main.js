@@ -1,26 +1,46 @@
-$(document).ready(function() {
+// $(document).ready(function() {
   //HOME PAGE RULES
   (function() {
-    const homeLinks = $('.home-page-link');
+    // const homeLinks = $('.home-page-link');
+    // const socialLinks = document.getElementById('social-links');
+    // const leftNavOverlay = document.getElementById('left-nav-overlay');
+    // const rightNavOverlay = document.getElementById('right-nav-overlay');
+    // const media = window.matchMedia("(min-width: 1024px)");
+    // const navBar = $('#nav-bar');
+    // const homeBgFirstImg = $('#first-img');
+    // const bigBen = $('#big-ben');
+    // const londonBus = $('#london-bus');
+    // const headerSpan = $('#home-header-word-line-wrapper span');
+    // const navBtn = $('#nav-btn');
+    // const workLink = $('#works');
+    // const aboutLink = $('#about-me');
+    // const leftStickBot = $('.left-nav-stick-bot');
+    // const leftStickTop = $('.left-nav-stick-top');
+    // const rightStickTop = $('.right-nav-stick-top');
+    // const rightStickBot = $('.right-nav-stick-bot');
+    // const stickMiddle = $('.nav-stick-middle');
+    // const homeMain = document.getElementById('home-main');
+    // const homeAllImg = $('#img-holder img');
+    const homeLinks = document.querySelectorAll('.home-page-link');
     const socialLinks = document.getElementById('social-links');
     const leftNavOverlay = document.getElementById('left-nav-overlay');
     const rightNavOverlay = document.getElementById('right-nav-overlay');
     const media = window.matchMedia("(min-width: 1024px)");
-    const navBar = $('#nav-bar');
-    const homeBgFirstImg = $('#first-img');
-    const bigBen = $('#big-ben');
-    const londonBus = $('#london-bus');
-    const headerSpan = $('#home-header-word-line-wrapper span');
-    const navBtn = $('#nav-btn');
-    const workLink = $('#works');
-    const aboutLink = $('#about-me');
-    const leftStickBot = $('.left-nav-stick-bot');
-    const leftStickTop = $('.left-nav-stick-top');
-    const rightStickTop = $('.right-nav-stick-top');
-    const rightStickBot = $('.right-nav-stick-bot');
-    const stickMiddle = $('.nav-stick-middle');
+    const navBar = document.getElementById('nav-bar');
+    // const homeBgFirstImg = document.querySelector('#first-img');
+    const bigBen = document.getElementById('big-ben');
+    const londonBus = document.getElementById('london-bus');
+    const headerSpan = document.querySelectorAll('#home-header-word-line-wrapper span');
+    const navBtn = document.getElementById('nav-btn');
+    const workLink = document.getElementById('works');
+    const aboutLink = document.getElementById('about-me');
+    const leftStickBot = document.querySelector('.left-nav-stick-bot');
+    const leftStickTop = document.querySelector('.left-nav-stick-top');
+    const rightStickTop = document.querySelector('.right-nav-stick-top');
+    const rightStickBot = document.querySelector('.right-nav-stick-bot');
+    const stickMiddle = document.querySelector('.nav-stick-middle');
     const homeMain = document.getElementById('home-main');
-    const homeAllImg = $('#img-holder img');
+    const homeAllImg = document.getElementById('img-holder img');
 
     //Home page load animation
     function hideLinks() {
@@ -46,18 +66,18 @@ $(document).ready(function() {
         fadeInHeaderText();
       }});
     }
-    function fadeInBgImg(){
-      TweenMax.to(homeBgFirstImg, 8, {opacity:1});
-    }
+    // function fadeInBgImg(){
+    //   TweenMax.to(homeBgFirstImg, 8, {opacity:1});
+    // }
     //Home header hover animation
     function spanAnimation() {
-      const element = $(this);
+      let element = this;
       TweenMax.to(element, .2, {y:-10, onComplete:function() {
         TweenMax.to(element, .1, {y:0});
       }});
     }
     function changeSpanColor() {
-      const element = $(this);
+      const element = this;
       const r = Math.floor(Math.random() * 255);
       const g = Math.floor(Math.random() * 255);
       const b = Math.floor(Math.random() * 255);
@@ -65,13 +85,39 @@ $(document).ready(function() {
       TweenMax.set(element, {color: color});
     }
     //Home main links hover animation
-    function startLinkAnimation() {
-      TweenMax.to($(this).find('span'), .3, {padding:'.5rem 1rem'});
+    function startLinkAnimation(e) {
+      let element = e.target;
+      TweenMax.to(element.querySelectorAll('span'), .3, {padding:'.5rem 1rem'});
     }
-    function endLinkAnimation() {
-      TweenMax.to($(this).find('span'), .3, {padding:'0rem 1rem'});
+    function endLinkAnimation(e) {
+      let element = e.target;
+      TweenMax.to(element.querySelectorAll('span'), .3, {padding:'0rem 1rem'});
     }
     //Navigation rules
+    function navBtnClose(){
+      navBtn.className = '';
+      TweenMax.to(stickMiddle, .3, {height: '0%'});
+      TweenMax.to([rightStickBot, leftStickBot, leftStickTop, rightStickTop], .3, {x: 0});
+      TweenMax.to([leftStickBot, leftStickTop, rightStickTop, rightStickBot], .3, {rotation: 0});
+    }
+    function navBtnOpen() {
+      navBtn.className = 'navigation-open';
+      TweenMax.to(leftStickBot, .3, {rotation: -45, onComplete:function() {
+        TweenMax.to(stickMiddle, .3, {height: '140%'});
+        TweenMax.to([leftStickBot, leftStickTop],.3, {x: -5});
+        TweenMax.to([rightStickTop, rightStickBot], .3, {x: 5});
+      }});
+      TweenMax.to([leftStickTop, rightStickBot], .3, {rotation: 45});
+      TweenMax.to(rightStickTop, .3, {rotation: -45});
+    }
+    function navAnimation(e) {
+      e.preventDefault();
+      if (!navBtn.classList.contains('navigation-open')) {
+        openNav();
+      } else {
+        closeNav();
+      }
+    }
     function openNav() {
       navBtnOpen();
       TweenMax.to([leftNavOverlay, rightNavOverlay], 1, {width: '50%', ease: Bounce.easeOut});
@@ -86,35 +132,11 @@ $(document).ready(function() {
       TweenMax.to(socialLinks, .3, {y:'100%'});
       zoomInBg();
     }
-    function navBtnClose(){
-      navBtn.removeClass('navigation-open');
-      TweenMax.to(stickMiddle, .3, {height: '0%'});
-      TweenMax.to([rightStickBot, leftStickBot, leftStickTop, rightStickTop], .3, {x: 0});
-      TweenMax.to([leftStickBot, leftStickTop, rightStickTop, rightStickBot], .3, {rotation: 0});
-    }
-    function navBtnOpen() {
-      navBtn.addClass('navigation-open');
-      TweenMax.to(leftStickBot, .3, {rotation: -45, onComplete:function() {
-        TweenMax.to(stickMiddle, .3, {height: '140%'});
-        TweenMax.to([leftStickBot, leftStickTop],.3, {x: -5});
-        TweenMax.to([rightStickTop, rightStickBot], .3, {x: 5});
-      }});
-      TweenMax.to([leftStickTop, rightStickBot], .3, {rotation: 45});
-      TweenMax.to(rightStickTop, .3, {rotation: -45});
-    }
     function zoomInBg(){
       TweenMax.to(homeMain, .3, {scale: 1});
     }
     function zoomOutBg(){
       TweenMax.to(homeMain, .3, {scale: 0.8});
-    }
-    function navAnimation(e) {
-      e.preventDefault();
-      if (!navBtn.hasClass('navigation-open')) {
-        openNav();
-      } else {
-        closeNav();
-      }
     }
     //Home page resize queries
     function fromMobileToDesktopSize(media) {
@@ -128,24 +150,24 @@ $(document).ready(function() {
     }
     //Home page events
     media.addListener(fromMobileToDesktopSize);
-    navBtn.on('click touchstart', navAnimation);
-    workLink.on('mouseover', startLinkAnimation);
-    workLink.on('mouseleave', endLinkAnimation);
-    aboutLink.on('mouseover', startLinkAnimation);
-    aboutLink.on('mouseleave', endLinkAnimation);
+    navBtn.addEventListener('click', navAnimation);
+    workLink.addEventListener('mouseover', startLinkAnimation);
+    workLink.addEventListener('mouseleave', endLinkAnimation);
+    aboutLink.addEventListener('mouseover', startLinkAnimation);
+    aboutLink.addEventListener('mouseleave', endLinkAnimation);
     // headerSpan.hover(changeSpanColor);
-    headerSpan.on('mouseover', spanAnimation);
-    aboutLink.on('click', function() {
+    // headerSpan.addEventListener('mouseover', spanAnimation);
+    aboutLink.addEventListener('click', function() {
       closeNav();
       TweenMax.staggerTo( homeAllImg, .05, {autoAlpha:1}, .08);
     });
-    workLink.on('click', function() {
+    workLink.addEventListener('click', function() {
       closeNav();
-      TweenMax.staggerTo( $('.animate-back'), .05, {autoAlpha:0}, -.08);
+      TweenMax.staggerTo( '.animate-back', .05, {autoAlpha:0}, -.08);
     });
     //Home page function call
     slideInNavBar();
-    fadeInBgImg();
+    // fadeInBgImg();
     fromMobileToDesktopSize(media);
     //BARBA.JS TRANSITIONS
 
@@ -158,4 +180,4 @@ $(document).ready(function() {
   (function() {
 
   }())
-})
+// })

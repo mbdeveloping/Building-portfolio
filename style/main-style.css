@@ -423,7 +423,7 @@ main {
   }
   .home-page-link {
     /* color:rgba(255,255,255, 1); */
-    height: 0;
+    height: 150px;
   }
   #social-links {
     display: flex;
