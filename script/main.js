@@ -1,33 +1,11 @@
-// $(document).ready(function() {
-  //HOME PAGE RULES
+//HOME PAGE RULES
   (function() {
-    // const homeLinks = $('.home-page-link');
-    // const socialLinks = document.getElementById('social-links');
-    // const leftNavOverlay = document.getElementById('left-nav-overlay');
-    // const rightNavOverlay = document.getElementById('right-nav-overlay');
-    // const media = window.matchMedia("(min-width: 1024px)");
-    // const navBar = $('#nav-bar');
-    // const homeBgFirstImg = $('#first-img');
-    // const bigBen = $('#big-ben');
-    // const londonBus = $('#london-bus');
-    // const headerSpan = $('#home-header-word-line-wrapper span');
-    // const navBtn = $('#nav-btn');
-    // const workLink = $('#works');
-    // const aboutLink = $('#about-me');
-    // const leftStickBot = $('.left-nav-stick-bot');
-    // const leftStickTop = $('.left-nav-stick-top');
-    // const rightStickTop = $('.right-nav-stick-top');
-    // const rightStickBot = $('.right-nav-stick-bot');
-    // const stickMiddle = $('.nav-stick-middle');
-    // const homeMain = document.getElementById('home-main');
-    // const homeAllImg = $('#img-holder img');
     const homeLinks = document.querySelectorAll('.home-page-link');
     const socialLinks = document.getElementById('social-links');
     const leftNavOverlay = document.getElementById('left-nav-overlay');
     const rightNavOverlay = document.getElementById('right-nav-overlay');
     const media = window.matchMedia("(min-width: 1024px)");
     const navBar = document.getElementById('nav-bar');
-    // const homeBgFirstImg = document.querySelector('#first-img');
     const bigBen = document.getElementById('big-ben');
     const londonBus = document.getElementById('london-bus');
     const headerSpan = document.querySelectorAll('#home-header-word-line-wrapper span');
@@ -67,15 +45,12 @@
         fadeInHeaderText();
       }});
     }
-    // function fadeInBgImg(){
-    //   TweenMax.to(homeBgFirstImg, 8, {opacity:1});
-    // }
     //Home header hover animation
     function spanAnimation(e) {
       let element = e.target;
-      TweenMax.to(element, .2, {y:-10, onComplete:function() {
-        TweenMax.to(element, .1, {y:0});
-      }});
+        TweenMax.to(element, .2, {y:-10, onComplete:function() {
+          TweenMax.to(element, .1, {y:0});
+        }});
     }
     function changeSpanColor() {
       const element = this;
@@ -157,9 +132,9 @@
     aboutLink.addEventListener('mouseover', startLinkAnimation);
     aboutLink.addEventListener('mouseleave', endLinkAnimation);
     // headerSpan.hover(changeSpanColor);
-    for(let i=0;i<headerSpan.length;i++){
-      headerSpan[i].addEventListener('mouseover',spanAnimation,false);
-    }
+    headerSpan.forEach(function(span) {
+      span.addEventListener('mouseover',spanAnimation,false);
+    });
     aboutLink.addEventListener('click', function() {
       closeNav();
       TweenMax.staggerTo( homeAllImg, .05, {autoAlpha:1}, .08);
@@ -170,7 +145,6 @@
     });
     //Home page function call
     slideInNavBar();
-    // fadeInBgImg();
     fromMobileToDesktopSize(media);
     //BARBA.JS TRANSITIONS
 
@@ -183,4 +157,3 @@
   (function() {
 
   }())
-// })

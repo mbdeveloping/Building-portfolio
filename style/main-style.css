@@ -179,6 +179,8 @@ ul {
   -moz-transform: scale(1);
 }
 #home-header-word-line-wrapper span {
+  /* will-change: transform;
+  transform:translateZ(0); */
 }
 #hello {
   font-size: 3rem;
