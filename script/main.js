@@ -9,7 +9,7 @@
     const bigBen = document.getElementById('big-ben');
     const londonBus = document.getElementById('london-bus');
     const headerSpan = document.querySelectorAll('#home-header-word-line-wrapper span');
-    const headerSpanHoverTest = document.querySelector('#home-header-word-line-wrapper');
+    const headerSpanWrapper = document.querySelector('#home-header-word-line-wrapper');
     const navBtn = document.getElementById('nav-btn');
     const workLink = document.getElementById('works');
     const aboutLink = document.getElementById('about-me');
@@ -51,20 +51,25 @@
     }
     //Home header hover animation
     function spanAnimation(e) {
-      let element = e.target;
+      const element = e.target;
+
       if (element.className === 'testSpan') {
         TweenMax.to(element, .2, {y:-10, onComplete:function() {
           TweenMax.to(element, .1, {y:0});
         }});
+        changeSpanColor(e);
       }
     }
-    function changeSpanColor() {
-      const element = this;
+    function changeSpanColor(e) {
+      const element = e.target;
       const r = Math.floor(Math.random() * 255);
       const g = Math.floor(Math.random() * 255);
       const b = Math.floor(Math.random() * 255);
       const color = "rgb("+r+","+g+","+b+")";
       TweenMax.set(element, {color: color});
+    }
+    function setColorToWhite() {
+      TweenMax.to(headerSpan, 5, {color: '#fff'});
     }
     //Home main links hover animation
     function startLinkAnimation(e) {
@@ -137,8 +142,8 @@
     workLink.addEventListener('mouseleave', endLinkAnimation);
     aboutLink.addEventListener('mouseover', startLinkAnimation);
     aboutLink.addEventListener('mouseleave', endLinkAnimation);
-    // headerSpan.hover(changeSpanColor);
-    headerSpanHoverTest.addEventListener('mouseover', spanAnimation);
+    headerSpanWrapper.addEventListener('mouseover', spanAnimation);
+    headerSpanWrapper.addEventListener('mouseleave', setColorToWhite);
     aboutLink.addEventListener('click', function() {
       closeNav();
       TweenMax.staggerTo( homeAllImg, .05, {autoAlpha:1}, .08);
