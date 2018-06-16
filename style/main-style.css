@@ -346,6 +346,46 @@ main {
   display: inline-block;
   opacity:0;
 }
+/* Parallax Prototype */
+#parallax-wrapper-outter {
+  /* background:Red; */
+  width: 70%;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top:0;
+  z-index: -5;
+}
+#parallax-wrapper {
+  position: absolute;
+  top:0;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  z-index: -5;
+  -webkit-transform-style: preserve-3d;
+   -moz-transform-style: preserve-3d;
+   transform-style: preserve-3d;
+   transform: translateZ(0px);
+   -moz-transform: translateZ(0px);
+   -webkit-transform: translateZ(0px);
+}
+#parallax-wrapper img {
+  position: absolute;
+}
+#bg-pc {
+  right:0;
+  bottom:20px;
+  height: 80%;
+}
+#person {
+  height: 65%;
+transform: translateZ(50px);
+-moz-transform: translateZ(50px);
+-webkit-transform: translateZ(50px);
+bottom: 0;
+right: 220px;
+}
 /********** MEDIA QUERIES **********/
 @media (min-width: 600px) {
   #img-holder img {
