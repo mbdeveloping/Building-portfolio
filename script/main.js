@@ -20,6 +20,7 @@
     const stickMiddle = document.querySelector('.nav-stick-middle');
     const homeMain = document.getElementById('home-main');
     const homeAllImg = document.getElementById('img-holder img');
+    const pageBody = document.querySelector('body');
 
     //Add class for all header spans
     headerSpan.forEach(function(span) {
@@ -71,14 +72,38 @@
     function setColorToWhite() {
       TweenMax.to(headerSpan, 5, {color: '#fff'});
     }
+    function prevAboutPage() {
+      TweenMax.to(document.getElementById('home-main'), .3, {x:'-50%'});
+      TweenMax.to(document.getElementById('about-page-thumbnail'), .3,{x:"50%"});
+    }
+    function hidePrevAboutPage() {
+      TweenMax.to(document.getElementById('home-main'), .3, {x:'0%'});
+      TweenMax.to(document.getElementById('about-page-thumbnail'), .3, {x:"100%"});
+    }
+    function prevWorksPage() {
+      TweenMax.to(document.getElementById('home-main'), .3, {x:'50%'});
+      TweenMax.to(document.getElementById('works-page-thumbnail'), .3,{x:"-50%"});
+    }
+    function hidePrevWorksPage() {
+      TweenMax.to(document.getElementById('home-main'), .3, {x:'0%'});
+      TweenMax.to(document.getElementById('works-page-thumbnail'), .3,{x:"-100%"});
+    }
     //Home main links hover animation
     function startLinkAnimation(e) {
       let element = e.target;
       TweenMax.to(element.querySelectorAll('span'), .3, {padding:'.5rem 1rem'});
+      if (this.id === 'about-me') {
+        prevAboutPage();
+      }
+      if (this.id === 'works') {
+        prevWorksPage();
+      }
     }
     function endLinkAnimation(e) {
       let element = e.target;
       TweenMax.to(element.querySelectorAll('span'), .3, {padding:'0rem 1rem'});
+      hidePrevAboutPage();
+      hidePrevWorksPage();
     }
     //Navigation rules
     function navBtnClose(){
@@ -167,38 +192,32 @@
 
   }())
 //Paralax prorotyping
-  let wrap = document.getElementById('parallax-wrapper-outter');
-  // let cx = wrap.offsetWidth / 2;
-	// let cy = wrap.offsetHeight/ 2;
-	let request = null;
-	let mouse = { x: 0, y: 0 };
-	let cx = window.innerWidth / 2;
-	let cy = window.innerHeight / 2;
-    console.log(cx);
-	document.querySelector('body').addEventListener('mousemove', function(event) {
-		mouse.x = event.pageX;
-		mouse.y = event.pageY;
-    cancelAnimationFrame(request);
-    request = requestAnimationFrame(update);
-	});
-
-	function update() {
-		dx = mouse.x - cx;
-		dy = mouse.y - cy;
-		let tiltx = (dy / cy );
-		let tilty = - (dx / cx);
-		let radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
-		let degree = (radius * 20);
-
-    // TweenMax.to("#parallax-wrapper", 1, {transform:'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)', ease:Power2.easeOut});
-    TweenMax.to("#bg-pc", 1, {x:-tilty*5, ease:Power2.easeOut});
-    TweenMax.to("#person", 1, {x:tilty*10, ease:Power2.easeOut});
-    console.log(cx);
-  }
-
-  window.addEventListener('resize', function(event){
-    // cx = wrap.offsetWidth / 2;
-		// cy = wrap.offsetHeight / 2;
-     window.innerWidth / 2;
-  	 window.innerHeight / 2;
-  });
+  // let wrap = document.getElementById('parallax-wrapper-outter');
+	// let request = null;
+	// let mouse = { x: 0, y: 0 };
+	// let cx = window.innerWidth / 2;
+	// let cy = window.innerHeight / 2;
+  //
+	// document.querySelector('body').addEventListener('mousemove', function(event) {
+	// 	mouse.x = event.pageX;
+	// 	mouse.y = event.pageY;
+  //   cancelAnimationFrame(request);
+  //   request = requestAnimationFrame(update);
+	// });
+  //
+	// function update() {
+	// 	dx = mouse.x - cx;
+	// 	dy = mouse.y - cy;
+	// 	let tiltx = (dy / cy );
+	// 	let tilty = - (dx / cx);
+	// 	let radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
+	// 	let degree = (radius * 20);
+  //
+  //   TweenMax.to("#bg-pc", 1, {x:-tilty*5, y:-tiltx*5, ease:Power2.easeOut});
+  //   TweenMax.to("#person", 1, {x:tilty*10, y:tiltx*5, ease:Power2.easeOut});
+  // }
+  //
+  // window.addEventListener('resize', function(event){
+  //    window.innerWidth / 2;
+  // 	 window.innerHeight / 2;
+  // });

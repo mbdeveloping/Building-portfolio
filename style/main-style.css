@@ -6,7 +6,6 @@
 body {
   width: 100%;
   font-size: 1rem;
-  background: #000;
   color: #fff;
   font-family: Arial;
 }
@@ -29,6 +28,27 @@ ul {
 }
 #barba-wrapper {
   /* opacity:0; */
+}
+#home-main {
+  background: #000;
+}
+#about-page-thumbnail {
+  height: 100vh;
+  width: 100%;
+  transform:translateX(100%);
+  background:purple;
+  position: absolute;
+  top:0;
+  right: 0;
+}
+#works-page-thumbnail {
+  height: 100vh;
+  width: 100%;
+  transform:translateX(-100%);
+  background:red;
+  position: absolute;
+  top:0;
+  left: 0;
 }
 /********** Main header rules **********/
 #nav-bar {
@@ -354,7 +374,7 @@ main {
   position: absolute;
   right: 0;
   top:0;
-  z-index: -5;
+  z-index: -50;
 }
 #parallax-wrapper {
   position: absolute;
@@ -384,7 +404,7 @@ transform: translateZ(50px);
 -moz-transform: translateZ(50px);
 -webkit-transform: translateZ(50px);
 bottom: 0;
-right: 220px;
+right: 200px;
 }
 /********** MEDIA QUERIES **********/
 @media (min-width: 600px) {
