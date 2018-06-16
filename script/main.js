@@ -21,6 +21,8 @@
     const homeMain = document.getElementById('home-main');
     const homeAllImg = document.getElementById('img-holder img');
     const pageBody = document.querySelector('body');
+    const prevAboutPAge = document.getElementById('about-page-thumbnail');
+    const prevAWorksPage = document.getElementById('works-page-thumbnail');
 
     //Add class for all header spans
     headerSpan.forEach(function(span) {
@@ -73,20 +75,26 @@
       TweenMax.to(headerSpan, 5, {color: '#fff'});
     }
     function prevAboutPage() {
+      TweenMax.set(prevAboutPAge, {width:"50%"});
       TweenMax.to(document.getElementById('home-main'), .3, {x:'-50%'});
-      TweenMax.to(document.getElementById('about-page-thumbnail'), .3,{x:"50%"});
+      TweenMax.to(prevAboutPAge, .3,{x:"0%"});
     }
     function hidePrevAboutPage() {
       TweenMax.to(document.getElementById('home-main'), .3, {x:'0%'});
-      TweenMax.to(document.getElementById('about-page-thumbnail'), .3, {x:"100%"});
+      TweenMax.to(prevAboutPAge, .3, {x:"100%"});
     }
     function prevWorksPage() {
       TweenMax.to(document.getElementById('home-main'), .3, {x:'50%'});
-      TweenMax.to(document.getElementById('works-page-thumbnail'), .3,{x:"-50%"});
+      TweenMax.to(prevAWorksPage, .3,{x:"0%"});
     }
     function hidePrevWorksPage() {
       TweenMax.to(document.getElementById('home-main'), .3, {x:'0%'});
-      TweenMax.to(document.getElementById('works-page-thumbnail'), .3,{x:"-100%"});
+      TweenMax.to(prevAWorksPage, .3,{x:"-100%"});
+    }
+    function openAboutPage(e) {
+      e.preventDefault();
+      TweenMax.to(document.getElementById('home-main'), .3, {x:'-100%'});
+      TweenMax.fromTo(prevAboutPAge, .3,{width:"50%"},{width:"100%"});
     }
     //Home main links hover animation
     function startLinkAnimation(e) {
@@ -102,8 +110,6 @@
     function endLinkAnimation(e) {
       let element = e.target;
       TweenMax.to(element.querySelectorAll('span'), .3, {padding:'0rem 1rem'});
-      hidePrevAboutPage();
-      hidePrevWorksPage();
     }
     //Navigation rules
     function navBtnClose(){
@@ -167,16 +173,19 @@
     workLink.addEventListener('mouseleave', endLinkAnimation);
     aboutLink.addEventListener('mouseover', startLinkAnimation);
     aboutLink.addEventListener('mouseleave', endLinkAnimation);
+    aboutLink.addEventListener('click', openAboutPage);
     headerSpanWrapper.addEventListener('mouseover', spanAnimation);
     headerSpanWrapper.addEventListener('mouseleave', setColorToWhite);
-    aboutLink.addEventListener('click', function() {
-      closeNav();
-      TweenMax.staggerTo( homeAllImg, .05, {autoAlpha:1}, .08);
-    });
-    workLink.addEventListener('click', function() {
-      closeNav();
-      TweenMax.staggerTo( '.animate-back', .05, {autoAlpha:0}, -.08);
-    });
+    prevAboutPAge.addEventListener('mouseleave', hidePrevAboutPage);
+    prevAWorksPage.addEventListener('mouseleave', hidePrevWorksPage);
+    // aboutLink.addEventListener('click', function() {;
+    //   closeNav();
+    //   TweenMax.staggerTo( homeAllImg, .05, {autoAlpha:1}, .08);
+    // });
+    // workLink.addEventListener('click', function() {
+    //   closeNav();
+    //   TweenMax.staggerTo( '.animate-back', .05, {autoAlpha:0}, -.08);
+    // });
     //Home page function call
     slideInNavBar();
     fromMobileToDesktopSize(media);

@@ -8,6 +8,7 @@ body {
   font-size: 1rem;
   color: #fff;
   font-family: Arial;
+  background:#000;
 }
 .body-ov-hidden {
   overflow: hidden;
@@ -34,21 +35,33 @@ ul {
 }
 #about-page-thumbnail {
   height: 100vh;
-  width: 100%;
+  width: 50%;
   transform:translateX(100%);
   background:purple;
   position: absolute;
   top:0;
   right: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#about-page-thumbnail h1 {
+  font-size: 4rem;
+}
+.about-page-header-text {
+
 }
 #works-page-thumbnail {
   height: 100vh;
-  width: 100%;
+  width: 50%;
   transform:translateX(-100%);
   background:red;
   position: absolute;
   top:0;
   left: 0;
+  text-align: center;
 }
 /********** Main header rules **********/
 #nav-bar {
@@ -249,10 +262,10 @@ ul {
 }
 #london-bus {
   width: 30px;
-  transform: translateY(10px);
-  -webkit-transform: translateY(10px);
-  -ms-transform: translateY(10px);
-  -moz-transform: translateY(10px);
+  transform: translateY(15px);
+  -webkit-transform: translateY(15px);
+  -ms-transform: translateY(15px);
+  -moz-transform: translateY(15px);
 }
 main {
   width: 100%;
