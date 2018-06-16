@@ -22,13 +22,17 @@
     const homeAllImg = document.getElementById('img-holder img');
     const pageBody = document.querySelector('body');
     const parallaxWrapper = document.getElementById('parallax-wrapper-outter');
-    // const prevAboutPAge = document.getElementById('about-page-thumbnail');
-    // const prevAWorksPage = document.getElementById('works-page-thumbnail');
-    TweenMax.to(parallaxWrapper, 5, {opacity:1});
+
+    //On page load fadein home page background image
+    function onLoadFadeInHomeImg() {
+      TweenMax.to(parallaxWrapper, 5, {delay:.3,opacity:1});
+    }
     //Add class for all header spans
-    headerSpan.forEach(function(span) {
-      span.className = 'testSpan'
-    });
+    function addClassForAllSpans() {
+      headerSpan.forEach(function(span) {
+        span.className = 'testSpan'
+      });
+    }
     //Home page load animation
     function hideLinks() {
       TweenMax.set(socialLinks,{y:'100%'});
@@ -75,42 +79,10 @@
     function setColorToWhite() {
       TweenMax.to(headerSpan, 5, {color: '#fff'});
     }
-    // function prevAboutPage() {
-    //   prevAboutPAge.className += 'about-page-display';
-    //   TweenMax.set(prevAboutPAge, {width:"50%"});
-    //   TweenMax.to(document.getElementById('home-main'), .3, {x:'-50%'});
-    //   TweenMax.to(prevAboutPAge, .3,{x:"0%"});
-    // }
-    // function hidePrevAboutPage() {
-    //   TweenMax.to(document.getElementById('home-main'), .3, {x:'0%'});
-    //   TweenMax.to(prevAboutPAge, .3, {x:"100%"});
-    // }
-    // function prevWorksPage() {
-    //   TweenMax.to(document.getElementById('home-main'), .3, {x:'50%'});
-    //   TweenMax.to(prevAWorksPage, .3,{x:"0%"});
-    // }
-    // function hidePrevWorksPage() {
-    //   TweenMax.to(document.getElementById('home-main'), .3, {x:'0%'});
-    //   TweenMax.to(prevAWorksPage, .3,{x:"-100%"});
-    // }
-    // function openAboutPage(e) {
-    //   e.preventDefault();
-    //   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    //    closeNav();
-    //   }
-    //   TweenMax.to(document.getElementById('home-main'), .3, {x:'-100%'});
-    //   TweenMax.fromTo(prevAboutPAge, .3,{width:"50%"},{width:"100%"});
-    // }
     //Home main links hover animation
     function startLinkAnimation(e) {
       let element = e.target;
       TweenMax.to(element.querySelectorAll('span'), .3, {padding:'.5rem 1rem'});
-      // if (this.id === 'about-me') {
-      //   prevAboutPage();
-      // }
-      // if (this.id === 'works') {
-      //   prevWorksPage();
-      // }
     }
     function endLinkAnimation(e) {
       let element = e.target;
@@ -178,20 +150,11 @@
     workLink.addEventListener('mouseleave', endLinkAnimation);
     aboutLink.addEventListener('mouseover', startLinkAnimation);
     aboutLink.addEventListener('mouseleave', endLinkAnimation);
-    // aboutLink.addEventListener('click', openAboutPage);
     headerSpanWrapper.addEventListener('mouseover', spanAnimation);
     headerSpanWrapper.addEventListener('mouseleave', setColorToWhite);
-    // prevAboutPAge.addEventListener('mouseleave', hidePrevAboutPage);
-    // prevAWorksPage.addEventListener('mouseleave', hidePrevWorksPage);
-    // aboutLink.addEventListener('click', function() {
-    //   closeNav();
-    //   TweenMax.staggerTo( homeAllImg, .05, {autoAlpha:1}, .08);
-    // });
-    // workLink.addEventListener('click', function() {
-    //   closeNav();
-    //   TweenMax.staggerTo( '.animate-back', .05, {autoAlpha:0}, -.08);
-    // });
     //Home page function call
+    onLoadFadeInHomeImg();
+    addClassForAllSpans();
     slideInNavBar();
     fromMobileToDesktopSize(media);
     //BARBA.JS TRANSITIONS
