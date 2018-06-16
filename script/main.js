@@ -47,11 +47,11 @@
     //On page load header text animation
     function fadeInHeaderText() {
       TweenMax.staggerFromTo( headerSpan, 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.08 );
-      TweenMax.staggerFromTo( headerSpan, 0.1, {scale:4}, {scale:1}, 0.08 );
-      setTimeout(function() {
+      TweenMax.staggerFromTo( headerSpan, 0.1, {scale:4}, {scale:1}, 0.08, bigBenAndBus);
+      function bigBenAndBus() {
         TweenMax.fromTo(bigBen, 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
-        TweenMax.fromTo(londonBus, 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
-      }, 3900);
+          TweenMax.fromTo(londonBus, 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
+      }
     }
     //Slide nav bar from the op
     function slideInNavBar() {
