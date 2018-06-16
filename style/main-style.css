@@ -30,28 +30,27 @@ ul {
 #barba-wrapper {
   /* opacity:0; */
 }
-#home-main {
-  background: #000;
-}
-#about-page-thumbnail {
+/* #about-page-thumbnail {
   height: 100vh;
-  width: 50%;
+  width: 0%;
   transform:translateX(100%);
   background:purple;
   position: absolute;
   top:0;
   right: 0;
   text-align: center;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+#about-page-thumbnail.about-page-display {
+  display: flex;
+}
 #about-page-thumbnail h1 {
   font-size: 4rem;
 }
-.about-page-header-text {
-
+.about-page-headder-text {
 }
 #works-page-thumbnail {
   height: 100vh;
@@ -62,7 +61,7 @@ ul {
   top:0;
   left: 0;
   text-align: center;
-}
+} */
 /********** Main header rules **********/
 #nav-bar {
   width: 100%;
@@ -388,6 +387,7 @@ main {
   right: 0;
   top:0;
   z-index: -50;
+  opacity:0;
 }
 #parallax-wrapper {
   position: absolute;
