@@ -33,7 +33,7 @@
         span.className = 'testSpan'
       });
     }
-    //Home page load animation
+    //Hide Works, About, social links
     function hideLinks() {
       TweenMax.set(socialLinks,{y:'100%'});
       TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%', ease: Bounce.easeOut});
@@ -44,6 +44,7 @@
       TweenMax.to(socialLinks, .5, {y:'0%'});
       TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
     }
+    //On page load header text animation
     function fadeInHeaderText() {
       TweenMax.staggerFromTo( headerSpan, 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.08 );
       TweenMax.staggerFromTo( headerSpan, 0.1, {scale:4}, {scale:1}, 0.08 );
@@ -52,6 +53,7 @@
         TweenMax.fromTo(londonBus, 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
       }, 3900);
     }
+    //Slide nav bar from the op
     function slideInNavBar() {
       TweenMax.to(navBar, .5, {y:'0%', onComplete:function(){
         fadeInHeaderText();
@@ -68,6 +70,7 @@
         changeSpanColor(e);
       }
     }
+    //Genearet random color on hover span
     function changeSpanColor(e) {
       const element = e.target;
       const r = Math.floor(Math.random() * 255);
@@ -76,6 +79,7 @@
       const color = "rgb("+r+","+g+","+b+")";
       TweenMax.set(element, {color: color});
     }
+    //Set span color back to white
     function setColorToWhite() {
       TweenMax.to(headerSpan, 5, {color: '#fff'});
     }
@@ -88,13 +92,14 @@
       let element = e.target;
       TweenMax.to(element.querySelectorAll('span'), .3, {padding:'0rem 1rem'});
     }
-    //Navigation rules
+    //Nav button open animation
     function navBtnClose(){
       navBtn.className = '';
       TweenMax.to(stickMiddle, .3, {height: '0%'});
       TweenMax.to([rightStickBot, leftStickBot, leftStickTop, rightStickTop], .3, {x: 0});
       TweenMax.to([leftStickBot, leftStickTop, rightStickTop, rightStickBot], .3, {rotation: 0});
     }
+    //Nav button close animation
     function navBtnOpen() {
       navBtn.className = 'navigation-open';
       TweenMax.to(leftStickBot, .3, {rotation: -45, onComplete:function() {
@@ -105,6 +110,7 @@
       TweenMax.to([leftStickTop, rightStickBot], .3, {rotation: 45});
       TweenMax.to(rightStickTop, .3, {rotation: -45});
     }
+    //Navigation animation
     function navAnimation(e) {
       e.preventDefault();
       if (!navBtn.classList.contains('navigation-open')) {
@@ -127,9 +133,11 @@
       TweenMax.to(socialLinks, .3, {y:'100%'});
       zoomInBg();
     }
+    //Scale back background
     function zoomInBg(){
       TweenMax.to(homeMain, .3, {scale: 1});
     }
+    //Scale out background
     function zoomOutBg(){
       TweenMax.to(homeMain, .3, {scale: 0.8});
     }
@@ -158,7 +166,6 @@
     slideInNavBar();
     fromMobileToDesktopSize(media);
     //BARBA.JS TRANSITIONS
-
   }());
   //ABOUT PAGE RULES
   (function() {
