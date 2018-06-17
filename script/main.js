@@ -22,6 +22,7 @@
     const homeAllImg = document.getElementById('img-holder img');
     const pageBody = document.querySelector('body');
     const parallaxWrapper = document.getElementById('parallax-wrapper-outter');
+    let pcImg = document.getElementById('bg-pc');
 
     //On page load fadein home page background image
     function onLoadFadeInHomeImg() {
@@ -87,10 +88,12 @@
     function startLinkAnimation(e) {
       let element = e.target;
       TweenMax.to(element.querySelectorAll('span'), .3, {padding:'.5rem 1rem'});
+         pcImg.src = 'img/about-hover-bg.png';
     }
     function endLinkAnimation(e) {
       let element = e.target;
       TweenMax.to(element.querySelectorAll('span'), .3, {padding:'0rem 1rem'});
+       pcImg.src = 'img/prorotype-bg.png';
     }
     //Nav button open animation
     function navBtnClose(){
@@ -197,8 +200,8 @@
 		let radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
 		let degree = (radius * 20);
 
-    TweenMax.to("#bg-pc", 1, {x:-tilty*5, y:-tiltx*5, ease:Power2.easeOut});
-    TweenMax.to("#person", 1, {x:tilty*10, y:tiltx*5, ease:Power2.easeOut});
+    TweenMax.to("#bg-pc", 1, {x:-tilty*5, y:-tiltx*5, rotation:0.01, ease:Power2.easeOut});
+    TweenMax.to("#person", 1, {x:tilty*10, y:tiltx*5, rotation:0.01, ease:Power2.easeOut});
   }
 
   window.addEventListener('resize', function(event){
