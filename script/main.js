@@ -200,8 +200,8 @@
 		let radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
 		let degree = (radius * 20);
 
-    TweenMax.to("#bg-pc", 1, {x:-tilty*5, y:-tiltx*5, rotation:0.01, ease:Power2.easeOut});
-    TweenMax.to("#person", 1, {x:tilty*10, y:tiltx*5, rotation:0.01, ease:Power2.easeOut});
+    TweenMax.to("#bg-pc", 1, {x:-tilty*5, y:-tiltx*5, rotation:0.01,rotationY:tilty, ease:Power2.easeOut});
+    TweenMax.to("#person", 1, {x:tilty*10, y:tiltx*5, rotation:0.01,rotationY:tilty*2, ease:Power2.easeOut});
   }
 
   window.addEventListener('resize', function(event){

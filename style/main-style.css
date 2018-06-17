@@ -396,12 +396,13 @@ main {
   width: 50%;
   height: 100vh;
   z-index: -5;
-  -webkit-transform-style: preserve-3d;
+  /* -webkit-transform-style: preserve-3d;
    -moz-transform-style: preserve-3d;
-   transform-style: preserve-3d;
+   transform-style: preserve-3d; */
    transform: translateZ(0px);
    -moz-transform: translateZ(0px);
    -webkit-transform: translateZ(0px);
+   perspective: 600px;
 }
 #parallax-wrapper img {
   position: absolute;
