@@ -88,12 +88,12 @@
     function startLinkAnimation(e) {
       let element = e.target;
       TweenMax.to(element.querySelectorAll('span'), .3, {padding:'.5rem 1rem'});
-         pcImg.src = 'img/about-hover-bg.png';
+         // pcImg.src = 'img/about-hover-bg.png';
     }
     function endLinkAnimation(e) {
       let element = e.target;
       TweenMax.to(element.querySelectorAll('span'), .3, {padding:'0rem 1rem'});
-       pcImg.src = 'img/prorotype-bg.png';
+       // pcImg.src = 'img/prorotype-bg.png';
     }
     //Nav button open animation
     function navBtnClose(){
@@ -179,32 +179,44 @@
 
   }())
 //Paralax prorotyping
-  let wrap = document.getElementById('parallax-wrapper-outter');
-	let request = null;
-	let mouse = { x: 0, y: 0 };
-	let cx = window.innerWidth / 2;
-	let cy = window.innerHeight / 2;
-
-	document.querySelector('body').addEventListener('mousemove', function(event) {
-		mouse.x = event.pageX;
-		mouse.y = event.pageY;
-    cancelAnimationFrame(request);
-    request = requestAnimationFrame(update);
-	});
-
-	function update() {
-		dx = mouse.x - cx;
-		dy = mouse.y - cy;
-		let tiltx = (dy / cy );
-		let tilty = - (dx / cx);
-		let radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
-		let degree = (radius * 20);
-
-    TweenMax.to("#bg-pc", 1, {x:-tilty*5, y:-tiltx*5, rotation:0.01,rotationY:tilty, ease:Power2.easeOut});
-    TweenMax.to("#person", 1, {x:tilty*10, y:tiltx*5, rotation:0.01,rotationY:tilty*2, ease:Power2.easeOut});
-  }
-
-  window.addEventListener('resize', function(event){
-     window.innerWidth / 2;
-  	 window.innerHeight / 2;
-  });
+  // let wrap = document.getElementById('parallax-wrapper-outter');
+	// let request = null;
+	// let mouse = { x: 0, y: 0 };
+	// let cx = window.innerWidth / 2;
+	// let cy = window.innerHeight / 2;
+  //
+	// document.querySelector('body').addEventListener('mousemove', function(event) {
+	// 	mouse.x = event.pageX;
+	// 	mouse.y = event.pageY;
+  //   cancelAnimationFrame(request);
+  //   request = requestAnimationFrame(update);
+	// });
+  //
+	// function update() {
+	// 	dx = mouse.x - cx;
+	// 	dy = mouse.y - cy;
+	// 	let tiltx = (dy / cy );
+	// 	let tilty = - (dx / cx);
+	// 	let radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
+	// 	let degree = (radius * 20);
+  //   let meImg = document.getElementById('person');
+  //
+  //   TweenMax.to("#bg-pc", 1, {x:-tilty*5, y:-tiltx*5, rotation:0.01, rotationY:tilty*5, rotationX:tiltx*5, ease:Power2.easeOut});
+  //   TweenMax.to("#person", 1, {x:tilty*10, y:tiltx*5, rotation:0.01, rotationY:tilty, ease:Power2.easeOut});
+  //   if (mouse.x <= 999) {
+  //     meImg.src = 'img/me.png';
+  //     console.log("melast");
+  //   } else if (mouse.x >= 1000 && mouse.x < 1099) {
+  //     meImg.src = 'img/me1.png';
+  //     console.log("me1");
+  //   } else if (mouse.x >= 1100 && mouse.x < 1199) {
+  //     meImg.src = 'img/me2.png';
+  //   } else if (mouse.x >= 1200 && mouse.x < 1399) {
+  //     meImg.src = 'img/me-last.png';
+  //   }
+  // }
+  //
+  // window.addEventListener('resize', function(event){
+  //    window.innerWidth / 2;
+  // 	 window.innerHeight / 2;
+  // });

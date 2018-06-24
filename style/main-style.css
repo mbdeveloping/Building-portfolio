@@ -405,20 +405,26 @@ main {
    perspective: 600px;
 }
 #parallax-wrapper img {
-  position: absolute;
+  /* position: absolute; */
 }
 #bg-pc {
   right:0;
   bottom:0px;
-  height: 75%;
+  height: 90%;
 }
 #person {
-  height: 60%;
+  height: 87%;
 transform: translateZ(50px);
 -moz-transform: translateZ(50px);
 -webkit-transform: translateZ(50px);
-bottom: 0;
-right: 70px;
+bottom: 20px;
+right: 0px;
+}
+#old-me {
+  height: 100vh;
+  position: absolute;
+  right: -200px;
+  bottom: 0;
 }
 /********** MEDIA QUERIES **********/
 @media (min-width: 600px) {
