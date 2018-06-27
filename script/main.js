@@ -169,6 +169,56 @@
     slideInNavBar();
     fromMobileToDesktopSize(media);
     //BARBA.JS TRANSITIONS
+      const Homepage = Barba.BaseView.extend({
+        namespace: 'home',
+        onEnter: function() {
+          onLoadFadeInHomeImg();
+          addClassForAllSpans();
+          slideInNavBar();
+          fromMobileToDesktopSize(media);
+          TweenMax.to(imgHolderImg,1,{opacity:1});
+        },
+        onLeave: function() {
+            // A new Transition toward a new page has just started.
+        },
+        onLeaveCompleted: function() {
+            // The Container has just been removed from the DOM.
+        }
+      });
+      const Aboutpage = Barba.BaseView.extend({
+        namespace: 'about',
+        onEnter: function() {
+          onLoadFadeInHomeImg();
+          addClassForAllSpans();
+          slideInNavBar();
+          fromMobileToDesktopSize(media);
+        },
+        onEnterCompleted: function() {
+        },
+        onLeave: function() {
+            // A new Transition toward a new page has just started.
+        },
+        onLeaveCompleted: function() {
+            // The Container has just been removed from the DOM.
+        }
+      });
+      var HideShowTransition = Barba.BaseTransition.extend({
+  start: function() {
+    this.newContainerLoading.then(this.finish.bind(this));
+  },
+
+  finish: function() {
+    document.body.scrollTop = 0;
+    this.done();
+  }
+});
+Barba.Pjax.getTransition = function() {
+  return HideShowTransition;
+};
+      Homepage.init();
+      Aboutpage.init();
+      Barba.Pjax.init();
+      Barba.Prefetch.init();
   }());
   //ABOUT PAGE RULES
   (function() {

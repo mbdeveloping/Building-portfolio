@@ -414,6 +414,10 @@ transform: translateZ(50px);
 bottom: 20px;
 right: 0px;
 }
+/* #img-holder img#about-me {
+  opacity: 1;
+  right: 50%;
+} */
 /********** MEDIA QUERIES **********/
 @media (min-width: 600px) {
   #img-holder img {
@@ -557,19 +561,3 @@ right: 0px;
     -moz-transform: translateX(0%);
   }
 }
-/* @media (min-width: 600px) and (min-height: 565px) {
-  #img-holder img {
-    transform:translateX(30%);
-    -webkit-transform: translateX(30%);
-    -ms-transform: translateX(30%);
-    -moz-transform: translateX(30%);
-  }
-}
-@media (min-width: 600px) and (min-height: 770px) {
-  #img-holder img {
-    transform:translateX(40%);
-    -webkit-transform: translateX(40%);
-    -ms-transform: translateX(40%);
-    -moz-transform: translateX(40%);
-  }
-} */
