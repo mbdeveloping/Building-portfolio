@@ -21,12 +21,12 @@
     const homeMain = document.getElementById('home-main');
     const homeAllImg = document.getElementById('img-holder img');
     const pageBody = document.querySelector('body');
-    const parallaxWrapper = document.getElementById('parallax-wrapper-outter');
+    const imgHolderImg = document.querySelectorAll('#img-holder img');
     let pcImg = document.getElementById('bg-pc');
 
     //On page load fadein home page background image
     function onLoadFadeInHomeImg() {
-      TweenMax.to(parallaxWrapper, 5, {delay:.3,opacity:1});
+      TweenMax.to(imgHolderImg, 5, {delay:.3,opacity:1});
     }
     //Add class for all header spans
     function addClassForAllSpans() {
