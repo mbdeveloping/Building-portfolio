@@ -169,39 +169,41 @@ document.addEventListener("DOMContentLoaded", function() {
       headerSpanWrapper.addEventListener('mouseover', spanAnimation);
       headerSpanWrapper.addEventListener('mouseleave', setColorToWhite);
       //Home page function call
-      // onLoadFadeInHomeImg();
-      // addClassForAllSpans();
-      // slideInNavBar();
-      // fromMobileToDesktopSize(media);
+      onLoadFadeInHomeImg();
+      addClassForAllSpans();
+      slideInNavBar();
+      fromMobileToDesktopSize(media);
       //BARBA.JS TRANSITIONS
-        const Homepage = Barba.BaseView.extend({
-          namespace: 'home',
-          onEnter: function() {
-            console.log("This is home page");
-            onLoadFadeInHomeImg();
-            addClassForAllSpans();
-            slideInNavBar();
-            fromMobileToDesktopSize(media);
-          },
-          onLeave: function() {
-          },
-          onLeaveCompleted: function() {
-              // The Container has just been removed from the DOM.
-          }
-        });
-        const Aboutpage = Barba.BaseView.extend({
-          namespace: 'about',
-          onEnter: function() {
-            console.log("This is about page");
-          },
-          onLeave: function() {
-          },
-          onLeaveCompleted: function() {
-              // The Container has just been removed from the DOM.
-          }
-        });
-        Homepage.init();
-        Aboutpage.init();
+        // const Homepage = Barba.BaseView.extend({
+        //   namespace: 'home',
+        //   onEnter: function() {
+        //     console.log("This is home page");
+        //     onLoadFadeInHomeImg();
+        //     addClassForAllSpans();
+        //     slideInNavBar();
+        //     fromMobileToDesktopSize(media);
+        //   },
+        //   onLeave: function() {
+        //   },
+        //   onLeaveCompleted: function() {
+        //   }
+        // });
+        // const Aboutpage = Barba.BaseView.extend({
+        //   namespace: 'about',
+        //   onEnter: function() {
+        //     console.log("This is about page");
+        //     onLoadFadeInHomeImg();
+        //     addClassForAllSpans();
+        //     slideInNavBar();
+        //     fromMobileToDesktopSize(media);
+        //   },
+        //   onLeave: function() {
+        //   },
+        //   onLeaveCompleted: function() {
+        //   }
+        // });
+        // Homepage.init();
+        // Aboutpage.init();
         Barba.Pjax.init();
         Barba.Prefetch.init();
 
