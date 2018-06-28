@@ -174,20 +174,32 @@ document.addEventListener("DOMContentLoaded", function() {
       slideInNavBar();
       fromMobileToDesktopSize(media);
       //BARBA.JS TRANSITIONS
-        // const Homepage = Barba.BaseView.extend({
-        //   namespace: 'home',
-        //   onEnter: function() {
-        //     console.log("This is home page");
-        //     onLoadFadeInHomeImg();
-        //     addClassForAllSpans();
-        //     slideInNavBar();
-        //     fromMobileToDesktopSize(media);
-        //   },
-        //   onLeave: function() {
-        //   },
-        //   onLeaveCompleted: function() {
-        //   }
-        // });
+        const Homepage = Barba.BaseView.extend({
+          namespace: 'home',
+          onEnter: function() {
+            document.querySelectorAll('#home-header-word-line-wrapper span').forEach(function(span) {
+              span.className = 'testSpan'
+            });
+            // addClassForAllSpans();
+          },
+          onEnterCompleted: function() {
+            document.querySelector('#home-header-word-line-wrapper').addEventListener('mouseover', function(e) {
+              console.log("hover veikia");
+                const element = e.target;
+                if (element.className === 'testSpan') {
+                  TweenMax.to(element, .2, {y:-10, onComplete:function() {
+                    TweenMax.to(element, .1, {y:0});
+                  }});
+                  changeSpanColor(e);
+                }
+            });
+          },
+          onLeave: function() {
+          },
+          onLeaveCompleted: function() {
+          }
+        });
+
         // const Aboutpage = Barba.BaseView.extend({
         //   namespace: 'about',
         //   onEnter: function() {
@@ -202,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function() {
         //   onLeaveCompleted: function() {
         //   }
         // });
-        // Homepage.init();
+        Homepage.init();
         // Aboutpage.init();
         Barba.Pjax.init();
         Barba.Prefetch.init();
@@ -229,6 +241,7 @@ document.addEventListener("DOMContentLoaded", function() {
             slieInLinks();
             TweenMax.to('#home-header span', 1, {opacity:1});
             TweenMax.to('#about-me-img', 1, {opacity:1});
+
             this.done();
           }
         });
@@ -254,6 +267,7 @@ document.addEventListener("DOMContentLoaded", function() {
             slieInLinks();
             TweenMax.to('#home-header span', 1, {opacity:1});
             TweenMax.to('#home-img', 1, {opacity:1});
+
             this.done();
           }
         });
