@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       //Add class for all header spans
       function addClassForAllSpans() {
-        headerSpan.forEach(function(span) {
+        document.querySelectorAll('#home-header-word-line-wrapper span').forEach(function(span) {
           span.className = 'testSpan'
         });
       }
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       //Set span color back to white
       function setColorToWhite() {
-        TweenMax.to(headerSpan, 5, {color: '#fff'});
+        TweenMax.to(document.querySelectorAll('#home-header-word-line-wrapper span'), 5, {color: '#fff'});
       }
       //Home main links hover animation
       function startLinkAnimation(e) {
@@ -177,22 +177,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const Homepage = Barba.BaseView.extend({
           namespace: 'home',
           onEnter: function() {
-            document.querySelectorAll('#home-header-word-line-wrapper span').forEach(function(span) {
-              span.className = 'testSpan'
-            });
-            // addClassForAllSpans();
+            addClassForAllSpans();
           },
           onEnterCompleted: function() {
-            document.querySelector('#home-header-word-line-wrapper').addEventListener('mouseover', function(e) {
-              console.log("hover veikia");
-                const element = e.target;
-                if (element.className === 'testSpan') {
-                  TweenMax.to(element, .2, {y:-10, onComplete:function() {
-                    TweenMax.to(element, .1, {y:0});
-                  }});
-                  changeSpanColor(e);
-                }
-            });
+            document.querySelector('#home-header-word-line-wrapper').addEventListener('mouseover', spanAnimation);
+            document.querySelector('#home-header-word-line-wrapper').addEventListener('mouseleave', setColorToWhite);
           },
           onLeave: function() {
           },
