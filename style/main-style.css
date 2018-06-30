@@ -418,6 +418,24 @@ right: 0px;
   opacity: 1;
   right: 50%;
 } */
+/***************** ABOUT PAGE **************/
+#about-header {
+  padding-top: 100px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+#about-header-word-line-wrapper {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+#about-me-img {
+  position: absolute;
+  right: -35%;
+  bottom: 0;
+  z-index: -10;
+  height: 60vh;
+
+}
 /********** MEDIA QUERIES **********/
 @media (min-width: 600px) {
   #img-holder img {
