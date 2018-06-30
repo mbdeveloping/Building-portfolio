@@ -217,7 +217,8 @@ document.addEventListener("DOMContentLoaded", function() {
             hideLinks();
             slideOutNavBar();
             TweenMax.to('#home-header', 1, {opacity:0});
-            TweenMax.to(imgHolderImg, 1, {
+            navBtnClose();
+            TweenMax.to('#img-holder img', 1, {
                 opacity:0, onComplete: function() {
                   deferred.resolve();
               }
@@ -227,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function() {
           showNewPage: function() {
             this.newContainer.style.visibility = 'visible';
             slideInNavBar();
-            slieInLinks();
+            // slieInLinks();
             TweenMax.to('#home-header span', 1, {opacity:1});
             TweenMax.to('#about-me-img', 1, {opacity:1});
 
@@ -242,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const deferred = Barba.Utils.deferred();
             hideLinks();
             slideOutNavBar();
+            navBtnClose();
             TweenMax.to('#home-header span', 1, {opacity:0});
             TweenMax.to('#about-me-img', 1, {
                 opacity:0, onComplete: function() {
@@ -253,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function() {
           showNewPage: function() {
             this.newContainer.style.visibility = 'visible';
             slideInNavBar();
-            slieInLinks();
+            // slieInLinks();
             TweenMax.to('#home-header span', 1, {opacity:1});
             TweenMax.to('#home-img', 1, {opacity:1});
 
