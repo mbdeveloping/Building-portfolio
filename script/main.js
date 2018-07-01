@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const homeAllImg = document.getElementById('img-holder img');
       const pageBody = document.querySelector('body');
       const imgHolderImg = document.querySelectorAll('#img-holder img');
+      const homePage = document.getElementById('home-main');
       let pcImg = document.getElementById('bg-pc');
 
       //On page load fadein home page background image
@@ -160,14 +161,16 @@ document.addEventListener("DOMContentLoaded", function() {
           }
       }
       //Home page events
-      media.addListener(fromMobileToDesktopSize);
-      navBtn.addEventListener('click', navAnimation);
-      workLink.addEventListener('mouseover', startLinkAnimation);
-      workLink.addEventListener('mouseleave', endLinkAnimation);
-      aboutLink.addEventListener('mouseover', startLinkAnimation);
-      aboutLink.addEventListener('mouseleave', endLinkAnimation);
-      headerSpanWrapper.addEventListener('mouseover', spanAnimation);
-      headerSpanWrapper.addEventListener('mouseleave', setColorToWhite);
+      if (homePage) {
+        media.addListener(fromMobileToDesktopSize);
+        navBtn.addEventListener('click', navAnimation);
+        workLink.addEventListener('mouseover', startLinkAnimation);
+        workLink.addEventListener('mouseleave', endLinkAnimation);
+        aboutLink.addEventListener('mouseover', startLinkAnimation);
+        aboutLink.addEventListener('mouseleave', endLinkAnimation);
+        headerSpanWrapper.addEventListener('mouseover', spanAnimation);
+        headerSpanWrapper.addEventListener('mouseleave', setColorToWhite);
+      }
       //Home page function call
       onLoadFadeInHomeImg();
       addClassForAllSpans();
