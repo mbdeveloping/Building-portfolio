@@ -1,5 +1,12 @@
 $color_primary: #000;
 $color_white: #fff;
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
 * {
   box-sizing: border-box;
   margin:0;
@@ -11,11 +18,12 @@ body {
   color: #fff;
   font-family: Arial;
   background:$color_primary;
-  .body-ov-hidden {
-    overflow: hidden;
-    height: 100vh;
-    position: fixed;
-  }
+}
+.body-ov-hidden {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
 }
 a {
   text-decoration: none;
@@ -27,4 +35,409 @@ ul {
 .container {
   width: 100%;
   padding: 0 1rem;
+}
+/******************** Main header rules *************************/
+#nav-bar {
+  width: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 1000;
+  @include transform(translateY(-100%));
+  #nav-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1rem 0;
+  }
+  #logo-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #logo-wrapper {
+    position: relative;
+    display: flex;
+    width: 67px;
+  }
+  #logo-name {
+    display:none;
+    padding-top: .5rem;
+    font-size: .6rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+  }
+  #logo-section img {
+    width: 67px;
+    height: 50px;
+    z-index: 10;
+  }
+  #logo-big-rec {
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    border: 1px solid $color_white;
+    border-radius: 3px;
+    @include transform(rotate(47deg) translate(9px, 0px));
+    background:#000;
+    z-index: 5;
+  }
+  #logo-small-rec {
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    border:1px solid $color_white;
+    border-radius: 3px;
+    @include transform(rotate(22deg) translate(27px, 2px));
+    z-index: 1;
+  }
+  #nav-btn {
+    height: 30px;
+    z-index: 1000;
+    cursor: pointer;
+  }
+  #nav-btn-wrapper {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .nav-stick {
+    height: 50%;
+    width: 2px;
+    background:$color_white;
+  }
+  .left-nav-stick-bot, .right-nav-stick-bot {
+    will-change: transform;
+    transform-origin: top;
+  }
+  .left-nav-stick-top, .right-nav-stick-top {
+    transform-origin: bottom;
+  }
+  .nav-stick-middle {
+    width: 2px;
+    height: 0%;
+    background: $color_white;
+    transform-origin: top;
+    @include transform(rotate(27deg) translate(7px, -7px));
+  }
+}
+%nav-overlay-shared {
+  position: fixed;
+  width: 0;
+  height: 100vh;
+  top:0;
+  background:rgba(0,0,0, .9);
+  z-index: 20;
+}
+#left-nav-overlay {
+  left: 0;
+  @extend %nav-overlay-shared;
+}
+#right-nav-overlay {
+  right: 0;
+  @extend %nav-overlay-shared;
+}
+/***************** HOME PAGE RULES *******************/
+main {
+  width: 100%;
+  height: 100vh;
+}
+#home-header {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+   h1 {
+    grid-row: 1/3;
+    overflow: hidden;
+    max-width: 311px;
+    width: 100%;
+    justify-self: center;
+    padding: 0 1rem;
+    cursor: default;
+  }
+}
+#home-header-word-line-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start;
+  @include transform(scale(1));
+  span {
+    display: inline-block;
+    opacity:0;
+  }
+}
+#hello {
+  font-size: 3rem;
+  @include transform(scale(1.0));
+}
+#i-am-mantvydas {
+  @include transform(translate(1px, -17px));
+  span {
+    font-size: 2rem;
+  }
+}
+#frontend-developer  {
+  @include transform(translate(1px, -37px));
+  span {
+    font-size: 1.5rem;
+  }
+}
+#based  {
+  height: 0px;
+  @include transform(translate(0px, -80px));
+  align-self: flex-end;
+  span {
+    font-size: 1rem;
+  }
+}
+#big-ben, #london-bus {
+  opacity:0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+#big-ben {
+  width: 10px;
+  transform-origin: bottom;
+}
+#london-bus {
+  width: 30px;
+  @include transform(translateY(15px));
+}
+#img-holder-section{
+  will-change: transform;
+  @include transform(translateZ(0));
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
+  outline: 1px solid transparent;
+  -webkit-backface-visibility: hidden;
+}
+#img-holder {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: -10;
+  will-change: transform;
+  @include transform(translateZ(0));
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
+  outline: 1px solid transparent;
+  -webkit-backface-visibility: hidden;
+  img {
+    height: 60vh;
+    position: absolute;
+    bottom: 0;
+    right: 37%;
+    @include transform(translateX(50%));
+    opacity:0;
+  }
+  div {
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    height: 90vh;
+    opacity:0;
+    @include transform(translateX(60%) translateZ(0));
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
+  }
+}
+.home-page-link {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255,255,255, 0);
+  @include transform(scale(1));
+  span {
+    padding:0 1rem;
+  }
+}
+#social-links {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left:0;
+  width: 100%;
+  z-index: 1000;
+  justify-content: space-around;
+  padding:1rem 4rem;
+  background:rgba(0,0,0, .9);
+  @include transform(translateY(100%));
+  a {
+    position: relative;
+    display: inline-block;
+    &:hover .social-links-box {
+      @include transform(rotate(90deg));
+    }
+  }
+  i {
+    font-size: .8rem;
+    position: absolute;
+    top:50%;
+    left:50%;
+    @include transform(translate(-50%, -50%));
+  }
+}
+.social-links-box {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #fff;
+  position: relative;
+  transition: transform .3s;
+  @include transform(rotate(45deg));
+}
+
+/****************** ABOUT PAGE RULES ********************/
+#about-header {
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  h1 {
+    font-size: 2rem;
+    padding-bottom:1rem;
+  }
+}
+#skillset {
+  padding-top: .5rem;
+}
+#about-me-img {
+  position: absolute;
+  right: -35%;
+  bottom: 0;
+  z-index: -10;
+  height: 60vh;
+}
+
+/*********** MEDIA QUERIES *********/
+@media (min-width: 600px) {
+  #img-holder img {
+    right:0;
+    @include transform(translateX(25%));
+    height: 75vh;
+  }
+  #home-header {
+    grid-template-columns: 2fr 1fr;
+    h1 {
+      grid-row: 2/3;
+      max-width: 386px;
+      max-height: 130px;
+      letter-spacing: 1.5px;
+    }
+  }
+  #hello {
+    font-size: 3.5rem;
+    @include transform(translateY(3px));
+  }
+  #i-am-mantvydas span {
+    font-size: 2.5rem;
+  }
+  #frontend-developer span {
+    font-size:1.7rem;
+  }
+}
+@media (min-width: 900px) {
+  #img-holder img {
+    height: 90vh;
+    @include transform(translateX(10%));
+  }
+  #home-header h1 {
+    grid-row: 2/3;
+    max-width: 515px;
+    letter-spacing: 5px;
+    max-height: 165px;
+    #frontend-developer {
+      letter-spacing: 3.3px;
+    }
+    #based {
+      letter-spacing: 1.5px;
+    }
+  }
+  #hello {
+    font-size: 4rem;
+    @include transform(translateY(7px));
+  }
+  #i-am-mantvydas span {
+    font-size: 3rem;
+  }
+  #frontend-developer span {
+    font-size:2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  #nav-btn {
+    display: none;
+  }
+  #nav-bar #logo-name {
+    display: block;
+  }
+  #left-nav-overlay, #right-nav-overlay {
+    display: flex;
+    background:none;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-page-link {
+    height: 150px;
+  }
+  #social-links {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0,0,0, 0);
+    max-width: 150px;
+    right: 0;
+    left: auto;
+    padding:1rem;
+    i {
+      font-size: .7rem;
+    }
+  }
+  .social-links-box {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (min-width: 1440px) {
+  #home-header h1 {
+    max-width: 579px;
+    max-height: 215px;
+  }
+  #hello {
+    font-size: 5rem;
+    @include transform(translateY(15px));
+  }
+  #i-am-mantvydas span {
+    font-size: 3.75rem;
+  }
+  #frontend-developer span {
+    font-size:2.5rem;
+  }
+  #big-ben {
+    width: 15px;
+  }
+  #london-bus {
+    width: 40px;
+  }
+  #based {
+    @include transform(translate(0px,-106px));
+    align-self: flex-end;
+    span {
+      font-size: 1.25rem;
+    }
+  }
+  #img-holder img {
+    @include transform(translateX(0%));
+  }
 }
