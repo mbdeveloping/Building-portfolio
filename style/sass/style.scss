@@ -1,0 +1,30 @@
+$color_primary: #000;
+$color_white: #fff;
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+body {
+  width: 100%;
+  font-size: 1rem;
+  color: #fff;
+  font-family: Arial;
+  background:$color_primary;
+  .body-ov-hidden {
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+  }
+}
+a {
+  text-decoration: none;
+  color:$color_white;
+}
+ul {
+  list-style-type: none;
+}
+.container {
+  width: 100%;
+  padding: 0 1rem;
+}
