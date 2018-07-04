@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       //On page load header text animation
       function fadeInHeaderText() {
-        TweenMax.staggerFromTo( headerSpan, 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.08 );
-        TweenMax.staggerFromTo( headerSpan, 0.1, {scale:4}, {scale:1}, 0.08, bigBenAndBus);
+        TweenMax.staggerFromTo( headerSpan, 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
+        TweenMax.staggerFromTo( headerSpan, 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);
         function bigBenAndBus() {
           TweenMax.fromTo(bigBen, 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
             TweenMax.fromTo(londonBus, 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
@@ -219,6 +219,8 @@ document.addEventListener("DOMContentLoaded", function() {
             const deferred = Barba.Utils.deferred();
             hideLinks();
             slideOutNavBar();
+            TweenMax.to('#big-ben', 1, {opacity:0});
+            TweenMax.to('#london-bus', 1, {opacity:0});
             TweenMax.to('#home-header', 1, {opacity:0});
             navBtnClose();
             TweenMax.to('#img-holder img', 1, {
@@ -259,6 +261,8 @@ document.addEventListener("DOMContentLoaded", function() {
             this.newContainer.style.visibility = 'visible';
             slideInNavBar();
             // slieInLinks();
+            TweenMax.to('#big-ben', 1, {opacity:1});
+            TweenMax.to('#london-bus', 1, {opacity:1});
             TweenMax.to('#home-header span', 1, {opacity:1});
             TweenMax.to('#home-img', 1, {opacity:1});
 
