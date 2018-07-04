@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function() {
             hideLinks();
             slideOutNavBar();
             navBtnClose();
-            TweenMax.to('#home-header span', 1, {opacity:0});
+            TweenMax.to('#about-header', 1, {opacity:0});
             TweenMax.to('#about-me-img', 1, {
                 opacity:0, onComplete: function() {
                   deferred.resolve();
