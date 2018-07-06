@@ -220,7 +220,7 @@ main {
   outline: 1px solid transparent;
   -webkit-backface-visibility: hidden;
 }
-#img-holder {
+.img-holder {
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -301,7 +301,6 @@ main {
 
 /****************** ABOUT PAGE RULES ********************/
 #about-header {
-  opacity: 0;
   display: flex;
   flex-direction: column;
   padding-top: 100px;
@@ -311,22 +310,25 @@ main {
     font-size: 2rem;
     padding-bottom:1rem;
   }
+  span {
+    opacity:0;
+    display: inline-block;
+  }
 }
 #skillset {
   padding-top: .5rem;
 }
 #about-me-img {
   position: absolute;
-  right: -35%;
+  right: 54%;
   bottom: 0;
   z-index: -10;
   height: 60vh;
-  opacity:0;
 }
 
 /*********** MEDIA QUERIES *********/
 @media (min-width: 600px) {
-  #img-holder img {
+  .img-holder img {
     right:0;
     @include transform(translateX(25%));
     height: 75vh;
@@ -352,7 +354,7 @@ main {
   }
 }
 @media (min-width: 900px) {
-  #img-holder img {
+  .img-holder img {
     height: 90vh;
     @include transform(translateX(10%));
   }
@@ -440,7 +442,7 @@ main {
       font-size: 1.25rem;
     }
   }
-  #img-holder img {
+  .img-holder img {
     @include transform(translateX(0%));
   }
 }

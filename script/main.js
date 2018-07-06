@@ -22,13 +22,14 @@ document.addEventListener("DOMContentLoaded", function() {
       const homeMain = document.getElementsByClassName('main-section');
       const homeAllImg = document.getElementById('img-holder img');
       const pageBody = document.querySelector('body');
-      const imgHolderImg = document.querySelectorAll('#img-holder img');
+      // const imgHolderImg = document.querySelectorAll('#img-holder img');
       const homePage = document.getElementById('home-main');
       let pcImg = document.getElementById('bg-pc');
 
+
       //On page load fadein home page background image
       function onLoadFadeInHomeImg() {
-        TweenMax.to(imgHolderImg, 5, {delay:.3,opacity:1});
+        TweenMax.to('.img-holder img', 5, {delay:.3,opacity:1});
       }
       //Add class for all header spans
       function addClassForAllSpans() {
@@ -50,11 +51,17 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       //On page load header text animation
       function fadeInHeaderText() {
-        TweenMax.staggerFromTo( '#home-header-word-line-wrapper span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
-        TweenMax.staggerFromTo( '#home-header-word-line-wrapper span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);
-        function bigBenAndBus() {
-          TweenMax.fromTo('#big-ben', 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
-          TweenMax.fromTo('#london-bus', 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
+        if (document.getElementById('home-header')) {
+          TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
+          TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);
+          function bigBenAndBus() {
+            TweenMax.fromTo('#big-ben', 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
+            TweenMax.fromTo('#london-bus', 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
+          }
+        }
+        if (document.getElementById('about-header')) {
+          TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.02 );
+          TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.02);
         }
       }
       //Leave home header animation
@@ -219,12 +226,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const deferred = Barba.Utils.deferred();
             hideLinks();
             slideOutNavBar();
-            // TweenMax.to('#big-ben', 1, {opacity:0});
-            // TweenMax.to('#london-bus', 1, {opacity:0});
-            // TweenMax.to('#home-header', 1, {opacity:0});
             fadeOutHomeHeader();
             navBtnClose();
-            TweenMax.to('#img-holder img', 1, {
+            TweenMax.to('.img-holder img', 1, {
                 opacity:0, onComplete: function() {
                   deferred.resolve();
               }
@@ -234,9 +238,7 @@ document.addEventListener("DOMContentLoaded", function() {
           showNewPage: function() {
             this.newContainer.style.visibility = 'visible';
             slideInNavBar();
-            // slieInLinks();
-            TweenMax.to('#home-header span', 1, {opacity:1});
-            TweenMax.to('#about-header', 1, {opacity:1});
+            TweenMax.to('#about-me-img', 1, {opacity:1});
             this.done();
           }
         });
@@ -260,10 +262,6 @@ document.addEventListener("DOMContentLoaded", function() {
           showNewPage: function() {
             this.newContainer.style.visibility = 'visible';
             slideInNavBar();
-            // slieInLinks();
-            // TweenMax.to('#big-ben', 1, {opacity:1});
-            // TweenMax.to('#london-bus', 1, {opacity:1});
-            // TweenMax.to('#home-header span', 1, {opacity:1});
             TweenMax.to('#home-img', 1, {opacity:1});
 
             this.done();
