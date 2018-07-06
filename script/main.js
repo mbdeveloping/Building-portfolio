@@ -60,8 +60,8 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         }
         if (document.getElementById('about-header')) {
-          TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.02 );
-          TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.02);
+          TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.01 );
+          TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.01);
         }
       }
       //Leave home header animation
@@ -251,7 +251,10 @@ document.addEventListener("DOMContentLoaded", function() {
             hideLinks();
             slideOutNavBar();
             navBtnClose();
-            TweenMax.to('#about-header', 1, {opacity:0});
+            // TweenMax.to('#about-header', 1, {opacity:0});
+            document.querySelectorAll('#about-header span').forEach(function(span) {
+              TweenMax.to(span, 1, {x:Math.random()*window.innerWidth, y: Math.random()*window.innerHeight, opacity:0});
+            });
             TweenMax.to('#about-me-img', 1, {
                 opacity:0, onComplete: function() {
                   deferred.resolve();
