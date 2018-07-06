@@ -306,6 +306,7 @@ main {
   padding-top: 100px;
   padding-left: 1rem;
   padding-right: 1rem;
+  max-width: 250px;
   h1 {
     font-size: 2rem;
     padding-bottom:1rem;
@@ -313,6 +314,8 @@ main {
   span {
     opacity:0;
     display: inline-block;
+    will-change: transform;
+    transform:translateZ(0);
   }
 }
 #skillset {
@@ -320,10 +323,10 @@ main {
 }
 #about-me-img {
   position: absolute;
-  right: 54%;
+  right: 6%;
   bottom: 0;
   z-index: -10;
-  height: 60vh;
+  height: 100vh;
 }
 
 /*********** MEDIA QUERIES *********/

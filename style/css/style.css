@@ -306,23 +306,26 @@ main {
   flex-direction: column;
   padding-top: 100px;
   padding-left: 1rem;
-  padding-right: 1rem; }
+  padding-right: 1rem;
+  max-width: 250px; }
   #about-header h1 {
     font-size: 2rem;
     padding-bottom: 1rem; }
   #about-header span {
     opacity: 0;
-    display: inline-block; }
+    display: inline-block;
+    will-change: transform;
+    transform: translateZ(0); }
 
 #skillset {
   padding-top: .5rem; }
 
 #about-me-img {
   position: absolute;
-  right: 54%;
+  right: 6%;
   bottom: 0;
   z-index: -10;
-  height: 60vh; }
+  height: 100vh; }
 
 /*********** MEDIA QUERIES *********/
 @media (min-width: 600px) {

@@ -60,13 +60,13 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         }
         if (document.getElementById('about-header')) {
-          TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.01 );
-          TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.01);
+          TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.02 );
+          TweenMax.staggerFromTo( '.testt span', 0.1, {scale:6}, {scale:1}, 0.02);
         }
       }
       //Leave home header animation
       function fadeOutHomeHeader() {
-        TweenMax.to('#big-ben, #london-bus', .1,  {opacity:0, x:500,ease: Elastic.easeOut.config(1, 0.3)});
+        TweenMax.to('#big-ben, #london-bus', .1,  {opacity:0, x:1000,ease: Elastic.easeOut.config(1, 0.3)});
         TweenMax.staggerTo( '#home-header-word-line-wrapper span', .2, {autoAlpha:0, x:500}, -0.01 );
       }
       //Slide nav bar from the op
@@ -251,10 +251,10 @@ document.addEventListener("DOMContentLoaded", function() {
             hideLinks();
             slideOutNavBar();
             navBtnClose();
-            // TweenMax.to('#about-header', 1, {opacity:0});
-            document.querySelectorAll('#about-header span').forEach(function(span) {
-              TweenMax.to(span, 1, {x:Math.random()*window.innerWidth, y: Math.random()*window.innerHeight, opacity:0});
-            });
+            TweenMax.to('#about-header', 1, {opacity:0});
+            // document.querySelectorAll('#about-header span').forEach(function(span) {
+            //   TweenMax.to(span, 1, {x:Math.round(Math.random()) *50-25, y: Math.random()*200-100,autoAlpha:0, scale:Math.random()*2-1});
+            // });
             TweenMax.to('#about-me-img', 1, {
                 opacity:0, onComplete: function() {
                   deferred.resolve();
