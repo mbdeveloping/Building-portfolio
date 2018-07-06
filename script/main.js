@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const bigBen = document.getElementById('big-ben');
       const londonBus = document.getElementById('london-bus');
       const headerSpan = document.querySelectorAll('#home-header-word-line-wrapper span');
-      const headerSpanWrapper = document.querySelector('#home-header-word-line-wrapper');
+      const headerSpanWrapper = document.getElementById('home-header-word-line-wrapper');
       const navBtn = document.getElementById('nav-btn');
       const workLink = document.getElementById('works');
       const aboutLink = document.getElementById('about-me');
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const rightStickTop = document.getElementById('right-nav-stick-top');
       const rightStickBot = document.getElementById('right-nav-stick-bot');
       const stickMiddle = document.getElementById('nav-stick-middle');
-      const homeMain = document.getElementById('main-section');
+      const homeMain = document.getElementsByClassName('main-section');
       const homeAllImg = document.getElementById('img-holder img');
       const pageBody = document.querySelector('body');
       const imgHolderImg = document.querySelectorAll('#img-holder img');
@@ -134,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
         TweenMax.to(socialLinks, .3, {y:'0%'});
         zoomOutBg();
+        console.log('open nav');
       }
       function closeNav() {
         navBtnClose();
@@ -141,13 +142,16 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
         TweenMax.to(socialLinks, .3, {y:'100%'});
         zoomInBg();
+        console.log('close nav');
       }
       //Scale back background
       function zoomInBg(){
+        console.log('zoom in');
         TweenMax.to(homeMain, .3, {scale: 1});
       }
       //Scale out background
       function zoomOutBg(){
+        console.log('zoom out');
         TweenMax.to(homeMain, .3, {scale: 0.8});
       }
       //Home page resize queries
@@ -159,11 +163,6 @@ document.addEventListener("DOMContentLoaded", function() {
           } else {
             hideLinks();
           }
-      }
-      //Home page events
-      if (homePage) {
-        headerSpanWrapper.addEventListener('mouseover', spanAnimation);
-        headerSpanWrapper.addEventListener('mouseleave', setColorToWhite);
       }
       media.addListener(fromMobileToDesktopSize);
       navBtn.addEventListener('click', navAnimation);
@@ -183,8 +182,8 @@ document.addEventListener("DOMContentLoaded", function() {
             addClassForAllSpans();
           },
           onEnterCompleted: function() {
-            document.querySelector('#home-header-word-line-wrapper').addEventListener('mouseover', spanAnimation);
-            document.querySelector('#home-header-word-line-wrapper').addEventListener('mouseleave', setColorToWhite);
+            document.getElementById('home-header-word-line-wrapper').addEventListener('mouseover', spanAnimation);
+            document.getElementById('home-header-word-line-wrapper').addEventListener('mouseleave', setColorToWhite);
           },
           onLeave: function() {
           },
