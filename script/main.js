@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   //HOME PAGE RULES
     (function() {
-      const homeLinks = document.querySelectorAll('.home-page-link');
+      const homeLinks = document.getElementsByClassName('home-page-link');
       const socialLinks = document.getElementById('social-links');
       const leftNavOverlay = document.getElementById('left-nav-overlay');
       const rightNavOverlay = document.getElementById('right-nav-overlay');
@@ -14,12 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
       const navBtn = document.getElementById('nav-btn');
       const workLink = document.getElementById('works');
       const aboutLink = document.getElementById('about-me');
-      const leftStickBot = document.querySelector('.left-nav-stick-bot');
-      const leftStickTop = document.querySelector('.left-nav-stick-top');
-      const rightStickTop = document.querySelector('.right-nav-stick-top');
-      const rightStickBot = document.querySelector('.right-nav-stick-bot');
-      const stickMiddle = document.querySelector('.nav-stick-middle');
-      const homeMain = document.getElementById('home-main');
+      const leftStickBot = document.getElementById('left-nav-stick-bot');
+      const leftStickTop = document.getElementById('left-nav-stick-top');
+      const rightStickTop = document.getElementById('right-nav-stick-top');
+      const rightStickBot = document.getElementById('right-nav-stick-bot');
+      const stickMiddle = document.getElementById('nav-stick-middle');
+      const homeMain = document.getElementById('main-section');
       const homeAllImg = document.getElementById('img-holder img');
       const pageBody = document.querySelector('body');
       const imgHolderImg = document.querySelectorAll('#img-holder img');
@@ -162,15 +162,15 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       //Home page events
       if (homePage) {
-        media.addListener(fromMobileToDesktopSize);
-        navBtn.addEventListener('click', navAnimation);
-        workLink.addEventListener('mouseover', startLinkAnimation);
-        workLink.addEventListener('mouseleave', endLinkAnimation);
-        aboutLink.addEventListener('mouseover', startLinkAnimation);
-        aboutLink.addEventListener('mouseleave', endLinkAnimation);
         headerSpanWrapper.addEventListener('mouseover', spanAnimation);
         headerSpanWrapper.addEventListener('mouseleave', setColorToWhite);
       }
+      media.addListener(fromMobileToDesktopSize);
+      navBtn.addEventListener('click', navAnimation);
+      workLink.addEventListener('mouseover', startLinkAnimation);
+      workLink.addEventListener('mouseleave', endLinkAnimation);
+      aboutLink.addEventListener('mouseover', startLinkAnimation);
+      aboutLink.addEventListener('mouseleave', endLinkAnimation);
       //Home page function call
       onLoadFadeInHomeImg();
       addClassForAllSpans();
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function() {
             slideInNavBar();
             // slieInLinks();
             TweenMax.to('#home-header span', 1, {opacity:1});
-            TweenMax.to('#about-me-img', 1, {opacity:1});
+            TweenMax.to('#about-header', 1, {opacity:1});
 
             this.done();
           }
