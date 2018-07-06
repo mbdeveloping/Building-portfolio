@@ -26,10 +26,15 @@ document.addEventListener("DOMContentLoaded", function() {
       const homePage = document.getElementById('home-main');
       let pcImg = document.getElementById('bg-pc');
 
-
       //On page load fadein home page background image
       function onLoadFadeInHomeImg() {
-        TweenMax.to('.img-holder img', 5, {delay:.3,opacity:1});
+        TweenMax.set('#about-me-img',  {visibility:'visible'});
+        TweenMax.to('#about-me-img', 5, {opacity:1});
+        // TweenMax.to('.hide-after-anim', 5, {delay:.3,opacity:1});
+        if (document.getElementById('home-header')) {
+          TweenMax.fromTo('.hide-after-anim', 5, {delay:.3,opacity:0}, {opacity:1});
+          TweenMax.set(document.getElementsByClassName('hide-after-anim')[0], {visibility:'visible'});
+        }
       }
       //Add class for all header spans
       function addClassForAllSpans() {
@@ -224,21 +229,31 @@ document.addEventListener("DOMContentLoaded", function() {
           },
           enlargeThumb: function() {
             const deferred = Barba.Utils.deferred();
+            zoomInBg();
             hideLinks();
             slideOutNavBar();
-            fadeOutHomeHeader();
+            // fadeOutHomeHeader();
             navBtnClose();
-            TweenMax.to('.img-holder img', 1, {
-                opacity:0, onComplete: function() {
-                  deferred.resolve();
-              }
-            });
+            TweenMax.staggerTo( '.img-holder img', 0.05, {visibility:"visible"}, 0.05, allDone );
+            function allDone() {
+              TweenMax.set('#about-me-img', {autoAlpha:1});
+              TweenMax.to('.img-holder', 1, {height:'100vh', onComplete:function() {
+                TweenMax.set('.img-holder', {height:'100vh'});
+                deferred.resolve();
+              }});
+              TweenMax.to('.img-holder img', .7, {right:'6%'});
+            }
+            // TweenMax.to('.img-holder', 1, {
+            //     autoAplha:1, onComplete: function() {
+            //       deferred.resolve();
+            //       TweenMax.set('.img-holder', {height:'100vh'});
+            //   }
+            // });
             return deferred.promise;
           },
           showNewPage: function() {
             this.newContainer.style.visibility = 'visible';
             slideInNavBar();
-            TweenMax.to('#about-me-img', 1, {opacity:1});
             this.done();
           }
         });
@@ -265,7 +280,7 @@ document.addEventListener("DOMContentLoaded", function() {
           showNewPage: function() {
             this.newContainer.style.visibility = 'visible';
             slideInNavBar();
-            TweenMax.to('#home-img', 1, {opacity:1});
+            onLoadFadeInHomeImg();
 
             this.done();
           }

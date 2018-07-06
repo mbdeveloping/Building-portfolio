@@ -222,24 +222,27 @@ main {
 }
 .img-holder {
   width: 100%;
-  height: 100vh;
+  height: 60vh;
   overflow: hidden;
   position: absolute;
-  top:0;
+  bottom:0;
   left:0;
   z-index: -10;
   will-change: transform;
   @include transform(translateZ(0));
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
-  outline: 1px solid transparent;
   -webkit-backface-visibility: hidden;
   img {
-    height: 60vh;
+    height: 100%;
     position: absolute;
     bottom: 0;
     right: 37%;
+    will-change: transform;
     @include transform(translateX(50%));
-    opacity:0;
+    // opacity:0;
+    visibility: hidden;
+    &:first-child{
+      // visibility: visible;
+    }
   }
   div {
     position: absolute;
@@ -327,6 +330,7 @@ main {
   bottom: 0;
   z-index: -10;
   height: 100vh;
+  opacity:0;
 }
 
 /*********** MEDIA QUERIES *********/

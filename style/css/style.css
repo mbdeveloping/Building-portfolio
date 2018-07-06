@@ -214,28 +214,27 @@ main {
 
 .img-holder {
   width: 100%;
-  height: 100vh;
+  height: 60vh;
   overflow: hidden;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   z-index: -10;
   will-change: transform;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
-  outline: 1px solid transparent;
   -webkit-backface-visibility: hidden; }
   .img-holder img {
-    height: 60vh;
+    height: 100%;
     position: absolute;
     bottom: 0;
     right: 37%;
+    will-change: transform;
     -webkit-transform: translateX(50%);
     -ms-transform: translateX(50%);
     transform: translateX(50%);
-    opacity: 0; }
+    visibility: hidden; }
   .img-holder div {
     position: absolute;
     right: 50%;
@@ -325,7 +324,8 @@ main {
   right: 6%;
   bottom: 0;
   z-index: -10;
-  height: 100vh; }
+  height: 100vh;
+  opacity: 0; }
 
 /*********** MEDIA QUERIES *********/
 @media (min-width: 600px) {
