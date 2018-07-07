@@ -203,21 +203,6 @@ document.addEventListener("DOMContentLoaded", function() {
           onLeaveCompleted: function() {
           }
         });
-
-        // const Aboutpage = Barba.BaseView.extend({
-        //   namespace: 'about',
-        //   onEnter: function() {
-        //     console.log("This is about page");
-        //     onLoadFadeInHomeImg();
-        //     addClassForAllSpans();
-        //     slideInNavBar();
-        //     fromMobileToDesktopSize(media);
-        //   },
-        //   onLeave: function() {
-        //   },
-        //   onLeaveCompleted: function() {
-        //   }
-        // });
         const Aboutpage = Barba.BaseView.extend({
           namespace: 'about',
           onEnterCompleted: function() {
@@ -244,6 +229,7 @@ document.addEventListener("DOMContentLoaded", function() {
             slideOutNavBar();
             // fadeOutHomeHeader();
             navBtnClose();
+            TweenMax.to('#home-header', .7, {autoAlpha:0});
             TweenMax.staggerTo( '.img-holder img', 0.05, {visibility:"visible"}, 0.05, allDone );
             function allDone() {
               TweenMax.set('#about-me-img', {autoAlpha:1});
@@ -253,12 +239,6 @@ document.addEventListener("DOMContentLoaded", function() {
               }});
               TweenMax.to('.img-holder img', .7, {x:'48%'});
             }
-            // TweenMax.to('.img-holder', 1, {
-            //     autoAplha:1, onComplete: function() {
-            //       deferred.resolve();
-            //       TweenMax.set('.img-holder', {height:'100vh'});
-            //   }
-            // });
             return deferred.promise;
           },
           showNewPage: function() {
@@ -277,9 +257,6 @@ document.addEventListener("DOMContentLoaded", function() {
             slideOutNavBar();
             navBtnClose();
             TweenMax.to('#about-header', 1, {opacity:0});
-            // document.querySelectorAll('#about-header span').forEach(function(span) {
-            //   TweenMax.to(span, 1, {x:Math.round(Math.random()) *50-25, y: Math.random()*200-100,autoAlpha:0, scale:Math.random()*2-1});
-            // });
             TweenMax.to('#about-me-img', 1, {
                 opacity:0, onComplete: function() {
                   deferred.resolve();
@@ -295,27 +272,6 @@ document.addEventListener("DOMContentLoaded", function() {
             this.done();
           }
         });
-        // var ShrinkTransition = Barba.BaseTransition.extend({
-        //   start: function() {
-        //     this.newContainerLoading.then(this.shrinkImage.bind(this));
-        //   },
-        //
-        //   shrinkImage: function() {
-        //     var _this = this;
-        //
-        //     this.oldContainer.style.zIndex = '10';
-        //     this.newContainer.style.visibility = 'visible';
-        //
-        //     var href = Barba.HistoryManager.prevStatus().url.split('/').pop();
-        //     var destThumb = this.newContainer.querySelector('a[href="' + href + '"]');
-        //
-        //     hideLinks();
-        //     slideOutNavBar();
-        //     TweenMax.to('#about-me-img', 1, {opacity:0, onComplete: function() {
-        //       _this.done();
-        //     }});
-        //   }
-        // });
         Barba.Pjax.getTransition = function() {
           var transitionObj = ExpandTransition;
 
@@ -334,46 +290,4 @@ document.addEventListener("DOMContentLoaded", function() {
     (function() {
 
     }())
-  //Paralax prorotyping
-    // let wrap = document.getElementById('parallax-wrapper-outter');
-  	// let request = null;
-  	// let mouse = { x: 0, y: 0 };
-  	// let cx = window.innerWidth / 2;
-  	// let cy = window.innerHeight / 2;
-    //
-  	// document.querySelector('body').addEventListener('mousemove', function(event) {
-  	// 	mouse.x = event.pageX;
-  	// 	mouse.y = event.pageY;
-    //   cancelAnimationFrame(request);
-    //   request = requestAnimationFrame(update);
-  	// });
-    //
-  	// function update() {
-  	// 	dx = mouse.x - cx;
-  	// 	dy = mouse.y - cy;
-  	// 	let tiltx = (dy / cy );
-  	// 	let tilty = - (dx / cx);
-  	// 	let radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
-  	// 	let degree = (radius * 20);
-    //   let meImg = document.getElementById('person');
-    //
-    //   TweenMax.to("#bg-pc", 1, {x:-tilty*5, y:-tiltx*5, rotation:0.01, rotationY:tilty*5, rotationX:tiltx*5, ease:Power2.easeOut});
-    //   TweenMax.to("#person", 1, {x:tilty*10, y:tiltx*5, rotation:0.01, rotationY:tilty, ease:Power2.easeOut});
-    //   if (mouse.x <= 999) {
-    //     meImg.src = 'img/me.png';
-    //     console.log("melast");
-    //   } else if (mouse.x >= 1000 && mouse.x < 1099) {
-    //     meImg.src = 'img/me1.png';
-    //     console.log("me1");
-    //   } else if (mouse.x >= 1100 && mouse.x < 1199) {
-    //     meImg.src = 'img/me2.png';
-    //   } else if (mouse.x >= 1200 && mouse.x < 1399) {
-    //     meImg.src = 'img/me-last.png';
-    //   }
-    // }
-    //
-    // window.addEventListener('resize', function(event){
-    //    window.innerWidth / 2;
-    // 	 window.innerHeight / 2;
-    // });
   });
