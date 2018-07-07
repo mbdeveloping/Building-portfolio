@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // fadeOutHomeHeader();
             navBtnClose();
             TweenMax.to('#home-header', .7, {autoAlpha:0});
-            TweenMax.staggerTo( '.img-holder img', 0.05, {visibility:"visible"}, 0.05, allDone );
+            TweenMax.staggerTo( '.img-holder img', 0.2, {visibility:"visible"}, 0.04, allDone );
             function allDone() {
               TweenMax.set('#about-me-img', {autoAlpha:1});
               TweenMax.to('.img-holder', 1, {height:'100vh', onComplete:function() {
