@@ -218,8 +218,18 @@ document.addEventListener("DOMContentLoaded", function() {
         //   onLeaveCompleted: function() {
         //   }
         // });
+        const Aboutpage = Barba.BaseView.extend({
+          namespace: 'about',
+          onEnterCompleted: function() {
+            TweenMax.set('.img-holder', {height:'100vh'});
+          },
+          onLeave: function() {
+          },
+          onLeaveCompleted: function() {
+          }
+        });
         Homepage.init();
-        // Aboutpage.init();
+        Aboutpage.init();
         Barba.Pjax.init();
         Barba.Prefetch.init();
 
@@ -241,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 TweenMax.set('.img-holder', {height:'100vh'});
                 deferred.resolve();
               }});
-              TweenMax.to('.img-holder img', .7, {right:'6%'});
+              TweenMax.to('.home-img-holder img', .7, {x:'63%'});
             }
             // TweenMax.to('.img-holder', 1, {
             //     autoAplha:1, onComplete: function() {
