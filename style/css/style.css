@@ -229,11 +229,11 @@ main {
     height: 100%;
     position: absolute;
     bottom: 0;
-    right: 37%;
+    right: 0;
     will-change: transform;
-    -webkit-transform: translateX(50%);
-    -ms-transform: translateX(50%);
-    transform: translateX(50%);
+    -webkit-transform: translateX(22%);
+    -ms-transform: translateX(22%);
+    transform: translateX(22%);
     visibility: hidden; }
   .img-holder div {
     position: absolute;

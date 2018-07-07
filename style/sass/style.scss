@@ -235,9 +235,9 @@ main {
     height: 100%;
     position: absolute;
     bottom: 0;
-    right: 37%;
+    right: 0;
     will-change: transform;
-    @include transform(translateX(50%));
+    @include transform(translateX(22%));
     // opacity:0;
     visibility: hidden;
     &:first-child{
