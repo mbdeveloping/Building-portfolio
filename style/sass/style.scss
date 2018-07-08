@@ -174,6 +174,7 @@ main {
   align-items:flex-start;
   @include transform(scale(1));
   span {
+    backface-visibility: hidden;
     display: inline-block;
     opacity:0;
   }
@@ -238,12 +239,8 @@ main {
     bottom: 0;
     right: 0;
     will-change: transform;
-    @include transform(translateX(22%));
-    // opacity:0;
+    @include transform(translateX(22%) translateZ(0));
     visibility: hidden;
-    &:first-child{
-      // visibility: visible;
-    }
   }
   div {
     position: absolute;

@@ -158,6 +158,7 @@ main {
   -ms-transform: scale(1);
   transform: scale(1); }
   #home-header-word-line-wrapper span {
+    backface-visibility: hidden;
     display: inline-block;
     opacity: 0; }
 
@@ -232,9 +233,9 @@ main {
     bottom: 0;
     right: 0;
     will-change: transform;
-    -webkit-transform: translateX(22%);
-    -ms-transform: translateX(22%);
-    transform: translateX(22%);
+    -webkit-transform: translateX(22%) translateZ(0);
+    -ms-transform: translateX(22%) translateZ(0);
+    transform: translateX(22%) translateZ(0);
     visibility: hidden; }
   .img-holder div {
     position: absolute;
