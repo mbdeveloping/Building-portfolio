@@ -46,11 +46,12 @@ document.addEventListener("DOMContentLoaded", function() {
       function hideLinks() {
         // TweenMax.set(socialLinks,{y:'100%'});
         TweenMax.to(socialLinks, .3, {y:'100%'});
-        TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%', ease: Bounce.easeOut});
+        TweenMax.to(leftNavOverlay,.3, {x: '-100%'});
+        TweenMax.to( rightNavOverlay,.3, {x: '100%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
       }
       function slieInLinks() {
-        TweenMax.to([leftNavOverlay, rightNavOverlay], 1, {width: '5%', ease: Bounce.easeOut});
+        TweenMax.to([leftNavOverlay, rightNavOverlay], 1, {width: '5%', x:'0%', ease: Bounce.easeOut});
         TweenMax.to(socialLinks, .5, {y:'0%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
       }
@@ -76,12 +77,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       //Slide nav bar from the op
       function slideInNavBar() {
-        TweenMax.to(navBar, .5, {y:'0%', onComplete:function(){
+        TweenMax.to('#nav-bar', .5, {y:'0%', onComplete:function(){
           fadeInHeaderText();
         }});
       }
       function slideOutNavBar() {
-        TweenMax.to(navBar, .5, {y: '-100%'});
+        TweenMax.to('#nav-bar', .5, {y: '-100%'});
       }
       //Home header hover animation
       function spanAnimation(e) {
@@ -147,14 +148,15 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       function openNav() {
         navBtnOpen();
-        TweenMax.to([leftNavOverlay, rightNavOverlay], 1, {width: '50%', ease: Bounce.easeOut});
+        TweenMax.to([leftNavOverlay, rightNavOverlay], 1, {x: '0%', width:'50%', ease: Bounce.easeOut});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
         TweenMax.to(socialLinks, .3, {y:'0%'});
         zoomOutBg();
       }
       function closeNav() {
         navBtnClose();
-        TweenMax.to([leftNavOverlay, rightNavOverlay], .3, {width: '0'});
+        TweenMax.to(leftNavOverlay, .3, {x: '-100%'});
+        TweenMax.to(rightNavOverlay, .3, {x: '100%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
         TweenMax.to(socialLinks, .3, {y:'100%'});
         zoomInBg();
@@ -178,7 +180,6 @@ document.addEventListener("DOMContentLoaded", function() {
           }
       }
       media.addListener(fromMobileToDesktopSize);
-      navBtn.addEventListener('click', navAnimation);
       workLink.addEventListener('mouseover', startLinkAnimation);
       workLink.addEventListener('mouseleave', endLinkAnimation);
       aboutLink.addEventListener('mouseover', startLinkAnimation);
@@ -195,6 +196,7 @@ document.addEventListener("DOMContentLoaded", function() {
             addClassForAllSpans();
           },
           onEnterCompleted: function() {
+            document.getElementById('nav-btn').addEventListener('click', navAnimation);
             document.getElementById('home-header-word-line-wrapper').addEventListener('mouseover', spanAnimation);
             document.getElementById('home-header-word-line-wrapper').addEventListener('mouseleave', setColorToWhite);
           },
@@ -206,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const Aboutpage = Barba.BaseView.extend({
           namespace: 'about',
           onEnterCompleted: function() {
-            TweenMax.set('.img-holder', {height:'100vh'});
+            document.getElementById('nav-btn').addEventListener('click', navAnimation);
           },
           onLeave: function() {
           },
@@ -225,20 +227,26 @@ document.addEventListener("DOMContentLoaded", function() {
           enlargeThumb: function() {
             const deferred = Barba.Utils.deferred();
             zoomInBg();
-            hideLinks();
+            // hideLinks();
             slideOutNavBar();
-            // fadeOutHomeHeader();
             navBtnClose();
-            TweenMax.to('#home-header', .7, {autoAlpha:0});
-            TweenMax.staggerTo( '.img-holder img', 0.2, {visibility:"visible"}, 0.04, allDone );
-            function allDone() {
-              TweenMax.set('#about-me-img', {autoAlpha:1});
-              TweenMax.to('.img-holder', 1, {height:'100vh', onComplete:function() {
-                TweenMax.set('.img-holder', {height:'100vh'});
+            TweenMax.to(socialLinks, .3, {y:'100%'});
+            TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%', ease: Bounce.easeOut});
+            TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
+              TweenMax.to('#home-header', .7, {autoAlpha:0});
+              TweenMax.staggerTo( '.img-holder img', .2, {visibility:"visible"}, 0.04, allDone );
+              function allDone() {
+                TweenMax.set('#about-me-img', {autoAlpha:1});
                 deferred.resolve();
-              }});
-              TweenMax.to('.img-holder img', .7, {x:'48%'});
-            }
+              }
+            }});
+
+            // TweenMax.to('#home-header', .7, {autoAlpha:0});
+            // TweenMax.staggerTo( '.img-holder img', .2, {visibility:"visible"}, 0.04, allDone );
+            // function allDone() {
+            //   TweenMax.set('#about-me-img', {autoAlpha:1});
+            //   deferred.resolve();
+            // }
             return deferred.promise;
           },
           showNewPage: function() {
@@ -257,11 +265,15 @@ document.addEventListener("DOMContentLoaded", function() {
             slideOutNavBar();
             navBtnClose();
             TweenMax.to('#about-header', 1, {opacity:0});
-            TweenMax.to('#about-me-img', 1, {
-                opacity:0, onComplete: function() {
-                  deferred.resolve();
-              }
-            });
+            TweenMax.staggerTo( '.img-holder img', .4, {visibility:"visible"}, -0.04, allDoneAbout );
+            function allDoneAbout() {
+              deferred.resolve();
+            }
+            // TweenMax.to('#about-me-img', 1, {
+            //     opacity:0, onComplete: function() {
+            //       deferred.resolve();
+            //   }
+            // });
             return deferred.promise;
           },
           showNewPage: function() {
