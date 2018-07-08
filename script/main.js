@@ -229,8 +229,8 @@ document.addEventListener("DOMContentLoaded", function() {
             // TweenMax.to(['#hello', '#frontend-developer'], .7, {x:300});
             // TweenMax.to(['#i-am-mantvydas', '#based'], .7, {x:-300});
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
-              TweenMax.to(['#hello', '#frontend-developer'], .7, {x:300});
-              TweenMax.to(['#i-am-mantvydas', '#based'], .7, {x:-300});
+              TweenMax.to(['#hello', '#frontend-developer'], .7, {x:350});
+              TweenMax.to(['#i-am-mantvydas', '#based'], .7, {x:-350});
               TweenMax.staggerTo( '.img-holder img', .2, {visibility:"visible"}, 0.04, allDone );
               function allDone() {
                 TweenMax.set('#about-me-img', {autoAlpha:1});
