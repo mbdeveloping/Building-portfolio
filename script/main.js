@@ -14,15 +14,9 @@ document.addEventListener("DOMContentLoaded", function() {
       const navBtn = document.getElementById('nav-btn');
       const workLink = document.getElementById('works');
       const aboutLink = document.getElementById('about-me');
-      const leftStickBot = document.getElementById('left-nav-stick-bot');
-      const leftStickTop = document.getElementById('left-nav-stick-top');
-      const rightStickTop = document.getElementById('right-nav-stick-top');
-      const rightStickBot = document.getElementById('right-nav-stick-bot');
-      const stickMiddle = document.getElementById('nav-stick-middle');
       const homeMain = document.getElementsByClassName('main-section');
       const homeAllImg = document.getElementById('img-holder img');
       const pageBody = document.querySelector('body');
-      // const imgHolderImg = document.querySelectorAll('#img-holder img');
       const homePage = document.getElementById('home-main');
       let pcImg = document.getElementById('bg-pc');
 
@@ -231,22 +225,18 @@ document.addEventListener("DOMContentLoaded", function() {
             slideOutNavBar();
             navBtnClose();
             TweenMax.to(socialLinks, .3, {y:'100%'});
-            TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%', ease: Bounce.easeOut});
+            TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
+            // TweenMax.to(['#hello', '#frontend-developer'], .7, {x:300});
+            // TweenMax.to(['#i-am-mantvydas', '#based'], .7, {x:-300});
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
-              TweenMax.to('#home-header', .7, {autoAlpha:0});
+              TweenMax.to(['#hello', '#frontend-developer'], .7, {x:300});
+              TweenMax.to(['#i-am-mantvydas', '#based'], .7, {x:-300});
               TweenMax.staggerTo( '.img-holder img', .2, {visibility:"visible"}, 0.04, allDone );
               function allDone() {
                 TweenMax.set('#about-me-img', {autoAlpha:1});
                 deferred.resolve();
               }
             }});
-
-            // TweenMax.to('#home-header', .7, {autoAlpha:0});
-            // TweenMax.staggerTo( '.img-holder img', .2, {visibility:"visible"}, 0.04, allDone );
-            // function allDone() {
-            //   TweenMax.set('#about-me-img', {autoAlpha:1});
-            //   deferred.resolve();
-            // }
             return deferred.promise;
           },
           showNewPage: function() {
@@ -269,11 +259,6 @@ document.addEventListener("DOMContentLoaded", function() {
             function allDoneAbout() {
               deferred.resolve();
             }
-            // TweenMax.to('#about-me-img', 1, {
-            //     opacity:0, onComplete: function() {
-            //       deferred.resolve();
-            //   }
-            // });
             return deferred.promise;
           },
           showNewPage: function() {
