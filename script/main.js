@@ -122,20 +122,20 @@ document.addEventListener("DOMContentLoaded", function() {
       //Nav button open animation
       function navBtnClose(){
         navBtn.className = '';
-        TweenMax.to(stickMiddle, .3, {height: '0%'});
-        TweenMax.to([rightStickBot, leftStickBot, leftStickTop, rightStickTop], .3, {x: 0});
-        TweenMax.to([leftStickBot, leftStickTop, rightStickTop, rightStickBot], .3, {rotation: 0});
+        TweenMax.to('#nav-stick-middle', .3, {height: '0%'});
+        TweenMax.to(['#right-nav-stick-bot', '#left-nav-stick-top', '#left-nav-stick-bot', '#right-nav-stick-top'], .3, {x: 0});
+        TweenMax.to(['#left-nav-stick-bot', '#left-nav-stick-top', '#right-nav-stick-top', '#right-nav-stick-bot'], .3, {rotation: 0});
       }
       //Nav button close animation
       function navBtnOpen() {
         navBtn.className = 'navigation-open';
-        TweenMax.to(leftStickBot, .3, {rotation: -45, onComplete:function() {
-          TweenMax.to(stickMiddle, .3, {height: '140%'});
-          TweenMax.to([leftStickBot, leftStickTop],.3, {x: -5});
-          TweenMax.to([rightStickTop, rightStickBot], .3, {x: 5});
+        TweenMax.to('#left-nav-stick-bot', .3, {rotation: -45, onComplete:function() {
+          TweenMax.to('#nav-stick-middle', .3, {height: '140%'});
+          TweenMax.to(['#left-nav-stick-bot', '#left-nav-stick-top'],.3, {x: -5});
+          TweenMax.to(['#right-nav-stick-top', '#right-nav-stick-bot'], .3, {x: 5});
         }});
-        TweenMax.to([leftStickTop, rightStickBot], .3, {rotation: 45});
-        TweenMax.to(rightStickTop, .3, {rotation: -45});
+        TweenMax.to(['#left-nav-stick-top', '#right-nav-stick-bot'], .3, {rotation: 45});
+        TweenMax.to('#right-nav-stick-top', .3, {rotation: -45});
       }
       //Navigation animation
       function navAnimation(e) {
