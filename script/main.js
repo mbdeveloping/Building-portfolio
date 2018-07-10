@@ -220,9 +220,7 @@ document.addEventListener("DOMContentLoaded", function() {
           },
           enlargeThumb: function() {
             const deferred = Barba.Utils.deferred();
-            const tl = new TimelineMax();
             zoomInBg();
-            // hideLinks();
             slideOutNavBar();
             navBtnClose();
             TweenMax.to(socialLinks, .3, {y:'100%'});
@@ -231,7 +229,6 @@ document.addEventListener("DOMContentLoaded", function() {
               TweenMax.to(['#hello', '#frontend-developer'], .7, {x:350});
               TweenMax.to(['#i-am-mantvydas', '#based'], .7, {x:-350, onComplete: allDone});
               function allDone() {
-                TweenMax.set('#about-me-img', {autoAlpha:1});
                 deferred.resolve();
               }
             }});
@@ -249,14 +246,18 @@ document.addEventListener("DOMContentLoaded", function() {
           },
           fadeOut: function() {
             const deferred = Barba.Utils.deferred();
-            hideLinks();
+            zoomInBg();
             slideOutNavBar();
             navBtnClose();
-            TweenMax.to('#about-header', 1, {x:'100%'});
-            TweenMax.to('.about-p', 1, {x:'-250%', onComplete:allDoneAbout});
-            function allDoneAbout() {
-              deferred.resolve();
-            }
+            TweenMax.to(socialLinks, .3, {y:'100%'});
+            TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
+            TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
+              TweenMax.to('#about-header', 1, {x:'100%'});
+              TweenMax.to('.about-p', 1, {x:'-250%', onComplete:allDoneAbout});
+              function allDoneAbout() {
+               deferred.resolve();
+             }
+            }});
             return deferred.promise;
           },
           showNewPage: function() {
