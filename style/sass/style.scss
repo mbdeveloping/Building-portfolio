@@ -301,12 +301,19 @@ main {
 }
 
 /****************** ABOUT PAGE RULES ********************/
+#about-pos-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #about-header {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   padding-top: 100px;
   padding-left: 1rem;
   padding-right: 1rem;
+  max-width: 300px;
   h1 {
     font-size: 2rem;
     padding-bottom:1rem;

@@ -252,8 +252,8 @@ document.addEventListener("DOMContentLoaded", function() {
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
-              TweenMax.to('#about-header', 1, {x:'100%'});
-              TweenMax.to('.about-p', 1, {x:'-250%', onComplete:allDoneAbout});
+              TweenMax.to('#about-header h1', 1, {x:'110%'});
+              TweenMax.to('.about-p', 1, {x:'-110%', onComplete:allDoneAbout});
               function allDoneAbout() {
                deferred.resolve();
              }
@@ -263,7 +263,6 @@ document.addEventListener("DOMContentLoaded", function() {
           showNewPage: function() {
             this.newContainer.style.visibility = 'visible';
             slideInNavBar();
-            onLoadFadeInHomeImg();
 
             this.done();
           }
