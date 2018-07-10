@@ -370,7 +370,6 @@ main {
   align-items: center;
   background: #111;
   color: #999;
-  border-bottom: 1px solid #999;
   header {
     z-index: 10;
   }
@@ -387,9 +386,10 @@ main {
   position: relative;
   display: grid;
   align-items: center;
-  background: #fff;
-  color: #333;
+  background: #333;
+  color: #999;
   .number {
+    color: #fff;
     @extend %number;
   }
 }
