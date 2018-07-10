@@ -252,8 +252,8 @@ document.addEventListener("DOMContentLoaded", function() {
             hideLinks();
             slideOutNavBar();
             navBtnClose();
-            TweenMax.to('#about-header', 1, {opacity:0});
-            TweenMax.staggerTo( '.img-holder img', .4, {visibility:"visible"}, -0.04, allDoneAbout );
+            TweenMax.to('#about-header', 1, {x:'100%'});
+            TweenMax.to('.about-p', 1, {x:'-250%', onComplete:allDoneAbout});
             function allDoneAbout() {
               deferred.resolve();
             }
