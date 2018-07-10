@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function() {
         Barba.Pjax.init();
         Barba.Prefetch.init();
 
-        const ExpandTransition = Barba.BaseTransition.extend({
+        const HomeTransition = Barba.BaseTransition.extend({
           start: function() {
             Promise.all([this.newContainerLoading, this.enlargeThumb()]).then(this.showNewPage.bind(this));
           },
@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function() {
             this.done();
           }
         });
-        const ShrinkTransition = Barba.BaseTransition.extend({
+        const AboutTransition = Barba.BaseTransition.extend({
           start: function() {
             Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.showNewPage.bind(this));
           },
@@ -268,10 +268,10 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         });
         Barba.Pjax.getTransition = function() {
-          var transitionObj = ExpandTransition;
+          var transitionObj = HomeTransition;
 
           if (Barba.HistoryManager.prevStatus().namespace === 'about') {
-            transitionObj = ShrinkTransition;
+            transitionObj = AboutTransition;
           }
 
           return transitionObj;

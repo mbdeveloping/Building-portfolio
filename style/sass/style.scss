@@ -321,7 +321,6 @@ main {
   span {
     opacity:0;
     display: inline-block;
-    will-change: transform;
     transform:translateZ(0);
   }
 }
