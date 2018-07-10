@@ -220,18 +220,16 @@ document.addEventListener("DOMContentLoaded", function() {
           },
           enlargeThumb: function() {
             const deferred = Barba.Utils.deferred();
+            const tl = new TimelineMax();
             zoomInBg();
             // hideLinks();
             slideOutNavBar();
             navBtnClose();
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
-            // TweenMax.to(['#hello', '#frontend-developer'], .7, {x:300});
-            // TweenMax.to(['#i-am-mantvydas', '#based'], .7, {x:-300});
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
               TweenMax.to(['#hello', '#frontend-developer'], .7, {x:350});
-              TweenMax.to(['#i-am-mantvydas', '#based'], .7, {x:-350});
-              TweenMax.staggerTo( '.img-holder img', .2, {visibility:"visible"}, 0.04, allDone );
+              TweenMax.to(['#i-am-mantvydas', '#based'], .7, {x:-350, onComplete: allDone});
               function allDone() {
                 TweenMax.set('#about-me-img', {autoAlpha:1});
                 deferred.resolve();

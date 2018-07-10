@@ -330,12 +330,13 @@ main {
 
 /*********** MEDIA QUERIES *********/
 @media (min-width: 600px) {
-  .img-holder img {
-    right: 0;
-    -webkit-transform: translateX(25%);
-    -ms-transform: translateX(25%);
-    transform: translateX(25%);
+  .img-holder {
     height: 75vh; }
+    .img-holder img {
+      right: 0;
+      -webkit-transform: translateX(25%);
+      -ms-transform: translateX(25%);
+      transform: translateX(25%); }
 
   #home-header {
     grid-template-columns: 2fr 1fr; }
@@ -357,11 +358,12 @@ main {
   #frontend-developer span {
     font-size: 1.7rem; } }
 @media (min-width: 900px) {
-  .img-holder img {
-    height: 90vh;
-    -webkit-transform: translateX(10%);
-    -ms-transform: translateX(10%);
-    transform: translateX(10%); }
+  .img-holder {
+    height: 90vh; }
+    .img-holder img {
+      -webkit-transform: translateX(20%);
+      -ms-transform: translateX(20%);
+      transform: translateX(20%); }
 
   #home-header h1 {
     grid-row: 2/3;
@@ -443,11 +445,6 @@ main {
     transform: translate(0px, -106px);
     align-self: flex-end; }
     #based span {
-      font-size: 1.25rem; }
-
-  .img-holder img {
-    -webkit-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-    transform: translateX(0%); } }
+      font-size: 1.25rem; } }
 
 /*# sourceMappingURL=style.css.map */

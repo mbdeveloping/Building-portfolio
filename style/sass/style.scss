@@ -332,10 +332,12 @@ main {
 
 /*********** MEDIA QUERIES *********/
 @media (min-width: 600px) {
-  .img-holder img {
-    right:0;
-    @include transform(translateX(25%));
+  .img-holder  {
     height: 75vh;
+    img {
+      right:0;
+      @include transform(translateX(25%));
+    }
   }
   #home-header {
     grid-template-columns: 2fr 1fr;
@@ -358,9 +360,11 @@ main {
   }
 }
 @media (min-width: 900px) {
-  .img-holder img {
+  .img-holder {
     height: 90vh;
-    @include transform(translateX(10%));
+    img {
+      @include transform(translateX(20%));
+    }
   }
   #home-header h1 {
     grid-row: 2/3;
@@ -447,6 +451,6 @@ main {
     }
   }
   .img-holder img {
-    @include transform(translateX(0%));
+    // @include transform(translateX(0%));
   }
 }
