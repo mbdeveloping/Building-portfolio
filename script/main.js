@@ -209,8 +209,19 @@ document.addEventListener("DOMContentLoaded", function() {
           onLeaveCompleted: function() {
           }
         });
+        const Workspage = Barba.BaseView.extend({
+          namespace: 'works',
+          onEnterCompleted: function() {
+            document.getElementById('nav-btn').addEventListener('click', navAnimation);
+          },
+          onLeave: function() {
+          },
+          onLeaveCompleted: function() {
+          }
+        });
         Homepage.init();
         Aboutpage.init();
+        Workspage.init();
         Barba.Pjax.init();
         Barba.Prefetch.init();
 
@@ -267,12 +278,39 @@ document.addEventListener("DOMContentLoaded", function() {
             this.done();
           }
         });
+        const WorksTransition = Barba.BaseTransition.extend({
+          start: function() {
+            Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.showNewPage.bind(this));
+          },
+          fadeOut: function() {
+            const deferred = Barba.Utils.deferred();
+            zoomInBg();
+            slideOutNavBar();
+            navBtnClose();
+            TweenMax.to(socialLinks, .3, {y:'100%'});
+            TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
+            TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
+               deferred.resolve();
+            }});
+            return deferred.promise;
+          },
+          showNewPage: function() {
+            this.newContainer.style.visibility = 'visible';
+            slideInNavBar();
+
+            this.done();
+          }
+        });
         Barba.Pjax.getTransition = function() {
           var transitionObj = HomeTransition;
 
           if (Barba.HistoryManager.prevStatus().namespace === 'about') {
             transitionObj = AboutTransition;
           }
+          if (Barba.HistoryManager.prevStatus().namespace === 'works') {
+            transitionObj = WorksTransition;
+          }
+
 
           return transitionObj;
         };

@@ -334,6 +334,79 @@ main {
   height: 100%;
   opacity: 0; }
 
+/****************** WORKS PAGE RULES ********************/
+#works-page {
+  padding-top: 82px;
+  display: grid; }
+
+#seven-seals-of-event-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 3fr;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1em; }
+
+.work-header {
+  padding-bottom: 1rem;
+  align-self: end;
+  text-align: right; }
+  .work-header h1 {
+    letter-spacing: 2px;
+    font-size: 1.5rem; }
+  .work-header p {
+    font-size: .8rem;
+    font-style: italic; }
+
+#built-with-section {
+  align-self: start;
+  font-size: .9rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  text-align: right; }
+  #built-with-section h2 {
+    align-self: start;
+    justify-self: end;
+    font-size: 1rem;
+    font-weight: normal; }
+
+#about-website-section {
+  align-self: start;
+  text-align: center;
+  padding: 0 1rem; }
+  #about-website-section h2 {
+    padding-bottom: .5rem; }
+  #about-website-section a {
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    display: inline-block;
+    border: 1px solid #fff; }
+
+#go-back-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 1rem;
+  padding-bottom: 1.5rem;
+  padding-right: 0; }
+  #go-back-btn .btn-main-line {
+    height: 1px;
+    width: 60px;
+    background: #fff;
+    transform: translateY(1px); }
+  #go-back-btn .btn-top-line {
+    height: 1px;
+    width: 30px;
+    background: #fff;
+    transform-origin: top left;
+    transform: rotate(-25deg); }
+  #go-back-btn .btn-bot-line {
+    height: 1px;
+    width: 30px;
+    background: #fff;
+    transform-origin: top left;
+    transform: rotate(25deg); }
+
 /*********** MEDIA QUERIES *********/
 @media (min-width: 600px) {
   .img-holder {
