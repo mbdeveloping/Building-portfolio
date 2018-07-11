@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
       const homePage = document.getElementById('home-main');
       let pcImg = document.getElementById('bg-pc');
 
+      TweenMax.to('#stars-small', 50, {y:-2000, z:0, repeat:-1});
+      TweenMax.to('#stars-medium', 100, {y:-2000, z:0, repeat:-1});
+      TweenMax.to('#stars-large', 150, {y:-2000, z:0, repeat:-1});
       //On page load fadein home page background image
       function onLoadFadeInHomeImg() {
         TweenMax.set('#about-me-img',  {visibility:'visible'});
