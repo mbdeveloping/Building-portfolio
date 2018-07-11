@@ -62,6 +62,9 @@ ul {
     position: relative;
     display: flex;
     width: 67px;
+    svg {
+      width: 100px;
+    }
   }
   #logo-name {
     display:none;
@@ -391,6 +394,9 @@ main {
   .number {
     color: #fff;
     @extend %number;
+  }
+  img {
+    width: 50px;
   }
 }
 

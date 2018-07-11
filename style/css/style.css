@@ -52,6 +52,8 @@ ul {
     position: relative;
     display: flex;
     width: 67px; }
+    #nav-bar #logo-wrapper svg {
+      width: 100px; }
   #nav-bar #logo-name {
     display: none;
     padding-top: .5rem;
@@ -383,6 +385,8 @@ main {
   color: #999; }
   #my-portfolio .number {
     color: #fff; }
+  #my-portfolio img {
+    width: 50px; }
 
 /*********** MEDIA QUERIES *********/
 @media (min-width: 600px) {
