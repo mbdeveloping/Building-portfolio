@@ -56,8 +56,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         if (document.getElementById('about-header')) {
           TweenMax.set('#about-header', {autoAlpha:1});
-          // TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1, z:0}, {autoAlpha:1, scale:1, z:0}, 0.02 );
-          // TweenMax.staggerFromTo( '.testt span', 0.1, {scale:6, z:0}, {scale:1, z:0}, 0.02);
           TweenMax.from('#about-header h1', 1, {x:'-100%'});
           TweenMax.from('#about-header p', 1, {x:'100%'});
         }
@@ -67,8 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
           TweenMax.from('#works-page-main-header h1', 1, {x:'-100%'});
           TweenMax.from('#works-page-main-header p', 1, {x:'100%'});
-          TweenMax.from('#my-portfolio', 1, {y:'100%', autoAlpha:0});
-          TweenMax.from('#seven-seals-of-event', 1, {y:'100%', autoAlpha:0});
+          TweenMax.from('#works-thumbnails', 1, {y:'100%', autoAlpha:0});
         }
       }
       //Leave home header animation
@@ -299,8 +296,11 @@ document.addEventListener("DOMContentLoaded", function() {
             navBtnClose();
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
-            TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
-               deferred.resolve();
+            TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
+            TweenMax.to('#works-page-main-header h1', 1, {x:'110%'});
+            TweenMax.to('#works-page-main-header p', 1, {x:'-110%'});
+            TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:function() {
+              deferred.resolve();
             }});
             return deferred.promise;
           },
