@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const g = Math.floor(Math.random() * 255);
         const b = Math.floor(Math.random() * 255);
         const color = "rgb("+r+","+g+","+b+")";
-        // TweenMax.set(element, {color: color});
+        TweenMax.set(element, {color: color});
       }
       //Set span color back to white
       function setColorToWhite() {
@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function() {
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
               TweenMax.to('#about-header h1', 1, {x:'110%'});
-              TweenMax.to('.about-p', 1, {x:'-110%', onComplete:allDoneAbout});
+              TweenMax.to('#about-header p', 1, {x:'-110%', onComplete:allDoneAbout});
               function allDoneAbout() {
                deferred.resolve();
              }
