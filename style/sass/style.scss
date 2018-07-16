@@ -363,6 +363,7 @@ main {
   grid-template-rows: 90px auto;
 }
 #works-page-main-header {
+  opacity: 0;
   padding:0 1rem;
   text-align: center;
   h1 {
@@ -370,6 +371,7 @@ main {
   }
 }
 #works-thumbnails {
+  opacity:0;
   padding-top: 1rem;
   display: grid;
   grid-template-rows: 1fr 1fr;

@@ -61,6 +61,15 @@ document.addEventListener("DOMContentLoaded", function() {
           TweenMax.from('#about-header h1', 1, {x:'-100%'});
           TweenMax.from('#about-header p', 1, {x:'100%'});
         }
+        if (document.getElementById('works-page-main-header')) {
+          TweenMax.set('#works-page-main-header', {autoAlpha:1});
+          TweenMax.set('#works-thumbnails', {autoAlpha:1});
+
+          TweenMax.from('#works-page-main-header h1', 1, {x:'-100%'});
+          TweenMax.from('#works-page-main-header p', 1, {x:'100%'});
+          TweenMax.from('#my-portfolio', 1, {y:'100%', autoAlpha:0});
+          TweenMax.from('#seven-seals-of-event', 1, {y:'100%', autoAlpha:0});
+        }
       }
       //Leave home header animation
       function fadeOutHomeHeader() {
@@ -235,6 +244,9 @@ document.addEventListener("DOMContentLoaded", function() {
             navBtnClose();
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
+            // if (document.getElemenstByClassName('barba-container').namespace === 'works') {
+            //   console.log("to works")
+            // }
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
               TweenMax.to(['#hello', '#frontend-developer'], .7, {x:350});
               TweenMax.to(['#i-am-mantvydas', '#based'], .7, {x:-350, onComplete: allDone});
@@ -273,7 +285,6 @@ document.addEventListener("DOMContentLoaded", function() {
           showNewPage: function() {
             this.newContainer.style.visibility = 'visible';
             slideInNavBar();
-
             this.done();
           }
         });
@@ -302,12 +313,15 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         Barba.Pjax.getTransition = function() {
           var transitionObj = HomeTransition;
+          console.log("home transition");
 
           if (Barba.HistoryManager.prevStatus().namespace === 'about') {
             transitionObj = AboutTransition;
+            console.log("about transition");
           }
           if (Barba.HistoryManager.prevStatus().namespace === 'works') {
             transitionObj = WorksTransition;
+            console.log("works transition");
           }
 
 

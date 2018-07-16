@@ -361,12 +361,14 @@ main {
   grid-template-rows: 90px auto; }
 
 #works-page-main-header {
+  opacity: 0;
   padding: 0 1rem;
   text-align: center; }
   #works-page-main-header h1 {
     padding-bottom: .5rem; }
 
 #works-thumbnails {
+  opacity: 0;
   padding-top: 1rem;
   display: grid;
   grid-template-rows: 1fr 1fr; }
