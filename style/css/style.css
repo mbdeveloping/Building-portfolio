@@ -364,8 +364,7 @@ main {
 /****************** WORKS PAGE RULES ********************/
 #works-page {
   padding-top: 82px;
-  display: grid;
-  grid-template-rows: 90px auto; }
+  display: grid; }
 
 #works-page-main-header {
   opacity: 0;
@@ -376,7 +375,6 @@ main {
 
 #works-thumbnails {
   opacity: 0;
-  padding-top: 1rem;
   display: grid;
   grid-template-rows: 1fr 1fr; }
   #works-thumbnails article {
@@ -406,6 +404,7 @@ main {
   #seven-seals-of-event .number {
     color: yellow; }
   #seven-seals-of-event img {
+    width: 40px;
     align-self: center;
     justify-self: center; }
 
@@ -418,33 +417,57 @@ main {
   #my-portfolio .number {
     color: #fff; }
   #my-portfolio img {
-    width: 50px; }
+    width: 40px; }
 
 /********** Seven Seals of Event page ************/
-#seven-seals-of-event-page {
+#full-vh-section {
+  height: 100vh;
   display: grid;
+  grid-template-rows: 1fr 1fr;
   justify-content: center; }
+  #full-vh-section header {
+    margin: 1rem;
+    padding: 1rem;
+    margin-top: 82px;
+    text-align: right;
+    position: relative;
+    background: rgba(0, 0, 0, 0.6); }
+    #full-vh-section header h1 {
+      font-size: 1.5rem; }
+    #full-vh-section header .bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url("../../ssoe.jpg");
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: -10;
+      filter: blur(1px); }
+    #full-vh-section header a {
+      border: 1px solid #fff;
+      display: inline-block;
+      padding: 1rem;
+      margin-top: 1rem; }
 
-#seven-seals-of-event-page header {
-  margin: 1rem;
-  padding: 1rem;
-  margin-top: 82px;
-  text-align: right;
-  height: 231px;
-  position: relative;
-  background: rgba(0, 0, 0, 0.5); }
-  #seven-seals-of-event-page header h1 {
-    font-size: 1.5rem; }
-  #seven-seals-of-event-page header .bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url("../../ssoe.jpg");
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: -10; }
+#about-seven-seals-of-event {
+  text-align: center;
+  padding: 1rem; }
+  #about-seven-seals-of-event h2 {
+    padding: 1rem; }
+
+#aim {
+  text-align: center;
+  padding: 1rem; }
+  #aim h2 {
+    padding-bottom: 1rem; }
+
+#development-process {
+  text-align: center;
+  padding: 1rem; }
+  #development-process h2 {
+    padding-bottom: 1rem; }
 
 /*********** MEDIA QUERIES *********/
 @media (min-width: 600px) {
