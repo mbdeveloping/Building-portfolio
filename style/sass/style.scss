@@ -382,13 +382,7 @@ main {
   grid-template-rows: 1fr 1fr;
   article {
     padding: 1rem;
-    text-align: right;
-    .works-btn {
-      border: 1px solid #fff;
-      padding:1rem;
-      margin-top: 1rem;
-      display: inline-block;
-    }
+    text-align: right
   }
 }
 %number {
@@ -398,15 +392,22 @@ main {
   left:0;
   transform:translate(50%, 50%) scaleY(1.2);
 }
+%tech {
+  font-size: .9rem;
+  color: #999;
+}
+%design {
+  padding-bottom: .5rem;
+}
 #seven-seals-of-event {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
-  display: grid;
   align-items: center;
   background: #111;
-  color: #999;
-  header {
-    z-index: 10;
-  }
+  color: #fff;
+  z-index: 10;
   .number {
     color: yellow;
     @extend %number;
@@ -416,13 +417,26 @@ main {
      align-self: center;
      justify-self:center;
   }
+  a {
+    border: 1px solid yellow;
+    padding:1rem;
+    margin-top: 1rem;
+    display: inline-block;
+  }
+}
+.design {
+  @extend %design;
+}
+.tech {
+  @extend %tech;
 }
 #my-portfolio {
   position: relative;
-  display: grid;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: #333;
-  color: #999;
+  color: #fff;
   .number {
     color: #fff;
     @extend %number;
