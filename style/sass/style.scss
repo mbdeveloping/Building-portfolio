@@ -432,6 +432,22 @@ main {
     width: 50px;
   }
 }
+/********** Seven Seals of Event page ************/
+#seven-seals-of-event-page {
+  display: grid;
+  justify-content: center;
+}
+#seven-seals-of-event-page header {
+  margin:1rem;
+  padding:1rem;
+  margin-top: 82px;
+  text-align: right;
+  height: 231px;
+  background:red;
+  h1 {
+    font-size: 1.5rem;
+  }
+}
 
 /*********** MEDIA QUERIES *********/
 @media (min-width: 600px) {
