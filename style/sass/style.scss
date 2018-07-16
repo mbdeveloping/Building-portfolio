@@ -18,7 +18,8 @@ body {
   font-size: 1rem;
   color: $font-color;
   font-family: Arial;
-  background:#00041c;
+  // background:#00041c;
+  background:#000;
 }
 .body-ov-hidden {
   overflow: hidden;
@@ -43,6 +44,16 @@ ul {
   left:0;
   width: 100%;
   height: 100vh;
+}
+.twin {
+  will-change: transform;
+  transform:translateZ(0);
+  position: absolute;
+  left:0;
+  top:0;
+  width: 200%;
+  height: 200%;
+  background-image: url('../../twinkling.png');
 }
 /******************** Main header rules *************************/
 #nav-bar {
@@ -178,6 +189,7 @@ main {
   }
 }
 #home-header-word-line-wrapper {
+  will-change: transform;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -273,6 +285,7 @@ main {
   @include transform(scale(1));
   span {
     padding:0 1rem;
+    backface-visibility: hidden;
   }
 }
 #social-links {
@@ -329,6 +342,7 @@ main {
     padding-bottom:1rem;
   }
   span {
+    backface-visibility: hidden;
     opacity:0;
     display: inline-block;
     transform:translateZ(0);

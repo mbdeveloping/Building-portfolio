@@ -20,19 +20,11 @@ document.addEventListener("DOMContentLoaded", function() {
       const homePage = document.getElementById('home-main');
       let pcImg = document.getElementById('bg-pc');
 
-      TweenMax.to('#stars-small', 50, {y:-2000, z:0, repeat:-1});
-      TweenMax.to('#stars-medium', 100, {y:-2000, z:0, repeat:-1});
-      TweenMax.to('#stars-large', 150, {y:-2000, z:0, repeat:-1});
-      //On page load fadein home page background image
-      function onLoadFadeInHomeImg() {
-        TweenMax.set('#about-me-img',  {visibility:'visible'});
-        TweenMax.to('#about-me-img', 5, {opacity:1});
-        // TweenMax.to('.hide-after-anim', 5, {delay:.3,opacity:1});
-        if (document.getElementById('home-header')) {
-          TweenMax.fromTo('.hide-after-anim', 5, {delay:.3,opacity:0}, {opacity:1});
-          TweenMax.set(document.getElementsByClassName('hide-after-anim')[0], {visibility:'visible'});
-        }
-      }
+      TweenMax.to('.twin', 3, {y:-100,x:-100, z:0, repeat:-1, ease:Linear.easeNone﻿});
+
+      // TweenMax.to('#stars-small', 150, {y:-2000, z:0, repeat:-1, ease:Linear.easeNone﻿});
+      // TweenMax.to('#stars-medium', 200, {y:-2000, z:0, repeat:-1, ease:Linear.easeNone﻿});
+      // TweenMax.to('#stars-large', 250, {y:-2000, z:0, repeat:-1, ease:Linear.easeNone﻿});
       //Add class for all header spans
       function addClassForAllSpans() {
         document.querySelectorAll('#home-header-word-line-wrapper span').forEach(function(span) {
@@ -48,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
       }
       function slieInLinks() {
-        TweenMax.to([leftNavOverlay, rightNavOverlay], 1, {width: '5%', x:'0%', ease: Bounce.easeOut});
+        TweenMax.to([leftNavOverlay, rightNavOverlay], .5, {width: '5%', x:'0%'});
         TweenMax.to(socialLinks, .5, {y:'0%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
       }
@@ -63,8 +55,8 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         }
         if (document.getElementById('about-header')) {
-          TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.02 );
-          TweenMax.staggerFromTo( '.testt span', 0.1, {scale:6}, {scale:1}, 0.02);
+          TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1, z:0}, {autoAlpha:1, scale:1, z:0}, 0.02 );
+          TweenMax.staggerFromTo( '.testt span', 0.1, {scale:6, z:0}, {scale:1, z:0}, 0.02);
         }
       }
       //Leave home header animation
@@ -78,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
           fadeInHeaderText();
         }});
       }
+      // fadeInHeaderText();
       function slideOutNavBar() {
         TweenMax.to('#nav-bar', .5, {y: '-100%'});
       }
@@ -99,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const g = Math.floor(Math.random() * 255);
         const b = Math.floor(Math.random() * 255);
         const color = "rgb("+r+","+g+","+b+")";
-        TweenMax.set(element, {color: color});
+        // TweenMax.set(element, {color: color});
       }
       //Set span color back to white
       function setColorToWhite() {
@@ -182,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function() {
       aboutLink.addEventListener('mouseover', startLinkAnimation);
       aboutLink.addEventListener('mouseleave', endLinkAnimation);
       //Home page function call
-      onLoadFadeInHomeImg();
+      // onLoadFadeInHomeImg();
       addClassForAllSpans();
       slideInNavBar();
       fromMobileToDesktopSize(media);
