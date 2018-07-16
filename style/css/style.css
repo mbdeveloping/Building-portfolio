@@ -431,9 +431,20 @@ main {
   margin-top: 82px;
   text-align: right;
   height: 231px;
-  background: red; }
+  position: relative;
+  background: rgba(0, 0, 0, 0.5); }
   #seven-seals-of-event-page header h1 {
     font-size: 1.5rem; }
+  #seven-seals-of-event-page header .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../../ssoe.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -10; }
 
 /*********** MEDIA QUERIES *********/
 @media (min-width: 600px) {
