@@ -382,6 +382,11 @@ main {
   #works-thumbnails article {
     padding: 1rem;
     text-align: right; }
+    #works-thumbnails article .works-btn {
+      border: 1px solid #fff;
+      padding: 1rem;
+      margin-top: 1rem;
+      display: inline-block; }
 
 #seven-seals-of-event .number, #my-portfolio .number {
   font-size: 2rem;
