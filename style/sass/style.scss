@@ -330,6 +330,7 @@ main {
   align-items: center;
 }
 #about-header {
+  opacity:0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -340,12 +341,6 @@ main {
   h1 {
     font-size: 2rem;
     padding-bottom:1rem;
-  }
-  span {
-    backface-visibility: hidden;
-    opacity:0;
-    display: inline-block;
-    transform:translateZ(0);
   }
 }
 #skillset {

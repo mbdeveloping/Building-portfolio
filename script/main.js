@@ -55,8 +55,11 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         }
         if (document.getElementById('about-header')) {
-          TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1, z:0}, {autoAlpha:1, scale:1, z:0}, 0.02 );
-          TweenMax.staggerFromTo( '.testt span', 0.1, {scale:6, z:0}, {scale:1, z:0}, 0.02);
+          TweenMax.set('#about-header', {autoAlpha:1});
+          // TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1, z:0}, {autoAlpha:1, scale:1, z:0}, 0.02 );
+          // TweenMax.staggerFromTo( '.testt span', 0.1, {scale:6, z:0}, {scale:1, z:0}, 0.02);
+          TweenMax.from('#about-header h1', 1, {x:'-100%'});
+          TweenMax.from('#about-header p', 1, {x:'100%'});
         }
       }
       //Leave home header animation
