@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
       //On page load header text animation
       function fadeInHeaderText() {
         if (document.getElementById('home-header')) {
+          console.log("test home");
           TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
           TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);
           TweenMax.to('#earth',1, {y: '50%'});
@@ -57,12 +58,14 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         }
         if (document.getElementById('about-header')) {
+          console.log("test about");
           TweenMax.set('#about-header', {autoAlpha:1});
           TweenMax.from('#about-header h1', 1, {x:'-100%'});
           TweenMax.from('#about-header p', 1, {x:'100%'});
           TweenMax.to('#earth',1, {y: '50%'});
         }
         if (document.getElementById('works-page-main-header')) {
+          console.log("test works");
           TweenMax.set('#works-page-main-header', {autoAlpha:1});
           TweenMax.set('#works-thumbnails', {autoAlpha:1});
 
