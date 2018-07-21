@@ -328,11 +328,13 @@ main {
 
 /****************** ABOUT PAGE RULES ********************/
 #about-pos-header-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100%;
+  align-items: start;
 }
 #about-header {
+  justify-self: center;
   opacity:0;
   overflow: hidden;
   display: flex;
@@ -550,6 +552,13 @@ main {
     transform: translate(50%, -50%);
     width: auto;;
     height: 80%;
+  }
+  #about-pos-header-container {
+    align-items: flex-start;
+    #about-header {
+      max-width: 500px;
+      padding-left: 6rem;
+    }
   }
 }
 @media (min-width: 900px) {
