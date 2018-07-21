@@ -614,6 +614,10 @@ main {
     width: 20px;
     height: 20px;
   }
+  #earth {
+    right:5%;
+    transform: translate(0, -50%);
+  }
 }
 @media (min-width: 1440px) {
   #home-header h1 {

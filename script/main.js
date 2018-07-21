@@ -19,13 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
       const homePage = document.getElementById('home-main');
       let pcImg = document.getElementById('bg-pc');
       window.addEventListener('resize', function() {
-        if (window.innerWidth < 600) {
-          TweenMax.set('#earth', {x:'0%', y:'50%'})
-          console.log("less than 600")
+        if (window.innerWidth <= 600) {
+          TweenMax.set('#earth', {x:'0%', y:'50%'});
         }
-        if (window.innerWidth > 600) {
-          TweenMax.set('#earth', {x:'50%', y:'-50%'})
-          console.log("more than 600")
+        if (window.innerWidth >= 600 && window.innerWidth > 600) {
+          TweenMax.set('#earth', {x:'50%', y:'-50%'});
+        }
+        if (window.innerWidth >= 1024) {
+          TweenMax.set('#earth', {x:'0%', y:'-50%', right:'5%'});
         }
       })
 
