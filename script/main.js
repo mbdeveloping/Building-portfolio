@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
       const socialLinks = document.getElementById('social-links');
       const leftNavOverlay = document.getElementById('left-nav-overlay');
       const rightNavOverlay = document.getElementById('right-nav-overlay');
-      const media = window.matchMedia("(min-width: 1024px)");
       const navBar = document.getElementById('nav-bar');
       const bigBen = document.getElementById('big-ben');
       const londonBus = document.getElementById('london-bus');
@@ -20,8 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
       const homePage = document.getElementById('home-main');
       let pcImg = document.getElementById('bg-pc');
 
+
+
       TweenMax.to('.twin', 3, {y:-100,x:-100, z:0, repeat:-1, ease:Linear.easeNone﻿});
-      TweenMax.to('#earth', 100, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
+      // TweenMax.to('#earth', 100, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
 
       // TweenMax.to('#stars-small', 150, {y:-2000, z:0, repeat:-1, ease:Linear.easeNone﻿});
       // TweenMax.to('#stars-medium', 200, {y:-2000, z:0, repeat:-1, ease:Linear.easeNone﻿});
@@ -51,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
           console.log("test home");
           TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
           TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);
-          TweenMax.to('#earth',1, {y: '50%'});
+          // TweenMax.to('#earth',1, {y: '50%'});
           function bigBenAndBus() {
             TweenMax.fromTo('#big-ben', 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
             TweenMax.fromTo('#london-bus', 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
           TweenMax.set('#about-header', {autoAlpha:1});
           TweenMax.from('#about-header h1', 1, {x:'-100%'});
           TweenMax.from('#about-header p', 1, {x:'100%'});
-          TweenMax.to('#earth',1, {y: '50%'});
+          // TweenMax.to('#earth',1, {y: '50%'});
         }
         if (document.getElementById('works-page-main-header')) {
           console.log("test works");
@@ -72,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
           TweenMax.from('#works-page-main-header h1', 1, {x:'-100%'});
           TweenMax.from('#works-page-main-header p', 1, {x:'100%'});
           TweenMax.from('#works-thumbnails', 1, {y:'100%', autoAlpha:0});
-          TweenMax.to('#earth',.3, {y: '100%'});
+          // TweenMax.to('#earth',.3, {y: '100%'});
         }
       }
       //Leave home header animation
@@ -176,6 +177,8 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to(homeMain, .3, {scale: 0.8});
       }
       //Home page resize queries
+      const media = window.matchMedia("(min-width: 1024px)");
+      const media600 = window.matchMedia("(min-width: 600px)");
       function fromMobileToDesktopSize(media) {
           if (media.matches) {
             slieInLinks();
@@ -195,6 +198,7 @@ document.addEventListener("DOMContentLoaded", function() {
       addClassForAllSpans();
       slideInNavBar();
       fromMobileToDesktopSize(media);
+      // fromMobileToDesktopSize(media600);
       //BARBA.JS TRANSITIONS
         const Homepage = Barba.BaseView.extend({
           namespace: 'home',

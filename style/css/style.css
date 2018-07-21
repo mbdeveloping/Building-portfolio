@@ -359,7 +359,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  transform: translateY(100%) translateZ(0); }
+  transform: translateY(50%) translateZ(0); }
 
 /****************** WORKS PAGE RULES ********************/
 #works-page {
@@ -374,6 +374,7 @@ main {
     padding-bottom: .5rem; }
 
 #works-thumbnails {
+  overflow-scrolling: touch;
   opacity: 0;
   display: grid;
   grid-template-rows: 1fr 1fr; }
@@ -511,7 +512,14 @@ main {
     font-size: 2.5rem; }
 
   #frontend-developer span {
-    font-size: 1.7rem; } }
+    font-size: 1.7rem; }
+
+  #earth {
+    left: auto;
+    right: 0;
+    transform: translateX(50%);
+    width: auto;
+    height: 100%; } }
 @media (min-width: 900px) {
   .img-holder {
     height: 90vh; }
