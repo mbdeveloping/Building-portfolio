@@ -223,7 +223,7 @@ main {
   }
 }
 #based  {
-  height: auto;
+  height: 0px;
   width: 100%;
   text-align: right;
   @include transform(translate(0px, -80px));
