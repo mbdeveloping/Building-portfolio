@@ -27,11 +27,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         if (window.innerWidth >= 1024) {
           TweenMax.set('#earth', {x:'0%', y:'-50%', right:'5%'});
+          slieInLinks();
         }
       })
 
 
-      TweenMax.to('.twin', 3, {y:-100,x:-100, z:0, repeat:-1, ease:Linear.easeNone﻿});
+      // TweenMax.to('.twin', 3, {y:-100,x:-100, z:0, repeat:-1, ease:Linear.easeNone﻿});
       TweenMax.to('#earth', 100, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
 
       // TweenMax.to('#stars-small', 150, {y:-2000, z:0, repeat:-1, ease:Linear.easeNone﻿});
@@ -275,6 +276,9 @@ document.addEventListener("DOMContentLoaded", function() {
           showNewPage: function() {
             this.newContainer.style.visibility = 'visible';
             slideInNavBar();
+            if (window.innerWidth >= 1024) {
+              slieInLinks();
+            }
             this.done();
           }
         });
@@ -301,6 +305,9 @@ document.addEventListener("DOMContentLoaded", function() {
           showNewPage: function() {
             this.newContainer.style.visibility = 'visible';
             slideInNavBar();
+            if (window.innerWidth >= 1024) {
+              slieInLinks();
+            }
             this.done();
           }
         });
@@ -326,21 +333,20 @@ document.addEventListener("DOMContentLoaded", function() {
           showNewPage: function() {
             this.newContainer.style.visibility = 'visible';
             slideInNavBar();
-
+            if (window.innerWidth >= 1024) {
+              slieInLinks();
+            }
             this.done();
           }
         });
         Barba.Pjax.getTransition = function() {
           var transitionObj = HomeTransition;
-          console.log("home transition");
 
           if (Barba.HistoryManager.prevStatus().namespace === 'about') {
             transitionObj = AboutTransition;
-            console.log("about transition");
           }
           if (Barba.HistoryManager.prevStatus().namespace === 'works') {
             transitionObj = WorksTransition;
-            console.log("works transition");
           }
 
 

@@ -204,6 +204,7 @@ main {
   }
 }
 #hello {
+  width: 100%;
   font-size: 3rem;
   @include transform(scale(1.0));
 }
@@ -405,7 +406,6 @@ main {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  align-items: center;
   background: #111;
   color: #fff;
   z-index: 10;
@@ -616,7 +616,7 @@ main {
   }
   #earth {
     right:5%;
-    transform: translate(0, -50%);
+    @include transform(translate(0, -50%));
   }
 }
 @media (min-width: 1440px) {
@@ -646,9 +646,6 @@ main {
     span {
       font-size: 1.25rem;
     }
-  }
-  .img-holder img {
-    // @include transform(translateX(0%));
   }
 }
 /*testing stars*/

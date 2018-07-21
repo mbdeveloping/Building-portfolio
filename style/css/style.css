@@ -185,6 +185,7 @@ main {
     opacity: 0; }
 
 #hello {
+  width: 100%;
   font-size: 3rem;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
@@ -401,7 +402,6 @@ main {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  align-items: center;
   background: #111;
   color: #fff;
   z-index: 10; }
@@ -583,6 +583,8 @@ main {
 
   #earth {
     right: 5%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
     transform: translate(0, -50%); } }
 @media (min-width: 1440px) {
   #home-header h1 {
