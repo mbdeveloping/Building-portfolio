@@ -209,6 +209,7 @@ main {
   @include transform(scale(1.0));
 }
 #i-am-mantvydas {
+  width: 100%;
   @include transform(translate(1px, -17px));
   span {
     font-size: 2rem;
@@ -216,12 +217,15 @@ main {
 }
 #frontend-developer  {
   @include transform(translate(1px, -37px));
+  width: 100%;
   span {
     font-size: 1.5rem;
   }
 }
 #based  {
-  height: 0px;
+  height: auto;
+  width: 100%;
+  text-align: right;
   @include transform(translate(0px, -80px));
   align-self: flex-end;
   span {
@@ -554,10 +558,11 @@ main {
     height: 80%;
   }
   #about-pos-header-container {
-    align-items: flex-start;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
     #about-header {
       max-width: 500px;
-      padding-left: 6rem;
+      padding: 0 2rem;
     }
   }
 }

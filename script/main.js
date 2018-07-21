@@ -265,8 +265,10 @@ document.addEventListener("DOMContentLoaded", function() {
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
             // TweenMax.to('#earth',1, {y: '100%'});
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
-              TweenMax.to(['#hello', '#frontend-developer'], .7, {x:350});
-              TweenMax.to(['#i-am-mantvydas', '#based'], .7, {x:-350, onComplete: allDone});
+              // TweenMax.to(['#hello', '#frontend-developer'], .7, {x:350});
+              TweenMax.to(['#hello', '#frontend-developer'], .7, {x:'110%'});
+              // TweenMax.to(['#i-am-mantvydas', '#based'], .7, {x:-350, onComplete: allDone});
+              TweenMax.to(['#i-am-mantvydas', '#based'], .7, {x:'-110%', onComplete: allDone});
               function allDone() {
                 deferred.resolve();
               }

@@ -192,6 +192,7 @@ main {
   transform: scale(1); }
 
 #i-am-mantvydas {
+  width: 100%;
   -webkit-transform: translate(1px, -17px);
   -ms-transform: translate(1px, -17px);
   transform: translate(1px, -17px); }
@@ -201,12 +202,15 @@ main {
 #frontend-developer {
   -webkit-transform: translate(1px, -37px);
   -ms-transform: translate(1px, -37px);
-  transform: translate(1px, -37px); }
+  transform: translate(1px, -37px);
+  width: 100%; }
   #frontend-developer span {
     font-size: 1.5rem; }
 
 #based {
-  height: 0px;
+  height: auto;
+  width: 100%;
+  text-align: right;
   -webkit-transform: translate(0px, -80px);
   -ms-transform: translate(0px, -80px);
   transform: translate(0px, -80px);
@@ -525,10 +529,11 @@ main {
     height: 80%; }
 
   #about-pos-header-container {
-    align-items: flex-start; }
+    grid-template-columns: 3fr 1fr;
+    align-items: center; }
     #about-pos-header-container #about-header {
       max-width: 500px;
-      padding-left: 6rem; } }
+      padding: 0 2rem; } }
 @media (min-width: 900px) {
   .img-holder {
     height: 90vh; }
