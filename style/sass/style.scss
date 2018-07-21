@@ -607,6 +607,18 @@ main {
   }
 }
 @media (min-width: 1024px) {
+  #about-header {
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.4rem;
+    }
+  }
+  #about-pos-header-container {
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+  }
   #nav-btn {
     display: none;
   }
