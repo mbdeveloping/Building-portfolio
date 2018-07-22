@@ -46,8 +46,17 @@ ul {
   height: 200%;
   background-image: url("../../twinkling.png"); }
 
-#home-link {
-  display: none; }
+#test1 {
+  height: 100%;
+  width: 100%;
+  background: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url("../../test1.jpg");
+  background-position: center;
+  background-size: cover; }
 
 /******************** Main header rules *************************/
 #nav-bar {
@@ -380,7 +389,8 @@ main {
 #works-page-main-header {
   opacity: 0;
   padding: 0 1rem;
-  text-align: center; }
+  text-align: center;
+  align-self: center; }
   #works-page-main-header h1 {
     padding-bottom: .5rem; }
 
@@ -390,7 +400,6 @@ main {
   display: grid;
   grid-template-rows: 1fr 1fr; }
   #works-thumbnails article {
-    padding: 1rem;
     text-align: right; }
 
 #seven-seals-of-event .number, #my-portfolio .number {
@@ -408,6 +417,7 @@ main {
   padding-bottom: .5rem; }
 
 #seven-seals-of-event {
+  padding: 1rem;
   margin: 0 1rem;
   margin-bottom: .5rem;
   display: flex;
@@ -430,6 +440,7 @@ main {
     display: inline-block; }
 
 #my-portfolio {
+  padding: 1rem;
   margin: 0.5rem 1rem;
   margin-bottom: 1rem;
   position: relative;
@@ -541,18 +552,27 @@ main {
     align-items: center; }
     #about-pos-header-container #about-header {
       max-width: 500px;
-      padding: 0 2rem; }
-
-  #seven-seals-of-event {
-    margin: 0 1rem; }
-
-  #my-portfolio {
-    margin: 1rem; } }
+      padding: 0 2rem; } }
 @media (min-width: 700px) {
   #about-header h1 {
     font-size: 2.5rem; }
   #about-header p {
-    font-size: 1.2rem; } }
+    font-size: 1.2rem; }
+
+  #works-thumbnails {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    padding: 1rem;
+    grid-gap: 1rem; }
+
+  #works-page-main-header h1 {
+    font-size: 2.5rem; }
+
+  #seven-seals-of-event {
+    margin: 0; }
+
+  #my-portfolio {
+    margin: 0; } }
 @media (min-width: 900px) {
   .img-holder {
     height: 90vh; }
@@ -625,7 +645,14 @@ main {
     right: 5%;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%); } }
+    transform: translate(0, -50%); }
+
+  #works-thumbnails {
+    padding: 0 5rem;
+    padding-bottom: 5rem; }
+
+  #works-page-main-header h1 {
+    font-size: 3rem; } }
 @media (min-width: 1440px) {
   #about-pos-header-container #about-header {
     max-width: 600px; }
