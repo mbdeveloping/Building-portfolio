@@ -60,7 +60,6 @@ ul {
 #test1 {
   height: 100%;
   width: 100%;
-  background:red;
   position: absolute;
   top:0;
   left:0;
@@ -69,7 +68,10 @@ ul {
   background-position: center;
   background-size: cover;
   -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
-clip-path: polygon(0 0, 0 100%, 100% 0);
+  clip-path: polygon(0 0, 0 100%, 100% 0);
+  filter:blur(1px);
+  -webkit-filter:blur(1px);
+  display: none;
 }
 /******************** Main header rules *************************/
 #nav-bar {
@@ -701,11 +703,17 @@ main {
   #works-thumbnails {
     padding:0 5rem;
     padding-bottom: 4rem;
+    article {
+      justify-content: flex-end;
+    }
   }
   #works-page-main-header {
     h1 {
       font-size: 3rem;
     }
+  }
+  #test1 {
+    display: block;
   }
 }
 @media (min-width: 1440px) {
