@@ -105,6 +105,11 @@ ul {
     opacity: .9;
   }
 }
+.safari-padding {
+  padding-bottom: 44px;
+  overflow: scroll;
+  // -webkit-overflow-scrolling: touch;
+}
 /******************** Main header rules *************************/
 #nav-bar {
   width: 100%;
@@ -434,7 +439,7 @@ main {
   }
 }
 #works-thumbnails {
-  overflow-scrolling: touch;
+  z-index: 20;
   opacity:0;
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -789,6 +794,11 @@ main {
   }
 }
 @media (max-width: 700px) and (max-height: 580px) {
+  #works-thumbnails {
+    overflow: auto;
+  }
+}
+@media (max-width: 322px) and (max-height: 657px) {
   #works-thumbnails {
     overflow: auto;
   }

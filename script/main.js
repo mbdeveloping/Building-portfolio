@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", function() {
       const pageBody = document.querySelector('body');
       const homePage = document.getElementById('home-main');
       let pcImg = document.getElementById('bg-pc');
+      const userAgent = window.navigator.userAgent;
+
+
       window.addEventListener('resize', function() {
         if (window.innerWidth <= 600) {
           TweenMax.set('#earth', {x:'0%', y:'50%'});
@@ -87,6 +90,13 @@ document.addEventListener("DOMContentLoaded", function() {
           TweenMax.from('#works-page-main-header p', 1, {x:'100%'});
           TweenMax.from('#works-thumbnails', 1, {y:'100%', autoAlpha:0});
           // TweenMax.to('#earth',.3, {y: '100%'});
+
+            if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i)) {
+              document.getElementById('works-page').className = 'safari-padding';
+            }
+            else {
+               document.getElementById('works-page').className = '';
+            }
         }
       }
       //Leave home header animation
