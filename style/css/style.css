@@ -56,7 +56,9 @@ ul {
   z-index: -1;
   background-image: url("../../test1.jpg");
   background-position: center;
-  background-size: cover; }
+  background-size: cover;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
+  clip-path: polygon(0 0, 0 100%, 100% 0); }
 
 /******************** Main header rules *************************/
 #nav-bar {
@@ -649,7 +651,7 @@ main {
 
   #works-thumbnails {
     padding: 0 5rem;
-    padding-bottom: 5rem; }
+    padding-bottom: 4rem; }
 
   #works-page-main-header h1 {
     font-size: 3rem; } }
@@ -685,7 +687,10 @@ main {
     transform: translate(0px, -106px);
     align-self: flex-end; }
     #based span {
-      font-size: 1.25rem; } }
+      font-size: 1.25rem; }
+
+  #works-thumbnails {
+    grid-gap: 2rem; } }
 /*testing stars*/
 #stars-small {
   will-change: transform;

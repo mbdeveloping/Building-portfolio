@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         if (window.innerWidth >= 600 && window.innerWidth > 600) {
           TweenMax.set('#earth', {x:'50%', y:'-50%'});
-          
+
         }
         if (window.innerWidth >= 1024) {
           TweenMax.set('#earth', {x:'0%', y:'-50%', right:'5%'});
@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
       })
 
 
-      // TweenMax.to('.twin', 3, {y:-100,x:-100, z:0, repeat:-1, ease:Linear.easeNone﻿});
-      // TweenMax.to('#earth', 100, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
+      TweenMax.to('.twin', 3, {y:-100,x:-100, z:0, repeat:-1, ease:Linear.easeNone﻿});
+      TweenMax.to('#earth', 100, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
 
       // TweenMax.to('#stars-small', 150, {y:-2000, z:0, repeat:-1, ease:Linear.easeNone﻿});
       // TweenMax.to('#stars-medium', 200, {y:-2000, z:0, repeat:-1, ease:Linear.easeNone﻿});

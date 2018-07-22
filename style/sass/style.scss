@@ -68,6 +68,8 @@ ul {
   background-image: url('../../test1.jpg');
   background-position: center;
   background-size: cover;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
+clip-path: polygon(0 0, 0 100%, 100% 0);
 }
 /******************** Main header rules *************************/
 #nav-bar {
@@ -698,7 +700,7 @@ main {
   }
   #works-thumbnails {
     padding:0 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
   }
   #works-page-main-header {
     h1 {
@@ -738,6 +740,9 @@ main {
     span {
       font-size: 1.25rem;
     }
+  }
+  #works-thumbnails {
+    grid-gap: 2rem;
   }
 }
 /*testing stars*/
