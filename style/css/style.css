@@ -47,6 +47,7 @@ ul {
   background-image: url("../../twinkling.png"); }
 
 #test1 {
+  will-change: transform;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -54,28 +55,40 @@ ul {
   left: 0;
   z-index: -1;
   background-image: url("../../test1.jpg");
-  background-position: center;
+  background-position: left top;
   background-size: cover;
   -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
   clip-path: polygon(0 0, 0 100%, 100% 0);
   filter: blur(2px);
   -webkit-filter: blur(2px);
-  display: none; }
+  display: none;
+  opacity: 0;
+  transition: opacity .5s; }
 
 #test2 {
+  will-change: transform;
   height: 100%;
   width: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -1px;
+  left: -2px;
   z-index: -1;
   background-image: url("../../test2.jpg");
-  background-position: center;
+  background-position: left top;
   background-size: cover;
   -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
   clip-path: polygon(0 0, 0 100%, 100% 0);
   filter: blur(2px);
-  -webkit-filter: blur(2px); }
+  -webkit-filter: blur(2px);
+  display: none;
+  opacity: 0;
+  transition: opacity .5s; }
+
+#my-portfolio:hover #test2 {
+  opacity: .9; }
+
+#seven-seals-of-event:hover #test1 {
+  opacity: .9; }
 
 /******************** Main header rules *************************/
 #nav-bar {
@@ -443,7 +456,7 @@ main {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  background: #111;
+  background: rgba(17, 17, 17, 0.9);
   color: #fff;
   z-index: 10; }
   #seven-seals-of-event .number {
@@ -466,7 +479,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #111;
+  background: rgba(17, 17, 17, 0.9);
   color: #fff;
   z-index: 10; }
   #my-portfolio .number {
@@ -676,7 +689,7 @@ main {
   #works-page-main-header h1 {
     font-size: 3rem; }
 
-  #test1 {
+  #test1, #test2 {
     display: block; } }
 @media (min-width: 1440px) {
   #about-pos-header-container #about-header {
@@ -714,6 +727,9 @@ main {
 
   #works-thumbnails {
     grid-gap: 2rem; } }
+@media (max-width: 700px) and (max-height: 580px) {
+  #works-thumbnails {
+    overflow: auto; } }
 /*testing stars*/
 #stars-small {
   will-change: transform;
