@@ -46,6 +46,9 @@ ul {
   height: 200%;
   background-image: url("../../twinkling.png"); }
 
+#home-link {
+  display: none; }
+
 /******************** Main header rules *************************/
 #nav-bar {
   width: 100%;
@@ -405,6 +408,8 @@ main {
   padding-bottom: .5rem; }
 
 #seven-seals-of-event {
+  margin: 0 1rem;
+  margin-bottom: .5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -425,11 +430,13 @@ main {
     display: inline-block; }
 
 #my-portfolio {
+  margin: 0.5rem 1rem;
+  margin-bottom: 1rem;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #333;
+  background: #111;
   color: #fff; }
   #my-portfolio .number {
     color: #fff; }
@@ -534,7 +541,13 @@ main {
     align-items: center; }
     #about-pos-header-container #about-header {
       max-width: 500px;
-      padding: 0 2rem; } }
+      padding: 0 2rem; }
+
+  #seven-seals-of-event {
+    margin: 0 1rem; }
+
+  #my-portfolio {
+    margin: 1rem; } }
 @media (min-width: 700px) {
   #about-header h1 {
     font-size: 2.5rem; }
