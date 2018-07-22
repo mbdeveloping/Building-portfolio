@@ -58,8 +58,8 @@ ul {
   background-size: cover;
   -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
   clip-path: polygon(0 0, 0 100%, 100% 0);
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
   display: none; }
 
 /******************** Main header rules *************************/
