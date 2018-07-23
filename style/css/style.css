@@ -84,6 +84,18 @@ ul {
   padding-bottom: 44px;
   overflow: scroll; }
 
+#my-portfolio {
+  transform: scale(0.9);
+  transition: transform .3s; }
+  #my-portfolio:hover {
+    transform: scale(1); }
+
+#seven-seals-of-event {
+  transform: scale(0.9);
+  transition: transform .3s; }
+  #seven-seals-of-event:hover {
+    transform: scale(1); }
+
 /******************** Main header rules *************************/
 #nav-bar {
   width: 100%;
