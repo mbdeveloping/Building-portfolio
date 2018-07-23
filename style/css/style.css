@@ -334,7 +334,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 3000;
   justify-content: space-around;
   padding: 1rem 4rem;
   background: rgba(0, 0, 0, 0.9);
@@ -426,6 +426,7 @@ main {
   display: grid;
   grid-template-rows: 1fr 1fr; }
   #works-thumbnails article {
+    will-change: transform;
     text-align: right; }
 
 #seven-seals-of-event .number, #my-portfolio .number {
