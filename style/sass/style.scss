@@ -644,6 +644,11 @@ main {
       font-size: 1.2rem;
     }
   }
+  #works-page {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
   #works-thumbnails {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: none;
@@ -663,10 +668,10 @@ main {
       }
     }
     #test1, #test2 {
-      display: block;
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 46%, 0 46%);
-      clip-path: polygon(0 0, 100% 0, 100% 46%, 0 46%);
-      background-position: center;
+      // display: block;
+      // -webkit-clip-path: polygon(0 0, 100% 0, 100% 46%, 0 46%);
+      // clip-path: polygon(0 0, 100% 0, 100% 46%, 0 46%);
+      // background-position: center;
     }
   }
   #works-page-main-header {
@@ -772,6 +777,7 @@ main {
       text-align: right;
     }
     #test1, #test2 {
+      display: block;
       -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
       clip-path: polygon(0 0, 0 100%, 100% 0);
       background-position: top left;

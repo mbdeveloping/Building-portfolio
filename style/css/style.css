@@ -598,6 +598,11 @@ main {
   #about-header p {
     font-size: 1.2rem; }
 
+  #works-page {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem; }
+
   #works-thumbnails {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: none;
@@ -611,11 +616,6 @@ main {
         padding-bottom: .5rem; }
       #works-thumbnails article .design {
         padding-bottom: 2rem; }
-    #works-thumbnails #test1, #works-thumbnails #test2 {
-      display: block;
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 46%, 0 46%);
-      clip-path: polygon(0 0, 100% 0, 100% 46%, 0 46%);
-      background-position: center; }
 
   #works-page-main-header h1 {
     font-size: 2.5rem; }
@@ -710,6 +710,7 @@ main {
       transition: transform .3s;
       text-align: right; }
     #works-thumbnails #test1, #works-thumbnails #test2 {
+      display: block;
       -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
       clip-path: polygon(0 0, 0 100%, 100% 0);
       background-position: top left; }
