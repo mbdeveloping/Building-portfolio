@@ -96,27 +96,14 @@ ul {
   overflow: scroll;
   // -webkit-overflow-scrolling: touch;
 }
-#my-portfolio {
-  transform: scale(.9);
-  transition: transform .3s;
-  &:hover {
-    transform: scale(1);
-  }
-}
-#seven-seals-of-event {
-  transform: scale(.9);
-  transition: transform .3s;
-  &:hover {
-    transform: scale(1);
-  }
-}
+
 /******************** Main header rules *************************/
 #nav-bar {
   width: 100%;
   position: fixed;
   top:0;
   left:0;
-  z-index: 1000;
+  z-index: 3000;
   @include transform(translateY(-100%));
   #nav-wrapper {
     width: 100%;
@@ -745,6 +732,8 @@ main {
     padding-bottom: 4rem;
     article {
       justify-content: flex-end;
+      transform: scale(.9);
+      transition: transform .3s;
     }
   }
   #works-page-main-header {
@@ -754,6 +743,17 @@ main {
   }
   #test1, #test2 {
     display: block;
+  }
+  #my-portfolio {
+    &:hover {
+      transform: scale(1);
+    }
+  }
+  #seven-seals-of-event {
+
+    &:hover {
+      transform: scale(1);
+    }
   }
 }
 @media (min-width: 1440px) {

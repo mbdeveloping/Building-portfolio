@@ -84,25 +84,13 @@ ul {
   padding-bottom: 44px;
   overflow: scroll; }
 
-#my-portfolio {
-  transform: scale(0.9);
-  transition: transform .3s; }
-  #my-portfolio:hover {
-    transform: scale(1); }
-
-#seven-seals-of-event {
-  transform: scale(0.9);
-  transition: transform .3s; }
-  #seven-seals-of-event:hover {
-    transform: scale(1); }
-
 /******************** Main header rules *************************/
 #nav-bar {
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 3000;
   -webkit-transform: translateY(-100%);
   -ms-transform: translateY(-100%);
   transform: translateY(-100%); }
@@ -690,13 +678,21 @@ main {
     padding: 0 5rem;
     padding-bottom: 4rem; }
     #works-thumbnails article {
-      justify-content: flex-end; }
+      justify-content: flex-end;
+      transform: scale(0.9);
+      transition: transform .3s; }
 
   #works-page-main-header h1 {
     font-size: 3rem; }
 
   #test1, #test2 {
-    display: block; } }
+    display: block; }
+
+  #my-portfolio:hover {
+    transform: scale(1); }
+
+  #seven-seals-of-event:hover {
+    transform: scale(1); } }
 @media (min-width: 1440px) {
   #about-pos-header-container #about-header {
     max-width: 600px; }
