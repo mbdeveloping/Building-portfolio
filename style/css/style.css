@@ -592,6 +592,19 @@ main {
     grid-template-rows: none;
     padding: 1rem;
     grid-gap: 1rem; }
+    #works-thumbnails article {
+      text-align: center;
+      justify-content: flex-end; }
+      #works-thumbnails article h2 {
+        padding-top: 1rem;
+        padding-bottom: .5rem; }
+      #works-thumbnails article .design {
+        padding-bottom: 2rem; }
+    #works-thumbnails #test1, #works-thumbnails #test2 {
+      display: block;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 46%, 0 46%);
+      clip-path: polygon(0 0, 100% 0, 100% 46%, 0 46%);
+      background-position: center; }
 
   #works-page-main-header h1 {
     font-size: 2.5rem; }
@@ -681,13 +694,15 @@ main {
     #works-thumbnails article {
       justify-content: flex-end;
       transform: scale(0.9);
-      transition: transform .3s; }
+      transition: transform .3s;
+      text-align: right; }
+    #works-thumbnails #test1, #works-thumbnails #test2 {
+      -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
+      clip-path: polygon(0 0, 0 100%, 100% 0);
+      background-position: top left; }
 
   #works-page-main-header h1 {
     font-size: 3rem; }
-
-  #test1, #test2 {
-    display: block; }
 
   #my-portfolio:hover {
     transform: scale(1); }
