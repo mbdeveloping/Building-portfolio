@@ -59,10 +59,8 @@ ul {
   background-size: cover;
   -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
   clip-path: polygon(0 0, 0 100%, 100% 0);
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
   display: none;
-  opacity: 0;
+  opacity: 0.9;
   transition: opacity .5s; }
 
 #test2 {
@@ -78,17 +76,9 @@ ul {
   background-size: cover;
   -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
   clip-path: polygon(0 0, 0 100%, 100% 0);
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
   display: none;
-  opacity: 0;
+  opacity: 0.9;
   transition: opacity .5s; }
-
-#my-portfolio:hover #test2 {
-  opacity: .9; }
-
-#seven-seals-of-event:hover #test1 {
-  opacity: .9; }
 
 .safari-padding {
   padding-bottom: 44px;
