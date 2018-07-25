@@ -34,10 +34,6 @@ a {
 ul {
   list-style-type: none;
 }
-.container {
-  width: 100%;
-  padding: 0 1rem;
-}
 #stars-container {
   position: absolute;
   top:0;
@@ -110,7 +106,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:1rem 0;
+    padding:1rem;
   }
   #logo-section {
     display: flex;
