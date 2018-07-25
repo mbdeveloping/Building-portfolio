@@ -356,6 +356,9 @@ main {
     left:50%;
     @include transform(translate(-50%, -50%));
   }
+  li {
+    padding: 1rem;
+  }
 }
 .social-links-box {
   width: 25px;
