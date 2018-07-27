@@ -28,7 +28,7 @@ body {
 	right:0;
 	bottom:0;
 	z-index:-1;
-	background: linear-gradient(#00041c 20%, #01093b);
+	background: linear-gradient(#00041c 20%, #011172);
   }
 }
 .body-ov-hidden {
@@ -452,7 +452,7 @@ main {
     }
     #seven-seals-of-event {
       padding: 1rem;
-      padding-top: 82px;
+      padding-top: 65px;
       width: 100%;
       height: 100vh;
       .works-btn {
@@ -504,6 +504,23 @@ main {
     #my-portfolio {
       background: grey;
       width: 100%;
+    }
+  }
+  #progress-bar {
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    width: 100%;
+    left:0;
+    bottom: 0;
+    height: 15px;
+    li {
+      width: 50%;
+      height: 10px;
+      background:#ca3232;
+    }
+    .active-bar {
+      height: 20px;
     }
   }
 }
