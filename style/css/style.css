@@ -17,7 +17,7 @@ body {
     right: 0;
     bottom: 0;
     z-index: -1;
-    background: linear-gradient(#00041c, #01093b); }
+    background: linear-gradient(#00041c 20%, #01093b); }
 
 .body-ov-hidden {
   overflow: hidden;
@@ -445,7 +445,7 @@ main {
     height: 100vh; }
     #works-page #work-thumbnails #seven-seals-of-event .works-btn {
       padding: 1rem;
-      border: 2px solid #ca3232;
+      background: #ca3232;
       display: inline-block;
       margin-top: 1rem; }
     #works-page #work-thumbnails #seven-seals-of-event .img {
@@ -464,7 +464,22 @@ main {
       height: 100%;
       background: rgba(0, 0, 0, 0.5); }
     #works-page #work-thumbnails #seven-seals-of-event header {
+      text-align: center;
       transform: translateY(-33px); }
+      #works-page #work-thumbnails #seven-seals-of-event header h2 {
+        text-align: left;
+        font-size: 2.2rem;
+        line-height: 2rem; }
+      #works-page #work-thumbnails #seven-seals-of-event header span {
+        text-align: left;
+        display: block;
+        height: 3px;
+        width: 100px;
+        background: #ca3232;
+        margin: 0.5rem 0; }
+      #works-page #work-thumbnails #seven-seals-of-event header p {
+        text-align: left;
+        font-size: .8rem; }
   #works-page #work-thumbnails #my-portfolio {
     background: grey;
     width: 100%; }
