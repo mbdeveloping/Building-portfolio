@@ -28,7 +28,8 @@ body {
 	right:0;
 	bottom:0;
 	z-index:-1;
-	background: linear-gradient(#00041c 20%, #011172);
+	// background: linear-gradient(#00041c 20%, #011172);
+  background:linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
   }
 }
 .body-ov-hidden {
@@ -458,7 +459,7 @@ main {
       .works-btn {
         padding: 1rem;
         // border: 2px solid #ca3232;
-        background: #de5454;
+        background: #ff4d5a;
         display: inline-block;
         margin-top: 2.5rem;
       }
@@ -470,6 +471,13 @@ main {
         background-size: cover;
         background-position: center;
         position: relative;
+        img {
+          position: absolute;
+          top:50%;
+          left: 50%;
+          z-index: 10000;
+          transform: translate(-50%, -50%);
+        }
       }
       .ov {
         position: absolute;
@@ -478,8 +486,8 @@ main {
         width: 100%;
         height: 100%;
         // background:rgba(000,000,000, .5);
-        background: linear-gradient(136deg, #ffffff 30%, #de5454);
-        opacity: .5;
+        background: linear-gradient(136deg, yellow 30%, red);
+        opacity: .7;
       }
       header {
         text-align: center;
@@ -494,7 +502,7 @@ main {
           display: block;
           height: 3px;
           width: 100px;
-          background: #de5454;
+          background: #ff4d5a;
           margin:0.5rem 0;
         }
         p {
@@ -519,7 +527,7 @@ main {
     li {
       width: 50%;
       height: 5px;
-      background:#de5454;
+      background:#ff4d5a;
     }
     .active-bar {
       height: 10px;
