@@ -520,9 +520,73 @@ main {
       }
     }
     #my-portfolio {
-      background: grey;
+      padding: 1rem;
+      padding-top: 65px;
+      width: 100%;
       height: 100vh;
-      margin:0 1rem;
+      .img {
+        display: block;
+        margin:1.2rem;
+        height: 50vh;
+        background-image: url('../../slide11.jpg');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        img {
+          width: 80px;
+          position: absolute;
+          top:50%;
+          left: 50%;
+          z-index: 10;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .ov {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(136deg, #072141 30%, red);
+        opacity: .7;
+      }
+      header {
+        text-align: center;
+        transform: translateY(-22%);
+        .works-btn {
+          padding: 1rem;
+          // border: 2px solid #ca3232;
+          background: #ff4d5a;
+          display: inline-block;
+          margin-top: 2.5rem;
+          border-radius: 25px;
+          letter-spacing: .1rem;
+          font-size: .8rem;
+        }
+        h2 {
+          text-align: left;
+          font-size: 2.2rem;
+          line-height: 2rem;
+          letter-spacing: .1rem;
+        }
+        span {
+          text-align: left;
+          display: block;
+          height: 3px;
+          width: 100px;
+          background: #ff4d5a;
+          margin:0.5rem 0;
+        }
+        p {
+          text-align: left;
+          font-size: .7rem;
+          letter-spacing: .1rem;
+        }
+        .design {
+          font-size: 1rem;
+          padding-bottom: .2rem;
+        }
+      }
     }
   }
   #scroll-down {

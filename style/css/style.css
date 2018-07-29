@@ -496,9 +496,63 @@ main {
         font-size: 1rem;
         padding-bottom: .2rem; }
   #works-page #work-thumbnails #my-portfolio {
-    background: grey;
-    height: 100vh;
-    margin: 0 1rem; }
+    padding: 1rem;
+    padding-top: 65px;
+    width: 100%;
+    height: 100vh; }
+    #works-page #work-thumbnails #my-portfolio .img {
+      display: block;
+      margin: 1.2rem;
+      height: 50vh;
+      background-image: url("../../slide11.jpg");
+      background-size: cover;
+      background-position: center;
+      position: relative; }
+      #works-page #work-thumbnails #my-portfolio .img img {
+        width: 80px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 10;
+        transform: translate(-50%, -50%); }
+    #works-page #work-thumbnails #my-portfolio .ov {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(136deg, #072141 30%, red);
+      opacity: .7; }
+    #works-page #work-thumbnails #my-portfolio header {
+      text-align: center;
+      transform: translateY(-22%); }
+      #works-page #work-thumbnails #my-portfolio header .works-btn {
+        padding: 1rem;
+        background: #ff4d5a;
+        display: inline-block;
+        margin-top: 2.5rem;
+        border-radius: 25px;
+        letter-spacing: .1rem;
+        font-size: .8rem; }
+      #works-page #work-thumbnails #my-portfolio header h2 {
+        text-align: left;
+        font-size: 2.2rem;
+        line-height: 2rem;
+        letter-spacing: .1rem; }
+      #works-page #work-thumbnails #my-portfolio header span {
+        text-align: left;
+        display: block;
+        height: 3px;
+        width: 100px;
+        background: #ff4d5a;
+        margin: 0.5rem 0; }
+      #works-page #work-thumbnails #my-portfolio header p {
+        text-align: left;
+        font-size: .7rem;
+        letter-spacing: .1rem; }
+      #works-page #work-thumbnails #my-portfolio header .design {
+        font-size: 1rem;
+        padding-bottom: .2rem; }
 #works-page #scroll-down {
   opacity: 0;
   transform: translateY(140%);
