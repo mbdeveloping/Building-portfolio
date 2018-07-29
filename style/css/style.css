@@ -498,6 +498,30 @@ main {
   #works-page #work-thumbnails #my-portfolio {
     background: grey;
     width: 100%; }
+#works-page #scroll-down {
+  opacity: 0;
+  transform: translateY(140%);
+  visibility: hidden;
+  position: fixed;
+  text-transform: uppercase;
+  right: 6%;
+  bottom: 40px;
+  letter-spacing: .3rem;
+  font-size: .6rem;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  z-index: 10; }
+  #works-page #scroll-down:after {
+    content: "";
+    width: 2px;
+    height: 32px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -40px; }
 
 /********** Seven Seals of Event page ************/
 #full-vh-section {

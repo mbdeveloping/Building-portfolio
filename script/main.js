@@ -117,13 +117,14 @@ document.addEventListener("DOMContentLoaded", function() {
         if (document.getElementById('works-page-main-header')) {
           console.log("test works");
           document.body.className = '';
-          TweenMax.set('#works-page-main-header', {autoAlpha:1});
-          TweenMax.set('#works-thumbnails', {autoAlpha:1});
-
-          TweenMax.from('#works-page-main-header h1', 1, {x:'-110%'});
-          TweenMax.from('#works-page-main-header p', 1, {x:'110%'});
-          TweenMax.from('#works-thumbnails', 1, {y:'100%', autoAlpha:0});
-          TweenMax.to('#earth',.3, {y: '100%',display:'none'});
+          TweenMax.to('#scroll-down', .5, {y:'0%', autoAlpha:1});
+          // TweenMax.set('#works-page-main-header', {autoAlpha:1});
+          // TweenMax.set('#works-thumbnails', {autoAlpha:1});
+          //
+          // TweenMax.from('#works-page-main-header h1', 1, {x:'-110%'});
+          // TweenMax.from('#works-page-main-header p', 1, {x:'110%'});
+          // TweenMax.from('#works-thumbnails', 1, {y:'100%', autoAlpha:0});
+          // TweenMax.set('#earth', {display:'none'});
 
           // TweenMax.to('#earth',.3, {y: '100%'});
 
@@ -329,6 +330,10 @@ document.addEventListener("DOMContentLoaded", function() {
             if (window.innerWidth >= 1024) {
               slieInLinks();
             }
+            if (document.getElementById('works-page-main-header')) {
+              TweenMax.to('#earth', .3, {y:'100%', display:'none'});
+            }
+            console.log("home transition");
             this.done();
           }
         });
@@ -386,6 +391,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (window.innerWidth >= 1024) {
               slieInLinks();
             }
+            console.log("wokrs transition");
             this.done();
           }
         });
