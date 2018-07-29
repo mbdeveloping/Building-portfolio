@@ -4,7 +4,6 @@
   padding: 0; }
 
 body {
-  width: 100%;
   font-size: 1rem;
   color: #fff;
   font-family: Arial;
@@ -447,20 +446,24 @@ main {
       padding: 1rem;
       background: #ff4d5a;
       display: inline-block;
-      margin-top: 2.5rem; }
+      margin-top: 2.5rem;
+      border-radius: 25px;
+      letter-spacing: .1rem;
+      font-size: .8rem; }
     #works-page #work-thumbnails #seven-seals-of-event .img {
       display: block;
-      margin: 1rem;
+      margin: 1.2rem;
       height: 50vh;
       background-image: url("../../slide11.jpg");
       background-size: cover;
       background-position: center;
       position: relative; }
       #works-page #work-thumbnails #seven-seals-of-event .img img {
+        width: 115px;
         position: absolute;
         top: 50%;
         left: 50%;
-        z-index: 10000;
+        z-index: 10;
         transform: translate(-50%, -50%); }
     #works-page #work-thumbnails #seven-seals-of-event .ov {
       position: absolute;
@@ -472,11 +475,12 @@ main {
       opacity: .7; }
     #works-page #work-thumbnails #seven-seals-of-event header {
       text-align: center;
-      transform: translateY(-33px); }
+      transform: translateY(-35%); }
       #works-page #work-thumbnails #seven-seals-of-event header h2 {
         text-align: left;
         font-size: 2.2rem;
-        line-height: 2rem; }
+        line-height: 2rem;
+        letter-spacing: .1rem; }
       #works-page #work-thumbnails #seven-seals-of-event header span {
         text-align: left;
         display: block;
@@ -486,24 +490,14 @@ main {
         margin: 0.5rem 0; }
       #works-page #work-thumbnails #seven-seals-of-event header p {
         text-align: left;
-        font-size: .8rem; }
+        font-size: .7rem;
+        letter-spacing: .1rem; }
+      #works-page #work-thumbnails #seven-seals-of-event header .design {
+        font-size: 1rem;
+        padding-bottom: .2rem; }
   #works-page #work-thumbnails #my-portfolio {
     background: grey;
     width: 100%; }
-#works-page #progress-bar {
-  display: flex;
-  align-items: flex-end;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  height: 15px; }
-  #works-page #progress-bar li {
-    width: 50%;
-    height: 5px;
-    background: #ff4d5a; }
-  #works-page #progress-bar .active-bar {
-    height: 10px; }
 
 /********** Seven Seals of Event page ************/
 #full-vh-section {

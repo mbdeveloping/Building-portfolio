@@ -116,12 +116,15 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         if (document.getElementById('works-page-main-header')) {
           console.log("test works");
+          document.body.className = '';
           TweenMax.set('#works-page-main-header', {autoAlpha:1});
           TweenMax.set('#works-thumbnails', {autoAlpha:1});
 
           TweenMax.from('#works-page-main-header h1', 1, {x:'-110%'});
           TweenMax.from('#works-page-main-header p', 1, {x:'110%'});
           TweenMax.from('#works-thumbnails', 1, {y:'100%', autoAlpha:0});
+          TweenMax.to('#earth',.3, {y: '100%',display:'none'});
+
           // TweenMax.to('#earth',.3, {y: '100%'});
 
             if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i)) {
