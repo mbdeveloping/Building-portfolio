@@ -122,10 +122,10 @@ document.addEventListener("DOMContentLoaded", function() {
           console.log("test works");
 
           function tofirstWork() {
-            TweenMax.to(workThumbnails, 1,{y:0});
+            TweenMax.to(workThumbnails, 1,{y:0, z:0});
           }
           function toSecondWork() {
-            TweenMax.to(workThumbnails, 1,{y:-myPortTop});
+            TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0});
           }
           function hideScrollDown() {
             TweenMax.to('#scroll-down', .5, {y:'140%'});
@@ -145,11 +145,11 @@ document.addEventListener("DOMContentLoaded", function() {
             });
             document.addEventListener('keydown', function(e) {
               if (e.keyCode == '38') {
-                // TweenMax.to(workThumbnails, 1,{y:0});
+                showScrollDown();
                 tofirstWork();
               }
               else if (e.keyCode == '40') {
-                // TweenMax.to(workThumbnails, 1,{y:-myPortTop});
+                hideScrollDown();
                 toSecondWork();
               }
           });
