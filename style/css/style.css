@@ -433,10 +433,10 @@ main {
   font-size: 1.5rem;
   padding-bottom: 2rem; }
 #works-page #work-thumbnails {
+  padding: 0;
   display: flex;
-  flex-direction: column; }
-  #works-page #work-thumbnails li {
-    padding-bottom: 1rem; }
+  flex-direction: column;
+  position: relative; }
   #works-page #work-thumbnails #seven-seals-of-event {
     padding: 1rem;
     padding-top: 65px;
@@ -497,7 +497,8 @@ main {
         padding-bottom: .2rem; }
   #works-page #work-thumbnails #my-portfolio {
     background: grey;
-    width: 100%; }
+    height: 100vh;
+    margin: 0 1rem; }
 #works-page #scroll-down {
   opacity: 0;
   transform: translateY(140%);

@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function() {
       function fadeInHeaderText() {
         if (document.getElementById('home-header')) {
           console.log("test home");
+          // document.body.className = 'body-ov-hidden ';
           TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
           TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);
           // TweenMax.to('#earth',1, {y: '50%'});
@@ -115,8 +116,43 @@ document.addEventListener("DOMContentLoaded", function() {
           // // TweenMax.to('#earth',1, {y: '50%'});
         }
         if (document.getElementById('works-page-main-header')) {
+          const workThumbnails = document.getElementById('work-thumbnails');
+          const myPort = document.getElementById('my-portfolio');
+          let myPortTop = myPort.offsetTop;
           console.log("test works");
-          document.body.className = '';
+
+          function tofirstWork() {
+            TweenMax.to(workThumbnails, 1,{y:0});
+          }
+          function toSecondWork() {
+            TweenMax.to(workThumbnails, 1,{y:-myPortTop});
+          }
+          function hideScrollDown() {
+            TweenMax.to('#scroll-down', .5, {y:'140%'});
+          }
+          function showScrollDown() {
+            TweenMax.to('#scroll-down', .5, {y:'0%'});
+          }
+          document.addEventListener('wheel', function(e) {
+              if (e.deltaY < 0) {
+                showScrollDown();
+                tofirstWork();
+              }
+              if (e.deltaY > 0) {
+                hideScrollDown();
+                toSecondWork();
+              }
+            });
+            document.addEventListener('keydown', function(e) {
+              if (e.keyCode == '38') {
+                // TweenMax.to(workThumbnails, 1,{y:0});
+                tofirstWork();
+              }
+              else if (e.keyCode == '40') {
+                // TweenMax.to(workThumbnails, 1,{y:-myPortTop});
+                toSecondWork();
+              }
+          });
           TweenMax.to('#scroll-down', .5, {y:'0%', autoAlpha:1});
           // TweenMax.set('#works-page-main-header', {autoAlpha:1});
           // TweenMax.set('#works-thumbnails', {autoAlpha:1});

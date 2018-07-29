@@ -445,11 +445,10 @@ main {
     }
   }
   #work-thumbnails {
+    padding:0;
     display: flex;
     flex-direction: column;
-    li {
-      padding-bottom: 1rem;
-    }
+    position: relative;
     #seven-seals-of-event {
       padding: 1rem;
       padding-top: 65px;
@@ -522,7 +521,8 @@ main {
     }
     #my-portfolio {
       background: grey;
-      width: 100%;
+      height: 100vh;
+      margin:0 1rem;
     }
   }
   #scroll-down {
