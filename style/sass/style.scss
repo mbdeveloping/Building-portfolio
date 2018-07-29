@@ -199,7 +199,8 @@ ul {
   width: 50%;
   height: 100vh;
   top:0;
-  background:rgba(0,0,0, .9);
+  // background:rgba(0,0,0, .9);
+  background: linear-gradient(to bottom, #072142 34%, #ff4d5a);
   z-index: 2000;
 }
 #left-nav-overlay {
@@ -349,7 +350,7 @@ main {
   z-index: 3000;
   justify-content: space-around;
   padding:1rem 4rem;
-  background:rgba(0,0,0, .9);
+  // background:rgba(0,0,0, .9);
   @include transform(translateY(100%));
   a {
     position: relative;
@@ -528,7 +529,7 @@ main {
         display: block;
         margin:1.2rem;
         height: 50vh;
-        background-image: url('../../slide11.jpg');
+        background-image: url('../../home.png');
         background-size: cover;
         background-position: center;
         position: relative;
@@ -547,8 +548,8 @@ main {
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(136deg, #072141 30%, red);
-        opacity: .7;
+        background: linear-gradient(136deg, #072141 50%, #ff4d5a);
+        opacity: .9;
       }
       header {
         text-align: center;
