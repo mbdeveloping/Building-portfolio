@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const userAgent = window.navigator.userAgent;
       let touchY;
       let moveY;
+      const swipeDistance = 30;
 
       function positionEarth() {
         if (window.innerWidth <= 600) {
@@ -181,11 +182,11 @@ document.addEventListener("DOMContentLoaded", function() {
           document.addEventListener('touchmove', function(e) {
              moveY = e.changedTouches[0].screenY;
              console.log(moveY);
-             if ((moveY+30) < touchY) {
+             if ((moveY+swipeDistance) < touchY) {
                console.log("moving down");
                hideScrollDown();
                toSecondWork();
-             }else if ((moveY-30) > touchY) {
+             }else if ((moveY-swipeDistance) > touchY) {
                console.log("moving up");
                showScrollDown();
                tofirstWork();
