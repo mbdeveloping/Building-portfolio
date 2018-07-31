@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
       const homePage = document.getElementById('home-main');
       let pcImg = document.getElementById('bg-pc');
       const userAgent = window.navigator.userAgent;
+      let touchstartY = 0;
+      let touchendY = 0;
 
       function positionEarth() {
         if (window.innerWidth <= 600) {
@@ -143,6 +145,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 toSecondWork();
               }
             });
+
+            // function handleGesture() {
+            //     if (touchendY <= touchstartY) {
+            //         hideScrollDown();
+            //         toSecondWork();
+            //     }
+            //     if (touchendY >= touchstartY) {
+            //         showScrollDown();
+            //         tofirstWork();
+            //     }
+            // }
+            // document.addEventListener('touchstart', function(event) {
+            //     touchstartY = event.changedTouches[0].screenY;
+            //     console.log(touchstartY);
+            // }, false);
+            // document.addEventListener('touchend', function(event) {
+            //     touchendY = event.changedTouches[0].screenY;
+            //     handleGesture();
+            // }, false);
             document.addEventListener('keydown', function(e) {
               if (e.keyCode == '38') {
                 showScrollDown();
@@ -153,6 +174,26 @@ document.addEventListener("DOMContentLoaded", function() {
                 toSecondWork();
               }
           });
+          let touchY;
+          let moveY;
+          document.addEventListener('touchstart', function(e) {
+            touchY = e.changedTouches[0].screenY;
+            // console.log(touchY);
+          });
+          document.addEventListener('touchmove', function(e) {
+             moveY = e.changedTouches[0].screenY;
+             // console.log(moveY);
+             if (moveY < touchY) {
+               console.log("moving down");
+               hideScrollDown();
+               toSecondWork();
+             }else if (moveY > touchY) {
+               console.log("moving up");
+               showScrollDown();
+               tofirstWork();
+             }
+          });
+
           TweenMax.to('#scroll-down', .5, {y:'0%', autoAlpha:1});
           // TweenMax.set('#works-page-main-header', {autoAlpha:1});
           // TweenMax.set('#works-thumbnails', {autoAlpha:1});

@@ -86,7 +86,7 @@ ul {
 
 .safari-padding {
   padding-bottom: 44px;
-  overflow: scroll; }
+  overflow: hidden; }
 
 /******************** Main header rules *************************/
 #nav-bar {
@@ -435,7 +435,9 @@ main {
   padding: 0;
   display: flex;
   flex-direction: column;
-  position: relative; }
+  position: relative;
+  touch-action: none;
+  will-change: transform; }
   #works-page #work-thumbnails #seven-seals-of-event {
     padding: 1rem;
     padding-top: 65px;

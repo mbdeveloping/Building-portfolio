@@ -99,7 +99,7 @@ ul {
 }
 .safari-padding {
   padding-bottom: 44px;
-  overflow: scroll;
+  overflow: hidden;
   // -webkit-overflow-scrolling: touch;
 }
 
@@ -450,6 +450,8 @@ main {
     display: flex;
     flex-direction: column;
     position: relative;
+    touch-action: none;
+    will-change: transform;
     #seven-seals-of-event {
       padding: 1rem;
       padding-top: 65px;
