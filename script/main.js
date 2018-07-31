@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
       const homePage = document.getElementById('home-main');
       let pcImg = document.getElementById('bg-pc');
       const userAgent = window.navigator.userAgent;
-      let touchstartY = 0;
-      let touchendY = 0;
+      let touchY;
+      let moveY;
 
       function positionEarth() {
         if (window.innerWidth <= 600) {
@@ -174,20 +174,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 toSecondWork();
               }
           });
-          let touchY;
-          let moveY;
           document.addEventListener('touchstart', function(e) {
             touchY = e.changedTouches[0].screenY;
-            // console.log(touchY);
+            console.log(touchY);
           });
           document.addEventListener('touchmove', function(e) {
              moveY = e.changedTouches[0].screenY;
-             // console.log(moveY);
-             if (moveY < touchY) {
+             console.log(moveY);
+             if ((moveY+30) < touchY) {
                console.log("moving down");
                hideScrollDown();
                toSecondWork();
-             }else if (moveY > touchY) {
+             }else if ((moveY-30) > touchY) {
                console.log("moving up");
                showScrollDown();
                tofirstWork();
