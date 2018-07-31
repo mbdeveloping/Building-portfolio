@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", function() {
           // document.body.className = 'body-ov-hidden ';
           TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
           TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);
-          // TweenMax.to('#earth',1, {y: '50%'});
-            // TweenMax.to('#earth',1, {rotation:120, z:0});
+          TweenMax.set('#earth', {display: 'block'});
+          TweenMax.to('#earth',1, {y: '50%'});
           function bigBenAndBus() {
             TweenMax.fromTo('#big-ben', 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
             TweenMax.fromTo('#london-bus', 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
@@ -116,7 +116,8 @@ document.addEventListener("DOMContentLoaded", function() {
           TweenMax.set('#about-header', {autoAlpha:1});
           TweenMax.from('#about-header h1', 1, {x:'-100%'});
           TweenMax.from('#about-header p', 1, {x:'100%'});
-          // // TweenMax.to('#earth',1, {y: '50%'});
+          TweenMax.set('#earth', {display: 'block'});
+          TweenMax.to('#earth',1, {y: '50%'});
         }
         if (document.getElementById('works-page-main-header')) {
           const workThumbnails = document.getElementById('work-thumbnails');
@@ -439,6 +440,9 @@ document.addEventListener("DOMContentLoaded", function() {
             slideInNavBar();
             if (window.innerWidth >= 1024) {
               slieInLinks();
+            }
+            if (document.getElementById('works-page-main-header')) {
+              TweenMax.to('#earth', .3, {y:'100%', display:'none'});
             }
             this.done();
           }
