@@ -177,11 +177,11 @@ document.addEventListener("DOMContentLoaded", function() {
           });
           document.addEventListener('touchstart', function(e) {
             touchY = e.changedTouches[0].screenY;
-            console.log(touchY);
+            // console.log(touchY);
           });
           document.addEventListener('touchmove', function(e) {
              moveY = e.changedTouches[0].screenY;
-             console.log(moveY);
+             // console.log(moveY);
              if ((moveY+swipeDistance) < touchY) {
                console.log("moving down");
                hideScrollDown();
@@ -291,7 +291,8 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       function openNav() {
         navBtnOpen();
-        TweenMax.to([leftNavOverlay, rightNavOverlay], 1, {x: '0%', width:'50%', ease: Bounce.easeOut});
+        // TweenMax.to([leftNavOverlay, rightNavOverlay], 1, {x: '0%', width:'50%', ease: Bounce.easeOut});
+        TweenMax.to([leftNavOverlay, rightNavOverlay], .3, {x: '0%', width:'50%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
         TweenMax.to(socialLinks, .3, {y:'0%'});
         zoomOutBg();
