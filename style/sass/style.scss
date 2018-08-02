@@ -453,6 +453,7 @@ main {
     touch-action: none;
     will-change: transform;
     #seven-seals-of-event {
+      will-change: transform;
       padding: 1rem;
       padding-top: 65px;
       width: 100%;
@@ -523,6 +524,7 @@ main {
       }
     }
     #my-portfolio {
+      will-change: transform;
       padding: 1rem;
       padding-top: 65px;
       width: 100%;
