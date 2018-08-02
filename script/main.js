@@ -127,10 +127,14 @@ document.addEventListener("DOMContentLoaded", function() {
           console.log("test works");
 
           function tofirstWork() {
+            TweenMax.to('#my-portfolio', .3, {scale:0.7});
             TweenMax.to(workThumbnails, 1,{y:0, z:0});
+            TweenMax.to('#seven-seals-of-event', 1, {scale:1});
           }
           function toSecondWork() {
+            TweenMax.to('#seven-seals-of-event', .3, {scale:0.7});
             TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0});
+            TweenMax.to('#my-portfolio', 1, {scale:1});
           }
           function hideScrollDown() {
             TweenMax.to('#scroll-down', .5, {y:'140%'});
