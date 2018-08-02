@@ -392,6 +392,9 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             if (document.getElementById('works-page-main-header')) {
               TweenMax.to('#earth', .3, {y:'100%', display:'none'});
+              TweenMax.from('#works-page-main-header h2', 1, {autoAlpha:0, x:-100});
+              TweenMax.from('#works-page-main-header p', 1, {autoAlpha:0, x:100});
+              // TweenMax.from('#seven-seals-of-event .img', 1, {autoAlpha:0, x:100});
             }
             console.log("home transition");
             this.done();
