@@ -148,25 +148,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 toSecondWork();
               }
             });
-
-            // function handleGesture() {
-            //     if (touchendY <= touchstartY) {
-            //         hideScrollDown();
-            //         toSecondWork();
-            //     }
-            //     if (touchendY >= touchstartY) {
-            //         showScrollDown();
-            //         tofirstWork();
-            //     }
-            // }
-            // document.addEventListener('touchstart', function(event) {
-            //     touchstartY = event.changedTouches[0].screenY;
-            //     console.log(touchstartY);
-            // }, false);
-            // document.addEventListener('touchend', function(event) {
-            //     touchendY = event.changedTouches[0].screenY;
-            //     handleGesture();
-            // }, false);
             document.addEventListener('keydown', function(e) {
               if (e.keyCode == '38') {
                 showScrollDown();
