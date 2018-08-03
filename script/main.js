@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
               TweenMax.to('#works-page-main-header span', 1, {autoAlpha:1, x:'0%'});
               TweenMax.to('#works-page-main-header p', 1, {autoAlpha:1, x:'0%'});
               TweenMax.to('#works-page-main-header a', 1, {autoAlpha:1, x:'0%'});
-              TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1});
+              TweenMax.to('#seven-seals-of-event .img', .7, {z:0, autoAlpha:1, scale:1});
           console.log("test works");
 
           function tofirstWork() {
@@ -401,7 +401,8 @@ document.addEventListener("DOMContentLoaded", function() {
             navBtnClose();
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
-            TweenMax.to('#earth',.3, {y: '100%'});
+            // TweenMax.to('#earth',.3, {y: '100%'});
+            TweenMax.to('#earth',2, {scale:0, y:'-80%', ease:Power2.easeInOut});
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
               // TweenMax.to(['#hello', '#frontend-developer'], .7, {x:350});
               TweenMax.to(['#hello', '#frontend-developer'], 1, {x:'110%'});
@@ -410,8 +411,8 @@ document.addEventListener("DOMContentLoaded", function() {
               TweenMax.set('#works-page-main-header h2', {autoAlpha:0, x:'-100%'});
               TweenMax.set('#works-page-main-header span', {autoAlpha:0, x:'-100%'});
               TweenMax.set('#works-page-main-header p', {autoAlpha:0, x:'100%'});
-              TweenMax.set('#works-page-main-header a', {autoAlpha:0, x:'100%'});
-              TweenMax.set('#seven-seals-of-event .img', {z:0, autoAlpha:0, scale:0});
+              TweenMax.set('#works-page-main-header a', {autoAlpha:0, x:'190%'});
+              TweenMax.set('#seven-seals-of-event .img', {z:0, autoAlpha:0, scale:4});
               function allDone() {
                 deferred.resolve();
               }
