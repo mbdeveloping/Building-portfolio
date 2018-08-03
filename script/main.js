@@ -137,10 +137,10 @@ document.addEventListener("DOMContentLoaded", function() {
             TweenMax.to('#my-portfolio', 1, {scale:1});
           }
           function hideScrollDown() {
-            TweenMax.to('#scroll-down', .5, {y:'140%'});
+            TweenMax.to('#scroll-down', .7, {y:'140%'});
           }
           function showScrollDown() {
-            TweenMax.to('#scroll-down', .5, {y:'0%'});
+            TweenMax.to('#scroll-down', .7, {y:'0%'});
           }
           // document.addEventListener('wheel', function(e) {
           //     if (e.deltaY < 0) {
@@ -161,7 +161,6 @@ document.addEventListener("DOMContentLoaded", function() {
               window.clearTimeout(timer);
             }
             timer = window.setTimeout(function() {
-          		// actual callback
           		console.log( "Firing!" );
               if (e.deltaY < 0) {
                    showScrollDown();
