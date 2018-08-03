@@ -127,13 +127,13 @@ document.addEventListener("DOMContentLoaded", function() {
           console.log("test works");
 
           function tofirstWork() {
-            TweenMax.to('#my-portfolio', .3, {scale:0.7});
-            TweenMax.to(workThumbnails, 1,{y:0, z:0});
+            TweenMax.to('#my-portfolio', .3, {scale:0.8});
+            TweenMax.to(workThumbnails, 1,{y:0, z:0, ease:Power2.easeInOut});
             TweenMax.to('#seven-seals-of-event', 1, {scale:1});
           }
           function toSecondWork() {
-            TweenMax.to('#seven-seals-of-event', .3, {scale:0.7});
-            TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0});
+            TweenMax.to('#seven-seals-of-event', .3, {scale:0.8});
+            TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0, ease:Power2.easeInOut});
             TweenMax.to('#my-portfolio', 1, {scale:1});
           }
           function hideScrollDown() {
@@ -142,16 +142,38 @@ document.addEventListener("DOMContentLoaded", function() {
           function showScrollDown() {
             TweenMax.to('#scroll-down', .5, {y:'0%'});
           }
+          // document.addEventListener('wheel', function(e) {
+          //     if (e.deltaY < 0) {
+          //       showScrollDown();
+          //       tofirstWork();
+          //       console.log("scrolling up");
+          //     }
+          //     if (e.deltaY > 0) {
+          //       hideScrollDown();
+          //       toSecondWork();
+          //       console.log("scrolling down");
+          //     }
+          //   });
+
+          let timer;
           document.addEventListener('wheel', function(e) {
+            if (timer) {
+              window.clearTimeout(timer);
+            }
+            timer = window.setTimeout(function() {
+          		// actual callback
+          		console.log( "Firing!" );
               if (e.deltaY < 0) {
-                showScrollDown();
-                tofirstWork();
-              }
-              if (e.deltaY > 0) {
-                hideScrollDown();
-                toSecondWork();
-              }
-            });
+                   showScrollDown();
+                   tofirstWork();
+                 }
+                 if (e.deltaY > 0) {
+                   hideScrollDown();
+                   toSecondWork();
+                 }
+          	}, 150);
+          })
+
             document.addEventListener('keydown', function(e) {
               if (e.keyCode == '38') {
                 showScrollDown();
@@ -164,11 +186,9 @@ document.addEventListener("DOMContentLoaded", function() {
           });
           document.addEventListener('touchstart', function(e) {
             touchY = e.changedTouches[0].screenY;
-            // console.log(touchY);
           });
           document.addEventListener('touchmove', function(e) {
              moveY = e.changedTouches[0].screenY;
-             // console.log(moveY);
              if ((moveY+swipeDistance) < touchY) {
                console.log("moving down");
                hideScrollDown();

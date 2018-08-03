@@ -452,6 +452,7 @@ main {
     position: relative;
     touch-action: none;
     will-change: transform;
+    // transition: transform 1000ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
     #seven-seals-of-event {
       will-change: transform;
       padding: 1rem;
