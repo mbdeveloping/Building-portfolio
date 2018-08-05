@@ -509,6 +509,8 @@ main {
         opacity: .7;
       }
       header {
+        width: 80%;
+        overflow: hidden;
         text-align: center;
         transform: translateY(-35%);
         h2 {

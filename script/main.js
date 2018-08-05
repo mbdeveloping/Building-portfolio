@@ -409,10 +409,10 @@ document.addEventListener("DOMContentLoaded", function() {
               TweenMax.to(['#hello', '#frontend-developer'], 1, {x:'110%'});
               // TweenMax.to(['#i-am-mantvydas', '#based'], .7, {x:-350, onComplete: allDone});
               TweenMax.to(['#i-am-mantvydas', '#based'], 1, {x:'-110%', onComplete: allDone});
-              TweenMax.set('#works-page-main-header h2', {autoAlpha:0, x:'-100%'});
-              TweenMax.set('#works-page-main-header span', {autoAlpha:0, x:'-100%'});
-              TweenMax.set('#works-page-main-header p', {autoAlpha:0, x:'100%'});
-              TweenMax.set('#works-page-main-header a', {autoAlpha:0, x:'190%'});
+              TweenMax.set('#works-page-main-header h2', {autoAlpha:1, x:'-100%'});
+              TweenMax.set('#works-page-main-header span', {autoAlpha:1, x:'-120%'});
+              TweenMax.set('#works-page-main-header p', {autoAlpha:1, x:'110%'});
+              TweenMax.set('#works-page-main-header a', {autoAlpha:1, x:'190%'});
               TweenMax.set('#seven-seals-of-event .img', {z:0, autoAlpha:0, scale:4});
               function allDone() {
                 deferred.resolve();
@@ -492,7 +492,11 @@ document.addEventListener("DOMContentLoaded", function() {
             function contTrans() {
               slideOutNavBar();
               TweenMax.to('#works-page-main-header h2', 1, {x:'110%'});
+              TweenMax.to('#works-page-main-header span', 1, {x:'320%'});
+              TweenMax.to('#works-page-main-header a', 1, {x:'-200%'});
               TweenMax.to('#works-page-main-header p', 1, {x:'-110%'});
+              TweenMax.to('#seven-seals-of-event .img', 1, {scale:0});
+              TweenMax.to('#scroll-down', .7, {y:'140%'});
               TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:function() {
                 deferred.resolve();
               }});
