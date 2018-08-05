@@ -806,6 +806,46 @@ main {
   }
 }
 /*********** MEDIA QUERIES *********/
+@media (min-width: 450px) {
+  #nav-bar  {
+    #nav-wrapper {
+      padding:2rem;
+    }
+  }
+  #works-page #work-thumbnails {
+    #seven-seals-of-event, #my-portfolio {
+      padding-bottom:2rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  #works-page #work-thumbnails #seven-seals-of-event header {
+    width: 70%;
+  }
+}
+@media (min-width: 550px) {
+  #works-page #work-thumbnails #seven-seals-of-event header {
+    width: 60%;
+  }
+}
+@media (min-width: 600px) and (min-height: 300px) {
+  #works-page #work-thumbnails #seven-seals-of-event, #works-page #work-thumbnails #my-portfolio{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    .img {
+      grid-column: 2/3;
+      width: 100%;
+      height: 60vh;
+    }
+    header {
+      width: 150%;
+      grid-row: 1/2;
+      transform: none;
+    }
+  }
+}
 @media (min-width: 600px) {
   .img-holder  {
     height: 75vh;
