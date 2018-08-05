@@ -102,7 +102,19 @@ ul {
   overflow: hidden;
   // -webkit-overflow-scrolling: touch;
 }
-
+#purple-bg {
+  position: absolute;
+  left:0;
+  bottom:0;
+  transform:translate(-24%, 50%);
+  width: 200%;
+}
+#star {
+  position: absolute;
+  width: 80%;
+  right:0;
+  bottom: 0;
+}
 /******************** Main header rules *************************/
 #nav-bar {
   width: 100%;

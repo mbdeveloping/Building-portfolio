@@ -38,39 +38,39 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
       positionEarth();
-
-      let request = null;
-      let mouse = { x: 0, y: 0 };
-      let cx = window.innerWidth / 2;
-      let cy = window.innerHeight / 2;
-
-      document.body.addEventListener('mousemove', function(event) {
-
-        mouse.x = event.pageX;
-        mouse.y = event.pageY;
-
-        cancelAnimationFrame(request);
-         request = requestAnimationFrame(update);
-      });
-
-      function update() {
-
-        let dx = mouse.x - cx;
-        let dy = mouse.y - cy;
-
-        let tiltx = - (dy / cy);
-        let tilty = - (dx / cx);
-        TweenMax.to("#earth", 1, {x:tilty*20,y:tiltx*20, ease:Power2.easeOut});
-      }
-
-      window.addEventListener('resize', function() {
-        cx = window.innerWidth / 2;
-        cy = window.innerHeight / 2;
-      });
-
-      window.addEventListener('resize', function() {
-        positionEarth();
-      });
+      //
+      // let request = null;
+      // let mouse = { x: 0, y: 0 };
+      // let cx = window.innerWidth / 2;
+      // let cy = window.innerHeight / 2;
+      //
+      // document.body.addEventListener('mousemove', function(event) {
+      //
+      //   mouse.x = event.pageX;
+      //   mouse.y = event.pageY;
+      //
+      //   cancelAnimationFrame(request);
+      //    request = requestAnimationFrame(update);
+      // });
+      //
+      // function update() {
+      //
+      //   let dx = mouse.x - cx;
+      //   let dy = mouse.y - cy;
+      //
+      //   let tiltx = - (dy / cy);
+      //   let tilty = - (dx / cx);
+      //   TweenMax.to("#earth", 1, {x:tilty*20,y:tiltx*20, ease:Power2.easeOut});
+      // }
+      //
+      // window.addEventListener('resize', function() {
+      //   cx = window.innerWidth / 2;
+      //   cy = window.innerHeight / 2;
+      // });
+      //
+      // window.addEventListener('resize', function() {
+      //   positionEarth();
+      // });
 
 
       // TweenMax.to('.twin', 3, {y:-100,x:-100, z:0, repeat:-1, ease:Linear.easeNone﻿});
