@@ -662,7 +662,7 @@ main {
 @media (min-width: 550px) {
   #works-page #work-thumbnails #seven-seals-of-event header {
     width: 60%; } }
-@media (min-width: 700px) and (min-height: 300px) {
+@media (min-width: 800px) and (max-height: 1000px) {
   #works-page #work-thumbnails #seven-seals-of-event, #works-page #work-thumbnails #my-portfolio {
     display: grid;
     grid-template-columns: 1fr 1fr;
