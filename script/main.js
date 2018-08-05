@@ -121,9 +121,16 @@ document.addEventListener("DOMContentLoaded", function() {
           TweenMax.to('#earth',1, {y: '50%'});
         }
         if (document.getElementById('works-page-main-header')) {
+          let myPortTop;
+
           const workThumbnails = document.getElementById('work-thumbnails');
           const myPort = document.getElementById('my-portfolio');
-          let myPortTop = myPort.offsetTop;
+          myPortTop = myPort.offsetTop;
+          window.addEventListener('resize', function() {
+            myPortTop = myPort.offsetTop;
+          });
+
+           console.log(myPortTop);
           TweenMax.to('#earth', .3, {y:'100%', display:'none'});
               TweenMax.to('#works-page-main-header h2', 1, {autoAlpha:1, x:'0%'});
               TweenMax.to('#works-page-main-header span', 1, {autoAlpha:1, x:'0%'});
@@ -223,6 +230,8 @@ document.addEventListener("DOMContentLoaded", function() {
             else {
                document.getElementById('works-page').className = '';
             }
+
+
         }
       }
       //Leave home header animation
