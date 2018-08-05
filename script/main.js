@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
           // document.body.className = 'body-ov-hidden ';
           TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
           TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);
-          TweenMax.set('#earth', {z:0, scale:1, y:'100%'});
+          TweenMax.set('#earth', {display: 'block', z:0, scale:1, y:'100%'});
           TweenMax.to('#earth',1, {y: '50%'});
           function bigBenAndBus() {
             TweenMax.fromTo('#big-ben', 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
@@ -506,8 +506,8 @@ document.addEventListener("DOMContentLoaded", function() {
               slieInLinks();
             }
             if (document.getElementById('home-header')) {
-              TweenMax.to('#earth',1, {display:'block', y: '50%'});
-              console.log("turi pasirodyti earth")
+              // TweenMax.to('#earth',1, {display:'block', y: '50%'});
+              // console.log("turi pasirodyti earth")
             }else if (document.getElementById('about-header')) {
               TweenMax.to('#earth',1, {display:'block', y: '50%'});
             }
