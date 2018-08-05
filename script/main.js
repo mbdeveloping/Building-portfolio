@@ -127,6 +127,7 @@ document.addEventListener("DOMContentLoaded", function() {
           const myPort = document.getElementById('my-portfolio');
           myPortTop = myPort.offsetTop;
           window.addEventListener('resize', function() {
+            workThumbnails.className = '';
             TweenMax.to('#seven-seals-of-event', .3, {scale:1});
             TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut});
             myPortTop = myPort.offsetTop;
