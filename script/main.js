@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       function positionEarth() {
         if (window.innerWidth <= 600) {
-          TweenMax.set('#earth', {x:'0%', y:'50%'});
+          TweenMax.set('#earth', {x:'0%', y:'100%'});
         }
         if (window.innerWidth >= 600 && window.innerWidth > 600) {
           TweenMax.set('#earth', {x:'50%', y:'-50%'});
@@ -105,8 +105,8 @@ document.addEventListener("DOMContentLoaded", function() {
           // document.body.className = 'body-ov-hidden ';
           TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
           TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);
-          // TweenMax.set('#earth', {display: 'block'});
-          // TweenMax.to('#earth',1, {y: '50%'});
+          TweenMax.set('#earth', {z:0, scale:1, y:'100%'});
+          TweenMax.to('#earth',1, {y: '50%'});
           function bigBenAndBus() {
             TweenMax.fromTo('#big-ben', 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
             TweenMax.fromTo('#london-bus', 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
@@ -491,7 +491,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             function contTrans() {
               slideOutNavBar();
-              TweenMax.to('#works-page-main-header h1', 1, {x:'110%'});
+              TweenMax.to('#works-page-main-header h2', 1, {x:'110%'});
               TweenMax.to('#works-page-main-header p', 1, {x:'-110%'});
               TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:function() {
                 deferred.resolve();
@@ -507,6 +507,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             if (document.getElementById('home-header')) {
               TweenMax.to('#earth',1, {display:'block', y: '50%'});
+              console.log("turi pasirodyti earth")
             }else if (document.getElementById('about-header')) {
               TweenMax.to('#earth',1, {display:'block', y: '50%'});
             }

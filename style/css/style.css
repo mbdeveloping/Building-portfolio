@@ -422,7 +422,8 @@ main {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  transform: translateY(100%) translateZ(0); }
 
 #cloud {
   will-change: transform;
