@@ -133,11 +133,13 @@ document.addEventListener("DOMContentLoaded", function() {
           console.log("test works");
 
           function tofirstWork() {
+            workThumbnails.className = '';
             TweenMax.to('#my-portfolio', 1, {scale:0.8});
             TweenMax.to(workThumbnails, 1,{y:0, z:0, ease:Power2.easeInOut});
             TweenMax.to('#seven-seals-of-event', 1, {scale:1});
           }
           function toSecondWork() {
+            workThumbnails.className = 'scrolled-portfolio';
             TweenMax.to('#seven-seals-of-event', 1, {scale:0.8});
             TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0, ease:Power2.easeInOut});
             TweenMax.to('#my-portfolio', 1, {scale:1});
@@ -167,7 +169,6 @@ document.addEventListener("DOMContentLoaded", function() {
               window.clearTimeout(timer);
             }
             timer = window.setTimeout(function() {
-          		console.log( "Firing!" );
               if (e.deltaY < 0) {
                    showScrollDown();
                    tofirstWork();
@@ -476,20 +477,26 @@ document.addEventListener("DOMContentLoaded", function() {
           fadeOut: function() {
             const deferred = Barba.Utils.deferred();
             zoomInBg();
-            TweenMax.to('#my-portfolio', .3, {scale:0.8});
-            TweenMax.to('#seven-seals-of-event', .3, {scale:1});
-            TweenMax.to('#work-thumbnails', .3,{y:0, z:0, ease:Power2.easeInOut});
-
-            slideOutNavBar();
             navBtnClose();
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
-            TweenMax.to('#works-page-main-header h1', 1, {x:'110%'});
-            TweenMax.to('#works-page-main-header p', 1, {x:'-110%'});
-            TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:function() {
-              deferred.resolve();
-            }});
+            TweenMax.to('#my-portfolio', .3, {scale:0.8});
+            TweenMax.to('#seven-seals-of-event', .3, {scale:1});
+            if (document.getElementById('work-thumbnails').className === 'scrolled-portfolio') {
+              TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut, onComplete:contTrans});
+            } else {
+              contTrans();
+            }
+
+            function contTrans() {
+              slideOutNavBar();
+              TweenMax.to('#works-page-main-header h1', 1, {x:'110%'});
+              TweenMax.to('#works-page-main-header p', 1, {x:'-110%'});
+              TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:function() {
+                deferred.resolve();
+              }});
+            }
             return deferred.promise;
           },
           showNewPage: function() {
