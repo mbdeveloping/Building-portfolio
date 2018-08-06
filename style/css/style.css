@@ -867,9 +867,14 @@ main {
 
   #seven-seals-of-event:hover {
     transform: scale(1); } }
-@media (min-width: 1440px) {
+@media (min-width: 1100px) {
   #works-page #work-thumbnails #seven-seals-of-event header, #works-page #work-thumbnails #my-portfolio header {
-    width: 72%;
+    width: 85%; } }
+@media (min-width: 1440px) {
+  #works-page #work-thumbnails #seven-seals-of-event .img img, #works-page #work-thumbnails #my-portfolio .img img {
+    width: 200px; }
+  #works-page #work-thumbnails #seven-seals-of-event header, #works-page #work-thumbnails #my-portfolio header {
+    width: 80%;
     justify-self: self-end; }
     #works-page #work-thumbnails #seven-seals-of-event header h2, #works-page #work-thumbnails #my-portfolio header h2 {
       font-size: 3rem;
