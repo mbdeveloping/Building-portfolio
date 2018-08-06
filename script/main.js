@@ -137,9 +137,9 @@ document.addEventListener("DOMContentLoaded", function() {
            console.log(myPortTop);
           TweenMax.to('#earth', .3, {y:'100%', display:'none'});
               TweenMax.to('#works-page-main-header h2', 1, {autoAlpha:1, x:'0%'});
-              TweenMax.to('#works-page-main-header span', 1, {autoAlpha:1, x:'0%'});
+              TweenMax.to('#works-page-main-header .border-wrapper', 1, {autoAlpha:1, x:'0%'});
               TweenMax.to('#works-page-main-header p', 1, {autoAlpha:1, x:'0%'});
-              TweenMax.to('#works-page-main-header a', 1, {autoAlpha:1, x:'0%'});
+              TweenMax.to('#works-page-main-header .button-wrapper', 1, {autoAlpha:1, x:'0%'});
               TweenMax.to('#seven-seals-of-event .img', .7, {z:0, autoAlpha:1, scale:1});
           console.log("test works");
 
@@ -423,9 +423,9 @@ document.addEventListener("DOMContentLoaded", function() {
               // TweenMax.to(['#i-am-mantvydas', '#based'], .7, {x:-350, onComplete: allDone});
               TweenMax.to(['#i-am-mantvydas', '#based'], 1, {x:'-110%', onComplete: allDone});
               TweenMax.set('#works-page-main-header h2', {autoAlpha:1, x:'-100%'});
-              TweenMax.set('#works-page-main-header span', {autoAlpha:1, x:'-120%'});
+              TweenMax.set('#works-page-main-header .border-wrapper', {autoAlpha:1, x:'-120%'});
               TweenMax.set('#works-page-main-header p', {autoAlpha:1, x:'110%'});
-              TweenMax.set('#works-page-main-header a', {autoAlpha:1, x:'190%'});
+              TweenMax.set('#works-page-main-header .button-wrapper', {autoAlpha:1, x:'110%'});
               TweenMax.set('#seven-seals-of-event .img', {z:0, autoAlpha:0, scale:4});
               function allDone() {
                 deferred.resolve();
@@ -505,8 +505,8 @@ document.addEventListener("DOMContentLoaded", function() {
             function contTrans() {
               slideOutNavBar();
               TweenMax.to('#works-page-main-header h2', 1, {x:'110%'});
-              TweenMax.to('#works-page-main-header span', 1, {x:'320%'});
-              TweenMax.to('#works-page-main-header a', 1, {x:'-200%'});
+              TweenMax.to('#works-page-main-header .border-wrapper', 1, {x:'110%'});
+              TweenMax.to('#works-page-main-header .button-wrapper', 1, {x:'-110%'});
               TweenMax.to('#works-page-main-header p', 1, {x:'-110%'});
               TweenMax.to('#seven-seals-of-event .img', 1, {scale:0});
               TweenMax.to('#scroll-down', .7, {y:'140%'});
