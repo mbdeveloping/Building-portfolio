@@ -1095,6 +1095,16 @@ main {
     }
   }
 }
+@media (min-width: 1300px) {
+  #works-page #work-thumbnails {
+    #seven-seals-of-event, #my-portfolio {
+      header {
+        width: 70%;
+        // justify-self: self-end;
+      }
+    }
+  }
+}
 @media (min-width: 1440px) {
   #works-page #work-thumbnails {
     #seven-seals-of-event, #my-portfolio {
@@ -1102,11 +1112,11 @@ main {
         width: 200px;
       }
       header {
-        width: 80%;
+        width: 100%;
         justify-self: self-end;
         h2 {
-          font-size: 3rem;
-          line-height: 3rem;
+          font-size: 4rem;
+          line-height: 4rem;
         }
       }
     }
