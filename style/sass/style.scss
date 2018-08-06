@@ -1086,6 +1086,18 @@ main {
   }
 }
 @media (min-width: 1440px) {
+  #works-page #work-thumbnails {
+    #seven-seals-of-event, #my-portfolio {
+      header {
+        width: 72%;
+        justify-self: self-end;
+        h2 {
+          font-size: 3rem;
+          line-height: 3rem;
+        }
+      }
+    }
+  }
   #about-pos-header-container {
     #about-header {
       max-width: 600px;
