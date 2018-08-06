@@ -882,6 +882,10 @@ main {
     #works-page #work-thumbnails #seven-seals-of-event header h2, #works-page #work-thumbnails #my-portfolio header h2 {
       font-size: 4rem;
       line-height: 4rem; }
+    #works-page #work-thumbnails #seven-seals-of-event header .design, #works-page #work-thumbnails #my-portfolio header .design {
+      font-size: 1.4rem; }
+    #works-page #work-thumbnails #seven-seals-of-event header .tech, #works-page #work-thumbnails #my-portfolio header .tech {
+      font-size: .9rem; }
 
   #about-pos-header-container #about-header {
     max-width: 600px; }
@@ -924,5 +928,10 @@ main {
 @media (max-width: 322px) and (max-height: 657px) {
   #works-thumbnails {
     overflow: auto; } }
+@media (min-width: 1900px) {
+  #works-page #work-thumbnails #seven-seals-of-event, #works-page #work-thumbnails #my-portfolio {
+    padding-right: 7rem; }
+    #works-page #work-thumbnails #seven-seals-of-event header, #works-page #work-thumbnails #my-portfolio header {
+      width: 75%; } }
 
 /*# sourceMappingURL=style.css.map */
