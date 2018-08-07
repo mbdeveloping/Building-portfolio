@@ -448,8 +448,13 @@ document.addEventListener("DOMContentLoaded", function() {
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
-              TweenMax.to('#about-header h1', 1, {x:'110%'});
-              TweenMax.to('#about-header p', 1, {x:'-110%', onComplete:allDoneAbout});
+              // TweenMax.to('#about-header h1', 1, {x:'110%'});
+              // TweenMax.to('#about-header p', 1, {x:'-110%', onComplete:allDoneAbout});
+
+              TweenMax.to('#about-me-page .img',1, {z:0, autoAlpha:0, scale:0});
+              TweenMax.to('#about-me-page h1',1, {x:'110%'});
+              TweenMax.to('#about-me-page p',1, {x:'-110%'});
+              TweenMax.to('#about-me-page .button-wrapper',1, {x:'110%', onComplete:allDoneAbout});
               function allDoneAbout() {
                deferred.resolve();
              }
