@@ -399,11 +399,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
               if (document.getElementById('works-page-main-header')) {
                 console.log("wokrs out transition WORKS");
+                TweenMax.set('#seven-seals-of-event .img', {z:0, autoAlpha:0, scale:4});
                 TweenMax.set('#works-page-main-header h2', {autoAlpha:1, x:'-100%'});
                 TweenMax.set('#works-page-main-header .border-wrapper', {autoAlpha:1, x:'-120%'});
                 TweenMax.set('#works-page-main-header p', {autoAlpha:1, x:'110%'});
                 TweenMax.set('#works-page-main-header .button-wrapper', {autoAlpha:1, x:'110%'});
-                TweenMax.set('#seven-seals-of-event .img', {z:0, autoAlpha:0, scale:4});
               }
               if (document.getElementById('about-me-page')) {
                 console.log("wokrs out transition ABOUT");
@@ -448,13 +448,18 @@ document.addEventListener("DOMContentLoaded", function() {
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
-              // TweenMax.to('#about-header h1', 1, {x:'110%'});
-              // TweenMax.to('#about-header p', 1, {x:'-110%', onComplete:allDoneAbout});
-
               TweenMax.to('#about-me-page .img',1, {z:0, autoAlpha:0, scale:0});
               TweenMax.to('#about-me-page h1',1, {x:'110%'});
               TweenMax.to('#about-me-page p',1, {x:'-110%'});
               TweenMax.to('#about-me-page .button-wrapper',1, {x:'110%', onComplete:allDoneAbout});
+              if (document.getElementById('works-page-main-header')) {
+                console.log("about out transition WORKS");
+                TweenMax.set('#works-page-main-header h2', {autoAlpha:1, x:'-100%'});
+                TweenMax.set('#works-page-main-header .border-wrapper', {autoAlpha:1, x:'-120%'});
+                TweenMax.set('#works-page-main-header p', {autoAlpha:1, x:'110%'});
+                TweenMax.set('#works-page-main-header .button-wrapper', {autoAlpha:1, x:'110%'});
+                TweenMax.set('#seven-seals-of-event .img', {z:0, autoAlpha:0, scale:4});
+              }
               function allDoneAbout() {
                deferred.resolve();
              }
@@ -470,6 +475,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (document.getElementById('works-page-main-header')) {
               TweenMax.to('#earth', .3, {y:'100%', display:'none'});
             }
+            console.log("about transition");
             this.done();
           }
         });
@@ -487,6 +493,13 @@ document.addEventListener("DOMContentLoaded", function() {
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
               TweenMax.to('#my-portfolio', .3, {scale:0.8});
               TweenMax.to('#seven-seals-of-event', .3, {scale:1});
+              if (document.getElementById('about-me-page')) {
+                console.log("wokrs out transition ABOUT");
+                TweenMax.set('#about-me-page .img', {z:0, autoAlpha:0, scale:4});
+                TweenMax.set('#about-me-page h1', {x:'-110%'});
+                TweenMax.set('#about-me-page p', {x:'110%'});
+                TweenMax.set('#about-me-page .button-wrapper', {x:'-110%'});
+              }
               if (document.getElementById('work-thumbnails').className === 'scrolled-portfolio') {
                 TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut, onComplete:contTrans});
               } else {

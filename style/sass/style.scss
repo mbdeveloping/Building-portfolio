@@ -526,6 +526,7 @@ main {
         font-size: .8rem;
       }
       .img {
+        will-change: transform;
         display: block;
         margin:1.2rem;
         height: 50vh;
