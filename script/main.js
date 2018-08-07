@@ -204,12 +204,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
           TweenMax.to('#scroll-down', .5, {y:'0%', autoAlpha:1});
 
-            if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i)) {
-              document.getElementById('works-page').className = 'safari-padding';
-            }
-            else {
-               document.getElementById('works-page').className = '';
-            }
+            // if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i)) {
+            //   document.getElementById('works-page').className = 'safari-padding';
+            // }
+            // else {
+            //    document.getElementById('works-page').className = '';
+            // }
 
 
         }
@@ -481,29 +481,51 @@ document.addEventListener("DOMContentLoaded", function() {
             const deferred = Barba.Utils.deferred();
             zoomInBg();
             navBtnClose();
+            // slideOutNavBar();
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
-            TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
-            TweenMax.to('#my-portfolio', .3, {scale:0.8});
-            TweenMax.to('#seven-seals-of-event', .3, {scale:1});
-            if (document.getElementById('work-thumbnails').className === 'scrolled-portfolio') {
-              TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut, onComplete:contTrans});
-            } else {
-              contTrans();
-            }
+            TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
+              TweenMax.to('#my-portfolio', .3, {scale:0.8});
+              TweenMax.to('#seven-seals-of-event', .3, {scale:1});
+              if (document.getElementById('work-thumbnails').className === 'scrolled-portfolio') {
+                TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut, onComplete:contTrans});
+              } else {
+                contTrans();
+              }
 
-            function contTrans() {
-              slideOutNavBar();
-              TweenMax.to('#works-page-main-header h2', 1, {x:'110%'});
-              TweenMax.to('#works-page-main-header .border-wrapper', 1, {x:'110%'});
-              TweenMax.to('#works-page-main-header .button-wrapper', 1, {x:'-110%'});
-              TweenMax.to('#works-page-main-header p', 1, {x:'-110%'});
-              TweenMax.to('#seven-seals-of-event .img', 1, {scale:0});
-              TweenMax.to('#scroll-down', .7, {y:'140%'});
-              TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:function() {
-                deferred.resolve();
-              }});
-            }
+              function contTrans() {
+                slideOutNavBar();
+                TweenMax.to('#works-page-main-header h2', 1, {x:'110%'});
+                TweenMax.to('#works-page-main-header .border-wrapper', 1, {x:'110%'});
+                TweenMax.to('#works-page-main-header .button-wrapper', 1, {x:'-110%'});
+                TweenMax.to('#works-page-main-header p', 1, {x:'-110%'});
+                TweenMax.to('#seven-seals-of-event .img', 1, {scale:0});
+                TweenMax.to('#scroll-down', .7, {y:'140%'});
+                TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:function() {
+                  deferred.resolve();
+                }});
+              }
+            }});
+            // TweenMax.to('#my-portfolio', .3, {scale:0.8});
+            // TweenMax.to('#seven-seals-of-event', .3, {scale:1});
+            // if (document.getElementById('work-thumbnails').className === 'scrolled-portfolio') {
+            //   TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut, onComplete:contTrans});
+            // } else {
+            //   contTrans();
+            // }
+            //
+            // function contTrans() {
+            //   // slideOutNavBar();
+            //   TweenMax.to('#works-page-main-header h2', 1, {x:'110%'});
+            //   TweenMax.to('#works-page-main-header .border-wrapper', 1, {x:'110%'});
+            //   TweenMax.to('#works-page-main-header .button-wrapper', 1, {x:'-110%'});
+            //   TweenMax.to('#works-page-main-header p', 1, {x:'-110%'});
+            //   TweenMax.to('#seven-seals-of-event .img', 1, {scale:0});
+            //   TweenMax.to('#scroll-down', .7, {y:'140%'});
+            //   TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:function() {
+            //     deferred.resolve();
+            //   }});
+            // }
             return deferred.promise;
           },
           showNewPage: function() {
