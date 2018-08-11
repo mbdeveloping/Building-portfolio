@@ -357,6 +357,7 @@ main {
   -ms-transform: translateY(100%);
   transform: translateY(100%); }
   #social-links a {
+    padding: 1rem;
     position: relative;
     display: inline-block; }
     #social-links a:hover .social-links-box {
@@ -371,8 +372,6 @@ main {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
-  #social-links li {
-    padding: 1rem; }
 
 .social-links-box {
   width: 25px;

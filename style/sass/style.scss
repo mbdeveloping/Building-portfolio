@@ -365,6 +365,7 @@ main {
   // background:rgba(0,0,0, .9);
   @include transform(translateY(100%));
   a {
+    padding:1rem;
     position: relative;
     display: inline-block;
     &:hover .social-links-box {
@@ -377,9 +378,6 @@ main {
     top:50%;
     left:50%;
     @include transform(translate(-50%, -50%));
-  }
-  li {
-    padding: 1rem;
   }
 }
 .social-links-box {
