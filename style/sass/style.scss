@@ -867,6 +867,14 @@ main {
   #works-page #work-thumbnails #seven-seals-of-event header {
     width: 70%;
   }
+  #about-me-page {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+  header {
+      width: 80%;
+    }
+  }
 }
 @media (min-width: 550px) {
   #works-page #work-thumbnails #seven-seals-of-event header {
