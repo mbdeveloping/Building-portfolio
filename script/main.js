@@ -26,15 +26,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
       function positionEarth() {
         if (window.innerWidth <= 600) {
-          TweenMax.set('#earth', {x:'0%', y:'100%'});
+          TweenMax.set('#earth', {x:'0%', y:'50%'});
+          console.log("less than 600");
         }
-        if (window.innerWidth >= 600 && window.innerWidth > 600) {
+        else if (window.innerWidth > 600 && window.innerWidth < 1023) {
           TweenMax.set('#earth', {x:'50%', y:'-50%'});
-
+          console.log("more than 600");
         }
-        if (window.innerWidth >= 1024) {
+        else if (window.innerWidth >= 1024) {
           TweenMax.set('#earth', {x:'0%', y:'-50%', right:'5%'});
           slieInLinks();
+          console.log("more than 1024");
         }
       }
       positionEarth();
@@ -96,18 +98,20 @@ document.addEventListener("DOMContentLoaded", function() {
       //On page load header text animation
       function fadeInHeaderText() {
         if (document.getElementById('home-header')) {
+          positionEarth();
           console.log("if home page");
           // document.body.className = 'body-ov-hidden ';
           TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
           TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);
-          TweenMax.set('#earth', {autoAlpha:1,display: 'block', z:0, scale:1, y:'100%'});
-          TweenMax.to('#earth',1, {y: '50%'});
+          // TweenMax.set('#earth', {autoAlpha:1,display: 'block', z:0, scale:1, y:'100%'});
+          TweenMax.to('#earth',1, {scale:1, autoAlpha:1});
           function bigBenAndBus() {
             TweenMax.fromTo('#big-ben', 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
             TweenMax.fromTo('#london-bus', 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
           }
         }
         if (document.getElementById('about-me-page')) {
+          // TweenMax.set('#earth', {autoAlpha:0,scale:0, z:0});
           console.log("if about page");
           TweenMax.to('#about-me-page .img', 1, {z:0, autoAlpha:1, scale:1});
           TweenMax.to('#about-me-page h1', 1, {x:'0%'});
@@ -312,8 +316,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       //Home page resize queries
       const media = window.matchMedia("(min-width: 1024px)");
-      const media600 = window.matchMedia("(min-width: 600px)");
-      function fromMobileToDesktopSize(media) {
+      function media1024(media) {
           if (media.matches) {
             slieInLinks();
             navBtnClose();
@@ -322,16 +325,19 @@ document.addEventListener("DOMContentLoaded", function() {
             hideLinks();
           }
       }
-      media.addListener(fromMobileToDesktopSize);
+      media.addListener(media1024);
       workLink.addEventListener('mouseover', startLinkAnimation);
       workLink.addEventListener('mouseleave', endLinkAnimation);
       aboutLink.addEventListener('mouseover', startLinkAnimation);
       aboutLink.addEventListener('mouseleave', endLinkAnimation);
+      window.addEventListener('resize', function() {
+        positionEarth();
+      })
       //Home page function call
       // onLoadFadeInHomeImg();
       addClassForAllSpans();
       slideInNavBar();
-      fromMobileToDesktopSize(media);
+      media1024(media);
       // fromMobileToDesktopSize(media600);
       //BARBA.JS TRANSITIONS
         const Homepage = Barba.BaseView.extend({
@@ -468,7 +474,8 @@ document.addEventListener("DOMContentLoaded", function() {
               slieInLinks();
             }
             if (document.getElementById('works-page-main-header')) {
-              TweenMax.to('#earth', .3, {y:'100%', display:'none'});
+              // TweenMax.to('#earth', .3, {y:'100%', display:'none'});
+                TweenMax.to('#earth',1, {scale:1, autoAlpha:1});
             }
             console.log("about transition");
             this.done();
