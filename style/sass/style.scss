@@ -887,7 +887,7 @@ main {
       }
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 700px) {
   #works-page #work-thumbnails #seven-seals-of-event, #works-page #work-thumbnails #my-portfolio{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -918,6 +918,9 @@ main {
       grid-row: 1/2;
       align-self: center;
       transform:translateX(68px);
+      h1 {
+        font-size: 3rem;
+      }
     }
   }
 }
@@ -1156,6 +1159,26 @@ main {
 
     &:hover {
       transform: scale(1);
+    }
+  }
+  #about-me-page {
+    .img {
+      height: 75vh;
+    }
+    header {
+      transform:translateX(155px);
+      h1 {
+        padding-bottom: .5rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+      a {
+        margin-top: 1.5rem;
+      }
+    }
+    #skillset {
+      padding-top: 1rem;
     }
   }
 }
