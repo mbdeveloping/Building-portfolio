@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
             myPortTop = myPort.offsetTop;
           });
 
-          TweenMax.to('#earth', .3, {y:'100%', display:'none'});
+          // TweenMax.to('#earth', .3, {y:'100%', display:'none'});
               TweenMax.to('#works-page-main-header h2', 1, {autoAlpha:1, x:'0%'});
               TweenMax.to('#works-page-main-header .border-wrapper', 1, {autoAlpha:1, x:'0%'});
               TweenMax.to('#works-page-main-header p', 1, {autoAlpha:1, x:'0%'});
@@ -425,14 +425,6 @@ document.addEventListener("DOMContentLoaded", function() {
             if (window.innerWidth >= 1024) {
               slieInLinks();
             }
-            // if (document.getElementById('works-page-main-header')) {
-            //   TweenMax.to('#earth', .3, {y:'100%', display:'none'});
-            //   TweenMax.from('#works-page-main-header h2', 1, {autoAlpha:0, x:'-100%'});
-            //   TweenMax.from('#works-page-main-header span', 1, {autoAlpha:0, x:'-100%'});
-            //   TweenMax.from('#works-page-main-header p', 1, {autoAlpha:0, x:'100%'});
-            //   TweenMax.from('#works-page-main-header a', 1, {autoAlpha:0, x:'100%'});
-            //   TweenMax.from('#seven-seals-of-event .img', 1, {z:0, autoAlpha:0, scale:0});
-            // }
             console.log("home transition");
             this.done();
           }
@@ -472,10 +464,6 @@ document.addEventListener("DOMContentLoaded", function() {
             slideInNavBar();
             if (window.innerWidth >= 1024) {
               slieInLinks();
-            }
-            if (document.getElementById('works-page-main-header')) {
-              // TweenMax.to('#earth', .3, {y:'100%', display:'none'});
-                TweenMax.to('#earth',1, {scale:1, autoAlpha:1});
             }
             console.log("about transition");
             this.done();
@@ -521,26 +509,6 @@ document.addEventListener("DOMContentLoaded", function() {
               }
 
             }});
-            // TweenMax.to('#my-portfolio', .3, {scale:0.8});
-            // TweenMax.to('#seven-seals-of-event', .3, {scale:1});
-            // if (document.getElementById('work-thumbnails').className === 'scrolled-portfolio') {
-            //   TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut, onComplete:contTrans});
-            // } else {
-            //   contTrans();
-            // }
-            //
-            // function contTrans() {
-            //   // slideOutNavBar();
-            //   TweenMax.to('#works-page-main-header h2', 1, {x:'110%'});
-            //   TweenMax.to('#works-page-main-header .border-wrapper', 1, {x:'110%'});
-            //   TweenMax.to('#works-page-main-header .button-wrapper', 1, {x:'-110%'});
-            //   TweenMax.to('#works-page-main-header p', 1, {x:'-110%'});
-            //   TweenMax.to('#seven-seals-of-event .img', 1, {scale:0});
-            //   TweenMax.to('#scroll-down', .7, {y:'140%'});
-            //   TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:function() {
-            //     deferred.resolve();
-            //   }});
-            // }
             return deferred.promise;
           },
           showNewPage: function() {
@@ -573,12 +541,4 @@ document.addEventListener("DOMContentLoaded", function() {
           return transitionObj;
         };
     }());
-    //ABOUT PAGE RULES
-    (function() {
-
-    }());
-    //WORKS PAGE RULES
-    (function() {
-
-    }())
   });
