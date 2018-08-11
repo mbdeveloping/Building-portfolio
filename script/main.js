@@ -487,27 +487,14 @@ document.addEventListener("DOMContentLoaded", function() {
             const deferred = Barba.Utils.deferred();
             zoomInBg();
             navBtnClose();
-            // slideOutNavBar();
+            slideOutNavBar();
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
               TweenMax.to('#my-portfolio', .3, {scale:0.8});
               TweenMax.to('#seven-seals-of-event', .3, {scale:1});
-              if (document.getElementById('about-me-page')) {
-                console.log("wokrs out transition ABOUT");
-                TweenMax.set('#about-me-page .img', {z:0, autoAlpha:0, scale:4});
-                TweenMax.set('#about-me-page h1', {x:'-110%'});
-                TweenMax.set('#about-me-page p', {x:'110%'});
-                TweenMax.set('#about-me-page .button-wrapper', {x:'-110%'});
-              }
-              if (document.getElementById('work-thumbnails').className === 'scrolled-portfolio') {
-                TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut, onComplete:contTrans});
-              } else {
-                contTrans();
-              }
-
               function contTrans() {
-                slideOutNavBar();
+                // slideOutNavBar();
                 TweenMax.to('#works-page-main-header h2', 1, {x:'110%'});
                 TweenMax.to('#works-page-main-header .border-wrapper', 1, {x:'110%'});
                 TweenMax.to('#works-page-main-header .button-wrapper', 1, {x:'-110%'});
@@ -518,6 +505,19 @@ document.addEventListener("DOMContentLoaded", function() {
                   deferred.resolve();
                 }});
               }
+              if (document.getElementById('work-thumbnails').className === 'scrolled-portfolio') {
+                TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut, onComplete:contTrans});
+              } else {
+                contTrans();
+              }
+              if (document.getElementById('about-me-page')) {
+                console.log("wokrs out transition ABOUT");
+                TweenMax.set('#about-me-page .img', {z:0, autoAlpha:0, scale:4});
+                TweenMax.set('#about-me-page h1', {x:'-110%'});
+                TweenMax.set('#about-me-page p', {x:'110%'});
+                TweenMax.set('#about-me-page .button-wrapper', {x:'-110%'});
+              }
+
             }});
             // TweenMax.to('#my-portfolio', .3, {scale:0.8});
             // TweenMax.to('#seven-seals-of-event', .3, {scale:1});
