@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
           // document.body.className = 'body-ov-hidden ';
           TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
           TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);
-          TweenMax.set('#earth', {display: 'block', z:0, scale:1, y:'100%'});
+          TweenMax.set('#earth', {autoAlpha:1,display: 'block', z:0, scale:1, y:'100%'});
           TweenMax.to('#earth',1, {y: '50%'});
           function bigBenAndBus() {
             TweenMax.fromTo('#big-ben', 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
@@ -392,7 +392,7 @@ document.addEventListener("DOMContentLoaded", function() {
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
             // TweenMax.to('#earth',.3, {y: '100%'});
-            TweenMax.to('#earth',2, {scale:0, y:'-80%', ease:Power2.easeInOut});
+            TweenMax.to('#earth',2, {autoAlpha:0,scale:0, y:'-80%', ease:Power2.easeInOut});
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
               TweenMax.to(['#hello', '#frontend-developer'], 1, {x:'110%'});
               TweenMax.to(['#i-am-mantvydas', '#based'], 1, {x:'-110%', onComplete: allDone});
@@ -506,7 +506,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }});
               }
               if (document.getElementById('work-thumbnails').className === 'scrolled-portfolio') {
-                TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut, onComplete:contTrans});
+                TweenMax.to('#work-thumbnails', .7,{y:0, z:0, ease:Power2.easeInOut, onComplete:contTrans});
               } else {
                 contTrans();
               }
