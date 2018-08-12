@@ -868,7 +868,7 @@ main {
 
   #works-page #scroll-down {
     right: auto;
-    left: 6%; }
+    left: 2%; }
 
   #about-pos-header-container {
     grid-template-columns: 2fr 1fr;
@@ -943,6 +943,9 @@ main {
   #works-page #work-thumbnails #seven-seals-of-event header, #works-page #work-thumbnails #my-portfolio header {
     width: 100%;
     justify-self: self-end; }
+    #works-page #work-thumbnails #seven-seals-of-event header h2, #works-page #work-thumbnails #my-portfolio header h2 {
+      font-size: 5rem;
+      line-height: 4rem; }
     #works-page #work-thumbnails #seven-seals-of-event header .design, #works-page #work-thumbnails #my-portfolio header .design {
       font-size: 1.4rem; }
     #works-page #work-thumbnails #seven-seals-of-event header .tech, #works-page #work-thumbnails #my-portfolio header .tech {

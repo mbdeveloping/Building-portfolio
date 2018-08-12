@@ -1087,7 +1087,7 @@ main {
   }
   #works-page #scroll-down {
     right: auto;
-    left: 6%;
+    left: 2%;
   }
   #about-pos-header-container {
     grid-template-columns: 2fr 1fr;
@@ -1206,8 +1206,8 @@ main {
         width: 100%;
         justify-self: self-end;
         h2 {
-          // font-size: 4rem;
-          // line-height: 4rem;
+          font-size: 5rem;
+          line-height: 4rem;
         }
         .design {
           font-size: 1.4rem;
