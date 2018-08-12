@@ -636,6 +636,24 @@ main {
     right: 0;
     margin: auto;
     bottom: -40px; }
+#works-page #work-navigator {
+  z-index: 500;
+  position: fixed;
+  bottom: 3%;
+  left: 5%;
+  font-size: .8rem;
+  letter-spacing: .3rem;
+  display: flex; }
+  #works-page #work-navigator p {
+    align-self: center; }
+  #works-page #work-navigator ul {
+    display: flex; }
+    #works-page #work-navigator ul li {
+      padding: 1rem; }
+  #works-page #work-navigator .work-indicator {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #fff; }
 
 /********** Seven Seals of Event page ************/
 #full-vh-section {

@@ -681,6 +681,29 @@ main {
       bottom: -40px;
     }
   }
+  #work-navigator {
+    z-index: 500;
+    position: fixed;
+    bottom:3%;
+    left:5%;
+    font-size: .8rem;
+    letter-spacing: .3rem;
+    display: flex;
+    p {
+      align-self: center;
+    }
+    ul {
+      display: flex;
+      li {
+        padding:1rem;
+      }
+    }
+    .work-indicator {
+      width: 15px;
+      height: 15px;
+      border: 1px solid #fff;
+    }
+  }
 }
 // #works-page {
 //   padding-top: 82px;
