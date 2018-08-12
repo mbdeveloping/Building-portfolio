@@ -913,13 +913,13 @@ main {
       height: 80vh;
     }
     header {
-      width: 100%;
+      width: 130%;
       grid-column: 1/2;
       grid-row: 1/2;
       align-self: center;
-      transform:translateX(68px);
+      transform:translateX(30px);
       h1 {
-        font-size: 3rem;
+        // font-size: 3rem;
       }
     }
   }

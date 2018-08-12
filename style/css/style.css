@@ -735,13 +735,11 @@ main {
       grid-column: 2/3;
       height: 80vh; }
     #about-me-page header {
-      width: 100%;
+      width: 130%;
       grid-column: 1/2;
       grid-row: 1/2;
       align-self: center;
-      transform: translateX(68px); }
-      #about-me-page header h1 {
-        font-size: 3rem; } }
+      transform: translateX(30px); } }
 @media (min-width: 600px) {
   .img-holder {
     height: 75vh; }
