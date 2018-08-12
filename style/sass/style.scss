@@ -1042,6 +1042,14 @@ main {
     margin: 0;
   }
 }
+@media (min-width: 800px) {
+  #about-me-page {
+    header {
+      width: 110%;
+      transform:translateX(65px);
+    }
+  }
+}
 @media (min-width: 900px) {
   .img-holder {
     height: 90vh;
@@ -1169,9 +1177,10 @@ main {
       transform:translateX(155px);
       h1 {
         padding-bottom: .5rem;
+        font-size: 3rem;
       }
       p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
       a {
         margin-top: 1.5rem;

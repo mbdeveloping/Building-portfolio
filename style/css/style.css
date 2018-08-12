@@ -828,6 +828,10 @@ main {
 
   #my-portfolio {
     margin: 0; } }
+@media (min-width: 800px) {
+  #about-me-page header {
+    width: 110%;
+    transform: translateX(65px); } }
 @media (min-width: 900px) {
   .img-holder {
     height: 90vh; }
@@ -936,9 +940,10 @@ main {
   #about-me-page header {
     transform: translateX(155px); }
     #about-me-page header h1 {
-      padding-bottom: .5rem; }
+      padding-bottom: .5rem;
+      font-size: 3rem; }
     #about-me-page header p {
-      font-size: 1.2rem; }
+      font-size: 1.1rem; }
     #about-me-page header a {
       margin-top: 1.5rem; }
   #about-me-page #skillset {
