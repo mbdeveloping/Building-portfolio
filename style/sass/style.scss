@@ -1137,36 +1137,17 @@ main {
     right:5%;
     // @include transform(translate(0, -50%));
   }
-  #works-thumbnails {
-    padding:0 5rem;
-    padding-bottom: 4rem;
-    article {
-      justify-content: flex-end;
-      transform: scale(.9);
-      transition: transform .3s;
-      text-align: right;
-    }
-    #test1, #test2 {
-      display: block;
-      -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
-      clip-path: polygon(0 0, 0 100%, 100% 0);
-      background-position: top left;
-    }
-  }
-  #works-page-main-header {
-    h1 {
-      font-size: 3rem;
-    }
-  }
-  #my-portfolio {
-    &:hover {
-      transform: scale(1);
-    }
-  }
-  #seven-seals-of-event {
-
-    &:hover {
-      transform: scale(1);
+  #works-page {
+    #work-thumbnails {
+      #seven-seals-of-event, #my-portfolio {
+        header {
+          width: 100%;
+          h2 {
+            font-size: 3rem;
+            line-height: 2.5rem;
+          }
+        }
+      }
     }
   }
   #about-me-page {
@@ -1191,13 +1172,18 @@ main {
     }
   }
 }
-@media (min-width: 1100px) {
-  #works-page #work-thumbnails {
-    #seven-seals-of-event, #my-portfolio {
-      header {
-        width: 85%;
-      }
-    }
+// @media (min-width: 1100px) {
+//   #works-page #work-thumbnails {
+//     #seven-seals-of-event, #my-portfolio {
+//       header {
+//         width: 85%;
+//       }
+//     }
+//   }
+// }
+@media (min-width: 1200px) {
+  #about-me-page {
+    padding-right: 3rem;
   }
 }
 @media (min-width: 1300px) {
