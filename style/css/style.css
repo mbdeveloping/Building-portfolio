@@ -644,16 +644,21 @@ main {
   font-size: .8rem;
   letter-spacing: .3rem;
   display: flex; }
+  #works-page #work-navigator a {
+    padding: 1rem; }
   #works-page #work-navigator p {
     align-self: center; }
   #works-page #work-navigator ul {
+    margin-left: 1rem;
     display: flex; }
-    #works-page #work-navigator ul li {
-      padding: 1rem; }
   #works-page #work-navigator .work-indicator {
     width: 15px;
     height: 15px;
-    border: 1px solid #fff; }
+    border: 1px solid #fff;
+    transform: rotate(45deg); }
+  #works-page #work-navigator #second-indicator {
+    border-left: 1px solid transparent;
+    border-top: 1px solid transparent; }
 
 /********** Seven Seals of Event page ************/
 #full-vh-section {

@@ -689,19 +689,32 @@ main {
     font-size: .8rem;
     letter-spacing: .3rem;
     display: flex;
+    a {
+      padding:1rem;
+    }
     p {
       align-self: center;
     }
     ul {
+      margin-left: 1rem;
       display: flex;
       li {
-        padding:1rem;
+        // padding:1rem;
       }
     }
     .work-indicator {
       width: 15px;
       height: 15px;
       border: 1px solid #fff;
+      transform: rotate(45deg);
+    }
+    #first-indicator {
+      // background: linear-gradient(95deg, yellow 30%, red);
+    }
+    #second-indicator {
+      // background: linear-gradient(95deg, #072141 50%, #ff4d5a);
+      border-left: 1px solid transparent;
+      border-top: 1px solid transparent;
     }
   }
 }
