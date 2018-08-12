@@ -1206,8 +1206,8 @@ main {
         width: 100%;
         justify-self: self-end;
         h2 {
-          font-size: 4rem;
-          line-height: 4rem;
+          // font-size: 4rem;
+          // line-height: 4rem;
         }
         .design {
           font-size: 1.4rem;
@@ -1253,6 +1253,16 @@ main {
   #works-thumbnails {
     grid-gap: 2rem;
   }
+  #about-me-page header {
+    width: 90%;
+    justify-self: end;
+    h1 {
+      font-size: 5rem;
+    }
+    p {
+      font-size: 1.3rem;
+    }
+  }
 }
 @media (max-width: 700px) and (max-height: 580px) {
   #works-thumbnails {
@@ -1272,15 +1282,6 @@ main {
         // justify-self: self-end;
       }
       padding-right: 7rem;
-    }
-  }
-}
-@media (min-width: 1500px) {
-  #about-me-page header {
-    width: 90%;
-    justify-self: end;
-    h1 {
-      // font-size: 5rem;
     }
   }
 }
