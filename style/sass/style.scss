@@ -463,6 +463,7 @@ main {
     position: relative;
     height: 45vh;
     background-image: url(../../p022.jpg);
+    align-self: center;
     .ov {
       position: absolute;
       top:0;
@@ -513,23 +514,26 @@ main {
     #seven-seals-of-event {
       will-change: transform;
       padding: 1rem;
-      padding-top: 65px;
+      padding-top: 50px;
       width: 100%;
       height: 100vh;
       .works-btn {
-        padding: 1rem;
+        padding: .5rem 1rem;
         // border: 2px solid #ca3232;
         background: #ff4d5a;
         display: inline-block;
-        margin-top: 2.5rem;
+        margin-top: 1.5rem;
         border-radius: 25px;
         letter-spacing: .1rem;
         font-size: .8rem;
       }
       .img {
+        width: 85%;
+        margin:auto;
+        margin-top: 1.2rem;
         will-change: transform;
         display: block;
-        margin:1.2rem;
+        // margin:1.2rem;
         height: 50vh;
         background-image: url('../../slide11.jpg');
         background-size: cover;
@@ -558,7 +562,9 @@ main {
         width: 80%;
         overflow: hidden;
         text-align: center;
-        transform: translateY(-35%);
+        // transform: translateY(-35%);
+        position: absolute;
+        bottom: 24%;
         h2 {
           text-align: left;
           font-size: 2.2rem;
@@ -587,7 +593,7 @@ main {
     #my-portfolio {
       will-change: transform;
       padding: 1rem;
-      padding-top: 65px;
+      padding-top: 50px;
       width: 100%;
       height: 100vh;
       .img {
@@ -684,7 +690,7 @@ main {
   #work-navigator {
     z-index: 500;
     position: fixed;
-    bottom:3%;
+    bottom:0;
     left:5%;
     font-size: .8rem;
     letter-spacing: .3rem;
