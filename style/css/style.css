@@ -525,6 +525,8 @@ main {
         top: 50%;
         left: 50%;
         z-index: 10;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%); }
     #works-page #work-thumbnails #seven-seals-of-event .ov {
       position: absolute;
@@ -579,6 +581,8 @@ main {
         top: 50%;
         left: 50%;
         z-index: 10;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%); }
     #works-page #work-thumbnails #my-portfolio .ov {
       position: absolute;
@@ -620,6 +624,8 @@ main {
         padding-bottom: .2rem; }
 #works-page #scroll-down {
   opacity: 0;
+  -webkit-transform: translateY(140%);
+  -ms-transform: translateY(140%);
   transform: translateY(140%);
   visibility: hidden;
   position: fixed;
@@ -661,6 +667,8 @@ main {
     width: 15px;
     height: 15px;
     border: 1px solid #fff;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
     transform: rotate(45deg); }
   #works-page #work-navigator #second-indicator {
     border-left: 1px solid transparent;
@@ -768,6 +776,8 @@ main {
       grid-column: 1/2;
       grid-row: 1/2;
       align-self: center;
+      -webkit-transform: translateX(30px);
+      -ms-transform: translateX(30px);
       transform: translateX(30px); } }
 @media (min-width: 600px) {
   .img-holder {
@@ -860,6 +870,8 @@ main {
 @media (min-width: 800px) {
   #about-me-page header {
     width: 110%;
+    -webkit-transform: translateX(65px);
+    -ms-transform: translateX(65px);
     transform: translateX(65px); } }
 @media (min-width: 900px) {
   .img-holder {
@@ -950,6 +962,8 @@ main {
   #about-me-page .img {
     height: 75vh; }
   #about-me-page header {
+    -webkit-transform: translateX(155px);
+    -ms-transform: translateX(155px);
     transform: translateX(155px); }
     #about-me-page header h1 {
       padding-bottom: .5rem;
