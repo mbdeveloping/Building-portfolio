@@ -706,6 +706,10 @@ main {
       border-left: 1px solid transparent;
       border-top: 1px solid transparent;
     }
+    .active-indicator {
+      border-left: 1px solid #fff;
+      border-top: 1px solid #fff;
+    }
     #first-indicator {
       // background: linear-gradient(95deg, yellow 30%, red);
     }
@@ -715,10 +719,6 @@ main {
       // border-top: 1px solid transparent;
     }
   }
-}
-.active-indicator {
-  border-left: 1px solid #fff;
-  border-top: 1px solid #fff;
 }
 /********** Seven Seals of Event page ************/
 #seven-seals-of-event-page {

@@ -88,7 +88,8 @@ document.addEventListener("DOMContentLoaded", function() {
         if (document.getElementById('works-page-main-header')) {
           console.log("if works page");
           let myPortTop;
-
+          const firstIndicator = document.getElementById('first-indicator');
+          const secondIndicator = document.getElementById('second-indicator');
           const workThumbnails = document.getElementById('work-thumbnails');
           const myPort = document.getElementById('my-portfolio');
           myPortTop = myPort.offsetTop;
@@ -108,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
               TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1});
           function tofirstWork() {
             workThumbnails.className = '';
+            firstIndicator.className += ' active-indicator';
             TweenMax.to('#my-portfolio', 1, {scale:0.8});
             TweenMax.to(workThumbnails, 1,{y:0, z:0, ease:Power2.easeInOut});
             TweenMax.to('#seven-seals-of-event', 1, {scale:1});

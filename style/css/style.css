@@ -672,10 +672,9 @@ main {
     transform: rotate(45deg);
     border-left: 1px solid transparent;
     border-top: 1px solid transparent; }
-
-.active-indicator {
-  border-left: 1px solid #fff;
-  border-top: 1px solid #fff; }
+  #works-page #work-navigator .active-indicator {
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff; }
 
 /********** Seven Seals of Event page ************/
 #full-vh-section {
