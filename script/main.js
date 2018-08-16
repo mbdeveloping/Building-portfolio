@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
               TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1});
           function tofirstWork() {
             workThumbnails.className = '';
+            secondIndicator.classList.remove('active-indicator');
             firstIndicator.className += ' active-indicator';
             TweenMax.to('#my-portfolio', 1, {scale:0.8});
             TweenMax.to(workThumbnails, 1,{y:0, z:0, ease:Power2.easeInOut});
@@ -116,6 +117,8 @@ document.addEventListener("DOMContentLoaded", function() {
           }
           function toSecondWork() {
             workThumbnails.className = 'scrolled-portfolio';
+            secondIndicator.className += ' active-indicator';
+            firstIndicator.classList.remove('active-indicator');
             TweenMax.to('#seven-seals-of-event', 1, {scale:0.8});
             TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0, ease:Power2.easeInOut});
             TweenMax.to('#my-portfolio', 1, {scale:1});
