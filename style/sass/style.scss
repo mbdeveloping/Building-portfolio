@@ -703,18 +703,23 @@ main {
       height: 15px;
       border: 1px solid #fff;
       @include transform(rotate(45deg));
+      border-left: 1px solid transparent;
+      border-top: 1px solid transparent;
     }
     #first-indicator {
       // background: linear-gradient(95deg, yellow 30%, red);
     }
     #second-indicator {
       // background: linear-gradient(95deg, #072141 50%, #ff4d5a);
-      border-left: 1px solid transparent;
-      border-top: 1px solid transparent;
+      // border-left: 1px solid transparent;
+      // border-top: 1px solid transparent;
     }
   }
 }
-
+.active-indicator {
+  border-left: 1px solid #fff;
+  border-top: 1px solid #fff;
+}
 /********** Seven Seals of Event page ************/
 #seven-seals-of-event-page {
   // display: grid;
