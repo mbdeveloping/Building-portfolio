@@ -705,20 +705,12 @@ main {
       @include transform(rotate(45deg));
       border-left: 1px solid transparent;
       border-top: 1px solid transparent;
-      transition: border .5s, transform .3s;
+      transition: border .3s, transform .3s;
     }
     .active-indicator {
       border-left: 1px solid #fff;
       border-top: 1px solid #fff;
       transform:rotate(135deg);
-    }
-    #first-indicator {
-      // background: linear-gradient(95deg, yellow 30%, red);
-    }
-    #second-indicator {
-      // background: linear-gradient(95deg, #072141 50%, #ff4d5a);
-      // border-left: 1px solid transparent;
-      // border-top: 1px solid transparent;
     }
   }
 }

@@ -672,7 +672,7 @@ main {
     transform: rotate(45deg);
     border-left: 1px solid transparent;
     border-top: 1px solid transparent;
-    transition: border .5s, transform .3s; }
+    transition: border .3s, transform .3s; }
   #works-page #work-navigator .active-indicator {
     border-left: 1px solid #fff;
     border-top: 1px solid #fff;
