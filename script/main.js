@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
           function showScrollDown() {
             TweenMax.to('#scroll-down', .7, {y:'0%'});
           }
-          firstIndicator.addEventListener('click', tofirstWork);
+
           let timer;
           document.addEventListener('wheel', function(e) {
             if (timer) {
@@ -173,17 +173,9 @@ document.addEventListener("DOMContentLoaded", function() {
                tofirstWork();
              }
           });
-
+          firstIndicator.addEventListener('click', tofirstWork);
+          secondIndicator.addEventListener('click', toSecondWork);
           TweenMax.to('#scroll-down', .5, {y:'0%', autoAlpha:1});
-
-            // if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i)) {
-            //   document.getElementById('works-page').className = 'safari-padding';
-            // }
-            // else {
-            //    document.getElementById('works-page').className = '';
-            // }
-
-
         }
       }
       //Leave home header animation
