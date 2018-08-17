@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
       let moveY;
       const swipeDistance = 30;
 
-
       function positionEarth() {
         if (window.innerWidth <= 600) {
           TweenMax.set('#earth', {x:'0%', y:'50%'});
@@ -93,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
           const workThumbnails = document.getElementById('work-thumbnails');
           const myPort = document.getElementById('my-portfolio');
           myPortTop = myPort.offsetTop;
+
           window.addEventListener('resize', function() {
             workThumbnails.className = '';
             TweenMax.to('#scroll-down', .7, {y:'0%'});
@@ -102,11 +102,12 @@ document.addEventListener("DOMContentLoaded", function() {
           });
 
           // TweenMax.to('#earth', .3, {y:'100%', display:'none'});
-              TweenMax.to('#works-page-main-header h2', 1, {autoAlpha:1, x:'0%'});
-              TweenMax.to('#works-page-main-header .border-wrapper', 1, {autoAlpha:1, x:'0%'});
-              TweenMax.to('#works-page-main-header p', 1, {autoAlpha:1, x:'0%'});
-              TweenMax.to('#works-page-main-header .button-wrapper', 1, {autoAlpha:1, x:'0%'});
-              TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1});
+          TweenMax.to('#works-page-main-header h2', 1, {autoAlpha:1, x:'0%'});
+          TweenMax.to('#works-page-main-header .border-wrapper', 1, {autoAlpha:1, x:'0%'});
+          TweenMax.to('#works-page-main-header p', 1, {autoAlpha:1, x:'0%'});
+          TweenMax.to('#works-page-main-header .button-wrapper', 1, {autoAlpha:1, x:'0%'});
+          TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1});
+
           function tofirstWork() {
             workThumbnails.className = '';
             secondIndicator.classList.remove('active-indicator');
@@ -129,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
           function showScrollDown() {
             TweenMax.to('#scroll-down', .7, {y:'0%'});
           }
-
+          firstIndicator.addEventListener('click', tofirstWork);
           let timer;
           document.addEventListener('wheel', function(e) {
             if (timer) {
