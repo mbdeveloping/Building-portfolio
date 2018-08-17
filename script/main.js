@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
           console.log("more than 1024");
         }
       }
-      positionEarth();
 
       TweenMax.to('#earth', 100, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
 
@@ -66,10 +65,8 @@ document.addEventListener("DOMContentLoaded", function() {
         if (document.getElementById('home-header')) {
           positionEarth();
           console.log("if home page");
-          // document.body.className = 'body-ov-hidden ';
           TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
-          TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);
-          // TweenMax.set('#earth', {autoAlpha:1,display: 'block', z:0, scale:1, y:'100%'});
+          TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);;
           TweenMax.to('#earth',1, {scale:1, autoAlpha:1});
           function bigBenAndBus() {
             TweenMax.fromTo('#big-ben', 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
@@ -77,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         }
         if (document.getElementById('about-me-page')) {
-          // TweenMax.set('#earth', {autoAlpha:0,scale:0, z:0});
           console.log("if about page");
           TweenMax.to('#about-me-page .img', 1, {z:0, autoAlpha:1, scale:1});
           TweenMax.to('#about-me-page h1', 1, {x:'0%'});
@@ -87,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (document.getElementById('works-page-main-header')) {
           console.log("if works page");
           let myPortTop;
+          let timer;
           const firstIndicator = document.getElementById('first-indicator');
           const secondIndicator = document.getElementById('second-indicator');
           const workThumbnails = document.getElementById('work-thumbnails');
@@ -101,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function() {
             myPortTop = myPort.offsetTop;
           });
 
-          // TweenMax.to('#earth', .3, {y:'100%', display:'none'});
           TweenMax.to('#works-page-main-header h2', 1, {autoAlpha:1, x:'0%'});
           TweenMax.to('#works-page-main-header .border-wrapper', 1, {autoAlpha:1, x:'0%'});
           TweenMax.to('#works-page-main-header p', 1, {autoAlpha:1, x:'0%'});
@@ -116,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
             TweenMax.to(workThumbnails, 1,{y:0, z:0, ease:Power2.easeInOut});
             TweenMax.to('#seven-seals-of-event', 1, {scale:1});
           }
+
           function toSecondWork() {
             workThumbnails.className = 'scrolled-portfolio';
             secondIndicator.className += ' active-indicator';
@@ -124,14 +121,15 @@ document.addEventListener("DOMContentLoaded", function() {
             TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0, ease:Power2.easeInOut});
             TweenMax.to('#my-portfolio', 1, {scale:1});
           }
+
           function hideScrollDown() {
             TweenMax.to('#scroll-down', .7, {y:'140%'});
           }
+
           function showScrollDown() {
             TweenMax.to('#scroll-down', .7, {y:'0%'});
           }
 
-          let timer;
           document.addEventListener('wheel', function(e) {
             if (timer) {
               window.clearTimeout(timer);
@@ -148,36 +146,38 @@ document.addEventListener("DOMContentLoaded", function() {
           	}, 150);
           })
 
-            document.addEventListener('keydown', function(e) {
-              if (e.keyCode == '38') {
-                showScrollDown();
-                tofirstWork();
-              }
-              else if (e.keyCode == '40') {
-                hideScrollDown();
-                toSecondWork();
-              }
-          });
-          document.addEventListener('touchstart', function(e) {
-            touchY = e.changedTouches[0].screenY;
-          });
-          document.addEventListener('touchmove', function(e) {
-             moveY = e.changedTouches[0].screenY;
-             if ((moveY+swipeDistance) < touchY) {
-               console.log("moving down");
-               hideScrollDown();
-               toSecondWork();
-             }else if ((moveY-swipeDistance) > touchY) {
-               console.log("moving up");
-               showScrollDown();
-               tofirstWork();
-             }
-          });
+          document.addEventListener('keydown', function(e) {
+            if (e.keyCode == '38') {
+              showScrollDown();
+              tofirstWork();
+            }
+            else if (e.keyCode == '40') {
+              hideScrollDown();
+              toSecondWork();
+            }
+        });
+
+        document.addEventListener('touchstart', function(e) {
+          touchY = e.changedTouches[0].screenY;
+        });
+        document.addEventListener('touchmove', function(e) {
+           moveY = e.changedTouches[0].screenY;
+           if ((moveY+swipeDistance) < touchY) {
+             console.log("moving down");
+             hideScrollDown();
+             toSecondWork();
+           }else if ((moveY-swipeDistance) > touchY) {
+             console.log("moving up");
+             showScrollDown();
+             tofirstWork();
+           }
+        });
           firstIndicator.addEventListener('click', tofirstWork);
           secondIndicator.addEventListener('click', toSecondWork);
           TweenMax.to('#scroll-down', .5, {y:'0%', autoAlpha:1});
         }
       }
+
       //Leave home header animation
       function fadeOutHomeHeader() {
         TweenMax.to('#big-ben, #london-bus', .1,  {opacity:0, x:1000,ease: Elastic.easeOut.config(1, 0.3)});
@@ -303,6 +303,7 @@ document.addEventListener("DOMContentLoaded", function() {
       addClassForAllSpans();
       slideInNavBar();
       media1024(media);
+      positionEarth();
       // fromMobileToDesktopSize(media600);
       //BARBA.JS TRANSITIONS
         const Homepage = Barba.BaseView.extend({
@@ -334,6 +335,7 @@ document.addEventListener("DOMContentLoaded", function() {
           namespace: 'works',
           onEnterCompleted: function() {
             document.getElementById('nav-btn').addEventListener('click', navAnimation);
+            console.log("workpage extend");
           },
           onLeave: function() {
           },
