@@ -60,121 +60,133 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to(socialLinks, .5, {y:'0%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
       }
+
+      function homeTransitionIn() {
+        console.log("if home page");
+        TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
+        TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);;
+        TweenMax.to('#earth',1, {scale:1, autoAlpha:1});
+        function bigBenAndBus() {
+          TweenMax.fromTo('#big-ben', 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
+          TweenMax.fromTo('#london-bus', 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
+        }
+      }
+
+      function aboutTransitionIn() {
+        console.log("if about page");
+        TweenMax.to('#about-me-page .img', 1, {z:0, autoAlpha:1, scale:1});
+        TweenMax.to('#about-me-page h1', 1, {x:'0%'});
+        TweenMax.to('#about-me-page p', 1, {x:'0%'});
+        TweenMax.to('#about-me-page .button-wrapper', 1, {x:'0%'});
+      }
+
+      function worksTransitionIn() {
+        console.log("if works page");
+        let myPortTop;
+        let timer;
+        const firstIndicator = document.getElementById('first-indicator');
+        const secondIndicator = document.getElementById('second-indicator');
+        const workThumbnails = document.getElementById('work-thumbnails');
+        const myPort = document.getElementById('my-portfolio');
+        myPortTop = myPort.offsetTop;
+
+        window.addEventListener('resize', function() {
+          workThumbnails.className = '';
+          TweenMax.to('#scroll-down', .7, {y:'0%'});
+          TweenMax.to('#seven-seals-of-event', .3, {scale:1});
+          TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut});
+          myPortTop = myPort.offsetTop;
+        });
+
+        TweenMax.to('#works-page-main-header h2', 1, {autoAlpha:1, x:'0%'});
+        TweenMax.to('#works-page-main-header .border-wrapper', 1, {autoAlpha:1, x:'0%'});
+        TweenMax.to('#works-page-main-header p', 1, {autoAlpha:1, x:'0%'});
+        TweenMax.to('#works-page-main-header .button-wrapper', 1, {autoAlpha:1, x:'0%'});
+        TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1});
+
+        function tofirstWork() {
+          workThumbnails.className = '';
+          secondIndicator.classList.remove('active-indicator');
+          firstIndicator.className += ' active-indicator';
+          TweenMax.to('#my-portfolio', 1, {scale:0.8});
+          TweenMax.to(workThumbnails, 1,{y:0, z:0, ease:Power2.easeInOut});
+          TweenMax.to('#seven-seals-of-event', 1, {scale:1});
+        }
+
+        function toSecondWork() {
+          workThumbnails.className = 'scrolled-portfolio';
+          secondIndicator.className += ' active-indicator';
+          firstIndicator.classList.remove('active-indicator');
+          TweenMax.to('#seven-seals-of-event', 1, {scale:0.8});
+          TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0, ease:Power2.easeInOut});
+          TweenMax.to('#my-portfolio', 1, {scale:1});
+        }
+
+        function hideScrollDown() {
+          TweenMax.to('#scroll-down', .7, {y:'140%'});
+        }
+
+        function showScrollDown() {
+          TweenMax.to('#scroll-down', .7, {y:'0%'});
+        }
+
+        document.addEventListener('wheel', function(e) {
+          if (timer) {
+            window.clearTimeout(timer);
+          }
+          timer = window.setTimeout(function() {
+            if (e.deltaY < 0) {
+                 showScrollDown();
+                 tofirstWork();
+               }
+               if (e.deltaY > 0) {
+                 hideScrollDown();
+                 toSecondWork();
+               }
+          }, 150);
+        })
+
+        document.addEventListener('keydown', function(e) {
+          if (e.keyCode == '38') {
+            showScrollDown();
+            tofirstWork();
+          }
+          else if (e.keyCode == '40') {
+            hideScrollDown();
+            toSecondWork();
+          }
+      });
+
+      document.addEventListener('touchstart', function(e) {
+        touchY = e.changedTouches[0].screenY;
+      });
+      document.addEventListener('touchmove', function(e) {
+         moveY = e.changedTouches[0].screenY;
+         if ((moveY+swipeDistance) < touchY) {
+           console.log("moving down");
+           hideScrollDown();
+           toSecondWork();
+         }else if ((moveY-swipeDistance) > touchY) {
+           console.log("moving up");
+           showScrollDown();
+           tofirstWork();
+         }
+      });
+        firstIndicator.addEventListener('click', tofirstWork);
+        secondIndicator.addEventListener('click', toSecondWork);
+        TweenMax.to('#scroll-down', .5, {y:'0%', autoAlpha:1});
+      }
       //On page load header text animation
       function fadeInHeaderText() {
         if (document.getElementById('home-header')) {
           positionEarth();
-          console.log("if home page");
-          TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
-          TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);;
-          TweenMax.to('#earth',1, {scale:1, autoAlpha:1});
-          function bigBenAndBus() {
-            TweenMax.fromTo('#big-ben', 1, {opacity:0, rotation:-45}, {opacity:1, rotation:0,ease: Elastic.easeOut.config(1, 0.3)});
-            TweenMax.fromTo('#london-bus', 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
-          }
+          homeTransitionIn();
         }
         if (document.getElementById('about-me-page')) {
-          console.log("if about page");
-          TweenMax.to('#about-me-page .img', 1, {z:0, autoAlpha:1, scale:1});
-          TweenMax.to('#about-me-page h1', 1, {x:'0%'});
-          TweenMax.to('#about-me-page p', 1, {x:'0%'});
-          TweenMax.to('#about-me-page .button-wrapper', 1, {x:'0%'});
+          aboutTransitionIn();
         }
         if (document.getElementById('works-page-main-header')) {
-          console.log("if works page");
-          let myPortTop;
-          let timer;
-          const firstIndicator = document.getElementById('first-indicator');
-          const secondIndicator = document.getElementById('second-indicator');
-          const workThumbnails = document.getElementById('work-thumbnails');
-          const myPort = document.getElementById('my-portfolio');
-          myPortTop = myPort.offsetTop;
-
-          window.addEventListener('resize', function() {
-            workThumbnails.className = '';
-            TweenMax.to('#scroll-down', .7, {y:'0%'});
-            TweenMax.to('#seven-seals-of-event', .3, {scale:1});
-            TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut});
-            myPortTop = myPort.offsetTop;
-          });
-
-          TweenMax.to('#works-page-main-header h2', 1, {autoAlpha:1, x:'0%'});
-          TweenMax.to('#works-page-main-header .border-wrapper', 1, {autoAlpha:1, x:'0%'});
-          TweenMax.to('#works-page-main-header p', 1, {autoAlpha:1, x:'0%'});
-          TweenMax.to('#works-page-main-header .button-wrapper', 1, {autoAlpha:1, x:'0%'});
-          TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1});
-
-          function tofirstWork() {
-            workThumbnails.className = '';
-            secondIndicator.classList.remove('active-indicator');
-            firstIndicator.className += ' active-indicator';
-            TweenMax.to('#my-portfolio', 1, {scale:0.8});
-            TweenMax.to(workThumbnails, 1,{y:0, z:0, ease:Power2.easeInOut});
-            TweenMax.to('#seven-seals-of-event', 1, {scale:1});
-          }
-
-          function toSecondWork() {
-            workThumbnails.className = 'scrolled-portfolio';
-            secondIndicator.className += ' active-indicator';
-            firstIndicator.classList.remove('active-indicator');
-            TweenMax.to('#seven-seals-of-event', 1, {scale:0.8});
-            TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0, ease:Power2.easeInOut});
-            TweenMax.to('#my-portfolio', 1, {scale:1});
-          }
-
-          function hideScrollDown() {
-            TweenMax.to('#scroll-down', .7, {y:'140%'});
-          }
-
-          function showScrollDown() {
-            TweenMax.to('#scroll-down', .7, {y:'0%'});
-          }
-
-          document.addEventListener('wheel', function(e) {
-            if (timer) {
-              window.clearTimeout(timer);
-            }
-            timer = window.setTimeout(function() {
-              if (e.deltaY < 0) {
-                   showScrollDown();
-                   tofirstWork();
-                 }
-                 if (e.deltaY > 0) {
-                   hideScrollDown();
-                   toSecondWork();
-                 }
-          	}, 150);
-          })
-
-          document.addEventListener('keydown', function(e) {
-            if (e.keyCode == '38') {
-              showScrollDown();
-              tofirstWork();
-            }
-            else if (e.keyCode == '40') {
-              hideScrollDown();
-              toSecondWork();
-            }
-        });
-
-        document.addEventListener('touchstart', function(e) {
-          touchY = e.changedTouches[0].screenY;
-        });
-        document.addEventListener('touchmove', function(e) {
-           moveY = e.changedTouches[0].screenY;
-           if ((moveY+swipeDistance) < touchY) {
-             console.log("moving down");
-             hideScrollDown();
-             toSecondWork();
-           }else if ((moveY-swipeDistance) > touchY) {
-             console.log("moving up");
-             showScrollDown();
-             tofirstWork();
-           }
-        });
-          firstIndicator.addEventListener('click', tofirstWork);
-          secondIndicator.addEventListener('click', toSecondWork);
-          TweenMax.to('#scroll-down', .5, {y:'0%', autoAlpha:1});
+          worksTransitionIn();
         }
       }
 
