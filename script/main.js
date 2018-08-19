@@ -125,11 +125,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         function hideScrollDown() {
-          TweenMax.to('#scroll-down', 1, {y:'140%'});
+          TweenMax.to('#scroll-down', .5, {y:'140%'});
         }
 
         function showScrollDown() {
-          TweenMax.to('#scroll-down', 1, {y:'0%'});
+          TweenMax.to('#scroll-down', .5, {y:'0%'});
         }
 
         document.addEventListener('wheel', function(e) {
@@ -472,6 +472,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 TweenMax.to('#works-page-main-header p', 1, {x:'-110%'});
                 TweenMax.to('#seven-seals-of-event .img', 1, {scale:0, autoAlpha:0});
                 TweenMax.to('#scroll-down', .7, {y:'140%'});
+                TweenMax.to('#work-navigator',1, {x:'-110%'});
                 TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:function() {
                   deferred.resolve();
                 }});
