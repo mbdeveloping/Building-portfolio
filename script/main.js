@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       //Hide Works, About, social links
       function hideLinks() {
-        // TweenMax.set(socialLinks,{y:'100%'});
         TweenMax.to(socialLinks, .3, {y:'100%'});
         TweenMax.to(leftNavOverlay,.3, {x: '-100%'});
         TweenMax.to( rightNavOverlay,.3, {x: '100%'});
