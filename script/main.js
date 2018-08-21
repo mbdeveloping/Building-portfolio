@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
       let touchY;
       let moveY;
       const swipeDistance = 30;
+      const earth = document.getElementById('earth');
 
       function positionEarth() {
         if (window.innerWidth <= 600) {
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
 
-      TweenMax.to('#earth', 100, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
+      TweenMax.to(earth, 100, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
 
       //Add class for all header spans
       function addClassForAllSpans() {
