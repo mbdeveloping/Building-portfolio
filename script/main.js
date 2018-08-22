@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
 
-      TweenMax.to(earth, 100, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
+      // TweenMax.to(earth, 100, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
 
       //Add class for all header spans
       function addClassForAllSpans() {
