@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
       //Add class for all header spans
       function addClassForAllSpans() {
         document.querySelectorAll('#home-header-word-line-wrapper span').forEach(function(span) {
-          span.className = 'testSpan'
+          span.className = 'testSpan';
         });
       }
       //Hide Works, About, social links
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       function homeTransitionIn() {
-        console.log("if home page");
+        // console.log("if home page");
         TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
         TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);;
         TweenMax.to('#earth',1, {scale:1, autoAlpha:1});
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       function aboutTransitionIn() {
-        console.log("if about page");
+        // console.log("if about page");
         TweenMax.to('#about-me-page .img', 1, {z:0, autoAlpha:1, scale:1});
         TweenMax.to('#about-me-page h1', 1, {x:'0%'});
         TweenMax.to('#about-me-page p', 1, {x:'0%'});
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       function worksTransitionIn() {
-        console.log("if works page");
+        // console.log("if works page");
         let myPortTop;
         let timer;
         const firstIndicator = document.getElementById('first-indicator');
