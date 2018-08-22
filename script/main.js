@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       //Hide Works, About, social links
       function hideLinks() {
-        TweenMax.to(socialLinks, .3, {y:'100%'});
-        TweenMax.to(leftNavOverlay,.3, {x: '-100%'});
-        TweenMax.to( rightNavOverlay,.3, {x: '100%'});
+        TweenMax.to(socialLinks, .3, {z:0, y:'100%'});
+        TweenMax.to(leftNavOverlay,.3, {z:0, x: '-100%'});
+        TweenMax.to( rightNavOverlay,.3, {z:0, x: '100%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
       }
       function slieInLinks() {
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       function homeTransitionIn() {
         // console.log("if home page");
-        TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1}, 0.05 );
+        TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {z:0, autoAlpha:1, scale:1}, 0.05 );
         TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);;
         TweenMax.to('#earth',1, {scale:1, autoAlpha:1});
         function bigBenAndBus() {
@@ -100,10 +100,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         TweenMax.to('#work-navigator', 1, {x:'0%'});
 
-        TweenMax.to('#works-page-main-header h2', 1, {autoAlpha:1, x:'0%'});
-        TweenMax.to('#works-page-main-header .border-wrapper', 1, {autoAlpha:1, x:'0%'});
-        TweenMax.to('#works-page-main-header p', 1, {autoAlpha:1, x:'0%'});
-        TweenMax.to('#works-page-main-header .button-wrapper', 1, {autoAlpha:1, x:'0%'});
+        TweenMax.to('#works-page-main-header h2', 1, {z:0, autoAlpha:1, x:'0%'});
+        TweenMax.to('#works-page-main-header .border-wrapper', 1, {z:0, autoAlpha:1, x:'0%'});
+        TweenMax.to('#works-page-main-header p', 1, {z:0, autoAlpha:1, x:'0%'});
+        TweenMax.to('#works-page-main-header .button-wrapper', 1, {z:0, autoAlpha:1, x:'0%'});
         TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1});
 
         function tofirstWork() {
@@ -125,11 +125,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         function hideScrollDown() {
-          TweenMax.to('#scroll-down', .5, {y:'140%'});
+          TweenMax.to('#scroll-down', .5, {z:0, y:'140%'});
         }
 
         function showScrollDown() {
-          TweenMax.to('#scroll-down', .5, {y:'0%'});
+          TweenMax.to('#scroll-down', .5, {z:0, y:'0%'});
         }
 
         document.addEventListener('wheel', function(e) {
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function() {
       });
         firstIndicator.addEventListener('click', tofirstWork);
         secondIndicator.addEventListener('click', toSecondWork);
-        TweenMax.to('#scroll-down', .5, {y:'0%', autoAlpha:1});
+        TweenMax.to('#scroll-down', .5, {z:0, y:'0%', autoAlpha:1});
       }
       //On page load header text animation
       function fadeInHeaderText() {
