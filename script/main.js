@@ -133,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         document.addEventListener('wheel', function(e) {
+          console.log(e.deltaY);
           if (timer) {
             window.clearTimeout(timer);
           }
@@ -140,13 +141,13 @@ document.addEventListener("DOMContentLoaded", function() {
             if (e.deltaY < 0) {
                  showScrollDown();
                  tofirstWork();
-               }
-               if (e.deltaY > 0) {
+               } else {
                  hideScrollDown();
                  toSecondWork();
                }
           }, 150);
         })
+
 
         document.addEventListener('keydown', function(e) {
           if (e.keyCode == '38') {
