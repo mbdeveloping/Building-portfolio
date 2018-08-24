@@ -491,25 +491,19 @@ ul {
   }
 }
 #works-page {
-  padding:0;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  touch-action: none;
-  will-change: transform;
   header {
     h1 {
       font-size: 1.5rem;
       padding-bottom: 2rem;
     }
   }
-  // #work-thumbnails {
-    // padding:0;
-    // display: flex;
-    // flex-direction: column;
-    // position: relative;
-    // touch-action: none;
-    // will-change: transform;
+  #works-inner {
+    padding:0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    touch-action: none;
+    will-change: transform;
     #seven-seals-of-event {
       will-change: transform;
       padding: 1rem;
@@ -655,7 +649,7 @@ ul {
         }
       }
     }
-  // }
+  }
   #scroll-down {
     opacity:0;
     @include transform(translateY(140%));

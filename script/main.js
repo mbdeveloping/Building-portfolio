@@ -86,15 +86,15 @@ document.addEventListener("DOMContentLoaded", function() {
         let timer;
         const firstIndicator = document.getElementById('first-indicator');
         const secondIndicator = document.getElementById('second-indicator');
-        const workThumbnails = document.getElementById('work-thumbnails');
+        const worksContainer = document.getElementById('works-page');
         const myPort = document.getElementById('my-portfolio');
         myPortTop = myPort.offsetTop;
 
         window.addEventListener('resize', function() {
-          workThumbnails.className = '';
+          worksContainer.className = '';
           TweenMax.to('#scroll-down', 1, {y:'0%'});
           TweenMax.to('#seven-seals-of-event', .3, {scale:1});
-          TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut});
+          TweenMax.to(worksContainer, 1,{y:0, ease:Power2.easeInOut});
           myPortTop = myPort.offsetTop;
         });
 
@@ -107,20 +107,20 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1});
 
         function tofirstWork() {
-          workThumbnails.className = '';
+          worksContainer.className = '';
           secondIndicator.classList.remove('active-indicator');
           firstIndicator.className += ' active-indicator';
           TweenMax.to('#my-portfolio', 1, {z:0, scale:0.8});
-          TweenMax.to(workThumbnails, 1,{y:0, z:0, ease:Power2.easeInOut});
+          TweenMax.to(worksContainer, 1,{y:0, ease:Power2.easeInOut});
           TweenMax.to('#seven-seals-of-event', 1, {z:0, scale:1});
         }
 
         function toSecondWork() {
-          workThumbnails.className = 'scrolled-portfolio';
+          worksContainer.className = 'scrolled-portfolio';
           secondIndicator.className += ' active-indicator';
           firstIndicator.classList.remove('active-indicator');
           TweenMax.to('#seven-seals-of-event', 1, {z:0, scale:0.8});
-          TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0, ease:Power2.easeInOut});
+          TweenMax.to(worksContainer, 1,{y:-myPortTop, ease:Power2.easeInOut});
           TweenMax.to('#my-portfolio', 1, {z:0, scale:1});
         }
 
@@ -474,12 +474,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 TweenMax.to('#seven-seals-of-event .img', 1, {scale:0, autoAlpha:0});
                 TweenMax.to('#scroll-down', .7, {y:'140%'});
                 TweenMax.to('#work-navigator',1, {x:'-110%'});
-                TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:function() {
+                TweenMax.to('#works-page', 1, {y:'100%', autoAlpha:0, onComplete:function() {
                   deferred.resolve();
                 }});
               }
-              if (document.getElementById('work-thumbnails').className === 'scrolled-portfolio') {
-                TweenMax.to('#work-thumbnails', .7,{y:0, z:0, ease:Power2.easeInOut, onComplete:contTrans});
+              if (document.getElementById('works-page').className === 'scrolled-portfolio') {
+                TweenMax.to('#works-page', .7,{y:0, ease:Power2.easeInOut, onComplete:contTrans});
               } else {
                 contTrans();
               }
