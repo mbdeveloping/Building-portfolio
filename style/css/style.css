@@ -1,25 +1,29 @@
 /*
 Error: Invalid CSS after "    padding:0": expected "{", was ";"
-        on line 501 of sass/style.scss
+        on line 505 of sass/style.scss
 
-496: <<<<<<< HEAD
-497:   #works-inner {
-498: =======
-499:   #work-thumbnails {
-500: >>>>>>> parent of 9703ab1... Update
-501:     padding:0;
-502:     display: flex;
-503:     flex-direction: column;
-504:     position: relative;
-505:     touch-action: none;
-506:     will-change: transform;
+500:   #work-thumbnails {
+501: >>>>>>> parent of 9703ab1... Update
+502: =======
+503:   #work-thumbnails {
+504: >>>>>>> parent of 9703ab1... Update
+505:     padding:0;
+506:     display: flex;
+507:     flex-direction: column;
+508:     position: relative;
+509:     touch-action: none;
+510:     will-change: transform;
 
 Backtrace:
-sass/style.scss:501
+sass/style.scss:505
 C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:1278:in `expected'
 C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:1208:in `expected'
 C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:1203:in `tok!'
 C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:677:in `block'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:697:in `block_child'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:686:in `block_contents'
+C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:678:in `block'
 C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
 C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:697:in `block_child'
 C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:686:in `block_contents'
@@ -58,4 +62,4 @@ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-listen-4.0.0/lib/sass-listen/interna
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"    padding:0\": expected \"{\", was \";\"\A         on line 501 of sass/style.scss\A \A 496: <<<<<<< HEAD\A 497:   #works-inner {\A 498: =======\A 499:   #work-thumbnails {\A 500: >>>>>>> parent of 9703ab1... Update\A 501:     padding:0;\A 502:     display: flex;\A 503:     flex-direction: column;\A 504:     position: relative;\A 505:     touch-action: none;\A 506:     will-change: transform;"; }
+  content: "Error: Invalid CSS after \"    padding:0\": expected \"{\", was \";\"\A         on line 505 of sass/style.scss\A \A 500:   #work-thumbnails {\A 501: >>>>>>> parent of 9703ab1... Update\A 502: =======\A 503:   #work-thumbnails {\A 504: >>>>>>> parent of 9703ab1... Update\A 505:     padding:0;\A 506:     display: flex;\A 507:     flex-direction: column;\A 508:     position: relative;\A 509:     touch-action: none;\A 510:     will-change: transform;"; }
