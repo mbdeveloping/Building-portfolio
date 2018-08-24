@@ -226,11 +226,7 @@ ul {
   @extend %nav-overlay-shared;
 }
 /***************** HOME PAGE RULES *******************/
-// main {
-//   width: 100%;
-//   height: 100vh;
-// }
-#home-main {
+main {
   width: 100%;
   height: 100vh;
 }
@@ -497,7 +493,11 @@ ul {
       padding-bottom: 2rem;
     }
   }
+<<<<<<< HEAD
   #works-inner {
+=======
+  #work-thumbnails {
+>>>>>>> parent of 9703ab1... Update
     padding:0;
     display: flex;
     flex-direction: column;
@@ -780,14 +780,14 @@ ul {
       padding:2rem;
     }
   }
-  #works-page {
+  #works-page #work-thumbnails {
     #seven-seals-of-event, #my-portfolio {
       padding-bottom:2rem;
       padding-left: 2rem;
       padding-right: 2rem;
     }
   }
-  #works-page #seven-seals-of-event header {
+  #works-page #work-thumbnails #seven-seals-of-event header {
     width: 70%;
   }
   #about-me-page {
@@ -800,7 +800,7 @@ ul {
   }
 }
 @media (min-width: 550px) {
-  #works-page #seven-seals-of-event header {
+  #works-page #work-thumbnails #seven-seals-of-event header {
     width: 60%;
   }
   #about-me-page {
@@ -810,7 +810,7 @@ ul {
   }
 }
 @media (min-width: 600px) {
-  #works-page #seven-seals-of-event, #works-page #my-portfolio{
+  #works-page #work-thumbnails #seven-seals-of-event, #works-page #work-thumbnails #my-portfolio{
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -900,7 +900,7 @@ ul {
   }
 }
 @media (min-width: 700px) {
-  #works-page #seven-seals-of-event, #works-page #my-portfolio{
+  #works-page #work-thumbnails #seven-seals-of-event, #works-page #work-thumbnails #my-portfolio{
     grid-template-columns: 1fr 1.5fr;
     header {
       span {
@@ -1006,7 +1006,7 @@ ul {
   #works-page #work-navigator  {
     bottom: 3%;
   }
-  #works-page #seven-seals-of-event, #works-page #my-portfolio {
+  #works-page #work-thumbnails #seven-seals-of-event, #works-page #work-thumbnails #my-portfolio {
     padding-left: 10rem;
     padding-right: 4rem;
   }
@@ -1063,6 +1063,7 @@ ul {
     // @include transform(translate(0, -50%));
   }
   #works-page {
+    #work-thumbnails {
       #seven-seals-of-event, #my-portfolio {
         header {
           width: 100%;
@@ -1072,6 +1073,7 @@ ul {
           }
         }
       }
+    }
   }
   #about-me-page {
     .img {
@@ -1110,7 +1112,7 @@ ul {
   }
 }
 @media (min-width: 1300px) {
-  #works-page {
+  #works-page #work-thumbnails {
     #seven-seals-of-event, #my-portfolio {
       header {
         width: 70%;
@@ -1120,7 +1122,7 @@ ul {
   }
 }
 @media (min-width: 1440px) {
-  #works-page {
+  #works-page #work-thumbnails {
     #seven-seals-of-event, #my-portfolio {
       .img img {
         width: 200px;
@@ -1198,7 +1200,7 @@ ul {
   }
 }
 @media (min-width: 1900px) {
-  #works-page {
+  #works-page #work-thumbnails {
     #seven-seals-of-event, #my-portfolio {
       header {
         width: 75%;
