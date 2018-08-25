@@ -132,6 +132,12 @@ document.addEventListener("DOMContentLoaded", function() {
           TweenMax.to('#scroll-down', .5, {z:0, y:'0%'});
         }
         let scroll_blocked = false;
+        function blockScroll() {
+          scroll_blocked = true;
+          setTimeout(function(){
+            scroll_blocked = false;
+          }, 1000);
+        }
         document.addEventListener('wheel', function(e) {
           // console.log(e.deltaY);
           // if (timer) {
@@ -146,24 +152,14 @@ document.addEventListener("DOMContentLoaded", function() {
           //        toSecondWork();
           //      }
           // }, 150);
-
-
           if (!scroll_blocked){
         		if (e.deltaY < 0){
               tofirstWork();
-              console.log('going up');
+              blockScroll();
               console.log(e.deltaY);
-              scroll_blocked = true;
-              setTimeout(function(){
-                scroll_blocked = false;
-              }, 1000);
             } else if (e.deltaY > 0){
-              console.log('going down');
               toSecondWork();
-              scroll_blocked = true;
-              setTimeout(function(){
-                scroll_blocked = false;
-              }, 1000);
+              blockScroll();
             }
         	}
         })
