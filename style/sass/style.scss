@@ -116,6 +116,14 @@ ul {
   bottom: 0;
 }
 /******************** Main header rules *************************/
+.hide-nav-social-links {
+  transition: transform .3s;
+  transform:translateY(100%);
+}
+.show-nav-social-links {
+  transition: transform .3s;
+  transform:translateY(0%);
+}
 #nav-bar {
   width: 100%;
   position: fixed;
