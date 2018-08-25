@@ -27,21 +27,16 @@ document.addEventListener("DOMContentLoaded", function() {
       function positionEarth() {
         if (window.innerWidth <= 600) {
           TweenMax.set('#earth', {x:'0%', y:'50%'});
-          console.log("less than 600");
         }
         else if (window.innerWidth > 600 && window.innerWidth < 1023) {
           TweenMax.set('#earth', {x:'50%', y:'-50%'});
-          console.log("more than 600");
         }
         else if (window.innerWidth >= 1024) {
           TweenMax.set('#earth', {x:'0%', y:'-50%', right:'5%'});
           slieInLinks();
-          console.log("more than 1024");
         }
       }
-
       // TweenMax.to(earth, 100, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
-
       //Add class for all header spans
       function addClassForAllSpans() {
         document.querySelectorAll('#home-header-word-line-wrapper span').forEach(function(span) {
@@ -83,12 +78,12 @@ document.addEventListener("DOMContentLoaded", function() {
       function worksTransitionIn() {
         // console.log("if works page");
         let myPortTop;
-        let timer;
         const firstIndicator = document.getElementById('first-indicator');
         const secondIndicator = document.getElementById('second-indicator');
         const workThumbnails = document.getElementById('work-thumbnails');
         const myPort = document.getElementById('my-portfolio');
         myPortTop = myPort.offsetTop;
+        let scroll_blocked = false;
 
         window.addEventListener('resize', function() {
           workThumbnails.className = '';
@@ -131,7 +126,6 @@ document.addEventListener("DOMContentLoaded", function() {
         function showScrollDown() {
           TweenMax.to('#scroll-down', .5, {z:0, y:'0%'});
         }
-        let scroll_blocked = false;
         function blockScroll() {
           scroll_blocked = true;
           setTimeout(function(){
@@ -139,32 +133,19 @@ document.addEventListener("DOMContentLoaded", function() {
           }, 1000);
         }
         document.addEventListener('wheel', function(e) {
-          // console.log(e.deltaY);
-          // if (timer) {
-          //   window.clearTimeout(timer);
-          // }
-          // timer = window.setTimeout(function() {
-          //   if (e.deltaY < 0) {
-          //        showScrollDown();
-          //        tofirstWork();
-          //      } else {
-          //        hideScrollDown();
-          //        toSecondWork();
-          //      }
-          // }, 150);
           if (!scroll_blocked){
         		if (e.deltaY < 0){
               tofirstWork();
               blockScroll();
+              showScrollDown();
               console.log(e.deltaY);
-            } else if (e.deltaY > 0){
+            } else {
               toSecondWork();
               blockScroll();
+              hideScrollDown();
             }
         	}
-        })
-
-
+        });
         document.addEventListener('keydown', function(e) {
           if (e.keyCode == '38') {
             showScrollDown();
@@ -175,7 +156,6 @@ document.addEventListener("DOMContentLoaded", function() {
             toSecondWork();
           }
       });
-
       document.addEventListener('touchstart', function(e) {
         touchY = e.changedTouches[0].screenY;
       });
@@ -220,7 +200,6 @@ document.addEventListener("DOMContentLoaded", function() {
           fadeInHeaderText();
         }});
       }
-      // fadeInHeaderText();
       function slideOutNavBar() {
         TweenMax.to('#nav-bar', .5, {y: '-100%'});
       }
@@ -252,12 +231,10 @@ document.addEventListener("DOMContentLoaded", function() {
       function startLinkAnimation(e) {
         let element = e.target;
         TweenMax.to(element.querySelectorAll('span'), .3, {padding:'.5rem 1rem'});
-           // pcImg.src = 'img/about-hover-bg.png';
       }
       function endLinkAnimation(e) {
         let element = e.target;
         TweenMax.to(element.querySelectorAll('span'), .3, {padding:'0rem 1rem'});
-         // pcImg.src = 'img/prorotype-bg.png';
       }
       //Nav button open animation
       function navBtnClose(){
@@ -288,7 +265,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       function openNav() {
         navBtnOpen();
-        // TweenMax.to([leftNavOverlay, rightNavOverlay], 1, {x: '0%', width:'50%', ease: Bounce.easeOut});
         TweenMax.to([leftNavOverlay, rightNavOverlay], .3, {x: '0%', width:'50%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
         TweenMax.to(socialLinks, .3, {y:'0%'});
@@ -330,12 +306,10 @@ document.addEventListener("DOMContentLoaded", function() {
         positionEarth();
       })
       //Home page function call
-      // onLoadFadeInHomeImg();
       addClassForAllSpans();
       slideInNavBar();
       media1024(media);
       positionEarth();
-      // fromMobileToDesktopSize(media600);
       //BARBA.JS TRANSITIONS
         const Homepage = Barba.BaseView.extend({
           namespace: 'home',
@@ -389,7 +363,6 @@ document.addEventListener("DOMContentLoaded", function() {
             navBtnClose();
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
-            // TweenMax.to('#earth',.3, {y: '100%'});
             TweenMax.to('#earth',2, {autoAlpha:0,scale:0, y:'-80%', ease:Power2.easeInOut});
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
               TweenMax.to(['#hello', '#frontend-developer'], 1, {x:'110%'});
@@ -482,7 +455,6 @@ document.addEventListener("DOMContentLoaded", function() {
               TweenMax.to('#my-portfolio', .3, {scale:0.8});
               TweenMax.to('#seven-seals-of-event', .3, {scale:1});
               function contTrans() {
-                // slideOutNavBar();
                 TweenMax.to('#works-page-main-header h2', 1, {x:'110%'});
                 TweenMax.to('#works-page-main-header .border-wrapper', 1, {x:'110%'});
                 TweenMax.to('#works-page-main-header .button-wrapper', 1, {x:'-110%'});
@@ -517,8 +489,6 @@ document.addEventListener("DOMContentLoaded", function() {
               slieInLinks();
             }
             if (document.getElementById('home-header')) {
-              // TweenMax.to('#earth',1, {display:'block', y: '50%'});
-              // console.log("turi pasirodyti earth")
             }else if (document.getElementById('about-header')) {
               TweenMax.to('#earth',1, {display:'block', y: '50%'});
             }
