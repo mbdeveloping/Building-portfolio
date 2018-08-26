@@ -93,18 +93,30 @@ ul {
   left: 0;
   bottom: 0;
   transform: translate(-24%, 50%);
-  width: 200%; }
+  width: 200%;
+  opacity: .2; }
 
 #star {
   position: absolute;
-  width: 80%;
+  width: 100%;
   right: 0;
-  bottom: 0; }
+  top: 15%; }
+
+#pink-stars {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  z-index: -1;
+  opacity: .7; }
 
 /******************** Main header rules *************************/
 .hide-nav-social-links {
   transition: transform .3s;
   transform: translateY(100%); }
+
+.show-nav-social-links {
+  transition: transform .3s;
+  transform: translateY(0%); }
 
 #nav-bar {
   width: 100%;
@@ -430,13 +442,6 @@ main {
   -ms-transform: scale(0);
   transform: scale(0);
   opacity: 0; }
-
-#pink-stars {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  opacity: .7; }
 
 /****************** WORKS PAGE RULES ********************/
 #about-me-page {
