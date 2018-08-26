@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
           slieInLinks();
         }
       }
-      // TweenMax.to(earth, 100, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
+      // TweenMax.to(earth, 150, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
       //Add class for all header spans
       function addClassForAllSpans() {
         document.querySelectorAll('#home-header-word-line-wrapper span').forEach(function(span) {
@@ -271,9 +271,9 @@ document.addEventListener("DOMContentLoaded", function() {
         navBtnOpen();
         TweenMax.to([leftNavOverlay, rightNavOverlay], .3, {x: '0%', width:'50%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
-        // TweenMax.to(socialLinks, .3, {y:'0%'});
-        socialLinks.classList.add('show-nav-social-links');
-        socialLinks.classList.remove('hide-nav-social-links');
+        TweenMax.to(socialLinks, .3, {y:'0%'});
+        // socialLinks.classList.add('show-nav-social-links');
+        // socialLinks.classList.remove('hide-nav-social-links');
         zoomOutBg();
       }
       function closeNav() {
@@ -281,9 +281,9 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to(leftNavOverlay, .3, {x: '-100%'});
         TweenMax.to(rightNavOverlay, .3, {x: '100%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
-        // TweenMax.to(socialLinks, .3, {y:'100%'});
-        socialLinks.classList.add('hide-nav-social-links');
-        socialLinks.classList.remove('show-nav-social-links');
+        TweenMax.to(socialLinks, .3, {y:'100%'});
+        // socialLinks.classList.add('hide-nav-social-links');
+        // socialLinks.classList.remove('show-nav-social-links');
         zoomInBg();
       }
       //Scale back background

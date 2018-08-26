@@ -110,14 +110,6 @@ ul {
   opacity: .7; }
 
 /******************** Main header rules *************************/
-.hide-nav-social-links {
-  transition: transform .3s;
-  transform: translateY(100%); }
-
-.show-nav-social-links {
-  transition: transform .3s;
-  transform: translateY(0%); }
-
 #nav-bar {
   width: 100%;
   position: fixed;
@@ -819,6 +811,10 @@ main {
     top: 50%;
     width: auto;
     height: 80%; }
+
+  #purple-bg {
+    transform: translate(14%, 16%);
+    width: 150%; }
 
   #about-pos-header-container {
     grid-template-columns: 3fr 1fr;
