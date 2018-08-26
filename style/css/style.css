@@ -813,8 +813,10 @@ main {
     height: 80%; }
 
   #purple-bg {
-    transform: translate(14%, 16%);
-    width: 150%; }
+    top: 0;
+    right: 0;
+    transform: translate(-3%, -16%);
+    height: 150%; }
 
   #about-pos-header-container {
     grid-template-columns: 3fr 1fr;
@@ -956,6 +958,14 @@ main {
 
   #earth {
     right: 5%; }
+
+  #purple-bg {
+    top: 0;
+    right: 0;
+    left: auto;
+    transform: translate(17%, -16%);
+    width: auto;
+    height: 150%; }
 
   #works-page #work-thumbnails #seven-seals-of-event header, #works-page #work-thumbnails #my-portfolio header {
     width: 100%; }
