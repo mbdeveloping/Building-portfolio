@@ -112,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
           TweenMax.to('#my-portfolio', 1, {z:0, scale:0.8});
           TweenMax.to(workThumbnails, 1,{y:0, z:0, ease:Power2.easeInOut});
           TweenMax.to('#seven-seals-of-event', 1, {z:0, scale:1});
+          showScrollDown();
         }
 
         function toSecondWork() {
@@ -121,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
           TweenMax.to('#seven-seals-of-event', 1, {z:0, scale:0.8});
           TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0, ease:Power2.easeInOut});
           TweenMax.to('#my-portfolio', 1, {z:0, scale:1});
+          hideScrollDown();
         }
 
         function hideScrollDown() {
@@ -141,12 +143,12 @@ document.addEventListener("DOMContentLoaded", function() {
         		if (e.deltaY < 0){
               tofirstWork();
               blockScroll();
-              showScrollDown();
+
               console.log(e.deltaY);
             } else {
               toSecondWork();
               blockScroll();
-              hideScrollDown();
+
             }
         	}
         });
