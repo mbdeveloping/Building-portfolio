@@ -1229,3 +1229,15 @@ main {
     }
   }
 }
+@media (min-width: 1024px) and (min-height: 768px) {
+  #earth {
+    max-width: 640px;
+    max-height: 610px;
+  }
+  #purple-bg {
+    max-height: 1144px;
+    max-width: 1144px;
+    top:50%;
+    transform: translate(17%, -50%);
+  }
+}
