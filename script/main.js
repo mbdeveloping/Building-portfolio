@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const homeAllImg = document.getElementById('img-holder img');
       const pageBody = document.querySelector('body');
       const homePage = document.getElementById('home-main');
-      // let pcImg = document.getElementById('bg-pc');
+      let pcImg = document.getElementById('bg-pc');
       const userAgent = window.navigator.userAgent;
       let touchY;
       let moveY;
