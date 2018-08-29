@@ -1072,7 +1072,7 @@ main {
     max-width: 1144px;
     top: 50%;
     transform: translate(23%, -50%); } }
-@media (min-width: 1400px) {
+@media (min-width: 1400px) and (min-height: 768px) {
   #earth {
     left: 50%;
     right: auto; }
