@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         	}
         });
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', e => {
           if (e.keyCode == '38') {
             showScrollDown();
             tofirstWork();
@@ -162,10 +162,8 @@ document.addEventListener("DOMContentLoaded", function() {
             toSecondWork();
           }
       });
-      document.addEventListener('touchstart', function(e) {
-        touchY = e.changedTouches[0].screenY;
-      });
-      document.addEventListener('touchmove', function(e) {
+      document.addEventListener('touchstart', e => touchY = e.changedTouches[0].screenY);
+      document.addEventListener('touchmove', e => {
          moveY = e.changedTouches[0].screenY;
          if ((moveY+swipeDistance) < touchY) {
            console.log("moving down");
