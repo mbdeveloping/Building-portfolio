@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
           slieInLinks();
         }
       }
-      // TweenMax.to(earth, 150, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
+      TweenMax.to(earth, 150, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
       //Add class for all header spans
       function addClassForAllSpans() {
         document.querySelectorAll('#home-header-word-line-wrapper span').forEach(function(span) {
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
           workThumbnails.className = '';
           secondIndicator.classList.remove('active-indicator');
           firstIndicator.className += ' active-indicator';
-          TweenMax.to('#my-portfolio', 1, {z:0, scale:0.8});
+          TweenMax.to('#my-portfolio', 1, {z:0, scale:0.6});
           TweenMax.to(workThumbnails, 1,{y:0, z:0, ease:Power2.easeInOut});
           TweenMax.to('#seven-seals-of-event', 1, {z:0, scale:1});
           showScrollDown();
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
           workThumbnails.className = 'scrolled-portfolio';
           secondIndicator.className += ' active-indicator';
           firstIndicator.classList.remove('active-indicator');
-          TweenMax.to('#seven-seals-of-event', 1, {z:0, scale:0.8});
+          TweenMax.to('#seven-seals-of-event', 1, {z:0, scale:0.6});
           TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0, ease:Power2.easeInOut});
           TweenMax.to('#my-portfolio', 1, {z:0, scale:1});
           hideScrollDown();
