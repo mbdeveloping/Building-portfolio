@@ -1072,5 +1072,14 @@ main {
     max-width: 1144px;
     top: 50%;
     transform: translate(23%, -50%); } }
+@media (min-width: 1400px) {
+  #earth {
+    left: 50%;
+    right: auto; }
+
+  #purple-bg {
+    left: 50%;
+    right: auto;
+    transform: translate(-22%, -50%); } }
 
 /*# sourceMappingURL=style.css.map */

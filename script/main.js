@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
           slieInLinks();
         }
       }
-      TweenMax.to(earth, 150, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
+      // TweenMax.to(earth, 150, {rotation:360,z:0, repeat:-1, ease:Linear.easeNone﻿});
       //Add class for all header spans
       function addClassForAllSpans() {
         document.querySelectorAll('#home-header-word-line-wrapper span').forEach(function(span) {
