@@ -710,10 +710,18 @@ main {
       border-top: 1px solid transparent;
       transition: border .3s, transform .3s;
     }
-    .active-indicator {
+    %active-indicator {
       border-left: 1px solid #fff;
       border-top: 1px solid #fff;
       transform:rotate(135deg);
+    }
+    .active-first {
+      @extend %active-indicator;
+      background:linear-gradient(330deg, yellow 30%, red);
+    }
+    .active-second {
+      @extend %active-indicator;
+      background:linear-gradient(330deg, #072141 50%, #ff4d5a);
     }
   }
 }

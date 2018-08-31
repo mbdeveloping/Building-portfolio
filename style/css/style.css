@@ -668,10 +668,14 @@ main {
     border-left: 1px solid transparent;
     border-top: 1px solid transparent;
     transition: border .3s, transform .3s; }
-  #works-page #work-navigator .active-indicator {
+  #works-page #work-navigator .active-first, #works-page #work-navigator .active-second {
     border-left: 1px solid #fff;
     border-top: 1px solid #fff;
     transform: rotate(135deg); }
+  #works-page #work-navigator .active-first {
+    background: linear-gradient(330deg, yellow 30%, red); }
+  #works-page #work-navigator .active-second {
+    background: linear-gradient(330deg, #072141 50%, #ff4d5a); }
 
 /********** Seven Seals of Event page ************/
 #full-vh-section {
