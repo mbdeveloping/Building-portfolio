@@ -535,7 +535,6 @@ main {
         background-image: url('../../slide11.jpg');
         background-size: cover;
         background-position: center;
-        // position: relative;
         img {
           width: 115px;
           position: absolute;
@@ -587,19 +586,21 @@ main {
       }
     }
     #my-portfolio {
+      position: relative;
       will-change: transform;
       padding: 1rem;
       padding-top: 50px;
       width: 100%;
       height: 100vh;
       .img {
+        width: 85%;
         display: block;
         margin:1.2rem;
+        will-change: transform;
         height: 50vh;
         background-image: url('../../home.png');
         background-size: cover;
         background-position: center;
-        position: relative;
         img {
           width: 115px;
           position: absolute;
