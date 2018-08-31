@@ -97,7 +97,8 @@ document.addEventListener("DOMContentLoaded", function() {
           myPortTop = myPort.offsetTop;
         });
 
-        TweenMax.to('#work-navigator', 1, {x:'0%'});
+        // TweenMax.to('#work-navigator', 1, {x:'0%'});
+        TweenMax.to('#work-navigator', 1, {opacity:1});
 
         TweenMax.to('#works-page-main-header h2', 1, {z:0, autoAlpha:1, x:'0%'});
         TweenMax.to('#works-page-main-header .border-wrapper', 1, {z:0, autoAlpha:1, x:'0%'});
@@ -383,7 +384,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 TweenMax.set('#works-page-main-header .border-wrapper', {autoAlpha:1, x:'-120%'});
                 TweenMax.set('#works-page-main-header p', {autoAlpha:1, x:'110%'});
                 TweenMax.set('#works-page-main-header .button-wrapper', {autoAlpha:0, x:'110%'});
-                TweenMax.set('#work-navigator', {x:'-110%'});
+                // TweenMax.set('#work-navigator', {x:'-110%'});
+                TweenMax.set('#work-navigator', {opacity:0});
               }
               if (document.getElementById('about-me-page')) {
                 console.log("wokrs out transition ABOUT");
@@ -469,7 +471,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 TweenMax.to('#works-page-main-header p', 1, {x:'-110%'});
                 TweenMax.to('#seven-seals-of-event .img', 1, {scale:0, autoAlpha:0});
                 TweenMax.to('#scroll-down', .7, {y:'140%'});
-                TweenMax.to('#work-navigator',1, {x:'-110%'});
+                // TweenMax.to('#work-navigator',1, {x:'-110%'});
+                TweenMax.to('#work-navigator',1, {opacity:0});
                 TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:function() {
                   deferred.resolve();
                 }});
