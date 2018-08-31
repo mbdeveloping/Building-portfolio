@@ -510,6 +510,7 @@ main {
     touch-action: none;
     will-change: transform;
     #seven-seals-of-event {
+      position: relative;
       will-change: transform;
       padding: 1rem;
       padding-top: 50px;
@@ -534,7 +535,7 @@ main {
         background-image: url('../../slide11.jpg');
         background-size: cover;
         background-position: center;
-        position: relative;
+        // position: relative;
         img {
           width: 115px;
           position: absolute;

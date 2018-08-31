@@ -487,6 +487,7 @@ main {
   touch-action: none;
   will-change: transform; }
   #works-page #work-thumbnails #seven-seals-of-event {
+    position: relative;
     will-change: transform;
     padding: 1rem;
     padding-top: 50px;
@@ -509,8 +510,7 @@ main {
       height: 50vh;
       background-image: url("../../slide11.jpg");
       background-size: cover;
-      background-position: center;
-      position: relative; }
+      background-position: center; }
       #works-page #work-thumbnails #seven-seals-of-event .img img {
         width: 115px;
         position: absolute;
