@@ -760,7 +760,8 @@ main {
     #works-page #work-thumbnails #seven-seals-of-event header, #works-page #work-thumbnails #my-portfolio header {
       width: 100%;
       grid-row: 1/2;
-      transform: none; }
+      transform: none;
+      bottom: auto; }
 
   #about-me-page {
     display: grid;
