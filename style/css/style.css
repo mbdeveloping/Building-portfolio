@@ -1088,5 +1088,12 @@ main {
     left: 50%;
     right: auto;
     transform: translate(-22%, -50%); } }
+@media (min-width: 600px) and (min-height: 300px) {
+  #about-me-page .img {
+    height: 60vh;
+    width: 70%;
+    justify-self: center; }
+  #about-me-page header h1 {
+    font-size: 1.5rem; } }
 
 /*# sourceMappingURL=style.css.map */
