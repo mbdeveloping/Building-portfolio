@@ -848,7 +848,6 @@ main {
     grid-template-columns: 1fr 1.5fr;
     .img {
       grid-column: 2/3;
-      height: 80vh;
     }
     header {
       width: 130%;
@@ -856,17 +855,30 @@ main {
       grid-row: 1/2;
       align-self: center;
       @include transform(translateX(30px));
+    }
+  }
+}
+@media (min-width: 600px) and (min-height: 300px)  {
+  #about-me-page {
+    .img {
+      height: 60vh;
+      width: 85%;
+      justify-self:center;
+    }
+    header {
       h1 {
-        // font-size: 3rem;
+        font-size: 1.5rem;
       }
     }
   }
 }
-// @media (min-width: 700px) and (min-height: 900px) {
-//   #works-page #work-thumbnails #seven-seals-of-event, #works-page #work-thumbnails #my-portfolio{
-//     display: block;
-//   }
-// }
+@media (min-width: 600px) and (min-height: 500px)  {
+  #about-me-page {
+    .img {
+      height: 80vh;
+    }
+  }
+}
 @media (min-width: 600px) {
   .img-holder  {
     height: 75vh;
@@ -1261,19 +1273,5 @@ main {
     left:50%;
     right: auto;
     transform:translate(-22%, -50%);
-  }
-}
-@media (min-width: 600px) and (min-height: 300px)  {
-  #about-me-page {
-    .img {
-      height: 60vh;
-      width: 70%;
-      justify-self:center;
-    }
-    header {
-      h1 {
-        font-size: 1.5rem;
-      }
-    }
   }
 }

@@ -773,8 +773,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1.5fr; }
     #about-me-page .img {
-      grid-column: 2/3;
-      height: 80vh; }
+      grid-column: 2/3; }
     #about-me-page header {
       width: 130%;
       grid-column: 1/2;
@@ -783,6 +782,16 @@ main {
       -webkit-transform: translateX(30px);
       -ms-transform: translateX(30px);
       transform: translateX(30px); } }
+@media (min-width: 600px) and (min-height: 300px) {
+  #about-me-page .img {
+    height: 60vh;
+    width: 85%;
+    justify-self: center; }
+  #about-me-page header h1 {
+    font-size: 1.5rem; } }
+@media (min-width: 600px) and (min-height: 500px) {
+  #about-me-page .img {
+    height: 80vh; } }
 @media (min-width: 600px) {
   .img-holder {
     height: 75vh; }
@@ -1088,12 +1097,5 @@ main {
     left: 50%;
     right: auto;
     transform: translate(-22%, -50%); } }
-@media (min-width: 600px) and (min-height: 300px) {
-  #about-me-page .img {
-    height: 60vh;
-    width: 70%;
-    justify-self: center; }
-  #about-me-page header h1 {
-    font-size: 1.5rem; } }
 
 /*# sourceMappingURL=style.css.map */
