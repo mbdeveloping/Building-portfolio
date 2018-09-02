@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
       TweenMax.to(earth, 150, {rotation:360,z:0, repeat:-1, force3D:true, ease:Linear.easeNone﻿});
       //Add class for all header spans
       function addClassForAllSpans() {
-        document.querySelectorAll('#home-header-word-line-wrapper span').forEach(function(span) {
+        document.querySelectorAll('#home-header-word-line-wrapper span').forEach(span => {
           span.className = 'testSpan';
         });
       }
@@ -135,9 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         function blockScroll() {
           scroll_blocked = true;
-          setTimeout(function(){
-            scroll_blocked = false;
-          }, 1000);
+          setTimeout(()=> scroll_blocked = false, 1000);
         }
         document.addEventListener('wheel', function(e) {
           if (!scroll_blocked){
@@ -201,9 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       //Slide nav bar from the op
       function slideInNavBar() {
-        TweenMax.to('#nav-bar', .5, {y:'0%', onComplete:function(){
-          fadeInHeaderText();
-        }});
+        TweenMax.to('#nav-bar', .5, {y:'0%', onComplete:() => fadeInHeaderText() });
       }
       function slideOutNavBar() {
         TweenMax.to('#nav-bar', .5, {y: '-100%'});
@@ -213,9 +209,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const element = e.target;
 
         if (element.className === 'testSpan') {
-          TweenMax.to(element, .2, {y:-10, onComplete:function() {
-            TweenMax.to(element, .1, {y:0});
-          }});
+          TweenMax.to(element, .2, {y:-10, onComplete:() =>  TweenMax.to(element, .1, {y:0}) });
           changeSpanColor(e);
         }
       }
@@ -251,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function() {
       //Nav button close animation
       function navBtnOpen() {
         navBtn.className = 'navigation-open';
-        TweenMax.to('#left-nav-stick-bot', .3, {rotation: -45, onComplete:function() {
+        TweenMax.to('#left-nav-stick-bot', .3, {rotation: -45, onComplete:() => {
           TweenMax.to('#nav-stick-middle', .3, {height: '140%'});
           TweenMax.to(['#left-nav-stick-bot', '#left-nav-stick-top'],.3, {x: -5});
           TweenMax.to(['#right-nav-stick-top', '#right-nav-stick-bot'], .3, {x: 5});
@@ -311,9 +305,7 @@ document.addEventListener("DOMContentLoaded", function() {
       workLink.addEventListener('mouseleave', endLinkAnimation);
       aboutLink.addEventListener('mouseover', startLinkAnimation);
       aboutLink.addEventListener('mouseleave', endLinkAnimation);
-      window.addEventListener('resize', function() {
-        positionEarth();
-      })
+      window.addEventListener('resize', () => positionEarth());
       //Home page function call
       addClassForAllSpans();
       slideInNavBar();
@@ -322,9 +314,7 @@ document.addEventListener("DOMContentLoaded", function() {
       //BARBA.JS TRANSITIONS
         const Homepage = Barba.BaseView.extend({
           namespace: 'home',
-          onEnter: function() {
-            addClassForAllSpans();
-          },
+          onEnter: () => addClassForAllSpans(),
           onEnterCompleted: function() {
             document.getElementById('nav-btn').addEventListener('click', navAnimation);
             document.getElementById('home-header-word-line-wrapper').addEventListener('mouseover', spanAnimation);
@@ -373,7 +363,7 @@ document.addEventListener("DOMContentLoaded", function() {
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
             TweenMax.to('#earth',2, {autoAlpha:0,scale:0, ease:Power2.easeInOut});
-            TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
+            TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:() => {
               TweenMax.to(['#hello', '#frontend-developer'], 1, {x:'110%'});
               TweenMax.to(['#i-am-mantvydas', '#based'], 1, {x:'-110%', onComplete: allDone});
 
@@ -421,7 +411,7 @@ document.addEventListener("DOMContentLoaded", function() {
             navBtnClose();
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
-            TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
+            TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:() => {
               TweenMax.to('#about-me-page .img',1, {z:0, autoAlpha:0, scale:0});
               TweenMax.to('#about-me-page h1',1, {x:'110%'});
               TweenMax.to('#about-me-page p',1, {x:'-110%'});
@@ -462,7 +452,7 @@ document.addEventListener("DOMContentLoaded", function() {
             slideOutNavBar();
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
-            TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:function() {
+            TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:() => {
               TweenMax.to('#my-portfolio', .3, {scale:0.8});
               TweenMax.to('#seven-seals-of-event', .3, {scale:1});
               function contTrans() {
@@ -474,9 +464,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 TweenMax.to('#scroll-down', .7, {y:'140%'});
                 // TweenMax.to('#work-navigator',1, {x:'-110%'});
                 TweenMax.to('#work-navigator',1, {opacity:0});
-                TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:function() {
-                  deferred.resolve();
-                }});
+                TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:() => deferred.resolve()});
               }
               if (document.getElementById('work-thumbnails').className === 'scrolled-portfolio') {
                 TweenMax.to('#work-thumbnails', .7,{y:0, z:0, ease:Power2.easeInOut, onComplete:contTrans});
@@ -517,8 +505,6 @@ document.addEventListener("DOMContentLoaded", function() {
           if (Barba.HistoryManager.prevStatus().namespace === 'works') {
             transitionObj = WorksTransition;
           }
-
-
           return transitionObj;
         };
     }());
