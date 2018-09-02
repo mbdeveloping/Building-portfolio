@@ -824,7 +824,7 @@ main {
       }
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 560px) {
   #works-page #work-thumbnails #seven-seals-of-event, #works-page #work-thumbnails #my-portfolio{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -858,7 +858,7 @@ main {
     }
   }
 }
-@media (min-width: 600px) and (min-height: 300px)  {
+@media (min-width: 560px) and (min-height: 300px)  {
   #about-me-page {
     .img {
       height: 60vh;
@@ -872,7 +872,7 @@ main {
     }
   }
 }
-@media (min-width: 600px) and (min-height: 500px)  {
+@media (min-width: 560px) and (min-height: 500px)  {
   #about-me-page {
     .img {
       height: 80vh;
@@ -884,7 +884,7 @@ main {
     }
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 560px) {
   .img-holder  {
     height: 75vh;
     img {
