@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function() {
       const earth = document.getElementById('earth');
 
       function positionEarth() {
-        if (window.innerWidth <= 600) {
+        if (window.innerWidth <= 560) {
           TweenMax.set('#earth', {x:'0%', y:'50%'});
         }
-        else if (window.innerWidth > 600 && window.innerWidth < 1023) {
+        else if (window.innerWidth > 560 && window.innerWidth < 1023) {
           TweenMax.set('#earth', {x:'50%', y:'-50%'});
         }
         else if (window.innerWidth >= 1024) {
