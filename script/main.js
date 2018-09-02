@@ -45,8 +45,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       //Hide Works, About, social links
       function hideLinks() {
-        // socialLinks.classList.remove('show-nav-social-links');
-        // socialLinks.classList.add('hide-nav-social-links');
         TweenMax.to(socialLinks, .3, {z:0, y:'100%'});
         TweenMax.to(leftNavOverlay,.3, {z:0, x: '-100%'});
         TweenMax.to( rightNavOverlay,.3, {z:0, x: '100%'});
@@ -55,13 +53,10 @@ document.addEventListener("DOMContentLoaded", function() {
       function slieInLinks() {
         TweenMax.to([leftNavOverlay, rightNavOverlay], .5, {width: '5%', x:'0%'});
         TweenMax.to(socialLinks, .5, {y:'0%'});
-        // socialLinks.classList.remove('hide-nav-social-links');
-        // socialLinks.classList.add('show-nav-social-links');
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
       }
 
       function homeTransitionIn() {
-        // console.log("if home page");
         TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {z:0, autoAlpha:1, scale:1}, 0.05 );
         TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);;
         TweenMax.to('#earth',1, {scale:1, autoAlpha:1});
@@ -72,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       function aboutTransitionIn() {
-        // console.log("if about page");
         TweenMax.to('#about-me-page .img', 1, {z:0, autoAlpha:1, scale:1});
         TweenMax.to('#about-me-page h1', 1, {x:'0%'});
         TweenMax.to('#about-me-page p', 1, {x:'0%'});
@@ -80,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       function worksTransitionIn() {
-        // console.log("if works page");
         let myPortTop;
         const firstIndicator = document.getElementById('first-indicator');
         const secondIndicator = document.getElementById('second-indicator');
@@ -97,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function() {
           myPortTop = myPort.offsetTop;
         });
 
-        // TweenMax.to('#work-navigator', 1, {x:'0%'});
         TweenMax.to('#work-navigator', 1, {opacity:1});
 
         TweenMax.to('#works-page-main-header h2', 1, {z:0, autoAlpha:1, x:'0%'});
@@ -267,8 +259,6 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to([leftNavOverlay, rightNavOverlay], .3, {x: '0%', width:'50%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
         TweenMax.to(socialLinks, .3, {y:'0%'});
-        // socialLinks.classList.add('show-nav-social-links');
-        // socialLinks.classList.remove('hide-nav-social-links');
         zoomOutBg();
       }
       function closeNav() {
@@ -277,8 +267,6 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to(rightNavOverlay, .3, {x: '100%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
         TweenMax.to(socialLinks, .3, {y:'100%'});
-        // socialLinks.classList.add('hide-nav-social-links');
-        // socialLinks.classList.remove('show-nav-social-links');
         zoomInBg();
       }
       //Scale back background
@@ -374,7 +362,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 TweenMax.set('#works-page-main-header .border-wrapper', {autoAlpha:1, x:'-120%'});
                 TweenMax.set('#works-page-main-header p', {autoAlpha:1, x:'110%'});
                 TweenMax.set('#works-page-main-header .button-wrapper', {autoAlpha:0, x:'110%'});
-                // TweenMax.set('#work-navigator', {x:'-110%'});
                 TweenMax.set('#work-navigator', {opacity:0});
               }
               if (document.getElementById('about-me-page')) {
@@ -462,7 +449,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 TweenMax.to('#works-page-main-header p', 1, {x:'-110%'});
                 TweenMax.to('#seven-seals-of-event .img', 1, {scale:0, autoAlpha:0});
                 TweenMax.to('#scroll-down', .7, {y:'140%'});
-                // TweenMax.to('#work-navigator',1, {x:'-110%'});
                 TweenMax.to('#work-navigator',1, {opacity:0});
                 TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:() => deferred.resolve()});
               }
