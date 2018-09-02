@@ -433,6 +433,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 TweenMax.set('#works-page-main-header p', {autoAlpha:1, x:'110%'});
                 TweenMax.set('#works-page-main-header .button-wrapper', {autoAlpha:1, x:'110%'});
                 TweenMax.set('#seven-seals-of-event .img', {z:0, autoAlpha:0, scale:4});
+                TweenMax.set('#work-navigator', {opacity:0});
               }
               function allDoneAbout() {
                deferred.resolve();
