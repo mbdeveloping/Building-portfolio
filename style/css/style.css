@@ -526,7 +526,7 @@ main {
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(136deg, yellow 30%, red);
+      background: linear-gradient(136deg, #dcdc0f 30%, red);
       opacity: .7; }
     #works-page #work-thumbnails #seven-seals-of-event header {
       z-index: 500;
@@ -588,8 +588,10 @@ main {
       background: linear-gradient(136deg, #072141 50%, #ff4d5a);
       opacity: .9; }
     #works-page #work-thumbnails #my-portfolio header {
+      width: 80%;
       text-align: center;
-      transform: translateY(-22%); }
+      position: absolute;
+      bottom: 18%; }
       #works-page #work-thumbnails #my-portfolio header .works-btn {
         padding: 1rem;
         background: #ff4d5a;
@@ -766,7 +768,10 @@ main {
     #works-page #work-thumbnails #seven-seals-of-event header, #works-page #work-thumbnails #my-portfolio header {
       width: 100%;
       grid-row: 1/2;
-      transform: none;
+      grid-column: 1/2;
+      -webkit-transform: translateX(19%);
+      -ms-transform: translateX(19%);
+      transform: translateX(19%);
       bottom: auto; }
 
   #about-me-page {
