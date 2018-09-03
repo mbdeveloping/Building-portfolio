@@ -774,6 +774,9 @@ main {
       transform: translateX(19%);
       bottom: auto; }
 
+  .home-page-link {
+    font-size: 1.5rem; }
+
   #about-me-page {
     display: grid;
     grid-template-columns: 1fr 1.5fr; }
