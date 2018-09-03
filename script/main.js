@@ -98,6 +98,8 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to('#works-page-main-header .button-wrapper', 1, {z:0, autoAlpha:1, x:'0%'});
         TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1});
 
+        // TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'-50%'});
+
         function tofirstWork() {
           workThumbnails.className = '';
           secondIndicator.classList.remove('active-second');
@@ -357,6 +359,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
               if (document.getElementById('works-page-main-header')) {
                 console.log("wokrs out transition WORKS");
+                TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'-15%'});
                 TweenMax.set('#seven-seals-of-event .img', {z:0, autoAlpha:0, scale:4});
                 TweenMax.set('#works-page-main-header h2', {autoAlpha:1, x:'-100%'});
                 TweenMax.set('#works-page-main-header .border-wrapper', {autoAlpha:1, x:'-120%'});
@@ -384,6 +387,7 @@ document.addEventListener("DOMContentLoaded", function() {
               slieInLinks();
             }
             console.log("home transition");
+            // TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'-15%'});
             this.done();
           }
         });
@@ -443,6 +447,7 @@ document.addEventListener("DOMContentLoaded", function() {
               TweenMax.to('#my-portfolio', .3, {scale:0.8});
               TweenMax.to('#seven-seals-of-event', .3, {scale:1});
               function contTrans() {
+                TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'50%'});
                 TweenMax.to('#works-page-main-header h2', 1, {x:'110%'});
                 TweenMax.to('#works-page-main-header .border-wrapper', 1, {x:'110%'});
                 TweenMax.to('#works-page-main-header .button-wrapper', 1, {x:'-110%'});
