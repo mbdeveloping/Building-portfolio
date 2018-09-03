@@ -36,7 +36,23 @@ document.addEventListener("DOMContentLoaded", function() {
           slieInLinks();
         }
       }
-      TweenMax.to(earth, 150, {rotation:360,z:0, repeat:-1, force3D:true, ease:Linear.easeNone﻿});
+      function posPurpleBg() {
+        if (window.innerWidth <= 560) {
+          if (document.getElementById('works-page-main-header') || document.getElementById('about-me-page')) {
+            TweenMax.set('#purple-bg', {x:'-24%', y:'-15%'});
+          } else {
+            TweenMax.set('#purple-bg', {x:'-24%', y:'50%'});
+          }
+
+        }
+        else if (window.innerWidth > 560 && window.innerWidth < 1023) {
+          TweenMax.set('#purple-bg', {x:'-3%', y:'-16%'});
+        }
+        else if (window.innerWidth >= 1024) {
+          TweenMax.set('#purple-bg', {x:'23%', y:'-16%'});
+        }
+      }
+      // TweenMax.to(earth, 150, {rotation:360,z:0, repeat:-1, force3D:true, ease:Linear.easeNone﻿});
       //Add class for all header spans
       function addClassForAllSpans() {
         document.querySelectorAll('#home-header-word-line-wrapper span').forEach(span => {
@@ -296,6 +312,8 @@ document.addEventListener("DOMContentLoaded", function() {
       aboutLink.addEventListener('mouseover', startLinkAnimation);
       aboutLink.addEventListener('mouseleave', endLinkAnimation);
       window.addEventListener('resize', () => positionEarth());
+      window.addEventListener('resize', () => posPurpleBg());
+
       //Home page function call
       addClassForAllSpans();
       slideInNavBar();
@@ -359,7 +377,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
               if (document.getElementById('works-page-main-header')) {
                 console.log("wokrs out transition WORKS");
-                TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'-15%'});
+                if (window.innerWidth <= 560) {
+                  TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'-15%'});
+                }
                 TweenMax.set('#seven-seals-of-event .img', {z:0, autoAlpha:0, scale:4});
                 TweenMax.set('#works-page-main-header h2', {autoAlpha:1, x:'-100%'});
                 TweenMax.set('#works-page-main-header .border-wrapper', {autoAlpha:1, x:'-120%'});
@@ -447,7 +467,9 @@ document.addEventListener("DOMContentLoaded", function() {
               TweenMax.to('#my-portfolio', .3, {scale:0.8});
               TweenMax.to('#seven-seals-of-event', .3, {scale:1});
               function contTrans() {
-                TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'50%'});
+                if (window.innerWidth <= 560) {
+                  TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'50%'});
+                }
                 TweenMax.to('#works-page-main-header h2', 1, {x:'110%'});
                 TweenMax.to('#works-page-main-header .border-wrapper', 1, {x:'110%'});
                 TweenMax.to('#works-page-main-header .button-wrapper', 1, {x:'-110%'});
