@@ -108,10 +108,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
         TweenMax.to('#work-navigator', 1, {opacity:1});
 
-        TweenMax.to('#works-page-main-header h2', 1, {z:0, autoAlpha:1, x:'0%'});
-        TweenMax.to('#works-page-main-header .border-wrapper', 1, {z:0, autoAlpha:1, x:'0%'});
-        TweenMax.to('#works-page-main-header p', 1, {z:0, autoAlpha:1, x:'0%'});
-        TweenMax.to('#works-page-main-header .button-wrapper', 1, {z:0, autoAlpha:1, x:'0%'});
+        TweenMax.to(['#works-page-main-header h2',
+                     '#works-page-main-header .border-wrapper',
+                     '#works-page-main-header p',
+                     '#works-page-main-header .button-wrapper'], 1, {z:0, autoAlpha:1, x:'0%'});
+        // TweenMax.to('#works-page-main-header .border-wrapper', 1, {z:0, autoAlpha:1, x:'0%'});
+        // TweenMax.to('#works-page-main-header p', 1, {z:0, autoAlpha:1, x:'0%'});
+        // TweenMax.to('#works-page-main-header .button-wrapper', 1, {z:0, autoAlpha:1, x:'0%'});
+
         TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1});
 
         // TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'-50%'});
