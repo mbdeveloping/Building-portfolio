@@ -480,15 +480,12 @@ main {
   font-size: 1.5rem;
   padding-bottom: 2rem; }
 #works-page #work-thumbnails {
+  height: 100%;
   padding: 0;
-  display: flex;
-  flex-direction: column;
   position: relative;
-  touch-action: none;
-  will-change: transform; }
+  touch-action: none; }
   #works-page #work-thumbnails #seven-seals-of-event {
     position: relative;
-    will-change: transform;
     padding: 1rem;
     padding-top: 50px;
     width: 100%;
@@ -556,7 +553,6 @@ main {
         padding-bottom: .2rem; }
   #works-page #work-thumbnails #my-portfolio {
     position: relative;
-    will-change: transform;
     padding: 1rem;
     padding-top: 50px;
     width: 100%;
