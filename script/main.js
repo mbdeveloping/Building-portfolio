@@ -84,9 +84,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
       function aboutTransitionIn() {
         TweenMax.to('#about-me-page .img', 1, {z:0, autoAlpha:1, scale:1});
-        TweenMax.to('#about-me-page h1', 1, {x:'0%'});
-        TweenMax.to('#about-me-page p', 1, {x:'0%'});
-        TweenMax.to('#about-me-page .button-wrapper', 1, {x:'0%'});
+        TweenMax.to(['#about-me-page h1', '#about-me-page p', '#about-me-page .button-wrapper'], 1, {x:'0%'});
+        // TweenMax.to('#about-me-page p', 1, {x:'0%'});
+        // TweenMax.to('#about-me-page .button-wrapper', 1, {x:'0%'});
       }
 
       function worksTransitionIn() {
@@ -112,10 +112,6 @@ document.addEventListener("DOMContentLoaded", function() {
                      '#works-page-main-header .border-wrapper',
                      '#works-page-main-header p',
                      '#works-page-main-header .button-wrapper'], 1, {z:0, autoAlpha:1, x:'0%'});
-        // TweenMax.to('#works-page-main-header .border-wrapper', 1, {z:0, autoAlpha:1, x:'0%'});
-        // TweenMax.to('#works-page-main-header p', 1, {z:0, autoAlpha:1, x:'0%'});
-        // TweenMax.to('#works-page-main-header .button-wrapper', 1, {z:0, autoAlpha:1, x:'0%'});
-
         TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1});
 
         // TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'-50%'});
@@ -474,10 +470,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (window.innerWidth <= 560) {
                   TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'50%'});
                 }
-                TweenMax.to('#works-page-main-header h2', 1, {x:'110%'});
-                TweenMax.to('#works-page-main-header .border-wrapper', 1, {x:'110%'});
-                TweenMax.to('#works-page-main-header .button-wrapper', 1, {x:'-110%'});
-                TweenMax.to('#works-page-main-header p', 1, {x:'-110%'});
+                TweenMax.to(['#works-page-main-header h2', '#works-page-main-header .border-wrapper'], 1, {x:'110%'});
+                // TweenMax.to('#works-page-main-header .border-wrapper', 1, {x:'110%'});
+                TweenMax.to(['#works-page-main-header .button-wrapper', '#works-page-main-header p'], 1, {x:'-110%'});
+                // TweenMax.to('#works-page-main-header p', 1, {x:'-110%'});
                 TweenMax.to('#seven-seals-of-event .img', 1, {scale:0, autoAlpha:0});
                 TweenMax.to('#scroll-down', .7, {y:'140%'});
                 TweenMax.to('#work-navigator',1, {opacity:0});
