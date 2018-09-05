@@ -509,7 +509,8 @@ main {
     touch-action: none;
     // will-change: transform;
     .work-nr {
-      opacity:.9;
+      // z-index: -1;
+      // opacity:.7;
       font-family: 'Cinzel', serif;
       position: absolute;
       top:0;
@@ -566,7 +567,7 @@ main {
         width: 100%;
         height: 100%;
         background: linear-gradient(136deg, #dcdc0f 30%, red);
-        opacity: .7;
+        opacity: .8;
       }
       header {
         z-index: 500;

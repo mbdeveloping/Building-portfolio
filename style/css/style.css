@@ -485,7 +485,6 @@ main {
   position: relative;
   touch-action: none; }
   #works-page #work-thumbnails .work-nr {
-    opacity: .9;
     font-family: 'Cinzel', serif;
     position: absolute;
     top: 0;
@@ -540,7 +539,7 @@ main {
       width: 100%;
       height: 100%;
       background: linear-gradient(136deg, #dcdc0f 30%, red);
-      opacity: .7; }
+      opacity: .8; }
     #works-page #work-thumbnails #seven-seals-of-event header {
       z-index: 500;
       width: 80%;

@@ -112,7 +112,9 @@ document.addEventListener("DOMContentLoaded", function() {
           workThumbnails.className = '';
           TweenMax.to('#scroll-down', 1, {y:'0%'});
           TweenMax.to('#seven-seals-of-event', .3, {scale:1});
-          TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut});
+          TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut, onComplete:function() {
+            showWorkNr(firstWorkNr);
+          }});
           myPortTop = myPort.offsetTop;
         });
         // showWorkNr(firstWorkNr);
