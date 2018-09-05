@@ -104,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const workThumbnails = document.getElementById('work-thumbnails');
         const myPort = document.getElementById('my-portfolio');
         const firstWorkNr = document.getElementById('first-work-nr');
+        const secondWorkNr = document.getElementById('second-work-nr');
         myPortTop = myPort.offsetTop;
         let scroll_blocked = false;
 
@@ -114,13 +115,15 @@ document.addEventListener("DOMContentLoaded", function() {
           TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut});
           myPortTop = myPort.offsetTop;
         });
-        showWorkNr(firstWorkNr);
+        // showWorkNr(firstWorkNr);
         TweenMax.to('#work-navigator', 1, {opacity:1});
         TweenMax.to(['#works-page-main-header h2',
                      '#works-page-main-header .border-wrapper',
                      '#works-page-main-header p',
                      '#works-page-main-header .button-wrapper'], 1, {z:0, autoAlpha:1, x:'0%'});
-        TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1});
+        TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1, onComplete:function() {
+          showWorkNr(firstWorkNr);
+        }});
 
         // TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'-50%'});
         function showWorkNr(elem) {
@@ -134,7 +137,10 @@ document.addEventListener("DOMContentLoaded", function() {
           secondIndicator.classList.remove('active-second');
           firstIndicator.className += ' active-first';
           TweenMax.to('#my-portfolio', 1, {z:0, scale:0.6});
-          TweenMax.to(workThumbnails, 1,{y:0, z:0, ease:Power2.easeInOut});
+          TweenMax.to(workThumbnails, 1,{y:0, z:0, ease:Power2.easeInOut, onComplete:function() {
+            hideWorkNr(secondWorkNr);
+            showWorkNr(firstWorkNr);
+          }});
           TweenMax.to('#seven-seals-of-event', 1, {z:0, scale:1});
           showScrollDown();
         }
@@ -144,7 +150,10 @@ document.addEventListener("DOMContentLoaded", function() {
           secondIndicator.className += ' active-second';
           firstIndicator.classList.remove('active-first');
           TweenMax.to('#seven-seals-of-event', 1, {z:0, scale:0.6});
-          TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0, ease:Power2.easeInOut, onComplete:hideWorkNr(firstWorkNr)});
+          TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0, ease:Power2.easeInOut, onComplete:function() {
+            hideWorkNr(firstWorkNr);
+            showWorkNr(secondWorkNr);
+          }});
           TweenMax.to('#my-portfolio', 1, {z:0, scale:1});
           hideScrollDown();
         }
