@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const secondIndicator = document.getElementById('second-indicator');
         const workThumbnails = document.getElementById('work-thumbnails');
         const myPort = document.getElementById('my-portfolio');
+        const firstWorkNr = document.getElementById('first-work-nr');
         myPortTop = myPort.offsetTop;
         let scroll_blocked = false;
 
@@ -113,9 +114,8 @@ document.addEventListener("DOMContentLoaded", function() {
           TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut});
           myPortTop = myPort.offsetTop;
         });
-
+        showWorkNr(firstWorkNr);
         TweenMax.to('#work-navigator', 1, {opacity:1});
-
         TweenMax.to(['#works-page-main-header h2',
                      '#works-page-main-header .border-wrapper',
                      '#works-page-main-header p',
@@ -123,7 +123,12 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1});
 
         // TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'-50%'});
-
+        function showWorkNr(elem) {
+          TweenMax.to(elem,.5, {y:'0%'});
+        }
+        function hideWorkNr(elem) {
+          TweenMax.to(elem,.5, {y:'100%'});
+        }
         function tofirstWork() {
           workThumbnails.className = '';
           secondIndicator.classList.remove('active-second');
@@ -139,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function() {
           secondIndicator.className += ' active-second';
           firstIndicator.classList.remove('active-first');
           TweenMax.to('#seven-seals-of-event', 1, {z:0, scale:0.6});
-          TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0, ease:Power2.easeInOut});
+          TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0, ease:Power2.easeInOut, onComplete:hideWorkNr(firstWorkNr)});
           TweenMax.to('#my-portfolio', 1, {z:0, scale:1});
           hideScrollDown();
         }

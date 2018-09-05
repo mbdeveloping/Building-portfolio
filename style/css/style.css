@@ -522,7 +522,16 @@ main {
         position: absolute;
         top: 0;
         right: 0;
-        font-size: 2rem; }
+        height: 92px;
+        font-size: 5rem;
+        font-weight: bold;
+        -webkit-transform: translateY(-45%);
+        -ms-transform: translateY(-45%);
+        transform: translateY(-45%);
+        overflow: hidden; }
+        #works-page #work-thumbnails #seven-seals-of-event .img .work-nr span {
+          display: block;
+          transform: translateY(100%); }
     #works-page #work-thumbnails #seven-seals-of-event .ov {
       position: absolute;
       top: 0;
@@ -582,6 +591,20 @@ main {
         -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%); }
+      #works-page #work-thumbnails #my-portfolio .img .work-nr {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 92px;
+        font-size: 5rem;
+        font-weight: bold;
+        -webkit-transform: translateY(-45%);
+        -ms-transform: translateY(-45%);
+        transform: translateY(-45%);
+        overflow: hidden; }
+        #works-page #work-thumbnails #my-portfolio .img .work-nr span {
+          display: block;
+          transform: translateY(100%); }
     #works-page #work-thumbnails #my-portfolio .ov {
       position: absolute;
       top: 0;
