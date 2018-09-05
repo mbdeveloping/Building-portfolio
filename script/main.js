@@ -40,16 +40,23 @@ document.addEventListener("DOMContentLoaded", function() {
         if (window.innerWidth <= 560) {
           if (document.getElementById('works-page-main-header') || document.getElementById('about-me-page')) {
             TweenMax.set('#purple-bg', {x:'-24%', y:'-15%'});
-          } else {
+          }
+          else {
             TweenMax.set('#purple-bg', {x:'-24%', y:'50%'});
           }
-
         }
         else if (window.innerWidth > 560 && window.innerWidth < 1023) {
           TweenMax.set('#purple-bg', {x:'-3%', y:'-16%'});
         }
-        else if (window.innerWidth >= 1024) {
+        else if (window.innerWidth >= 1024 && window.innerHeight < 768) {
           TweenMax.set('#purple-bg', {x:'23%', y:'-16%'});
+        }
+        else if (window.innerWidth > 1024 && window.innerHeight > 768 && window.innerWidth < 1400) {
+          TweenMax.set('#purple-bg', {x:'23%', y:'-50%'});
+        }
+        else if (window.innerWidth > 1400 && window.innerHeight > 768) {
+          TweenMax.set('#purple-bg', {x:'-22%', y:'-50%'});
+          console.log("turi veikti");
         }
       }
       // TweenMax.to(earth, 150, {rotation:360,z:0, repeat:-1, force3D:true, ease:Linear.easeNone﻿});
