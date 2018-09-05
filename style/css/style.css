@@ -485,9 +485,11 @@ main {
   position: relative;
   touch-action: none; }
   #works-page #work-thumbnails .work-nr {
+    opacity: .9;
+    font-family: 'Cinzel', serif;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 5px;
     font-size: 4rem;
     font-weight: bold;
     -webkit-transform: translateY(-45%);

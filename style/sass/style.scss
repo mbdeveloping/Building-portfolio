@@ -509,10 +509,11 @@ main {
     touch-action: none;
     // will-change: transform;
     .work-nr {
+      opacity:.9;
+      font-family: 'Cinzel', serif;
       position: absolute;
       top:0;
-      right: 0;
-      // height: 92px;
+      right: 5px;
       font-size: 4rem;
       font-weight: bold;
       @include transform(translateY(-45%));
