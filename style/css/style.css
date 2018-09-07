@@ -448,7 +448,7 @@ main {
     background-position: center;
     position: relative;
     height: 45vh;
-    background-image: url(../../p022.jpg);
+    background-image: url(../../img/p022.jpg);
     align-self: center; }
     #about-me-page .img .ov {
       position: absolute;
@@ -520,7 +520,7 @@ main {
       will-change: transform;
       display: block;
       height: 50vh;
-      background-image: url("../../slide11.jpg");
+      background-image: url("../../img/slide11.jpg");
       background-size: cover;
       background-position: center; }
       #works-page #work-thumbnails #seven-seals-of-event .img img {
