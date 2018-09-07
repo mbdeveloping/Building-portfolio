@@ -93,8 +93,6 @@ document.addEventListener("DOMContentLoaded", function() {
       function aboutTransitionIn() {
         TweenMax.to('#about-me-page .img', 1, {z:0, autoAlpha:1, scale:1});
         TweenMax.to(['#about-me-page h1', '#about-me-page p', '#about-me-page .button-wrapper'], 1, {x:'0%'});
-        // TweenMax.to('#about-me-page p', 1, {x:'0%'});
-        // TweenMax.to('#about-me-page .button-wrapper', 1, {x:'0%'});
       }
 
       function worksTransitionIn() {
@@ -176,12 +174,9 @@ document.addEventListener("DOMContentLoaded", function() {
         		if (e.deltaY < 0){
               tofirstWork();
               blockScroll();
-
-              console.log(e.deltaY);
             } else {
               toSecondWork();
               blockScroll();
-
             }
         	}
         });
@@ -199,11 +194,9 @@ document.addEventListener("DOMContentLoaded", function() {
       document.addEventListener('touchmove', e => {
          moveY = e.changedTouches[0].screenY;
          if ((moveY+swipeDistance) < touchY) {
-           console.log("moving down");
            hideScrollDown();
            toSecondWork();
          }else if ((moveY-swipeDistance) > touchY) {
-           console.log("moving up");
            showScrollDown();
            tofirstWork();
          }
