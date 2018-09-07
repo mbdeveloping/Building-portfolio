@@ -1040,6 +1040,9 @@ main {
   #works-page #work-thumbnails #seven-seals-of-event header, #works-page #work-thumbnails #my-portfolio header {
     width: 70%; } }
 @media (min-width: 1440px) {
+  #works-page #work-thumbnails .work-nr {
+    font-size: 7rem; }
+
   #works-page #work-thumbnails #seven-seals-of-event .img img, #works-page #work-thumbnails #my-portfolio .img img {
     width: 200px; }
   #works-page #work-thumbnails #seven-seals-of-event header, #works-page #work-thumbnails #my-portfolio header {
