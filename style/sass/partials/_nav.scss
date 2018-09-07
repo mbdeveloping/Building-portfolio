@@ -1,0 +1,109 @@
+#nav-bar {
+  width: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 3000;
+  @include transform(translateY(-100%));
+  #nav-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1rem;
+  }
+  #logo-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #logo-wrapper {
+    position: relative;
+    display: flex;
+    width: 67px;
+    svg {
+      width: 100px;
+    }
+  }
+  #logo-name {
+    display:none;
+    padding-top: .5rem;
+    font-size: .6rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+  }
+  #logo-section img {
+    height: 45px;
+    z-index: 10;
+  }
+  #logo-big-rec {
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    border: 1px solid $color_white;
+    border-radius: 3px;
+    @include transform(rotate(47deg) translate(9px, 0px));
+    background:#000;
+    z-index: 5;
+  }
+  #logo-small-rec {
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    border:1px solid $color_white;
+    border-radius: 3px;
+    @include transform(rotate(22deg) translate(27px, 2px));
+    z-index: 1;
+  }
+  #nav-btn {
+    height: 30px;
+    z-index: 1000;
+    cursor: pointer;
+  }
+  #nav-btn-wrapper {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .nav-stick {
+    height: 50%;
+    width: 2px;
+    background:$color_white;
+  }
+  .left-nav-stick-bot, .right-nav-stick-bot {
+    will-change: transform;
+    transform-origin: top;
+  }
+  .left-nav-stick-top, .right-nav-stick-top {
+    transform-origin: bottom;
+  }
+  .nav-stick-middle {
+    width: 2px;
+    height: 0%;
+    background: $color_white;
+    transform-origin: top;
+    @include transform(rotate(27deg) translate(7px, -7px));
+  }
+}
+%nav-overlay-shared {
+  position: fixed;
+  width: 50%;
+  height: 100vh;
+  top:0;
+  // background:rgba(0,0,0, .9);
+  background: linear-gradient(to bottom, #072142 34%, #ff4d5a);
+  z-index: 2000;
+}
+#left-nav-overlay {
+  left: 0;
+  @extend %nav-overlay-shared;
+  transform:translateX(-100%);
+}
+#right-nav-overlay {
+  right: 0;
+  transform:translateX(100%);
+  @extend %nav-overlay-shared;
+}

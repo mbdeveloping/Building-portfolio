@@ -1,0 +1,475 @@
+@media (min-width: 450px) {
+  #nav-bar  {
+    #nav-wrapper {
+      padding:2rem;
+    }
+  }
+  #works-page #work-thumbnails {
+    #seven-seals-of-event, #my-portfolio {
+      padding-bottom:2rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  #works-page #work-thumbnails #seven-seals-of-event header {
+    width: 70%;
+  }
+  #about-me-page {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    header {
+        width: 80%;
+      }
+  }
+}
+@media (min-width: 550px) {
+  #works-page #work-thumbnails #seven-seals-of-event header {
+    width: 60%;
+  }
+  #about-me-page {
+    header {
+        width: 70%;
+      }
+  }
+}
+@media (min-width: 560px) {
+  #works-page #work-thumbnails #seven-seals-of-event, #works-page #work-thumbnails #my-portfolio{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    .img {
+      grid-column: 2/3;
+      width: 100%;
+      height: 60vh;
+      margin:0;
+    }
+    header {
+      width: 100%;
+      grid-row: 1/2;
+      grid-column: 1/2;
+      // transform: none;
+      @include transform(translateX(19%));
+      bottom:auto;
+    }
+  }
+  #about-me-page {
+    display:grid;
+    grid-template-columns: 1fr 1.5fr;
+    .img {
+      grid-column: 2/3;
+    }
+    header {
+      width: 130%;
+      grid-column: 1/2;
+      grid-row: 1/2;
+      align-self: center;
+      @include transform(translateX(30px));
+    }
+  }
+}
+@media (min-width: 700px) and (min-height: 1000px) {
+  .home-page-link {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 560px) and (min-height: 300px)  {
+  #about-me-page {
+    .img {
+      height: 60vh;
+      width: 85%;
+      justify-self:center;
+    }
+    header {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+@media (min-width: 560px) and (min-height: 500px)  {
+  #about-me-page {
+    .img {
+      height: 80vh;
+    }
+    header {
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+  }
+}
+@media (min-width: 560px) {
+  .img-holder  {
+    height: 75vh;
+    img {
+      right:0;
+      @include transform(translateX(25%));
+    }
+  }
+  #home-header {
+    grid-template-columns: 2fr 1fr;
+    h1 {
+      grid-row: 2/3;
+      max-width: 386px;
+      max-height: 130px;
+      letter-spacing: 1.5px;
+    }
+  }
+  #hello {
+    font-size: 3.5rem;
+    @include transform(translateY(3px));
+  }
+  #i-am-mantvydas span {
+    font-size: 2.5rem;
+  }
+  #frontend-developer span {
+    font-size:1.7rem;
+  }
+  #earth {
+    left: auto;
+    right:0;
+    top:50%;
+    // transform: translate(50%, -50%);
+    width: auto;;
+    height: 80%;
+  }
+  #purple-bg {
+    top:0;
+    right:0;
+    transform:translate(-3%, -16%);
+    height: 150%;
+  }
+  #works-page-main-header {
+    text-align: left;
+    grid-column: 1/2;
+  }
+}
+@media (min-width: 700px) {
+  #works-page #work-thumbnails .work-nr {
+    font-size: 5rem;
+  }
+  #works-page #work-thumbnails #seven-seals-of-event, #works-page #work-thumbnails #my-portfolio{
+    grid-template-columns: 1fr 1.5fr;
+    header {
+      span {
+        margin: 1rem 0;
+      }
+      .design {
+        padding-bottom: .5rem;
+      }
+    }
+  }
+  #works-page {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+  #works-thumbnails {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    padding:1rem;
+    grid-gap: 1rem;
+    article {
+      text-align: center;
+      justify-content: flex-end;
+      // max-width: 800px;
+      // max-height: 400px;
+      h2 {
+        padding-top: 1rem;
+        padding-bottom: .5rem;
+      }
+      .design {
+        padding-bottom: 2rem;
+      }
+    }
+    #test1, #test2 {
+      // display: block;
+      // -webkit-clip-path: polygon(0 0, 100% 0, 100% 46%, 0 46%);
+      // clip-path: polygon(0 0, 100% 0, 100% 46%, 0 46%);
+      // background-position: center;
+    }
+  }
+  #works-page-main-header {
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+  #seven-seals-of-event {
+    margin:0;
+  }
+  #my-portfolio {
+    margin: 0;
+  }
+}
+@media (min-width: 800px) {
+  #about-me-page {
+    header {
+      width: 110%;
+      @include transform(translateX(65px));
+    }
+  }
+}
+@media (min-width: 900px) {
+  .img-holder {
+    height: 90vh;
+    img {
+      @include transform(translateX(20%));
+    }
+  }
+  #home-header h1 {
+    grid-row: 2/3;
+    max-width: 515px;
+    letter-spacing: 5px;
+    max-height: 165px;
+    #frontend-developer {
+      letter-spacing: 3.3px;
+    }
+    #based {
+      letter-spacing: 1.5px;
+    }
+  }
+  #hello {
+    font-size: 4rem;
+    @include transform(translateY(7px));
+  }
+  #i-am-mantvydas span {
+    font-size: 3rem;
+  }
+  #frontend-developer span {
+    font-size:2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .home-page-link {
+    font-size: 1rem;
+  }
+  #works-page #work-navigator  {
+    bottom: 3%;
+  }
+  #works-page #work-thumbnails #seven-seals-of-event, #works-page #work-thumbnails #my-portfolio {
+    padding-left: 10rem;
+    padding-right: 4rem;
+  }
+  #works-page #scroll-down {
+    right: auto;
+    left: 2%;
+    font-size: .8rem;
+  }
+  #nav-btn {
+    display: none;
+  }
+  #nav-bar #logo-name {
+    display: block;
+  }
+  #left-nav-overlay, #right-nav-overlay {
+    display: flex;
+    background:none;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-page-link {
+    height: 150px;
+  }
+  #social-links {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0,0,0, 0);
+    max-width: 150px;
+    right: 0;
+    left: auto;
+    padding:1rem;
+    margin-right: 2rem;
+    i {
+      font-size: .7rem;
+    }
+  }
+  .social-links-box {
+    width: 20px;
+    height: 20px;
+  }
+  #earth {
+    right:5%;
+    // @include transform(translate(0, -50%));
+  }
+  #purple-bg {
+    top:0;
+    right: 5%;
+    left:auto;
+    transform:translate(23%, -16%);
+    width: auto;
+    height: 150%;
+  }
+  #works-page {
+    #work-thumbnails {
+      #seven-seals-of-event, #my-portfolio {
+        header {
+          width: 100%;
+          h2 {
+            font-size: 3rem;
+            line-height: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+  #about-me-page {
+    .img {
+      height: 75vh;
+    }
+    header {
+      @include transform(translateX(155px));
+      h1 {
+        padding-bottom: .5rem;
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+      a {
+        margin-top: 1.5rem;
+      }
+    }
+    #skillset {
+      padding-top: 1rem;
+    }
+  }
+}
+// @media (min-width: 1100px) {
+//   #works-page #work-thumbnails {
+//     #seven-seals-of-event, #my-portfolio {
+//       header {
+//         width: 85%;
+//       }
+//     }
+//   }
+// }
+@media (min-width: 1200px) {
+  #about-me-page {
+    padding-right: 3rem;
+  }
+}
+@media (min-width: 1300px) {
+  #works-page #work-thumbnails {
+    #seven-seals-of-event, #my-portfolio {
+      header {
+        width: 70%;
+        // justify-self: self-end;
+      }
+    }
+  }
+}
+@media (min-width: 1440px) {
+  #works-page #work-thumbnails .work-nr {
+    font-size: 7rem;
+  }
+  #works-page #work-thumbnails {
+    #seven-seals-of-event, #my-portfolio {
+      .img img {
+        width: 200px;
+      }
+      header {
+        width: 100%;
+        justify-self: self-end;
+        h2 {
+          font-size: 5rem;
+          line-height: 4rem;
+        }
+        .design {
+          font-size: 1.4rem;
+        }
+        .tech {
+          font-size: .9rem;
+        }
+      }
+    }
+  }
+  #home-header h1 {
+    max-width: 579px;
+    max-height: 215px;
+  }
+  #hello {
+    font-size: 5rem;
+    @include transform(translateY(15px));
+  }
+  #i-am-mantvydas span {
+    font-size: 3.75rem;
+  }
+  #frontend-developer span {
+    font-size:2.5rem;
+  }
+  #big-ben {
+    width: 15px;
+  }
+  #london-bus {
+    width: 40px;
+  }
+  #based {
+    @include transform(translate(0px,-106px));
+    align-self: flex-end;
+    span {
+      font-size: 1.25rem;
+    }
+  }
+  #works-thumbnails {
+    grid-gap: 2rem;
+  }
+  #about-me-page header {
+    width: 90%;
+    justify-self: end;
+    h1 {
+      font-size: 5rem;
+    }
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}
+@media (max-width: 700px) and (max-height: 580px) {
+  #works-thumbnails {
+    overflow: auto;
+  }
+}
+@media (max-width: 322px) and (max-height: 657px) {
+  #works-thumbnails {
+    overflow: auto;
+  }
+}
+@media (min-width: 1900px) {
+  #works-page #work-thumbnails {
+    #seven-seals-of-event, #my-portfolio {
+      header {
+        width: 75%;
+        // justify-self: self-end;
+      }
+      padding-right: 7rem;
+    }
+  }
+}
+@media (min-width: 1024px) and (min-height: 768px) {
+  #earth {
+    max-width: 640px;
+    max-height: 610px;
+  }
+  #purple-bg {
+    max-height: 1144px;
+    max-width: 1144px;
+    top:50%;
+    transform: translate(23%, -50%);
+  }
+}
+@media (min-width: 1400px) and (min-height: 768px)  {
+  #earth {
+    left:50%;
+    right:auto;
+  }
+  #purple-bg {
+    left:50%;
+    right: auto;
+    transform:translate(-22%, -50%);
+  }
+}

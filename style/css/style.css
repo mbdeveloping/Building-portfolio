@@ -39,55 +39,6 @@ ul {
   height: 100vh;
   z-index: -20; }
 
-.twin {
-  z-index: -10;
-  will-change: transform;
-  transform: translateZ(0);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 200%;
-  height: 200%;
-  background-image: url("../../twinkling.png"); }
-
-#test1 {
-  will-change: transform;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  background-image: url("../../test1.jpg");
-  background-position: left top;
-  background-size: cover;
-  -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
-  clip-path: polygon(0 0, 0 100%, 100% 0);
-  display: none;
-  opacity: 0.9;
-  transition: opacity .5s; }
-
-#test2 {
-  will-change: transform;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: -1px;
-  left: -2px;
-  z-index: -1;
-  background-image: url("../../test2.jpg");
-  background-position: left top;
-  background-size: cover;
-  -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
-  clip-path: polygon(0 0, 0 100%, 100% 0);
-  display: none;
-  opacity: 0.9;
-  transition: opacity .5s; }
-
-.safari-padding {
-  padding-bottom: 44px;
-  overflow: hidden; }
-
 #purple-bg {
   position: absolute;
   left: 0;
@@ -109,7 +60,6 @@ ul {
   z-index: -1;
   opacity: .7; }
 
-/******************** Main header rules *************************/
 #nav-bar {
   width: 100%;
   position: fixed;
@@ -210,10 +160,21 @@ ul {
   right: 0;
   transform: translateX(100%); }
 
-/***************** HOME PAGE RULES *******************/
 main {
   width: 100%;
   height: 100vh; }
+
+#earth {
+  will-change: transform;
+  transform-style: preserve-3d;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  opacity: 0; }
 
 #home-header {
   width: 100%;
@@ -391,27 +352,6 @@ main {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg); }
 
-/****************** ABOUT PAGE RULES ********************/
-#about-pos-header-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  height: 100%;
-  align-items: start; }
-
-#about-header {
-  justify-self: center;
-  opacity: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  padding-top: 100px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  max-width: 300px; }
-  #about-header h1 {
-    font-size: 2rem;
-    padding-bottom: 1rem; }
-
 #skillset {
   padding-top: .5rem; }
 
@@ -423,19 +363,6 @@ main {
   height: 100%;
   opacity: 0; }
 
-#earth {
-  will-change: transform;
-  transform-style: preserve-3d;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  opacity: 0; }
-
-/****************** WORKS PAGE RULES ********************/
 #about-me-page {
   padding: 1rem;
   padding-top: 65px;
@@ -691,57 +618,6 @@ main {
   #works-page #work-navigator .active-second {
     background: linear-gradient(330deg, #072141 50%, #ff4d5a); }
 
-/********** Seven Seals of Event page ************/
-#full-vh-section {
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  justify-content: center; }
-  #full-vh-section header {
-    margin: 1rem;
-    padding: 1rem;
-    margin-top: 82px;
-    text-align: right;
-    position: relative;
-    background: rgba(0, 0, 0, 0.6); }
-    #full-vh-section header h1 {
-      font-size: 1.5rem; }
-    #full-vh-section header .bg-img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-image: url("../../ssoe.jpg");
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      z-index: -10;
-      filter: blur(1px); }
-    #full-vh-section header a {
-      border: 1px solid #fff;
-      display: inline-block;
-      padding: 1rem;
-      margin-top: 1rem; }
-
-#about-seven-seals-of-event {
-  text-align: center;
-  padding: 1rem; }
-  #about-seven-seals-of-event h2 {
-    padding: 1rem; }
-
-#aim {
-  text-align: center;
-  padding: 1rem; }
-  #aim h2 {
-    padding-bottom: 1rem; }
-
-#development-process {
-  text-align: center;
-  padding: 1rem; }
-  #development-process h2 {
-    padding-bottom: 1rem; }
-
-/*********** MEDIA QUERIES *********/
 @media (min-width: 450px) {
   #nav-bar #nav-wrapper {
     padding: 2rem; }
@@ -856,13 +732,6 @@ main {
     transform: translate(-3%, -16%);
     height: 150%; }
 
-  #about-pos-header-container {
-    grid-template-columns: 3fr 1fr;
-    align-items: center; }
-    #about-pos-header-container #about-header {
-      max-width: 500px;
-      padding: 0 2rem; }
-
   #works-page-main-header {
     text-align: left;
     grid-column: 1/2; } }
@@ -876,11 +745,6 @@ main {
       margin: 1rem 0; }
     #works-page #work-thumbnails #seven-seals-of-event header .design, #works-page #work-thumbnails #my-portfolio header .design {
       padding-bottom: .5rem; }
-
-  #about-header h1 {
-    font-size: 2.5rem; }
-  #about-header p {
-    font-size: 1.2rem; }
 
   #works-page {
     padding-left: 1rem;
@@ -961,14 +825,6 @@ main {
     right: auto;
     left: 2%;
     font-size: .8rem; }
-
-  #about-pos-header-container {
-    grid-template-columns: 2fr 1fr;
-    align-items: center; }
-    #about-pos-header-container #about-header h1 {
-      font-size: 3rem; }
-    #about-pos-header-container #about-header p {
-      font-size: 1.4rem; }
 
   #nav-btn {
     display: none; }
@@ -1055,9 +911,6 @@ main {
       font-size: 1.4rem; }
     #works-page #work-thumbnails #seven-seals-of-event header .tech, #works-page #work-thumbnails #my-portfolio header .tech {
       font-size: .9rem; }
-
-  #about-pos-header-container #about-header {
-    max-width: 600px; }
 
   #home-header h1 {
     max-width: 579px;
