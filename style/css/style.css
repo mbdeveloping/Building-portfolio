@@ -579,7 +579,7 @@ main {
       margin: 1.2rem;
       will-change: transform;
       height: 50vh;
-      background-image: url("../../home.png");
+      background-image: url("../../img/home.png");
       background-size: cover;
       background-position: center; }
       #works-page #work-thumbnails #my-portfolio .img img {
