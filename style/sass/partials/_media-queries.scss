@@ -23,16 +23,6 @@
       }
   }
 }
-@media (min-width: 550px) {
-  #works-page #work-thumbnails #seven-seals-of-event header {
-    width: 60%;
-  }
-  #about-me-page {
-    header {
-        width: 70%;
-      }
-  }
-}
 @media (min-width: 560px) {
   #works-page #work-thumbnails #seven-seals-of-event, #works-page #work-thumbnails #my-portfolio{
     display: grid;
@@ -49,7 +39,6 @@
       width: 100%;
       grid-row: 1/2;
       grid-column: 1/2;
-      // transform: none;
       @include transform(translateX(19%));
       bottom:auto;
     }
@@ -131,7 +120,6 @@
     left: auto;
     right:0;
     top:50%;
-    // transform: translate(50%, -50%);
     width: auto;;
     height: 80%;
   }
@@ -174,8 +162,6 @@
     article {
       text-align: center;
       justify-content: flex-end;
-      // max-width: 800px;
-      // max-height: 400px;
       h2 {
         padding-top: 1rem;
         padding-bottom: .5rem;
@@ -183,12 +169,6 @@
       .design {
         padding-bottom: 2rem;
       }
-    }
-    #test1, #test2 {
-      // display: block;
-      // -webkit-clip-path: polygon(0 0, 100% 0, 100% 46%, 0 46%);
-      // clip-path: polygon(0 0, 100% 0, 100% 46%, 0 46%);
-      // background-position: center;
     }
   }
   #works-page-main-header {
@@ -294,7 +274,6 @@
   }
   #earth {
     right:5%;
-    // @include transform(translate(0, -50%));
   }
   #purple-bg {
     top:0;
@@ -339,15 +318,6 @@
     }
   }
 }
-// @media (min-width: 1100px) {
-//   #works-page #work-thumbnails {
-//     #seven-seals-of-event, #my-portfolio {
-//       header {
-//         width: 85%;
-//       }
-//     }
-//   }
-// }
 @media (min-width: 1200px) {
   #about-me-page {
     padding-right: 3rem;
@@ -358,7 +328,6 @@
     #seven-seals-of-event, #my-portfolio {
       header {
         width: 70%;
-        // justify-self: self-end;
       }
     }
   }
@@ -374,7 +343,6 @@
       }
       header {
         width: 100%;
-        justify-self: self-end;
         h2 {
           font-size: 5rem;
           line-height: 4rem;
@@ -444,7 +412,6 @@
     #seven-seals-of-event, #my-portfolio {
       header {
         width: 75%;
-        // justify-self: self-end;
       }
       padding-right: 7rem;
     }

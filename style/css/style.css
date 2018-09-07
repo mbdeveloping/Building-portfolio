@@ -636,12 +636,6 @@ main {
     padding-bottom: 2rem; }
     #about-me-page header {
       width: 80%; } }
-@media (min-width: 550px) {
-  #works-page #work-thumbnails #seven-seals-of-event header {
-    width: 60%; }
-
-  #about-me-page header {
-    width: 70%; } }
 @media (min-width: 560px) {
   #works-page #work-thumbnails #seven-seals-of-event, #works-page #work-thumbnails #my-portfolio {
     display: grid;
@@ -902,8 +896,7 @@ main {
   #works-page #work-thumbnails #seven-seals-of-event .img img, #works-page #work-thumbnails #my-portfolio .img img {
     width: 200px; }
   #works-page #work-thumbnails #seven-seals-of-event header, #works-page #work-thumbnails #my-portfolio header {
-    width: 100%;
-    justify-self: self-end; }
+    width: 100%; }
     #works-page #work-thumbnails #seven-seals-of-event header h2, #works-page #work-thumbnails #my-portfolio header h2 {
       font-size: 5rem;
       line-height: 4rem; }
