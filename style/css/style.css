@@ -786,9 +786,6 @@ main {
       transform: translateX(19%);
       bottom: auto; }
 
-  .home-page-link {
-    font-size: 1.5rem; }
-
   #about-me-page {
     display: grid;
     grid-template-columns: 1fr 1.5fr; }
@@ -802,6 +799,9 @@ main {
       -webkit-transform: translateX(30px);
       -ms-transform: translateX(30px);
       transform: translateX(30px); } }
+@media (min-width: 700px) and (min-height: 1000px) {
+  .home-page-link {
+    font-size: 1.5rem; } }
 @media (min-width: 560px) and (min-height: 300px) {
   #about-me-page .img {
     height: 60vh;
