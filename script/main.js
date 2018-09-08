@@ -24,13 +24,50 @@ document.addEventListener("DOMContentLoaded", function() {
       const swipeDistance = 30;
       const earth = document.getElementById('earth');
 
-      aboutLink.addEventListener('click', () => {
-        if (aboutLink.classList.contains('toHome')) {
-          aboutLink.classList.remove('toHome');
+      //Change href and link text
+      function addHomeClass(selector) {
+        if (selector.classList.contains('toHome')) {
+          selector.classList.remove('toHome');
         } else {
-          aboutLink.classList.add('toHome');
+          selector.classList.add('toHome');
         }
-      });
+      }
+      function detectLink(e) {
+        let aboutMe = e.target.id === 'about-me' || e.target.parentNode.id === 'about-me';
+        let works = (e.target.id === 'works' || e.target.parentNode.id === 'works');
+        if (aboutMe) {
+          addHomeClass(aboutLink);
+        }
+        else if (works) {
+          addHomeClass(workLink);
+        }
+      }
+      function changeHref(selector) {
+        if (selector.classList.contains('toHome')) {
+          selector.setAttribute('href', 'index.html');
+          aboutLink.innerHTML = `
+          <span>H</span>
+          <span>O</span>
+          <span>M</span>
+          <span>E</span>
+          `;
+        } else {
+          aboutToHome();
+        }
+      }
+      function aboutToHome() {
+        aboutLink.setAttribute('href', 'about-me.html');
+        aboutLink.innerHTML = `
+        <span>A</span>
+        <span>B</span>
+        <span>O</span>
+        <span>U</span>
+        <span>T</span>
+        `;
+      }
+
+      aboutLink.addEventListener('click', detectLink);
+      workLink.addEventListener('click', detectLink);
 
       function positionEarth() {
         if (window.innerWidth <= 560) {
@@ -76,29 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       }
       //Hide Works, About, social links
-      function changeHref(selector) {
-        if (selector.classList.contains('toHome')) {
-          selector.setAttribute('href', 'index.html');
-          aboutLink.innerHTML = `
-          <span>H</span>
-          <span>O</span>
-          <span>M</span>
-          <span>E</span>
-          `;
-        } else {
-          aboutToHome();
-        }
-      }
-      function aboutToHome() {
-        aboutLink.setAttribute('href', 'about-me.html');
-        aboutLink.innerHTML = `
-        <span>A</span>
-        <span>B</span>
-        <span>O</span>
-        <span>U</span>
-        <span>T</span>
-        `;
-      }
+
       function hideLinks() {
         TweenMax.to(socialLinks, .3, {z:0, y:'100%'});
         TweenMax.to(leftNavOverlay,.3, {z:0, x: '-100%'});
