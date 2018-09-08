@@ -25,49 +25,19 @@ document.addEventListener("DOMContentLoaded", function() {
       const earth = document.getElementById('earth');
 
       //Change href and link text
-      function addHomeClass(selector) {
-        if (selector.classList.contains('toHome')) {
-          selector.classList.remove('toHome');
-        } else {
-          selector.classList.add('toHome');
-        }
+      const homeP = {
+        link: 'index.html',
+        name: ['H', 'O', 'M', 'E']
       }
-      function detectLink(e) {
-        let aboutMe = e.target.id === 'about-me' || e.target.parentNode.id === 'about-me';
-        let works = (e.target.id === 'works' || e.target.parentNode.id === 'works');
-        if (aboutMe) {
-          addHomeClass(aboutLink);
-        }
-        else if (works) {
-          addHomeClass(workLink);
-        }
+      const aboutP = ['A', 'B', 'O', 'U', 'T'];
+      function changeHref(selector, name, link) {
+        let ans ='';
+        selector.setAttribute('href', link);
+        name.forEach(element => {
+          ans += `<span>${element}</span>`;
+        });
+        selector.innerHTML = ans;
       }
-      function changeHref(selector) {
-        if (selector.classList.contains('toHome')) {
-          selector.setAttribute('href', 'index.html');
-          aboutLink.innerHTML = `
-          <span>H</span>
-          <span>O</span>
-          <span>M</span>
-          <span>E</span>
-          `;
-        } else {
-          aboutToHome();
-        }
-      }
-      function aboutToHome() {
-        aboutLink.setAttribute('href', 'about-me.html');
-        aboutLink.innerHTML = `
-        <span>A</span>
-        <span>B</span>
-        <span>O</span>
-        <span>U</span>
-        <span>T</span>
-        `;
-      }
-
-      aboutLink.addEventListener('click', detectLink);
-      workLink.addEventListener('click', detectLink);
 
       function positionEarth() {
         if (window.innerWidth <= 560) {
@@ -121,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
       }
       function slieInLinks() {
-        changeHref(aboutLink);
+        // changeHref(aboutLink);
         TweenMax.to([leftNavOverlay, rightNavOverlay], .5, {width: '5%', x:'0%'});
         TweenMax.to(socialLinks, .5, {y:'0%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
@@ -402,6 +372,7 @@ document.addEventListener("DOMContentLoaded", function() {
           namespace: 'about',
           onEnterCompleted: function() {
             document.getElementById('nav-btn').addEventListener('click', navAnimation);
+            changeHref(aboutLink, homeP.name, homeP.link);
           },
           onLeave: function() {
           },
