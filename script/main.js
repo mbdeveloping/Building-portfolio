@@ -24,6 +24,11 @@ document.addEventListener("DOMContentLoaded", function() {
       const swipeDistance = 30;
       const earth = document.getElementById('earth');
 
+      aboutLink.addEventListener('click', () => {
+        console.log('About clicked!');
+        aboutLink.classList.add('aboutToHome');
+      });
+
       function positionEarth() {
         if (window.innerWidth <= 560) {
           TweenMax.set('#earth', {x:'0%', y:'50%'});
@@ -75,6 +80,16 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
       }
       function slieInLinks() {
+        if (aboutLink.classList.contains('aboutToHome')) {
+          console.log("changing href");
+          aboutLink.setAttribute('href', "index.html");
+          aboutLink.innerHTML = `
+          <span>H</span>
+          <span>O</span>
+          <span>M</span>
+          <span>E</span>
+          `;
+        }
         TweenMax.to([leftNavOverlay, rightNavOverlay], .5, {width: '5%', x:'0%'});
         TweenMax.to(socialLinks, .5, {y:'0%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
