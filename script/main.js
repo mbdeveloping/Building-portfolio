@@ -25,13 +25,20 @@ document.addEventListener("DOMContentLoaded", function() {
       const earth = document.getElementById('earth');
 
       //Change href and link text
-      const homeP = {
+      const homeL = {
         link: 'index.html',
         name: ['H', 'O', 'M', 'E']
       }
-      const aboutP = ['A', 'B', 'O', 'U', 'T'];
+      const aboutL = {
+        link: 'about-me.html',
+        name: ['A', 'B', 'O', 'U', 'T']
+      }
+      const worksL = {
+        link: 'works.html',
+        name: ['W', 'O', 'R', 'K', 'S']
+      }
       function changeHref(selector, name, link) {
-        let ans ='';
+        let ans = '';
         selector.setAttribute('href', link);
         name.forEach(element => {
           ans += `<span>${element}</span>`;
@@ -359,6 +366,8 @@ document.addEventListener("DOMContentLoaded", function() {
           namespace: 'home',
           onEnter: () => addClassForAllSpans(),
           onEnterCompleted: function() {
+            changeHref(aboutLink, aboutL.name, aboutL.link);
+            changeHref(workLink, worksL.name, worksL.link);
             document.getElementById('nav-btn').addEventListener('click', navAnimation);
             document.getElementById('home-header-word-line-wrapper').addEventListener('mouseover', spanAnimation);
             document.getElementById('home-header-word-line-wrapper').addEventListener('mouseleave', setColorToWhite);
@@ -372,7 +381,8 @@ document.addEventListener("DOMContentLoaded", function() {
           namespace: 'about',
           onEnterCompleted: function() {
             document.getElementById('nav-btn').addEventListener('click', navAnimation);
-            changeHref(aboutLink, homeP.name, homeP.link);
+            changeHref(aboutLink, homeL.name, homeL.link);
+            changeHref(workLink, worksL.name, worksL.link);
           },
           onLeave: function() {
           },
@@ -382,6 +392,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const Workspage = Barba.BaseView.extend({
           namespace: 'works',
           onEnterCompleted: function() {
+            changeHref(workLink, homeL.name, homeL.link);
+            changeHref(aboutLink, aboutL.name, aboutL.link);
             document.getElementById('nav-btn').addEventListener('click', navAnimation);
           },
           onLeave: function() {
