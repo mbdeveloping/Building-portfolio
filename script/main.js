@@ -25,8 +25,11 @@ document.addEventListener("DOMContentLoaded", function() {
       const earth = document.getElementById('earth');
 
       aboutLink.addEventListener('click', () => {
-        console.log('About clicked!');
-        aboutLink.classList.add('aboutToHome');
+        if (aboutLink.classList.contains('toHome')) {
+          aboutLink.classList.remove('toHome');
+        } else {
+          aboutLink.classList.add('toHome');
+        }
       });
 
       function positionEarth() {
@@ -73,6 +76,29 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       }
       //Hide Works, About, social links
+      function changeHref(selector) {
+        if (selector.classList.contains('toHome')) {
+          selector.setAttribute('href', 'index.html');
+          aboutLink.innerHTML = `
+          <span>H</span>
+          <span>O</span>
+          <span>M</span>
+          <span>E</span>
+          `;
+        } else {
+          aboutToHome();
+        }
+      }
+      function aboutToHome() {
+        aboutLink.setAttribute('href', 'about-me.html');
+        aboutLink.innerHTML = `
+        <span>A</span>
+        <span>B</span>
+        <span>O</span>
+        <span>U</span>
+        <span>T</span>
+        `;
+      }
       function hideLinks() {
         TweenMax.to(socialLinks, .3, {z:0, y:'100%'});
         TweenMax.to(leftNavOverlay,.3, {z:0, x: '-100%'});
@@ -80,16 +106,7 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)'});
       }
       function slieInLinks() {
-        if (aboutLink.classList.contains('aboutToHome')) {
-          console.log("changing href");
-          aboutLink.setAttribute('href', "index.html");
-          aboutLink.innerHTML = `
-          <span>H</span>
-          <span>O</span>
-          <span>M</span>
-          <span>E</span>
-          `;
-        }
+        changeHref(aboutLink);
         TweenMax.to([leftNavOverlay, rightNavOverlay], .5, {width: '5%', x:'0%'});
         TweenMax.to(socialLinks, .5, {y:'0%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
@@ -305,6 +322,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
       function openNav() {
+        changeHref(aboutLink);
         navBtnOpen();
         TweenMax.to([leftNavOverlay, rightNavOverlay], .3, {x: '0%', width:'50%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
