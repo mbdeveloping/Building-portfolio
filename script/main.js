@@ -314,7 +314,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
       function openNav() {
-        changeHref(aboutLink);
         navBtnOpen();
         TweenMax.to([leftNavOverlay, rightNavOverlay], .3, {x: '0%', width:'50%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
