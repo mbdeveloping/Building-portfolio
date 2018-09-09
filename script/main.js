@@ -38,12 +38,12 @@ document.addEventListener("DOMContentLoaded", function() {
         name: ['W', 'O', 'R', 'K', 'S']
       }
       function changeHref(selector, name, link) {
-        let ans = '';
+        let output = '';
         selector.setAttribute('href', link);
         name.forEach(element => {
-          ans += `<span>${element}</span>`;
+          output += `<span>${element}</span>`;
         });
-        selector.innerHTML = ans;
+        selector.innerHTML = output;
       }
 
       function positionEarth() {
