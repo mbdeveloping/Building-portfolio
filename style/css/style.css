@@ -408,10 +408,11 @@ main {
   font-size: 1.5rem;
   padding-bottom: 2rem; }
 #works-page #work-thumbnails {
+  will-change: transform;
+  transform: translateZ(0);
   height: 100%;
   padding: 0;
-  position: relative;
-  touch-action: none; }
+  position: relative; }
   #works-page #work-thumbnails .work-nr {
     font-family: 'Cinzel', serif;
     position: absolute;
@@ -559,6 +560,7 @@ main {
         font-size: 1rem;
         padding-bottom: .2rem; }
 #works-page #scroll-down {
+  will-change: transform, opacity;
   opacity: 0;
   -webkit-transform: translateY(140%);
   -ms-transform: translateY(140%);

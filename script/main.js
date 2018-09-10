@@ -127,26 +127,26 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       function worksTransitionIn() {
-        let myPortTop;
         const firstIndicator = document.getElementById('first-indicator');
         const secondIndicator = document.getElementById('second-indicator');
         const workThumbnails = document.getElementById('work-thumbnails');
-        const myPort = document.getElementById('my-portfolio');
         const firstWorkNr = document.getElementById('first-work-nr');
         const secondWorkNr = document.getElementById('second-work-nr');
-        myPortTop = myPort.offsetTop;
+        const workSsoe = document.getElementById('seven-seals-of-event');
+        const workPort = document.getElementById('my-portfolio');
         let scroll_blocked = false;
+
+        TweenMax.set([workThumbnails, '#seven-seals-of-event', '#my-portfolio'] , {z:0});
 
         window.addEventListener('resize', function() {
           workThumbnails.className = '';
           TweenMax.to('#scroll-down', 1, {y:'0%'});
           TweenMax.to('#seven-seals-of-event', .3, {scale:1});
-          TweenMax.to('#work-thumbnails', 1,{y:0, z:0, ease:Power2.easeInOut, onComplete:function() {
+          TweenMax.to(workThumbnails, 1,{y:'0%', z:0, ease:Power2.easeInOut, onComplete:function() {
             showWorkNr(firstWorkNr);
           }});
-          myPortTop = myPort.offsetTop;
         });
-        // showWorkNr(firstWorkNr);
+
         TweenMax.to('#work-navigator', 1, {opacity:1});
         TweenMax.to(['#works-page-main-header h2',
                      '#works-page-main-header .border-wrapper',
@@ -163,16 +163,17 @@ document.addEventListener("DOMContentLoaded", function() {
         function hideWorkNr(elem) {
           TweenMax.to(elem,.5, {y:'100%'});
         }
+
         function tofirstWork() {
           workThumbnails.className = '';
           secondIndicator.classList.remove('active-second');
           firstIndicator.className += ' active-first';
-          TweenMax.to('#my-portfolio', 1, {z:0, scale:0.6});
-          TweenMax.to(workThumbnails, 1,{y:0, z:0, ease:Power2.easeInOut, onComplete:function() {
+          TweenMax.to(workPort, 1, {z:0, scale:0.6});
+          TweenMax.to(workThumbnails, 1,{y:'0%', z:0, ease:Power2.easeInOut, onComplete:function() {
             hideWorkNr(secondWorkNr);
             showWorkNr(firstWorkNr);
           }});
-          TweenMax.to('#seven-seals-of-event', 1, {z:0, scale:1});
+          TweenMax.to(workSsoe, 1, {z:0, scale:1});
           showScrollDown();
         }
 
@@ -180,12 +181,12 @@ document.addEventListener("DOMContentLoaded", function() {
           workThumbnails.className = 'scrolled-portfolio';
           secondIndicator.className += ' active-second';
           firstIndicator.classList.remove('active-first');
-          TweenMax.to('#seven-seals-of-event', 1, {z:0, scale:0.6});
-          TweenMax.to(workThumbnails, 1,{y:-myPortTop, z:0, ease:Power2.easeInOut, onComplete:function() {
+          TweenMax.to(workSsoe, 1, {z:0, scale:0.6});
+          TweenMax.to(workThumbnails, 1,{y:'-100%', z:0, ease:Power2.easeInOut, onComplete:function() {
             hideWorkNr(firstWorkNr);
             showWorkNr(secondWorkNr);
           }});
-          TweenMax.to('#my-portfolio', 1, {z:0, scale:1});
+          TweenMax.to(workPort, 1, {z:0, scale:1});
           hideScrollDown();
         }
 
@@ -442,6 +443,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 TweenMax.set('#works-page-main-header .button-wrapper', {opacity:0, x:'110%'});
                 TweenMax.set('#work-navigator', {opacity:0});
               }
+              if (document.getElementById('about-me-page')) {
+                console.log("wokrs out transition ABOUT");
+                if (window.innerWidth <= 560) {
+                  TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'-15%'});
+                }
+                TweenMax.set('#about-me-page .img', {z:0, opacity:0, scale:4});
+                TweenMax.set('#about-me-page h1', {z:0, x:'-110%'});
+                TweenMax.set('#about-me-page p', {z:0, x:'110%'});
+                TweenMax.set('#about-me-page .button-wrapper', {z:0, x:'-110%'});
+              }
               function allDone() {
                 deferred.resolve();
               }
@@ -454,16 +465,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (window.innerWidth >= 1024) {
               slieInLinks();
             }
-            if (document.getElementById('about-me-page')) {
-              console.log("wokrs out transition ABOUT");
-              if (window.innerWidth <= 560) {
-                TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'-15%'});
-              }
-              TweenMax.set('#about-me-page .img', {z:0, opacity:0, scale:4});
-              TweenMax.set('#about-me-page h1', {z:0, x:'-110%'});
-              TweenMax.set('#about-me-page p', {z:0, x:'110%'});
-              TweenMax.set('#about-me-page .button-wrapper', {z:0, x:'-110%'});
-            }
+
             console.log("home transition");
             this.done();
           }
@@ -533,11 +535,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 TweenMax.to(['#works-page-main-header .button-wrapper', '#works-page-main-header p'], 1, {x:'-110%'});
                 TweenMax.to('#seven-seals-of-event .img', 1, {scale:0, autoAlpha:0});
                 TweenMax.to('#scroll-down', .7, {y:'140%'});
-                TweenMax.to('#work-navigator',1, {opacity:0});
-                TweenMax.to('#works-thumbnails', 1, {y:'100%', autoAlpha:0, onComplete:() => deferred.resolve()});
+                TweenMax.to('#work-navigator',1, {opacity:0, onComplete:() => deferred.resolve()});
               }
               if (document.getElementById('work-thumbnails').className === 'scrolled-portfolio') {
-                TweenMax.to('#work-thumbnails', .7,{y:0, z:0, ease:Power2.easeInOut, onComplete:contTrans});
+                TweenMax.to('#work-thumbnails', .7,{y:'0%', z:0, ease:Power2.easeInOut, onComplete:contTrans});
               } else {
                 contTrans();
               }
