@@ -420,7 +420,7 @@ document.addEventListener("DOMContentLoaded", function() {
             navBtnClose();
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
-            TweenMax.to('#earth',2, {autoAlpha:0,scale:0, ease:Power2.easeInOut});
+            TweenMax.to('#earth',1, {autoAlpha:0,scale:0, ease:Power2.easeInOut});
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:() => {
               TweenMax.to(['#hello', '#frontend-developer'], 1, {x:'110%'});
               TweenMax.to(['#i-am-mantvydas', '#based'], 1, {x:'-110%', onComplete: allDone});
