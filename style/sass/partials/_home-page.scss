@@ -3,7 +3,7 @@ main {
   height: 100vh;
 }
 #earth {
-  will-change: transform;
+  will-change: transform, opacity;
   transform-style: preserve-3d;
   position: absolute;
   bottom:0;

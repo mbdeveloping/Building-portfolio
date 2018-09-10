@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
       let touchY;
       let moveY;
       const swipeDistance = 30;
-      const earth = document.getElementById('earth');
 
       //Change href and link text
       const homeL = {
@@ -82,9 +81,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
       posPurpleBg();
-      if (earth) {
-        TweenMax.to(earth, 150, {rotation:360,z:0, repeat:-1, force3D:true, ease:Linear.easeNone﻿});
+      function spinEarth() {
+        if (document.getElementById('earth')) {
+          console.log('spinning');
+          TweenMax.to('#earth', 150, {rotation:360,z:0, repeat:-1, force3D:true, ease:Linear.easeNone﻿});
+        }
       }
+      // spinEarth();
 
       //Add class for all header spans
       function addClassForAllSpans() {
@@ -373,6 +376,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('nav-btn').addEventListener('click', navAnimation);
             document.getElementById('home-header-word-line-wrapper').addEventListener('mouseover', spanAnimation);
             document.getElementById('home-header-word-line-wrapper').addEventListener('mouseleave', setColorToWhite);
+            // spinEarth();
           },
           onLeave: function() {
           },
@@ -418,13 +422,13 @@ document.addEventListener("DOMContentLoaded", function() {
             zoomInBg();
             slideOutNavBar();
             navBtnClose();
+            TweenMax.set('#earth', {x:0});
             TweenMax.to(socialLinks, .3, {y:'100%'});
             TweenMax.to([leftNavOverlay, rightNavOverlay],.3, {width: '0%'});
-            TweenMax.to('#earth',1, {autoAlpha:0,scale:0, ease:Power2.easeInOut});
             TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 0)', onComplete:() => {
               TweenMax.to(['#hello', '#frontend-developer'], 1, {x:'110%'});
               TweenMax.to(['#i-am-mantvydas', '#based'], 1, {x:'-110%', onComplete: allDone});
-
+              TweenMax.to('#earth',1, {opacity:0,scale:0});
               if (document.getElementById('works-page-main-header')) {
                 console.log("wokrs out transition WORKS");
                 if (window.innerWidth <= 560) {
