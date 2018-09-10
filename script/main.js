@@ -82,7 +82,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
       posPurpleBg();
-      TweenMax.to(earth, 150, {rotation:360,z:0, repeat:-1, force3D:true, ease:Linear.easeNone﻿});
+      if (earth) {
+        TweenMax.to(earth, 150, {rotation:360,z:0, repeat:-1, force3D:true, ease:Linear.easeNone﻿});
+      }
+
       //Add class for all header spans
       function addClassForAllSpans() {
         document.querySelectorAll('#home-header-word-line-wrapper span').forEach(span => {
