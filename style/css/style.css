@@ -165,7 +165,7 @@ main {
   height: 100vh; }
 
 #earth {
-  will-change: transform;
+  will-change: transform, opacity;
   transform-style: preserve-3d;
   position: absolute;
   bottom: 0;
@@ -369,6 +369,7 @@ main {
   width: 100%;
   height: 100%; }
   #about-me-page .img {
+    will-change: transform, opacity;
     display: block;
     margin: 1.2rem;
     background-size: cover;
