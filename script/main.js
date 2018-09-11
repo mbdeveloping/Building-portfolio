@@ -126,6 +126,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const workSsoe = document.getElementById('seven-seals-of-event');
         const workPort = document.getElementById('my-portfolio');
         let scroll_blocked = false;
+        let swipe_blocked = false;
+        console.log(swipe_blocked);
 
         TweenMax.set([workThumbnails, '#seven-seals-of-event', '#my-portfolio'] , {z:0});
 
@@ -191,25 +193,29 @@ document.addEventListener("DOMContentLoaded", function() {
           scroll_blocked = true;
           setTimeout(()=> scroll_blocked = false, 1000);
         }
-        function scrolledToEnd() {
-          TweenMax.to(workThumbnails, .3, {y:'-120%', onComplete:function() {
-            TweenMax.to(workThumbnails, .5, {y:'-100%'});
+        function blockSwipe() {
+          swipe_blocked = true;
+          setTimeout(()=> swipe_blocked = false, 1000);
+        }
+        function scrolledToEnd(starttime, endtime) {
+          TweenMax.to(workThumbnails, starttime, {y:'-120%', onComplete:function() {
+            TweenMax.to(workThumbnails, endtime, {y:'-100%'});
           }});
         }
         document.addEventListener('wheel', function(e) {
+          console.log('wheel event');
           if (!scroll_blocked){
             if (e.deltaY < 0){
               tofirstWork();
               blockScroll();
             }
             else if (e.deltaY > 0 && workThumbnails.classList.contains('scrolled-portfolio')) {
-              scrolledToEnd();
+              scrolledToEnd(.3, .5);
             }
             else {
               toSecondWork();
               blockScroll();
             }
-
         	}
         });
         document.addEventListener('keydown', e => {
@@ -218,22 +224,32 @@ document.addEventListener("DOMContentLoaded", function() {
             tofirstWork();
           }
           else if (e.keyCode == '40' && workThumbnails.classList.contains('scrolled-portfolio')) {
-            scrolledToEnd();
+            scrolledToEnd(.3, .5);
           }
           else {
             hideScrollDown();
             toSecondWork();
           }
       });
-      document.addEventListener('touchstart', e => touchY = e.changedTouches[0].screenY);
+      document.addEventListener('touchstart', e => {
+        touchY = e.changedTouches[0].screenY;
+      });
       document.addEventListener('touchmove', e => {
          moveY = e.changedTouches[0].screenY;
-         if ((moveY+swipeDistance) < touchY) {
-           hideScrollDown();
-           toSecondWork();
-         }else if ((moveY-swipeDistance) > touchY) {
-           showScrollDown();
-           tofirstWork();
+         if (!swipe_blocked){
+           if ((moveY+swipeDistance) < touchY) {
+             hideScrollDown();
+             toSecondWork();
+             // blockSwipe();
+           }else if (moveY < touchY && workThumbnails.classList.contains('scrolled-portfolio')) {
+             scrolledToEnd(.3, .3);
+             blockSwipe();
+           }
+           else {
+             showScrollDown();
+             tofirstWork();
+             // blockSwipe();
+           }
          }
       });
         firstIndicator.addEventListener('click', tofirstWork);
