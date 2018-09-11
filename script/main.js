@@ -39,9 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
       function changeHref(selector, name, link) {
         let output = '';
         selector.setAttribute('href', link);
-        name.forEach(element => {
-          output += `<span>${element}</span>`;
-        });
+        name.forEach(element => output += `<span>${element}</span>`);
         selector.innerHTML = output;
       }
 
