@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-  //HOME PAGE RULES
     (function() {
       const homeLinks = document.getElementsByClassName('home-page-link');
       const socialLinks = document.getElementById('social-links');
@@ -79,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
       posPurpleBg();
-
       function spinEarth() {
         if (document.getElementById('earth')) {
           console.log('spinning');
@@ -87,7 +85,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
       spinEarth();
-
       //Add class for all header spans
       function addClassForAllSpans() {
         document.querySelectorAll('#home-header-word-line-wrapper span').forEach(span => {
@@ -95,7 +92,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       }
       //Hide Works, About, social links
-
       function hideLinks() {
         TweenMax.to(socialLinks, .3, {z:0, y:'100%'});
         TweenMax.to(leftNavOverlay,.3, {z:0, x: '-100%'});
@@ -108,7 +104,6 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to(socialLinks, .5, {y:'0%'});
         TweenMax.to(homeLinks, .3, {color: 'rgba(255, 255, 255, 1)'});
       }
-
       function homeTransitionIn() {
         TweenMax.staggerFromTo( '.testt span', 1, {autoAlpha:0, scale:1}, {z:0, autoAlpha:1, scale:1}, 0.05 );
         TweenMax.staggerFromTo( '.testt span', 0.1, {scale:4}, {scale:1}, 0.05, bigBenAndBus);;
@@ -118,12 +113,10 @@ document.addEventListener("DOMContentLoaded", function() {
           TweenMax.fromTo('#london-bus', 1, {opacity:0, x:-100}, {opacity:1, x:0,ease: Power4.easeOut});
         }
       }
-
       function aboutTransitionIn() {
         TweenMax.to('#about-me-page .img', 1, {z:0, autoAlpha:1, scale:1});
         TweenMax.to(['#about-me-page h1', '#about-me-page p', '#about-me-page .button-wrapper'], 1, {x:'0%'});
       }
-
       function worksTransitionIn() {
         const firstIndicator = document.getElementById('first-indicator');
         const secondIndicator = document.getElementById('second-indicator');
@@ -154,7 +147,6 @@ document.addEventListener("DOMContentLoaded", function() {
           showWorkNr(firstWorkNr);
         }});
 
-        // TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'-50%'});
         function showWorkNr(elem) {
           TweenMax.to(elem,.5, {y:'0%'});
         }
@@ -199,15 +191,25 @@ document.addEventListener("DOMContentLoaded", function() {
           scroll_blocked = true;
           setTimeout(()=> scroll_blocked = false, 1000);
         }
+        function scrolledToEnd() {
+          TweenMax.to(workThumbnails, .3, {y:'-120%', onComplete:function() {
+            TweenMax.to(workThumbnails, .5, {y:'-100%'});
+          }});
+        }
         document.addEventListener('wheel', function(e) {
           if (!scroll_blocked){
-        		if (e.deltaY < 0){
+            if (e.deltaY < 0){
               tofirstWork();
               blockScroll();
-            } else {
+            }
+            else if (e.deltaY > 0 && workThumbnails.classList.contains('scrolled-portfolio')) {
+              scrolledToEnd();
+            }
+            else {
               toSecondWork();
               blockScroll();
             }
+
         	}
         });
         document.addEventListener('keydown', e => {
@@ -215,7 +217,10 @@ document.addEventListener("DOMContentLoaded", function() {
             showScrollDown();
             tofirstWork();
           }
-          else if (e.keyCode == '40') {
+          else if (e.keyCode == '40' && workThumbnails.classList.contains('scrolled-portfolio')) {
+            scrolledToEnd();
+          }
+          else {
             hideScrollDown();
             toSecondWork();
           }
