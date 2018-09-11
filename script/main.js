@@ -127,7 +127,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const workPort = document.getElementById('my-portfolio');
         let scroll_blocked = false;
         let swipe_blocked = false;
-        console.log(swipe_blocked);
 
         TweenMax.set([workThumbnails, '#seven-seals-of-event', '#my-portfolio'] , {z:0});
 
@@ -198,8 +197,8 @@ document.addEventListener("DOMContentLoaded", function() {
           setTimeout(()=> swipe_blocked = false, 1000);
         }
         function scrolledToEnd(starttime, endtime) {
-          TweenMax.to(workThumbnails, starttime, {y:'-120%', onComplete:function() {
-            TweenMax.to(workThumbnails, endtime, {y:'-100%'});
+          TweenMax.to(workThumbnails, starttime, {z:0, y:'-120%', onComplete:function() {
+            TweenMax.to(workThumbnails, endtime, {z:0, y:'-100%'});
           }});
         }
         document.addEventListener('wheel', function(e) {
