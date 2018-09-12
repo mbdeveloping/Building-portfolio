@@ -8,18 +8,18 @@ body {
   font-size: 1rem;
   color: $font-color;
   font-family: Arial;
-  background:#061c37;
-  // background: linear-gradient(to bottom, #00041c, #01093b);
-  // &:before {
-	// content:"";
-	// position:fixed;
-	// left:0;
-	// top:0;
-	// right:0;
-	// bottom:0;
-	// z-index:-1;
-  // background:linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
-  // }
+  // background:#061c37;
+  // background: linear-gradient(#01093b, #00041c);
+  &:before {
+	content:"";
+	position:fixed;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	z-index:-1;
+  background:linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
+  }
 }
 .body-ov-hidden {
   overflow: hidden;
