@@ -143,8 +143,8 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to(['#works-page-main-header h2',
                      '#works-page-main-header .border-wrapper',
                      '#works-page-main-header p',
-                     '#works-page-main-header .button-wrapper'], 1, {z:0, autoAlpha:1, x:'0%'});
-        TweenMax.to('#seven-seals-of-event .img', 1, {z:0, autoAlpha:1, scale:1, onComplete:function() {
+                     '#works-page-main-header .button-wrapper'], 1, {z:0, opacity:1, x:'0%'});
+        TweenMax.to('#seven-seals-of-event .img', 1, {z:0, opacity:1, scale:1, onComplete:function() {
           showWorkNr(firstWorkNr);
         }});
 
@@ -454,7 +454,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (window.innerWidth <= 560) {
                   TweenMax.to('#purple-bg', 1, {z:0, x:'-24%', y:'-15%'});
                 }
-                TweenMax.set('#seven-seals-of-event .img', {z:0, autoAlpha:0, scale:4});
+                TweenMax.set('#seven-seals-of-event .img', {z:0, opacity:0, scale:4});
                 TweenMax.set('#works-page-main-header h2', {opacity:1, x:'-100%'});
                 TweenMax.set('#works-page-main-header .border-wrapper', {opacity:1, x:'-120%'});
                 TweenMax.set('#works-page-main-header p', {opacity:1, x:'110%'});
@@ -506,11 +506,11 @@ document.addEventListener("DOMContentLoaded", function() {
               TweenMax.to('#about-me-page .button-wrapper',1, {x:'110%', onComplete:allDoneAbout});
               if (document.getElementById('works-page-main-header')) {
                 console.log("about out transition WORKS");
-                TweenMax.set('#works-page-main-header h2', {autoAlpha:1, x:'-100%'});
-                TweenMax.set('#works-page-main-header .border-wrapper', {autoAlpha:1, x:'-120%'});
-                TweenMax.set('#works-page-main-header p', {autoAlpha:1, x:'110%'});
-                TweenMax.set('#works-page-main-header .button-wrapper', {autoAlpha:1, x:'110%'});
-                TweenMax.set('#seven-seals-of-event .img', {z:0, autoAlpha:0, scale:4});
+                TweenMax.set('#works-page-main-header h2', {opacity:1, x:'-100%'});
+                TweenMax.set('#works-page-main-header .border-wrapper', {opacity:1, x:'-120%'});
+                TweenMax.set('#works-page-main-header p', {opacity:1, x:'110%'});
+                TweenMax.set('#works-page-main-header .button-wrapper', {opacity:1, x:'110%'});
+                TweenMax.set('#seven-seals-of-event .img', {z:0, opacity:0, scale:4});
                 TweenMax.set('#work-navigator', {opacity:0});
               }
               if (document.getElementById('home-header')) {

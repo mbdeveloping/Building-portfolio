@@ -15,6 +15,7 @@
     // touch-action: none;
 
     .work-nr {
+      will-change: transform;
       font-family: 'Cinzel', serif;
       position: absolute;
       top:0;
