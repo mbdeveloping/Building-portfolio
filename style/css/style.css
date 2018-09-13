@@ -6,10 +6,14 @@
 body {
   font-size: 1rem;
   color: #fff;
-  font-family: Arial; }
+  font-family: Arial;
+  -webkit-transform: translate3d(0, 0, 0) translateZ(0); }
   body:before {
+    -webkit-transform: translate3d(0, 0, 0) translateZ(0);
     content: "";
-    position: fixed;
+    will-change: transform;
+    transform: translateZ(0);
+    position: absolute;
     left: 0;
     top: 0;
     right: 0;
@@ -407,7 +411,7 @@ main {
   font-size: 1.5rem;
   padding-bottom: 2rem; }
 #works-page #work-thumbnails {
-  will-change: transform;
+  will-change: transform, scroll-position;
   transform: translateZ(0);
   height: 100%;
   padding: 0;
@@ -428,6 +432,7 @@ main {
       display: block;
       transform: translateY(100%); }
   #works-page #work-thumbnails #seven-seals-of-event {
+    will-change: transform, scroll-position;
     position: relative;
     padding: 1rem;
     padding-top: 50px;
@@ -495,6 +500,7 @@ main {
         font-size: 1rem;
         padding-bottom: .2rem; }
   #works-page #work-thumbnails #my-portfolio {
+    will-change: transform, scroll-position;
     position: relative;
     padding: 1rem;
     padding-top: 50px;

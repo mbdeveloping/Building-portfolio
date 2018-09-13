@@ -7,7 +7,7 @@
     }
   }
   #work-thumbnails {
-    will-change: transform;
+    will-change: transform, scroll-position;
     transform:translateZ(0);
     height: 100%;
     padding:0;
@@ -30,7 +30,7 @@
       }
     }
     #seven-seals-of-event {
-      // will-change: transform;
+      will-change: transform, scroll-position;
       // transform:translateZ(0);
       position: relative;
       padding: 1rem;
@@ -107,6 +107,7 @@
       }
     }
     #my-portfolio {
+      will-change: transform, scroll-position;
       // will-change: transform;
       // transform:translateZ(0);
       position: relative;
