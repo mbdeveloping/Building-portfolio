@@ -7,19 +7,8 @@ body {
   font-size: 1rem;
   color: #fff;
   font-family: Arial;
+  background: #061c37;
   -webkit-transform: translate3d(0, 0, 0) translateZ(0); }
-  body:before {
-    -webkit-transform: translate3d(0, 0, 0) translateZ(0);
-    content: "";
-    will-change: transform;
-    transform: translateZ(0);
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16); }
 
 .body-ov-hidden {
   overflow: hidden;
@@ -738,6 +727,19 @@ main {
     text-align: left;
     grid-column: 1/2; } }
 @media (min-width: 700px) {
+  body:before {
+    -webkit-transform: translate3d(0, 0, 0) translateZ(0);
+    content: "";
+    will-change: transform;
+    transform: translateZ(0);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16); }
+
   #works-page #work-thumbnails .work-nr {
     font-size: 5rem; }
 
