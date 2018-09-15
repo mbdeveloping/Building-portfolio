@@ -127,6 +127,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const workPort = document.getElementById('my-portfolio');
         let scroll_blocked = false;
         let swipe_blocked = false;
+        const toFirst = '0%';
+        const toSecond = '-100%';
+        const endOfWorks = '-120%';
+        const scaleDownWorks = 0.6;
 
         TweenMax.set([workThumbnails, '#seven-seals-of-event', '#my-portfolio'] , {z:0});
 
@@ -159,8 +163,8 @@ document.addEventListener("DOMContentLoaded", function() {
           workThumbnails.className = '';
           secondIndicator.classList.remove('active-second');
           firstIndicator.className += ' active-first';
-          TweenMax.to(workPort, 1, {z:0, scale:0.6});
-          TweenMax.to(workThumbnails, 1,{y:'0%', z:0, ease:Power2.easeInOut, onComplete:function() {
+          TweenMax.to(workPort, 1, {z:0, scale:scaleDownWorks});
+          TweenMax.to(workThumbnails, 1,{y:toFirst, z:0, ease:Power2.easeInOut, onComplete:function() {
             hideWorkNr(secondWorkNr);
             showWorkNr(firstWorkNr);
           }});
@@ -172,8 +176,8 @@ document.addEventListener("DOMContentLoaded", function() {
           workThumbnails.className = 'scrolled-portfolio';
           secondIndicator.className += ' active-second';
           firstIndicator.classList.remove('active-first');
-          TweenMax.to(workSsoe, 1, {z:0, scale:0.6});
-          TweenMax.to(workThumbnails, 1,{y:'-100%', z:0, ease:Power2.easeInOut, onComplete:function() {
+          TweenMax.to(workSsoe, 1, {z:0, scale:scaleDownWorks});
+          TweenMax.to(workThumbnails, 1,{y:toSecond, z:0, ease:Power2.easeInOut, onComplete:function() {
             hideWorkNr(firstWorkNr);
             showWorkNr(secondWorkNr);
           }});
@@ -197,8 +201,8 @@ document.addEventListener("DOMContentLoaded", function() {
           setTimeout(()=> swipe_blocked = false, 1000);
         }
         function scrolledToEnd(starttime, endtime) {
-          TweenMax.to(workThumbnails, starttime, {z:0, y:'-120%', onComplete:function() {
-            TweenMax.to(workThumbnails, endtime, {z:0, y:'-100%'});
+          TweenMax.to(workThumbnails, starttime, {z:0, y:endOfWorks, onComplete:function() {
+            TweenMax.to(workThumbnails, endtime, {z:0, y:toSecond});
           }});
         }
         document.addEventListener('wheel', function(e) {
