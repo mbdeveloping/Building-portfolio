@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
         TweenMax.to(['#about-me-page h1', '#about-me-page p', '#about-me-page .button-wrapper'], 1, {x:'0%'});
       }
       function worksTransitionIn() {
+        console.log('workTransition function called');
         const firstIndicator = document.getElementById('first-indicator');
         const secondIndicator = document.getElementById('second-indicator');
         const workThumbnails = document.getElementById('work-thumbnails');
@@ -185,6 +186,12 @@ document.addEventListener("DOMContentLoaded", function() {
           hideScrollDown();
         }
 
+        function scrolledToEnd(starttime, endtime) {
+          TweenMax.to(workThumbnails, starttime, {z:0, y:endOfWorks, onComplete:function() {
+            TweenMax.to(workThumbnails, endtime, {z:0, y:toSecond});
+          }});
+        }
+
         function hideScrollDown() {
           TweenMax.to('#scroll-down', .5, {z:0, y:'140%'});
         }
@@ -200,11 +207,7 @@ document.addEventListener("DOMContentLoaded", function() {
           swipe_blocked = true;
           setTimeout(()=> swipe_blocked = false, 1000);
         }
-        function scrolledToEnd(starttime, endtime) {
-          TweenMax.to(workThumbnails, starttime, {z:0, y:endOfWorks, onComplete:function() {
-            TweenMax.to(workThumbnails, endtime, {z:0, y:toSecond});
-          }});
-        }
+
         document.addEventListener('wheel', function(e) {
           console.log('wheel event');
           if (!scroll_blocked){

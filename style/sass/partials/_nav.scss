@@ -89,6 +89,7 @@
   }
 }
 %nav-overlay-shared {
+  will-change: transform;
   position: fixed;
   width: 50%;
   height: 100vh;
