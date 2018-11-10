@@ -164,12 +164,12 @@ document.addEventListener("DOMContentLoaded", function() {
           workThumbnails.className = '';
           secondIndicator.classList.remove('active-second');
           firstIndicator.className += ' active-first';
-          TweenMax.to(workPort, 1, {z:0, scale:scaleDownWorks});
+          // TweenMax.to(workPort, 1, {z:0, scale:scaleDownWorks});
           TweenMax.to(workThumbnails, 1,{y:toFirst, z:0, ease:Power2.easeInOut, onComplete:function() {
             hideWorkNr(secondWorkNr);
             showWorkNr(firstWorkNr);
           }});
-          TweenMax.to(workSsoe, 1, {z:0, scale:1});
+          // TweenMax.to(workSsoe, 1, {z:0, scale:1});
           showScrollDown();
         }
 
@@ -177,12 +177,12 @@ document.addEventListener("DOMContentLoaded", function() {
           workThumbnails.className = 'scrolled-portfolio';
           secondIndicator.className += ' active-second';
           firstIndicator.classList.remove('active-first');
-          TweenMax.to(workSsoe, 1, {z:0, scale:scaleDownWorks});
+          // TweenMax.to(workSsoe, 1, {z:0, scale:scaleDownWorks});
           TweenMax.to(workThumbnails, 1,{y:toSecond, z:0, ease:Power2.easeInOut, onComplete:function() {
             hideWorkNr(firstWorkNr);
             showWorkNr(secondWorkNr);
           }});
-          TweenMax.to(workPort, 1, {z:0, scale:1});
+          // TweenMax.to(workPort, 1, {z:0, scale:1});
           hideScrollDown();
         }
 
